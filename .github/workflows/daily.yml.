@@ -1,0 +1,45 @@
+# Lance le bot 2 fois par jour et publie la page sur GitHub Pages.
+# Horaires en UTC : 16:30 UTC = 17:30 à Paris en hiver (18:30 en été),
+#                   21:00 UTC = 22:00 à Paris en hiver (23:00 en été).
+name: Analyse NBA quotidienne
+
+on:
+  schedule:
+    - cron: "30 16 * * *"
+    - cron: "0 21 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nba-bot
+  cancel-in-progress: false
+
+jobs:
+  analyse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Installer les dépendances
+        run: pip install -r requirements.txt
+
+      - name: Lancer l'analyse et générer la page
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+        run: python main.py --hours 13 --html docs --no-save
+
+      - name: Publier la page et l'historique des cotes
+        run: |
+          git config user.name "nba-bot"
+          git config user.email "nba-bot@users.noreply.github.com"
+          git add -f docs
+          if [ -f data/odds_history.json ]; then git add -f data/odds_history.json; fi
+          git diff --cached --quiet || git commit -m "Analyse du $(date -u '+%Y-%m-%d %H:%M') UTC"
+          git push
