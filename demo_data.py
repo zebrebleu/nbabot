@@ -15,11 +15,14 @@ def _team(key: str, name: str, results: str, venues: str, commence: datetime, *,
           injuries: list[Injury] | None = None) -> TeamContext:
     """results/venues : du plus ancien au plus récent ('W'/'L', 'H'/'A')."""
     n = len(results)
-    games = [
-        TeamGame(commence - timedelta(hours=last_game_hours_ago + (n - 1 - i) * spacing_hours),
-                 "adversaire", v == "H", True, r == "W")
-        for i, (r, v) in enumerate(zip(results, venues))
-    ]
+    games = []
+    for i, (r, v) in enumerate(zip(results, venues)):
+        margin = 4 + (i * 5 + len(key)) % 11          # écarts fictifs mais variés
+        pts = 108 + (i * 7 + len(name)) % 14
+        pf, pa = (pts, pts - margin) if r == "W" else (pts - margin, pts)
+        games.append(TeamGame(
+            commence - timedelta(hours=last_game_hours_ago + (n - 1 - i) * spacing_hours),
+            "adversaire", v == "H", True, r == "W", pf, pa))
     games.append(TeamGame(commence, "adversaire du jour", today_home, False))
     for opp, hours_after in future or []:
         games.append(TeamGame(commence + timedelta(hours=hours_after), opp, True, False))

@@ -11,7 +11,8 @@ from datetime import datetime
 from pathlib import Path
 
 import config
-from analyzer import TZ, _fmt_day, select
+from analyzer import TZ, _fmt_day, no_bet_reason, select
+from insights import build_insight
 from models import Evaluation, Slate
 
 CSS = """
@@ -41,6 +42,13 @@ th{color:var(--muted);font-weight:600;font-size:12px}td{overflow-wrap:break-word
 details{margin-top:8px}summary{cursor:pointer;font-size:14px;font-weight:600;color:var(--muted)}td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
 .tag{display:inline-block;border-radius:999px;padding:1px 8px;font-size:12px;font-weight:600}
 .tag.v{background:var(--ok-bg);color:var(--ok)}.tag.r{background:var(--ko-bg);color:var(--ko)}
+.tag.m{background:var(--warn-bg);color:var(--warn)}
+.total small{color:var(--muted);font-size:13px}
+.sum{margin:10px 0 4px;font-size:15px}
+.sec h4{margin:12px 0 0;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.sec ul{margin-top:4px}.plus::before{content:"+ ";color:var(--ok);font-weight:700}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:0 20px}
+@media (max-width:600px){.grid{grid-template-columns:1fr}}
 .why{color:var(--muted);font-size:13px;display:block;margin-top:2px}
 .check li::before{content:"☐ ";color:var(--muted)}
 nav a{color:var(--ink);margin-right:12px;font-size:14px}
@@ -63,28 +71,37 @@ def _time(dt: datetime) -> str:
     return f"{dt.astimezone(TZ):%H:%M}"
 
 
-def _pick_card(e: Evaluation, open_reasons: bool = True) -> str:
+CONF_CLASS = {"Élevée": "v", "Moyenne": "m", "Prudente": "r"}
+
+
+def _pick_card(e: Evaluation, key_players, detailed: bool = True) -> str:
     m = e.matchup
+    ins = build_insight(e, key_players)
     lieu = "à domicile" if e.pick_is_home else "à l'extérieur"
-    extras = []
-    if "opening_odds" in e.metrics:
-        extras.append(f"1re obs. {e.metrics['opening_odds']:.2f}")
-    if m.reference:
-        ref = m.reference.home if e.pick_is_home else m.reference.away
-        extras.append(f"marché {ref:.2f}")
-    if "fair_prob" in e.metrics:
-        extras.append(f"proba. estimée {e.metrics['fair_prob']:.0%}")
     reasons = "".join(f'<li class="ok"><span class="n">{_e(r.name)}</span>{_e(r.reason)}</li>'
                       for r in e.results)
-    warns = "".join(f'<li class="wa">⚠ {_e(r.name)} — {_e(r.reason)}</li>' for r in e.warnings)
+    sections = "".join(
+        f'<div class="sec"><h4>{_e(title)}</h4><ul>{"".join(f"<li>{_e(r)}</li>" for r in rows)}</ul></div>'
+        for title, rows in ins.sections)
+    strengths = "".join(f'<li class="plus">{_e(s)}</li>' for s in ins.strengths)
+    risks = "".join(f'<li class="wa">⚠ {_e(r)}</li>' for r in ins.risks)
+    blocks = ""
+    if strengths:
+        blocks += f'<div class="sec"><h4>Atouts</h4><ul>{strengths}</ul></div>'
+    if risks:
+        blocks += f'<div class="sec"><h4>Points de vigilance</h4><ul>{risks}</ul></div>'
+    body = f"""<p class="sum">{_e(ins.summary)}</p>{blocks}
+<details><summary>Analyse complète</summary><div class="grid">{sections}</div></details>
+<details><summary>Filtres validés ({len(e.results)})</summary><ul>{reasons}</ul></details>"""
+    if not detailed:
+        body = f"<details><summary>Voir l'analyse</summary>{body}</details>"
     return f"""<div class="card pick">
 <span class="odds">{e.odds:.2f}</span>
 <h3>{_e(e.pick.name)} vainqueur</h3>
 <div class="meta">{_e(m.label)} · {_time(m.commence_time)} (Paris) · {lieu}</div>
-<div class="meta">{_e(" · ".join(extras))}</div>
-{f'<ul>{warns}</ul>' if warns else ''}
-<details{' open' if open_reasons else ''}><summary>Pourquoi ({len(e.results)} filtres validés)</summary>
-<ul>{reasons}</ul></details></div>"""
+<div class="meta">Confiance <span class="tag {CONF_CLASS.get(ins.confidence, 'm')}">{_e(ins.confidence)}</span>
+· proba. estimée {ins.win_prob:.0%}</div>
+{body}</div>"""
 
 
 def _row(e: Evaluation) -> str:
@@ -103,26 +120,25 @@ def _row(e: Evaluation) -> str:
 
 
 def build_html(slate: Slate, evaluations: list[Evaluation], archive_links: list[str], root: str = "") -> str:
-    passed, rejected, combo = select(evaluations)
+    passed, rejected, bet = select(evaluations)
     th = config.season_thresholds(slate.generated_at)
     gen = slate.generated_at.astimezone(TZ)
+    kp = slate.key_players
 
-    if combo:
-        picks, total = combo
-        combo_html = (f'<div class="card combo"><div class="total"><span>Combiné proposé · '
-                      f'{len(picks)} matchs</span><b>{total:.2f}</b></div></div>'
-                      + "".join(_pick_card(e) for e in picks))
-        others = [e for e in passed if e not in picks]
+    if bet:
+        combo_html = (f'<div class="card combo"><div class="total"><span>{_e(bet.kind)} proposé<br>'
+                      f'<small>Probabilité estimée que le pari passe : {bet.prob:.0%}</small></span>'
+                      f'<b>{bet.total:.2f}</b></div></div>'
+                      + "".join(_pick_card(e, kp) for e in bet.legs))
+        others = [e for e in passed if e not in bet.legs]
     else:
-        reason = (f"Seulement {len(passed)} match(s) passe(nt) tous les filtres : on ne force pas."
-                  if len(passed) < config.COMBO_SIZE else
-                  f"Aucune combinaison entre {config.COMBO_MIN:.2f} et {config.COMBO_MAX:.2f}.")
-        combo_html = f'<div class="card empty"><b>Aucun combiné aujourd\'hui.</b> {_e(reason)}</div>'
+        combo_html = (f'<div class="card empty"><b>Aucun pari aujourd\'hui.</b> '
+                      f'{_e(no_bet_reason(passed))}</div>')
         others = passed
 
     alt_html = ""
     if others:
-        alt_html = "<h2>Autres matchs validés</h2>" + "".join(_pick_card(e, open_reasons=False) for e in others)
+        alt_html = "<h2>Autres matchs validés</h2>" + "".join(_pick_card(e, kp, detailed=False) for e in others)
 
     rows = "".join(_row(e) for e in sorted(evaluations, key=lambda e: e.matchup.commence_time))
     table = (f"<h2>Toutes les cotes du jour ({len(evaluations)} matchs)</h2><div class='card'>"
@@ -139,7 +155,7 @@ def build_html(slate: Slate, evaluations: list[Evaluation], archive_links: list[
 <p>{len(evaluations)} matchs analysés · {len(passed)} validés · {len(rejected)} rejetés</p></header>
 <h2>Sélection</h2>{combo_html}{alt_html}{table}
 <h2>Avant de jouer sur Unibet</h2><div class="card"><ul class="check">
-<li>La cote affichée est toujours entre {config.ODDS_MIN:.2f} et {config.ODDS_MAX:.2f}</li>
+<li>La cote totale affichée ne dépasse pas {config.BET_MAX_ODDS:.2f}</li>
 <li>Marché « Face à face », prolongations incluses</li>
 <li>Rapport de blessures NBA revérifié ~30 min avant le match</li>
 <li>Aucune annonce de repos de dernière minute</li></ul></div>

@@ -165,9 +165,9 @@ class ESPNClient:
             if not me or not opp:
                 continue
             completed = bool(comp.get("status", {}).get("type", {}).get("completed"))
+            s_me, s_opp = (_score(me), _score(opp)) if completed else (None, None)
             won = me.get("winner") if completed else None
             if completed and won is None:
-                s_me, s_opp = _score(me), _score(opp)
                 won = s_me > s_opp if s_me is not None and s_opp is not None else None
             games.append(TeamGame(
                 date=parse_dt(ev.get("date") or comp.get("date")),
@@ -175,6 +175,8 @@ class ESPNClient:
                 is_home=me.get("homeAway") == "home",
                 completed=completed,
                 won=won,
+                points_for=s_me,
+                points_against=s_opp,
             ))
         games.sort(key=lambda g: g.date)
         return games

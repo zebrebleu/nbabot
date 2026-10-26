@@ -14,6 +14,8 @@ class TeamGame:
     is_home: bool
     completed: bool
     won: Optional[bool] = None
+    points_for: Optional[float] = None
+    points_against: Optional[float] = None
 
 
 @dataclass

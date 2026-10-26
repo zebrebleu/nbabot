@@ -1,9 +1,11 @@
 """
-Synthèse : score des matchs validés, choix du meilleur combiné, rapport texte.
+Synthèse : score des matchs validés, choix du meilleur pari (1 ou 2 matchs,
+cote totale <= BET_MAX_ODDS), rapport texte détaillé.
 """
 from __future__ import annotations
 
 import math
+from dataclasses import dataclass
 from datetime import datetime
 from itertools import combinations
 from pathlib import Path
@@ -11,6 +13,7 @@ from typing import Optional
 from zoneinfo import ZoneInfo
 
 import config
+from insights import Insight, build_insight, leg_probability
 from models import Evaluation, OddsQuote, Slate
 
 TZ = ZoneInfo(config.DISPLAY_TZ)
@@ -35,7 +38,7 @@ def fair_probability(ref: OddsQuote, home: bool) -> float:
 
 
 def score_evaluation(e: Evaluation) -> float:
-    """Score indicatif (≈ -0.5 à 1) : forme relative, forme dom./ext., repos, value vs marché."""
+    """Score de qualité (≈ -0.5 à 1) : forme relative, forme dom./ext., repos, value vs marché."""
     m = e.metrics
     form_diff = (m.get("pick_l10_wins", 0) - m.get("opp_l10_wins", 0)) / 10
     venue = m.get("venue_wins", 0) / max(m.get("venue_games", 1), 1)
@@ -52,20 +55,61 @@ def score_evaluation(e: Evaluation) -> float:
     return e.score
 
 
-def best_combo(candidates: list[Evaluation]) -> Optional[tuple[list[Evaluation], float]]:
-    best, best_val = None, -math.inf
-    for combo in combinations(candidates, config.COMBO_SIZE):
-        total = math.prod(e.odds for e in combo)
-        if not config.COMBO_MIN <= total <= config.COMBO_MAX:
-            continue
-        value = sum(e.score for e in combo) - 2 * abs(total - config.COMBO_TARGET)
-        if value > best_val:
-            best, best_val = (list(combo), total), value
-    return best
+# ---------------------------------------------------------------------------
+# Choix du pari
+# ---------------------------------------------------------------------------
+@dataclass
+class Bet:
+    legs: list[Evaluation]
+    total: float
+    prob: float          # probabilité estimée que tout le pari passe
+    value: float
+
+    @property
+    def kind(self) -> str:
+        return "Pari simple" if len(self.legs) == 1 else f"Combiné de {len(self.legs)} matchs"
+
+    @property
+    def expected_return(self) -> float:
+        return self.prob * self.total
+
+
+def best_bet(candidates: list[Evaluation]) -> tuple[Optional[Bet], list[Bet]]:
+    """Meilleure option parmi les simples et combinés autorisés. Renvoie (meilleur, toutes options)."""
+    options: list[Bet] = []
+    for size in range(1, config.BET_MAX_LEGS + 1):
+        for legs in combinations(candidates, size):
+            total = math.prod(e.odds for e in legs)
+            if not config.BET_MIN_ODDS <= total <= config.BET_MAX_ODDS:
+                continue
+            prob = math.prod(leg_probability(e) for e in legs)
+            quality = sum(e.score for e in legs) / len(legs)
+            value = prob * total + config.BET_QUALITY_WEIGHT * quality
+            options.append(Bet(list(legs), total, prob, value))
+    options.sort(key=lambda b: b.value, reverse=True)
+    return (options[0] if options else None), options
+
+
+def select(evaluations: list[Evaluation]):
+    """Renvoie (validés triés par qualité, rejetés, meilleur pari ou None)."""
+    passed = [e for e in evaluations if e.passed]
+    rejected = [e for e in evaluations if not e.passed]
+    for e in passed:
+        score_evaluation(e)
+    passed.sort(key=lambda e: e.score, reverse=True)
+    bet, _ = best_bet(passed)
+    return passed, rejected, bet
+
+
+def no_bet_reason(passed: list[Evaluation]) -> str:
+    if not passed:
+        return "Aucun match ne passe tous les filtres : on ne force pas."
+    return (f"{len(passed)} match(s) valide(s), mais aucune option entre "
+            f"{config.BET_MIN_ODDS:.2f} et {config.BET_MAX_ODDS:.2f} de cote totale.")
 
 
 # ---------------------------------------------------------------------------
-# Rapport
+# Rapport texte
 # ---------------------------------------------------------------------------
 def _fmt_dt(dt: datetime) -> str:
     local = dt.astimezone(TZ)
@@ -84,45 +128,34 @@ def _phase_line(when: datetime) -> str:
             f"dynamique dès {th.L10_MIN_GAMES} matchs · données insuffisantes = {data}")
 
 
-def _pick_block(i: int, e: Evaluation) -> list[str]:
+def _pick_block(i: int, e: Evaluation, ins: Insight) -> list[str]:
     m = e.matchup
     lieu = "à domicile" if e.pick_is_home else "à l'extérieur"
     lines = [
         f" {i}) {m.label}  —  {_fmt_dt(m.commence_time)} (heure de Paris)",
-        f"    PARI : {e.pick.name} vainqueur ({lieu}) — face-à-face / Moneyline",
+        f"    PARI : {e.pick.name} vainqueur ({lieu}) — cote Unibet {e.odds:.2f} — confiance {ins.confidence}",
+        "",
+        f"    En bref : {ins.summary}",
+        "",
     ]
-    extra = []
-    if "opening_odds" in e.metrics:
-        extra.append(f"1re obs. {e.metrics['opening_odds']:.2f}")
-    if m.reference:
-        ref_odds = m.reference.home if e.pick_is_home else m.reference.away
-        extra.append(f"marché ({m.reference.bookmaker}) {ref_odds:.2f}")
-    if "fair_prob" in e.metrics:
-        extra.append(f"proba. estimée {e.metrics['fair_prob']:.0%}")
-    lines.append(f"    Cote Unibet : {e.odds:.2f}" + (f"   ({' · '.join(extra)})" if extra else ""))
-    lines.append("    Pourquoi :")
+    for title, rows in ins.sections:
+        lines.append(f"    {title}")
+        lines += [f"      · {r}" for r in rows]
+    if ins.strengths:
+        lines.append("    Atouts")
+        lines += [f"      + {s}" for s in ins.strengths]
+    if ins.risks:
+        lines.append("    Points de vigilance")
+        lines += [f"      ! {r}" for r in ins.risks]
+    lines.append("    Filtres validés")
     for r in e.results:
         lines.append(f"      ✓ {r.name:<18} {r.reason}")
-    if e.warnings:
-        lines.append("    À vérifier :")
-        for r in e.warnings:
-            lines.append(f"      ! {r.name} — {r.reason}")
-    lines.append(f"    Score interne : {e.score:+.2f}")
     return lines
 
 
-def select(evaluations: list[Evaluation]):
-    """Score les matchs validés et choisit le combiné. Renvoie (validés triés, rejetés, combo)."""
-    passed = [e for e in evaluations if e.passed]
-    rejected = [e for e in evaluations if not e.passed]
-    for e in passed:
-        score_evaluation(e)
-    passed.sort(key=lambda e: e.score, reverse=True)
-    return passed, rejected, best_combo(passed)
-
-
 def build_report(slate: Slate, evaluations: list[Evaluation], show_rejected: bool = False) -> str:
-    passed, rejected, combo = select(evaluations)
+    passed, rejected, bet = select(evaluations)
+    kp = slate.key_players
 
     out = [
         LINE,
@@ -136,31 +169,27 @@ def build_report(slate: Slate, evaluations: list[Evaluation], show_rejected: boo
         "",
     ]
 
-    if combo:
-        picks, total = combo
-        out += [f" COMBINÉ PROPOSÉ ({len(picks)} matchs) — COTE TOTALE : {total:.2f}", SUB]
-        for i, e in enumerate(picks, 1):
-            out += _pick_block(i, e) + [""]
-        others = [e for e in passed if e not in picks]
+    if bet:
+        out += [f" {bet.kind.upper()} — COTE TOTALE {bet.total:.2f} (max {config.BET_MAX_ODDS:.2f})",
+                f" Probabilité estimée que le pari passe : {bet.prob:.0%}", SUB]
+        for i, e in enumerate(bet.legs, 1):
+            out += _pick_block(i, e, build_insight(e, kp)) + [""]
+        others = [e for e in passed if e not in bet.legs]
         if others:
-            out.append(" Autres matchs validés (alternatives) :")
+            out.append(" Autres matchs validés (non retenus) :")
             for e in others:
-                out.append(f"   • {e.pick.name} {e.odds:.2f} ({e.matchup.label}) — score {e.score:+.2f}")
+                out.append(f"   • {e.pick.name} {e.odds:.2f} ({e.matchup.label}) — "
+                           f"proba. estimée {leg_probability(e):.0%}")
             out.append("")
     else:
-        out += [" AUCUN COMBINÉ AUJOURD'HUI", SUB]
-        if len(passed) < config.COMBO_SIZE:
-            out.append(f" Seulement {len(passed)} match(s) passe(nt) tous les filtres : on ne force pas.")
-        else:
-            out.append(f" Aucune combinaison ne tombe entre {config.COMBO_MIN:.2f} et {config.COMBO_MAX:.2f}.")
+        out += [" AUCUN PARI AUJOURD'HUI", SUB, f" {no_bet_reason(passed)}", ""]
         for i, e in enumerate(passed, 1):
-            out += _pick_block(i, e) + [""]
-        out.append("")
+            out += _pick_block(i, e, build_insight(e, kp)) + [""]
 
     out += [
         " CHECKLIST AVANT DE JOUER SUR UNIBET",
         SUB,
-        f"   □ La cote Unibet affichée est toujours entre {config.ODDS_MIN:.2f} et {config.ODDS_MAX:.2f}",
+        f"   □ La cote totale affichée ne dépasse pas {config.BET_MAX_ODDS:.2f}",
         "   □ Le marché est bien « Face à face / Vainqueur du match » prolongations incluses",
         "   □ Rapport de blessures officiel NBA revérifié ~30 min avant le coup d'envoi",
         "   □ Aucune annonce de repos (load management) entre-temps",

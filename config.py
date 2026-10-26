@@ -61,8 +61,8 @@ NBA_TEAM_KEYS = {
 # ---------------------------------------------------------------------------
 # 1. Filtre de cote
 # ---------------------------------------------------------------------------
-ODDS_MIN = 1.25
-ODDS_MAX = 1.45
+ODDS_MIN = 1.25               # cote individuelle minimale d'un favori retenu
+ODDS_MAX = 1.80               # cote individuelle maximale (un pari simple peut aller jusqu'à 1.80)
 LINE_RISE_MAX_ABS = 0.06       # ex. 1.30 -> 1.36 = rejet
 LINE_RISE_MAX_PCT = 0.04       # ou +4 %
 LINE_MIN_OBSERVATION_MINUTES = 60
@@ -166,12 +166,15 @@ TANKING_MONTHS = {3, 4}
 TANKING_BOTTOM_N = 8
 
 # ---------------------------------------------------------------------------
-# Combiné
+# Pari proposé : 1 match (simple) ou 2 matchs (combiné), cote totale plafonnée
 # ---------------------------------------------------------------------------
-COMBO_SIZE = 2
-COMBO_TARGET = 1.80
-COMBO_MIN = 1.65
-COMBO_MAX = 1.98
+BET_MAX_LEGS = 2              # 1 ou 2 matchs maximum
+BET_MAX_ODDS = 1.80           # cote totale maximale du pari proposé
+BET_MIN_ODDS = 1.25           # cote totale minimale (ex. 1.50 pour écarter les simples trop bas)
+# Le bot choisit l'option (simple ou combiné) qui maximise :
+#   valeur attendue estimée (proba. marché x cote) + BET_QUALITY_WEIGHT x qualité des filtres
+BET_QUALITY_WEIGHT = 0.10
+MARKET_MARGIN = 0.045         # marge bookmaker retirée quand aucune cote de référence n'existe
 
 
 def validate() -> list[str]:
