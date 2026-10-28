@@ -1,12 +1,17 @@
-# Lance le bot 2 fois par jour et publie la page sur GitHub Pages.
-# Horaires en UTC : 16:30 UTC = 17:30 à Paris en hiver (18:30 en été),
-#                   21:00 UTC = 22:00 à Paris en hiver (23:00 en été).
+# Analyse la prochaine nuit NBA 4 fois par jour et publie la page sur GitHub Pages.
+# GitHub lance souvent ces tâches avec plusieurs heures de retard : d'où 4 passages.
+# Heures en UTC. Paris = UTC+1 en hiver, UTC+2 en été.
+#   08:13 UTC = 09:13 Paris (hiver)   13:43 UTC = 14:43
+#   17:07 UTC = 18:07                 19:37 UTC = 20:37
+# Dès qu'un match de la nuit a commencé, l'analyse affichée est figée.
 name: Analyse NBA quotidienne
 
 on:
   schedule:
-    - cron: "30 16 * * *"
-    - cron: "0 21 * * *"
+    - cron: "13 8 * * *"
+    - cron: "43 13 * * *"
+    - cron: "7 17 * * *"
+    - cron: "37 19 * * *"
   workflow_dispatch:
 
 permissions:
@@ -33,7 +38,7 @@ jobs:
       - name: Lancer l'analyse et générer la page
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
-        run: python main.py --hours 13 --html docs --no-save
+        run: python main.py --html docs --no-save
 
       - name: Publier la page et l'historique des cotes
         run: |
