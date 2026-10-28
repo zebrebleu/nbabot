@@ -171,6 +171,8 @@ def parse_season(data: dict, tour: str, players: dict[str, Player], seen: Option
             gname = f"{g.get('displayName', '')} {g.get('slug', '')}".lower()
             if "single" not in gname:
                 continue
+            # Les tournois mixtes (Grands Chelems, 1000) mélangent les tableaux dans les deux flux
+            g_tour = "wta" if ("women" in gname or "ladies" in gname) else ("atp" if "men" in gname else tour)
             for comp in grp.get("competitions", []):
                 cs = comp.get("competitors", [])
                 if len(cs) != 2 or any(c.get("type", "athlete") != "athlete" for c in cs):
@@ -190,13 +192,13 @@ def parse_season(data: dict, tour: str, players: dict[str, Player], seen: Option
                 date = parse_dt(when)
                 sets = max(len(c.get("linescores", [])) for c in cs)
                 games = sum(_num(s.get("value")) for c in cs for s in c.get("linescores", []))
-                best_of = 5 if (slam and tour == "atp") else 3
+                best_of = 5 if (slam and g_tour == "atp") else 3
                 rnd = comp.get("round", {}).get("displayName", "") if isinstance(comp.get("round"), dict) else ""
                 athletes = [c.get("athlete", {}) for c in cs]
                 names = [a.get("displayName") or a.get("fullName") or "" for a in athletes]
                 if not all(names):
                     continue
-                dedup = (tour, date.date().isoformat(), *sorted(norm_name(n) for n in names))
+                dedup = (g_tour, date.date().isoformat(), *sorted(norm_name(n) for n in names))
                 if (comp.get("id") and ("id", str(comp["id"])) in seen) or dedup in seen:
                     continue
                 seen.add(dedup)
@@ -205,7 +207,7 @@ def parse_season(data: dict, tour: str, players: dict[str, Player], seen: Option
                 for i in (0, 1):
                     me, opp = i, 1 - i
                     key = norm_name(names[me])
-                    p = players.setdefault(key, Player(key, names[me], tour))
+                    p = players.setdefault(key, Player(key, names[me], g_tour))
                     p.espn_id = p.espn_id or _athlete_id(athletes[me])
                     p.ids |= _athlete_ids(athletes[me])
                     p.matches.append(PlayerMatch(
@@ -270,10 +272,9 @@ def apply_rankings(ranks: list[dict], players: dict[str, "Player"], tour: str,
                    espn: Optional[ESPNTennis] = None) -> tuple[int, str]:
     """Rattache le classement aux joueurs : par identifiant, sinon par nom. Renvoie (nb, méthode)."""
     by_id = {}
-    for p in players.values():
-        if p.tour == tour:
-            for i in p.ids | ({p.espn_id} if p.espn_id else set()):
-                by_id[i] = p
+    for p in players.values():          # identifiants ESPN uniques : pas de filtre par circuit
+        for i in p.ids | ({p.espn_id} if p.espn_id else set()):
+            by_id[i] = p
     n = 0
     for r in ranks:
         p = next((by_id[i] for i in r["ids"] if i in by_id), None)
