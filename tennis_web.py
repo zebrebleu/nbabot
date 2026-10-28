@@ -235,4 +235,7 @@ def write_site(slate, evaluations, bet, locked, out_dir: Path) -> Path:
     page = out_dir / "tennis.html"
     page.write_text(build_html(slate, evaluations, bet, locked, days), encoding="utf-8")
     (out_dir / ".nojekyll").write_text("", encoding="utf-8")
+    from tracker_web import export_picks, write_page      # onglet « Mes paris »
+    export_picks("tennis", evaluations, bet.legs if bet else [], out_dir, slate.generated_at)
+    write_page(out_dir)
     return page

@@ -132,7 +132,8 @@ def _money(x: float) -> str:
 
 def nav_tabs(current: str, root: str = "") -> str:
     """Onglets communs aux pages NBA et Tennis."""
-    tabs = [("nba", "NBA", f"{root}index.html"), ("tennis", "Tennis", f"{root}tennis.html")]
+    tabs = [("nba", "NBA", f"{root}index.html"), ("tennis", "Tennis", f"{root}tennis.html"),
+            ("paris", "Mes paris", f"{root}mes-paris.html")]
     return '<nav class="tabs">' + "".join(
         f'<a class="{"cur" if k == current else ""}" href="{href}">{label}</a>' for k, label, href in tabs) + "</nav>"
 
@@ -405,4 +406,8 @@ def write_site(slate: Slate, evaluations: list[Evaluation], out_dir: Path) -> Pa
     index = out_dir / "index.html"
     index.write_text(build_html(slate, evaluations, days), encoding="utf-8")
     (out_dir / ".nojekyll").write_text("", encoding="utf-8")
+    from tracker_web import export_picks, write_page      # onglet « Mes paris »
+    _, _, bet = select(evaluations)
+    export_picks("nba", evaluations, bet.legs if bet else [], out_dir, slate.generated_at)
+    write_page(out_dir)
     return index
