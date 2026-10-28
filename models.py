@@ -2,7 +2,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from datetime import datetime, timedelta
+from datetime import date, datetime, timedelta
 from typing import Optional
 
 
@@ -31,6 +31,7 @@ class TeamContext:
     name: str                   # "Boston Celtics"
     abbr: str = ""
     espn_id: str = ""
+    color: str = ""             # couleur principale (hex sans #), pour l'affichage
     schedule: list[TeamGame] = field(default_factory=list)   # trié par date
     injuries: list[Injury] = field(default_factory=list)
     wins: int = 0
@@ -77,6 +78,10 @@ class Matchup:
     opening: Optional[OddsQuote] = None     # 1re cote Unibet observée par le script
     observed_since: Optional[datetime] = None
     n_observations: int = 0
+    state: str = "pre"                      # "pre" à venir, "in" en cours, "post" terminé
+    status_detail: str = ""
+    home_score: Optional[float] = None
+    away_score: Optional[float] = None
 
     @property
     def label(self) -> str:
@@ -92,6 +97,11 @@ class Slate:
     generated_at: datetime
     key_players: Optional[dict[str, list[str]]] = None   # surcharge (mode démo)
     source_label: str = "The Odds API + ESPN"
+    slate_date: Optional[date] = None   # date américaine des matchs (nuit du J au J+1 en France)
+
+    @property
+    def started(self) -> list["Matchup"]:
+        return [m for m in self.matchups if m.state != "pre"]
 
 
 @dataclass

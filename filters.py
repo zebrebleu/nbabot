@@ -268,9 +268,12 @@ FILTERS: list[Callable[[Evaluation, FilterContext], FilterResult]] = [
 
 
 def evaluate(m: Matchup, ctx: FilterContext) -> Evaluation:
+    if m.state != "pre":
+        label = "Match en cours" if m.state == "in" else "Match terminé"
+        return Evaluation(m, None, None, True, 0.0, [FilterResult("Statut", False, label)])
     if m.unibet is None:
         return Evaluation(m, None, None, True, 0.0,
-                          [FilterResult("Cote", False, "Cote Unibet FR indisponible pour ce match")])
+                          [FilterResult("Cote", False, "Cote Unibet pas encore publiée pour ce match")])
     pick_is_home = m.unibet.home <= m.unibet.away
     e = Evaluation(
         matchup=m,

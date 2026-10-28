@@ -121,6 +121,24 @@ def _fmt_day(dt: datetime) -> str:
     return f"{JOURS[local.weekday()]} {local.day} {MOIS[local.month - 1]} {local.year}"
 
 
+def slate_day(slate: Slate):
+    """Date américaine des matchs (déduite si absente)."""
+    if slate.slate_date:
+        return slate.slate_date
+    first = min((m.commence_time for m in slate.matchups), default=slate.generated_at)
+    return first.astimezone(ZoneInfo("America/New_York")).date()
+
+
+def night_label(slate: Slate) -> str:
+    """'nuit du mercredi 28 au jeudi 29 octobre' : les matchs du jour J américain
+    se jouent dans la nuit du J au J+1 en France."""
+    from datetime import timedelta
+    d = slate_day(slate)
+    n = d + timedelta(days=1)
+    first = f"{JOURS[d.weekday()]} {d.day}" + ("" if d.month == n.month else f" {MOIS[d.month - 1]}")
+    return f"nuit du {first} au {JOURS[n.weekday()]} {n.day} {MOIS[n.month - 1]}"
+
+
 def _phase_line(when: datetime) -> str:
     th = config.season_thresholds(when)
     data = "rejet" if th.INSUFFICIENT_DATA == "reject" else "alerte"
@@ -159,8 +177,8 @@ def build_report(slate: Slate, evaluations: list[Evaluation], show_rejected: boo
 
     out = [
         LINE,
-        f" ASSISTANT PARIS NBA — {_fmt_day(slate.generated_at)}",
-        f" Généré à {slate.generated_at.astimezone(TZ):%H:%M} (Paris) · Source : {slate.source_label}",
+        f" ASSISTANT PARIS NBA — matchs de la {night_label(slate)}",
+        f" Généré le {_fmt_dt(slate.generated_at)} (Paris) · Source : {slate.source_label}",
         f" Contenders : {slate.contenders_source}",
         _phase_line(slate.generated_at),
         LINE,

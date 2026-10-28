@@ -17,9 +17,10 @@ import logging
 import statistics
 import time
 from dataclasses import dataclass
-from datetime import datetime, timedelta, timezone
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any, Iterator, Optional
+from zoneinfo import ZoneInfo
 
 import requests
 
@@ -31,6 +32,7 @@ log = logging.getLogger(__name__)
 ESPN_SITE = "https://site.api.espn.com/apis/site/v2/sports/basketball/nba"
 ESPN_STANDINGS = "https://site.api.espn.com/apis/v2/sports/basketball/nba/standings"
 ODDS_API_URL = "https://api.the-odds-api.com/v4/sports/basketball_nba/odds"
+US_EASTERN = ZoneInfo("America/New_York")   # le calendrier NBA est daté à l'heure de New York
 
 
 # ---------------------------------------------------------------------------
@@ -111,8 +113,42 @@ class ESPNClient:
                     "id": str(t["id"]),
                     "abbr": t.get("abbreviation", ""),
                     "name": t["displayName"],
+                    "color": t.get("color", ""),
                 }
         return out
+
+    def scoreboard(self, day: date) -> list[dict]:
+        """Tous les matchs d'une date du calendrier NBA (date de New York)."""
+        data = self.http.get_json(f"{ESPN_SITE}/scoreboard",
+                                  params={"dates": day.strftime("%Y%m%d"), "limit": 50}, ttl_minutes=10)
+        games = []
+        for ev in data.get("events", []):
+            comp = (ev.get("competitions") or [{}])[0]
+            sides = {c.get("homeAway"): c for c in comp.get("competitors", [])}
+            if "home" not in sides or "away" not in sides:
+                continue
+            status = (ev.get("status") or comp.get("status") or {}).get("type", {})
+            games.append({
+                "id": str(ev.get("id", "")),
+                "date": parse_dt(ev.get("date") or comp.get("date")),
+                "home": sides["home"].get("team", {}).get("displayName", ""),
+                "away": sides["away"].get("team", {}).get("displayName", ""),
+                "state": status.get("state", "pre"),
+                "detail": status.get("shortDetail", ""),
+                "home_score": _score(sides["home"]),
+                "away_score": _score(sides["away"]),
+            })
+        games.sort(key=lambda g: g["date"])
+        return games
+
+    def next_slate(self, start: date, max_days: int = 10) -> tuple[date, list[dict]]:
+        """Première date (à partir de `start`) qui a encore au moins un match à venir."""
+        for i in range(max_days + 1):
+            day = start + timedelta(days=i)
+            games = self.scoreboard(day)
+            if any(g["state"] == "pre" for g in games):
+                return day, games
+        return start, self.scoreboard(start)
 
     def standings(self) -> dict[str, tuple[int, int]]:
         data = self.http.get_json(ESPN_STANDINGS, ttl_minutes=config.ESPN_CACHE_MINUTES)
@@ -279,11 +315,20 @@ class DataFetcher:
         self.odds = OddsClient(self.http, api_key)
         self.history = OddsHistory(config.ODDS_HISTORY_FILE)
 
-    def load_slate(self, lookahead_hours: Optional[float] = None) -> Slate:
+    def load_slate(self, target: Optional[date] = None) -> Slate:
+        """Charge la prochaine nuit NBA (ou la date `target`) : tous les matchs du calendrier,
+        avec les cotes quand elles existent."""
         now = datetime.now(timezone.utc)
-        horizon = now + timedelta(hours=lookahead_hours or config.LOOKAHEAD_HOURS)
-        events = [e for e in self.odds.fetch() if now < e.commence_time <= horizon]
-        log.info("%d match(s) NBA dans la fenêtre d'analyse", len(events))
+        if target:
+            day, games = target, self.espn.scoreboard(target)
+        else:
+            day, games = self.espn.next_slate(now.astimezone(US_EASTERN).date())
+        log.info("Nuit NBA du %s : %d match(s) au calendrier", day, len(games))
+
+        odds_by_teams: dict[tuple[str, str], list[OddsEvent]] = {}
+        if any(g["state"] == "pre" for g in games):
+            for ev in self.odds.fetch():
+                odds_by_teams.setdefault((team_key(ev.home_team), team_key(ev.away_team)), []).append(ev)
 
         teams = self.espn.teams()
         standings = self.espn.standings()
@@ -298,6 +343,7 @@ class DataFetcher:
                 w, l = standings.get(key, (0, 0))
                 contexts[key] = TeamContext(
                     key=key, name=info["name"], abbr=info["abbr"], espn_id=info["id"],
+                    color=info.get("color", ""),
                     schedule=self.espn.team_schedule(info["id"]),
                     injuries=injuries.get(key, []),
                     wins=w, losses=l, league_rank=ranks.get(key),
@@ -305,32 +351,40 @@ class DataFetcher:
             return contexts[key]
 
         matchups: list[Matchup] = []
-        for ev in events:
-            hk, ak = team_key(ev.home_team), team_key(ev.away_team)
+        for g in games:
+            hk, ak = team_key(g["home"]), team_key(g["away"])
             if hk not in teams or ak not in teams:
-                log.warning("Équipe non reconnue côté ESPN : %s / %s", ev.home_team, ev.away_team)
+                log.warning("Équipe non reconnue côté ESPN : %s / %s", g["away"], g["home"])
                 continue
             try:
                 home_ctx, away_ctx = context(hk), context(ak)
             except requests.RequestException as exc:
-                log.warning("Calendrier ESPN indisponible pour %s @ %s : %s", ev.away_team, ev.home_team, exc)
+                log.warning("Calendrier ESPN indisponible pour %s @ %s : %s", g["away"], g["home"], exc)
                 continue
 
-            unibet = ev.quotes.get(config.REFERENCE_BOOKMAKER)
-            reference = ev.quotes.get(config.SHARP_BOOKMAKER) or _median_quote(
-                [q for k, q in ev.quotes.items() if k != config.REFERENCE_BOOKMAKER])
-            opening = observed_since = None
+            # Cotes du même match (mêmes équipes, coup d'envoi à moins de 12 h près)
+            ev = next((e for e in odds_by_teams.get((hk, ak), [])
+                       if abs((e.commence_time - g["date"]).total_seconds()) < 12 * 3600), None)
+            unibet = reference = opening = observed_since = None
             n_obs = 0
-            if unibet:
-                opening, observed_since, n_obs = self.history.record(ev.event_id, unibet, now)
+            if ev and g["state"] == "pre":
+                unibet = ev.quotes.get(config.REFERENCE_BOOKMAKER)
+                reference = ev.quotes.get(config.SHARP_BOOKMAKER) or _median_quote(
+                    [q for k, q in ev.quotes.items() if k != config.REFERENCE_BOOKMAKER])
+                if unibet:
+                    opening, observed_since, n_obs = self.history.record(ev.event_id, unibet, now)
 
-            matchups.append(Matchup(ev.event_id, ev.commence_time, home_ctx, away_ctx,
-                                    unibet, reference, opening, observed_since, n_obs))
+            matchups.append(Matchup(
+                ev.event_id if ev else f"espn-{g['id']}", g["date"], home_ctx, away_ctx,
+                unibet, reference, opening, observed_since, n_obs,
+                state=g["state"], status_detail=g["detail"],
+                home_score=g["home_score"], away_score=g["away_score"],
+            ))
 
         self.history.purge(now)
         self.history.save()
         contenders, source = self._contenders(standings, ranks)
-        return Slate(matchups, contenders, source, now)
+        return Slate(matchups, contenders, source, now, slate_date=day)
 
     @staticmethod
     def _ranks(standings: dict[str, tuple[int, int]]) -> dict[str, int]:

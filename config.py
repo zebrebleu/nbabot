@@ -47,8 +47,6 @@ ODDS_CACHE_MINUTES = 15
 ESPN_CACHE_MINUTES = 60
 INJURIES_CACHE_MINUTES = 15
 
-# Fenêtre de matchs analysés à partir de maintenant (le slate NBA tombe la nuit en France)
-LOOKAHEAD_HOURS = 30
 
 # Surnoms valides des 30 franchises (clé utilisée partout dans le projet)
 NBA_TEAM_KEYS = {

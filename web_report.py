@@ -1,68 +1,119 @@
 """
-Génère le site statique (une page par jour + archives) à partir de l'analyse du bot.
+Génère le site statique à partir de l'analyse du bot.
 
-    docs/index.html                 -> dernière analyse
-    docs/archive/AAAA-MM-JJ.html    -> une page par jour
+    docs/index.html                 -> prochaine nuit NBA (dernière analyse)
+    docs/archive/AAAA-MM-JJ.html    -> une page par nuit (date américaine des matchs)
 """
 from __future__ import annotations
 
+import hashlib
 import html
-from datetime import datetime
+from collections import Counter
+from datetime import date, datetime
 from pathlib import Path
 
 import config
-from analyzer import TZ, _fmt_day, no_bet_reason, select
-from insights import build_insight
-from models import Evaluation, Slate
+from analyzer import JOURS, TZ, _fmt_dt, night_label, no_bet_reason, select, slate_day
+from insights import build_insight, leg_probability
+from models import Evaluation, Slate, TeamContext
+
+FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">'
+         '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
+         '<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700'
+         '&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">')
 
 CSS = """
-:root{--bg:#f6f5f2;--card:#fff;--ink:#1b1d21;--muted:#6b6f76;--line:#e4e2dc;
---ok:#1f7a4d;--ok-bg:#e6f3ec;--ko:#b3261e;--ko-bg:#fbeaea;--warn:#8a5a00;--warn-bg:#fdf3dc;--accent:#c8102e}
-@media (prefers-color-scheme:dark){:root{--bg:#121316;--card:#1c1e22;--ink:#ececec;--muted:#9a9ea6;
---line:#2c2f35;--ok:#5fd09a;--ok-bg:#16301f;--ko:#ff8a80;--ko-bg:#3a1a1a;--warn:#f0c060;--warn-bg:#3a2d10;--accent:#ff5470}}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
-font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-main{max-width:860px;margin:0 auto;padding:20px 16px 48px}
-header h1{font-size:22px;margin:0 0 4px}header p{margin:0;color:var(--muted);font-size:13px}
-h2{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:28px 0 10px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:12px}
-.combo{border:2px solid var(--accent)}
-.total{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
-.total b{font-size:34px;color:var(--accent);font-variant-numeric:tabular-nums}
-.pick h3{margin:0;font-size:17px}.meta{color:var(--muted);font-size:13px}
-.odds{float:right;font-size:22px;font-weight:700;font-variant-numeric:tabular-nums}
-ul{margin:8px 0 0;padding-left:0;list-style:none}li{padding:3px 0;font-size:14px}
-li .n{display:inline-block;min-width:160px;font-weight:600}
-.ok::before{content:"✓ ";color:var(--ok);font-weight:700}
-.wa{background:var(--warn-bg);color:var(--warn);border-radius:6px;padding:4px 8px;margin-top:4px}
-.empty{background:var(--warn-bg);color:var(--warn)}
-table{width:100%;border-collapse:collapse;font-size:14px}
-th,td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--line);vertical-align:top}
-th{color:var(--muted);font-weight:600;font-size:12px}td{overflow-wrap:break-word}
-details{margin-top:8px}summary{cursor:pointer;font-size:14px;font-weight:600;color:var(--muted)}td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
-.tag{display:inline-block;border-radius:999px;padding:1px 8px;font-size:12px;font-weight:600}
-.tag.v{background:var(--ok-bg);color:var(--ok)}.tag.r{background:var(--ko-bg);color:var(--ko)}
-.tag.m{background:var(--warn-bg);color:var(--warn)}
-.total small{color:var(--muted);font-size:13px}
-.sum{margin:10px 0 4px;font-size:15px}
-.sec h4{margin:12px 0 0;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
-.sec ul{margin-top:4px}.plus::before{content:"+ ";color:var(--ok);font-weight:700}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:0 20px}
-@media (max-width:600px){.grid{grid-template-columns:1fr}}
-.why{color:var(--muted);font-size:13px;display:block;margin-top:2px}
-.check li::before{content:"☐ ";color:var(--muted)}
-nav a{color:var(--ink);margin-right:12px;font-size:14px}
-footer{color:var(--muted);font-size:12px;margin-top:32px}
-@media (max-width:600px){.hide-sm{display:none}li .n{min-width:0;margin-right:6px}
-main{padding:16px 12px 40px}
-table,tbody,tr,td{display:block}thead{display:none}
-tr{position:relative;padding:10px 0 10px 52px;border-bottom:1px solid var(--line)}tr:last-child{border:0}
-td{border:0;padding:1px 0}td.t{position:absolute;left:0;top:10px;font-weight:600}
-td.mt br{display:none}td.mt{font-weight:600}
-td[data-l]::before{content:attr(data-l);color:var(--muted)}}
+:root{--bg:#f3f1ec;--card:#fff;--ink:#16181d;--muted:#646a73;--line:#e2ded5;--soft:#f7f5f0;
+--go:#13795b;--go-bg:#e3f4ec;--info:#1d5fbf;--info-bg:#e4eefb;--no:#b3261e;--no-bg:#fbe9e7;
+--warn:#8a5300;--warn-bg:#fdf1d8;--off:#6b7079;--off-bg:#eceae5;--accent:#e8590c;
+--num:"Barlow Condensed",system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#101216;--card:#1a1d22;--ink:#eceef1;
+--muted:#9aa1ab;--line:#2b2f36;--soft:#20242a;--go:#4cd19a;--go-bg:#123326;--info:#7fb0ff;--info-bg:#15263f;
+--no:#ff8f85;--no-bg:#3a1916;--warn:#f2bf5e;--warn-bg:#382a10;--off:#9aa1ab;--off-bg:#262a30;--accent:#ff7a33}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:880px;margin:0 auto;padding:0 16px 56px}
+a{color:inherit}
+.top{padding:28px 0 18px}
+.kicker{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+h1{font:700 34px/1.05 var(--num);margin:6px 0 6px;letter-spacing:.01em}
+.sub{color:var(--muted);font-size:13px;margin:0}
+.counts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px}
+.count{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.count b{display:block;font:700 28px/1 var(--num)}.count span{font-size:12px;color:var(--muted)}
+.count.go b{color:var(--go)}.count.no b{color:var(--no)}
+h2{font:700 22px/1.1 var(--num);margin:34px 0 4px;letter-spacing:.01em}
+.h2sub{color:var(--muted);font-size:13px;margin:0 0 12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;margin-bottom:12px}
+.verdict.go{border:2px solid var(--go)}
+.verdict.none{border:2px dashed var(--line)}
+.chip{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:3px 10px;
+font-size:12px;font-weight:700;letter-spacing:.02em;white-space:nowrap}
+.chip.go{background:var(--go-bg);color:var(--go)}.chip.info{background:var(--info-bg);color:var(--info)}
+.chip.no{background:var(--no-bg);color:var(--no)}.chip.off{background:var(--off-bg);color:var(--off)}
+.chip.warn{background:var(--warn-bg);color:var(--warn)}
+.verdict h3{font:700 26px/1.1 var(--num);margin:10px 0 14px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}
+.stat{background:var(--soft);border-radius:12px;padding:10px 12px}
+.stat span{display:block;font-size:12px;color:var(--muted)}
+.stat b{font:700 30px/1.1 var(--num)}.stat.big b{color:var(--go)}
+.leg{display:flex;align-items:center;gap:12px;padding:12px 0;border-top:1px solid var(--line)}
+.leg .who{flex:1;min-width:0}.leg .who b{display:block;font-size:16px}
+.leg .who span{color:var(--muted);font-size:13px}
+.pill{font:700 22px/1 var(--num);background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:8px 10px}
+.badge{flex:none;width:44px;height:44px;border-radius:12px;display:grid;place-items:center;
+font:700 15px/1 var(--num);letter-spacing:.03em}
+.badge.sm{width:34px;height:34px;border-radius:9px;font-size:13px}
+.why{font-size:15px;margin:4px 0 0}
+.reasons{margin:14px 0 0;padding:0;list-style:none}
+.reasons li{padding:4px 0 4px 24px;position:relative;font-size:14px}
+.reasons li::before{position:absolute;left:0;top:4px;font-weight:700}
+.reasons.plus li::before{content:"✓";color:var(--go)}
+.reasons.risk li::before{content:"!";color:var(--warn);left:6px}
+.reasons.ctrl li::before{content:"✓";color:var(--go)}
+.reasons.ctrl b{font-weight:600}
+.lbl{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:16px 0 0}
+.head{display:flex;align-items:flex-start;gap:12px}.head .who{flex:1}
+.head h3{margin:0;font-size:18px}.head p{margin:2px 0 0;color:var(--muted);font-size:13px}
+.meter{display:inline-flex;gap:3px;vertical-align:middle;margin-left:4px}
+.meter i{width:14px;height:6px;border-radius:3px;background:var(--line)}.meter i.on{background:var(--go)}
+details{margin-top:12px;border-top:1px solid var(--line);padding-top:10px}
+summary{cursor:pointer;font-weight:600;font-size:14px;color:var(--info);list-style:none}
+summary::-webkit-details-marker{display:none}summary::before{content:"▸ ";}
+details[open] summary::before{content:"▾ "}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:4px 24px}
+.grid h4{margin:12px 0 2px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.grid ul{margin:0;padding-left:16px;font-size:14px}
+.game{display:grid;grid-template-columns:54px 1fr auto;gap:4px 12px;padding:14px 0;border-top:1px solid var(--line)}
+.game:first-child{border-top:0;padding-top:0}
+.time{font:700 20px/1.2 var(--num)}.time small{display:block;font:500 11px Inter,sans-serif;color:var(--muted)}
+.teams{min-width:0}
+.team{display:flex;align-items:center;gap:10px;padding:3px 0}
+.team .nm{flex:1;min-width:0;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.team .nm em{font-style:normal;color:var(--muted);font-size:12px}
+.team .od{font:700 18px/1 var(--num);min-width:40px;text-align:right;color:var(--muted)}
+.team.fav .nm{font-weight:600}.team.fav .od{color:var(--ink)}
+.status{text-align:right}
+.reason{grid-column:2/4;font-size:13px;color:var(--muted);margin-top:2px}
+.reason b{color:var(--ink);font-weight:600}
+.legend{display:grid;gap:10px;margin:12px 0 0;padding:0;list-style:none}
+.legend li{display:flex;gap:10px;align-items:flex-start;font-size:14px}
+.legend .chip{min-width:92px;justify-content:center}
+.check{margin:0;padding:0;list-style:none}.check li{padding:5px 0 5px 28px;position:relative}
+.check li::before{content:"";position:absolute;left:0;top:7px;width:16px;height:16px;border:2px solid var(--muted);border-radius:4px}
+.archives{display:flex;flex-wrap:wrap;gap:8px}
+.archives a{text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:13px}
+.archives a.cur{border-color:var(--accent);color:var(--accent);font-weight:600}
+footer{color:var(--muted);font-size:12px;margin-top:36px;line-height:1.6}
+@media (max-width:600px){h1{font-size:28px}.stats{grid-template-columns:1fr 1fr}.stat.big{grid-column:1/3}
+.grid{grid-template-columns:1fr}.game{grid-template-columns:52px 1fr;gap:4px 8px}.status{grid-column:2;text-align:left}
+.time{font-size:18px}.team .nm{white-space:normal}
+.reason{grid-column:2}.counts b{font-size:24px}}
 """
 
-
+# ---------------------------------------------------------------------------
+# Helpers
+# ---------------------------------------------------------------------------
 def _e(x) -> str:
     return html.escape(str(x))
 
@@ -71,107 +122,232 @@ def _time(dt: datetime) -> str:
     return f"{dt.astimezone(TZ):%H:%M}"
 
 
-CONF_CLASS = {"Élevée": "v", "Moyenne": "m", "Prudente": "r"}
+def _money(x: float) -> str:
+    return f"{x:.2f}".replace(".", ",") + " €"
 
 
-def _pick_card(e: Evaluation, key_players, detailed: bool = True) -> str:
-    m = e.matchup
+def _abbr(team: TeamContext) -> str:
+    return (team.abbr or team.key[:3]).upper()
+
+
+def _badge(team: TeamContext, small: bool = False) -> str:
+    color = (team.color or "").lstrip("#")
+    if len(color) != 6:
+        h = int(hashlib.md5(team.key.encode()).hexdigest()[:2], 16) * 360 // 256
+        style = f"background:hsl({h} 55% 38%);color:#fff"
+    else:
+        r, g, b = (int(color[i:i + 2], 16) for i in (0, 2, 4))
+        fg = "#111" if (0.299 * r + 0.587 * g + 0.114 * b) > 160 else "#fff"
+        style = f"background:#{color};color:{fg}"
+    return f'<span class="badge{" sm" if small else ""}" style="{style}">{_e(_abbr(team))}</span>'
+
+
+def _meter(conf: str) -> str:
+    n = {"Élevée": 3, "Moyenne": 2}.get(conf, 1)
+    return '<span class="meter">' + "".join(f'<i class="{"on" if i < n else ""}"></i>' for i in range(3)) + "</span>"
+
+
+def plain_reason(e: Evaluation) -> tuple[str, str]:
+    """Raison d'un rejet en langage simple : (titre court, détail)."""
+    r = e.rejections[0]
+    txt = r.reason
+    insufficient = "insuffisantes" in txt
+    if r.name == "Statut":
+        return txt, "L'analyse a été faite avant le coup d'envoi."
+    if r.name == "Cote":
+        if e.pick is None:
+            return "Pas encore de cote Unibet", "Unibet n'a pas encore ouvert les paris sur ce match."
+        if e.odds < config.ODDS_MIN:
+            return "Cote trop basse", f"Favori à {e.odds:.2f} : le gain serait trop faible pour le risque."
+        return "Favori pas assez net", f"Cote de {e.odds:.2f}, au-dessus de la limite de {config.ODDS_MAX:.2f}."
+    if insufficient:
+        return "Pas assez de matchs joués", "Trop tôt dans la saison pour juger la forme. " + txt
+    return {
+        "Mouvement de cote": ("La cote du favori monte", "Le marché commence à douter. " + txt),
+        "Back-to-back": ("Fatigue", "Deuxième match en 24 h, à l'extérieur. " + txt),
+        "Trap game": ("Match piège", "Le favori a un gros choc juste après et risque de se ménager. " + txt),
+        "Road trip": ("Trop de déplacements", txt),
+        "Forme dom./ext.": ("Forme insuffisante", txt),
+        "Dynamique croisée": ("L'outsider est en forme", txt),
+        "Infirmerie": ("Blessure importante", txt),
+        "Anti-tanking": ("Fin de saison à risque", "Équipe du bas de classement, cadres souvent au repos. " + txt),
+    }.get(r.name, (r.name, txt))
+
+
+# ---------------------------------------------------------------------------
+# Blocs
+# ---------------------------------------------------------------------------
+def _verdict(bet, passed: list[Evaluation], rejected: list[Evaluation]) -> str:
+    if not bet:
+        counts = Counter(plain_reason(e)[0] for e in rejected)
+        rows = "".join(f"<li><b>{n} match{'s' if n > 1 else ''}</b> : {_e(t.lower())}</li>"
+                       for t, n in counts.most_common())
+        detail = (f'<p class="lbl">Pourquoi les matchs ont été écartés</p><ul class="reasons risk">{rows}</ul>'
+                  if rows else "")
+        return f"""<div class="card verdict none"><span class="chip off">PAS DE PARI</span>
+<h3>Ce soir, on ne joue pas</h3>
+<p class="why">{_e(no_bet_reason(passed))} Ne pas parier fait aussi partie de la stratégie :
+le bot ne propose un match que s'il passe tous les contrôles.</p>{detail}</div>"""
+
+    legs = ""
+    for e in bet.legs:
+        lieu = "à domicile" if e.pick_is_home else "à l'extérieur"
+        legs += f"""<div class="leg">{_badge(e.pick)}<div class="who"><b>{_e(e.pick.name)} gagne</b>
+<span>contre {_e(e.opponent.name)} · {_time(e.matchup.commence_time)} · {lieu}</span></div>
+<span class="pill">{e.odds:.2f}</span></div>"""
+    return f"""<div class="card verdict go"><span class="chip go">● À JOUER SUR UNIBET</span>
+<h3>{_e(bet.kind)}</h3>
+<div class="stats"><div class="stat big"><span>Cote totale</span><b>{bet.total:.2f}</b></div>
+<div class="stat"><span>Chances estimées</span><b>{bet.prob:.0%}</b></div>
+<div class="stat"><span>Pour 10 € misés</span><b>{_money(10 * bet.total)}</b></div></div>
+{legs}</div>"""
+
+
+def _analysis_card(e: Evaluation, key_players, opened: bool = True) -> str:
     ins = build_insight(e, key_players)
     lieu = "à domicile" if e.pick_is_home else "à l'extérieur"
-    reasons = "".join(f'<li class="ok"><span class="n">{_e(r.name)}</span>{_e(r.reason)}</li>'
-                      for r in e.results)
-    sections = "".join(
-        f'<div class="sec"><h4>{_e(title)}</h4><ul>{"".join(f"<li>{_e(r)}</li>" for r in rows)}</ul></div>'
-        for title, rows in ins.sections)
-    strengths = "".join(f'<li class="plus">{_e(s)}</li>' for s in ins.strengths)
-    risks = "".join(f'<li class="wa">⚠ {_e(r)}</li>' for r in ins.risks)
-    blocks = ""
-    if strengths:
-        blocks += f'<div class="sec"><h4>Atouts</h4><ul>{strengths}</ul></div>'
-    if risks:
-        blocks += f'<div class="sec"><h4>Points de vigilance</h4><ul>{risks}</ul></div>'
-    body = f"""<p class="sum">{_e(ins.summary)}</p>{blocks}
-<details><summary>Analyse complète</summary><div class="grid">{sections}</div></details>
-<details><summary>Filtres validés ({len(e.results)})</summary><ul>{reasons}</ul></details>"""
-    if not detailed:
+    plus = "".join(f"<li>{_e(s)}</li>" for s in ins.strengths) or "<li>Tous les contrôles sont validés.</li>"
+    risk = "".join(f"<li>{_e(r)}</li>" for r in ins.risks)
+    grid = "".join(f"<div><h4>{_e(t)}</h4><ul>{''.join(f'<li>{_e(x)}</li>' for x in rows)}</ul></div>"
+                   for t, rows in ins.sections)
+    ctrl = "".join(f"<li><b>{_e(r.name)}</b> — {_e(r.reason)}</li>" for r in e.results)
+    body = f"""<p class="why">{_e(ins.summary)}</p>
+<p class="lbl">Ce qui joue pour lui</p><ul class="reasons plus">{plus}</ul>
+{f'<p class="lbl">À surveiller</p><ul class="reasons risk">{risk}</ul>' if risk else ''}
+<details><summary>Tous les chiffres du match</summary><div class="grid">{grid}</div></details>
+<details><summary>Contrôles de sécurité ({len(e.results)}/{len(e.results)} validés)</summary>
+<ul class="reasons ctrl">{ctrl}</ul></details>"""
+    if not opened:
         body = f"<details><summary>Voir l'analyse</summary>{body}</details>"
-    return f"""<div class="card pick">
-<span class="odds">{e.odds:.2f}</span>
-<h3>{_e(e.pick.name)} vainqueur</h3>
-<div class="meta">{_e(m.label)} · {_time(m.commence_time)} (Paris) · {lieu}</div>
-<div class="meta">Confiance <span class="tag {CONF_CLASS.get(ins.confidence, 'm')}">{_e(ins.confidence)}</span>
-· proba. estimée {ins.win_prob:.0%}</div>
-{body}</div>"""
+    return f"""<div class="card"><div class="head">{_badge(e.pick)}<div class="who">
+<h3>{_e(e.pick.name)} gagne · {e.odds:.2f}</h3>
+<p>contre {_e(e.opponent.name)} · {_time(e.matchup.commence_time)} · {lieu}</p>
+<p>Confiance : <b>{_e(ins.confidence)}</b>{_meter(ins.confidence)} · chances estimées {ins.win_prob:.0%}</p>
+</div></div>{body}</div>"""
 
 
-def _row(e: Evaluation) -> str:
+def _game_row(e: Evaluation, bet_legs: list[Evaluation]) -> str:
     m = e.matchup
-    uni = f"{m.unibet.away:.2f} / {m.unibet.home:.2f}" if m.unibet else "—"
-    ref = f"{m.reference.away:.2f} / {m.reference.home:.2f}" if m.reference else "—"
-    if e.passed:
-        status = f'<span class="tag v">Validé</span><span class="why">{_e(e.pick.name)} {e.odds:.2f}</span>'
+    fav_home = m.unibet.home <= m.unibet.away if m.unibet else None
+
+    def team_line(team: TeamContext, home: bool) -> str:
+        odds = (m.unibet.home if home else m.unibet.away) if m.unibet else None
+        score = m.home_score if home else m.away_score
+        right = (f"{score:.0f}" if m.state != "pre" and score is not None
+                 else (f"{odds:.2f}" if odds else "—"))
+        fav = " fav" if fav_home is not None and fav_home == home else ""
+        tag = " <em>dom.</em>" if home else ""
+        return (f'<div class="team{fav}">{_badge(team, small=True)}'
+                f'<span class="nm">{_e(team.name)}{tag}</span><span class="od">{right}</span></div>')
+
+    if e in bet_legs:
+        chip, reason = '<span class="chip go">À JOUER</span>', f"<b>{_e(e.pick.name)} gagne</b> — voir l'analyse plus haut."
+    elif e.passed:
+        chip = '<span class="chip info">VALIDÉ</span>'
+        reason = (f"<b>{_e(e.pick.name)} gagne ({e.odds:.2f})</b> passe tous les contrôles, "
+                  f"mais n'est pas dans le meilleur pari ({leg_probability(e):.0%} de chances estimées).")
+    elif m.state != "pre":
+        title, _ = plain_reason(e)
+        chip, reason = f'<span class="chip off">{_e(title.upper())}</span>', _e(m.status_detail or "")
     else:
-        r = e.rejections[0]
-        status = f'<span class="tag r">Rejeté</span><span class="why">{_e(r.name)} : {_e(r.reason)}</span>'
-    return (f"<tr><td class='num t'>{_time(m.commence_time)}</td>"
-            f"<td class='mt'>{_e(m.away.name)} <br>@ {_e(m.home.name)}</td>"
-            f"<td class='num' data-l='Unibet ext. / dom. : '>{uni}</td>"
-            f"<td class='num hide-sm'>{ref}</td><td>{status}</td></tr>")
+        title, detail = plain_reason(e)
+        cls = "off" if e.pick is None else "no"
+        label = "EN ATTENTE" if e.pick is None else "ÉCARTÉ"
+        chip, reason = f'<span class="chip {cls}">{label}</span>', f"<b>{_e(title)}</b> — {_e(detail)}"
+
+    return f"""<div class="game"><div class="time">{_time(m.commence_time)}<small>Paris</small></div>
+<div class="teams">{team_line(m.away, False)}{team_line(m.home, True)}</div>
+<div class="status">{chip}</div><div class="reason">{reason}</div></div>"""
 
 
-def build_html(slate: Slate, evaluations: list[Evaluation], archive_links: list[str], root: str = "") -> str:
+LEGEND = """<details><summary>Comment lire cette page</summary>
+<ul class="legend">
+<li><span class="chip go">À JOUER</span><span>Le pari proposé ce soir : 1 ou 2 matchs, cote totale de 1,80 au maximum.</span></li>
+<li><span class="chip info">VALIDÉ</span><span>Le match passe tous les contrôles mais n'a pas été retenu dans le pari.</span></li>
+<li><span class="chip no">ÉCARTÉ</span><span>Au moins un contrôle a échoué : la raison est écrite en dessous.</span></li>
+<li><span class="chip off">EN ATTENTE</span><span>Unibet n'a pas encore publié de cote : le match sera analysé au prochain passage.</span></li>
+</ul>
+<p class="lbl">Les contrôles appliqués au favori</p>
+<ul class="reasons ctrl">
+<li><b>Cote</b> — entre {lo} et {hi}, et pas de hausse suspecte avant le match.</li>
+<li><b>Fatigue</b> — pas de 2e match en 24 h à l'extérieur, pas de 3e match d'affilée en déplacement.</li>
+<li><b>Match piège</b> — pas de gros choc prévu dans les 48 h qui suivent.</li>
+<li><b>Forme</b> — bon bilan récent à domicile ou à l'extérieur, outsider pas en meilleure forme.</li>
+<li><b>Blessures</b> — star et titulaires majeurs disponibles.</li>
+<li><b>Fin de saison</b> — pas d'équipe du bas de tableau en mars ou avril.</li>
+</ul></details>"""
+
+
+# ---------------------------------------------------------------------------
+# Page
+# ---------------------------------------------------------------------------
+def _archive_label(stem: str) -> str:
+    try:
+        d = date.fromisoformat(stem)
+    except ValueError:
+        return stem
+    return f"Nuit du {JOURS[d.weekday()][:3]}. {d.day:02d}/{d.month:02d}"
+
+
+def build_html(slate: Slate, evaluations: list[Evaluation], archive_days: list[str], root: str = "") -> str:
     passed, rejected, bet = select(evaluations)
-    th = config.season_thresholds(slate.generated_at)
-    gen = slate.generated_at.astimezone(TZ)
     kp = slate.key_players
+    current = slate_day(slate).isoformat()
+    legs = bet.legs if bet else []
 
-    if bet:
-        combo_html = (f'<div class="card combo"><div class="total"><span>{_e(bet.kind)} proposé<br>'
-                      f'<small>Probabilité estimée que le pari passe : {bet.prob:.0%}</small></span>'
-                      f'<b>{bet.total:.2f}</b></div></div>'
-                      + "".join(_pick_card(e, kp) for e in bet.legs))
-        others = [e for e in passed if e not in bet.legs]
-    else:
-        combo_html = (f'<div class="card empty"><b>Aucun pari aujourd\'hui.</b> '
-                      f'{_e(no_bet_reason(passed))}</div>')
-        others = passed
-
-    alt_html = ""
+    analysis = ""
+    if legs:
+        analysis = ("<h2>Pourquoi ce choix</h2><p class='h2sub'>L'analyse détaillée de chaque match du pari.</p>"
+                    + "".join(_analysis_card(e, kp) for e in legs))
+    others = [e for e in passed if e not in legs]
     if others:
-        alt_html = "<h2>Autres matchs validés</h2>" + "".join(_pick_card(e, kp, detailed=False) for e in others)
+        analysis += ("<h2>Validés mais non retenus</h2><p class='h2sub'>Alternatives possibles si une cote "
+                     "change ou si une info de dernière minute tombe.</p>"
+                     + "".join(_analysis_card(e, kp, opened=False) for e in others))
 
-    rows = "".join(_row(e) for e in sorted(evaluations, key=lambda e: e.matchup.commence_time))
-    table = (f"<h2>Toutes les cotes du jour ({len(evaluations)} matchs)</h2><div class='card'>"
-             "<table><thead><tr><th>Heure</th><th>Match</th><th>Unibet ext. / dom.</th>"
-             "<th class='hide-sm'>Marché</th><th>Analyse</th></tr></thead>"
-             f"<tbody>{rows or '<tr><td colspan=5>Aucun match</td></tr>'}</tbody></table></div>")
+    ordered = sorted(evaluations, key=lambda e: e.matchup.commence_time)
+    games = "".join(_game_row(e, legs) for e in ordered) or "<p class='sub'>Aucun match au calendrier.</p>"
+    n_pending = sum(1 for e in evaluations if e.pick is None and e.matchup.state == "pre")
 
-    nav = "".join(f'<a href="{root}archive/{_e(a)}.html">{_e(a)}</a>' for a in archive_links[:14])
+    archives = "".join(
+        f'<a class="{"cur" if d == current else ""}" href="{root}archive/{_e(d)}.html">{_e(_archive_label(d))}</a>'
+        for d in archive_days[:14])
+
     return f"""<!doctype html><html lang="fr"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Analyse NBA du jour</title><style>{CSS}</style></head><body><main>
-<header><h1>Analyse NBA — {_e(_fmt_day(slate.generated_at))}</h1>
-<p>Mis à jour à {gen:%H:%M} (Paris) · {_e(slate.source_label)} · {_e(th.label)}</p>
-<p>{len(evaluations)} matchs analysés · {len(passed)} validés · {len(rejected)} rejetés</p></header>
-<h2>Sélection</h2>{combo_html}{alt_html}{table}
-<h2>Avant de jouer sur Unibet</h2><div class="card"><ul class="check">
-<li>La cote totale affichée ne dépasse pas {config.BET_MAX_ODDS:.2f}</li>
-<li>Marché « Face à face », prolongations incluses</li>
-<li>Rapport de blessures NBA revérifié ~30 min avant le match</li>
-<li>Aucune annonce de repos de dernière minute</li></ul></div>
-<h2>Jours précédents</h2><nav><a href="{root}index.html">Dernière analyse</a>{nav}</nav>
-<footer>Outil d'aide à la décision : aucun filtre ne garantit un résultat. Mise fixe et raisonnable.
-Joueurs Info Service : 09 74 75 13 13.</footer>
+<title>Pronostic NBA</title>{FONTS}<style>{CSS}</style></head><body><main>
+<header class="top"><div class="kicker">Pronostic NBA · aide à la décision</div>
+<h1>{_e(night_label(slate)[0].upper() + night_label(slate)[1:])}</h1>
+<p class="sub">Analyse du {_e(_fmt_dt(slate.generated_at))} (Paris) · heures des matchs à l'heure de Paris</p>
+<div class="counts"><div class="count"><b>{len(evaluations)}</b><span>matchs au programme</span></div>
+<div class="count go"><b>{len(passed)}</b><span>passent les contrôles</span></div>
+<div class="count no"><b>{len(rejected) - n_pending}</b><span>écartés{f' · {n_pending} en attente' if n_pending else ''}</span></div></div>
+</header>
+<h2>Le pari du soir</h2>{_verdict(bet, passed, [e for e in rejected if e.matchup.state == 'pre'])}
+{analysis}
+<h2>Programme de la nuit</h2><p class="h2sub">Cotes Unibet de chaque équipe · le favori est en gras.</p>
+<div class="card">{games}{LEGEND.format(lo=f"{config.ODDS_MIN:.2f}", hi=f"{config.ODDS_MAX:.2f}")}</div>
+<h2>Avant de valider sur Unibet</h2><div class="card"><ul class="check">
+<li>La cote totale affichée sur Unibet ne dépasse pas {config.BET_MAX_ODDS:.2f}</li>
+<li>Pari « Face à face » (vainqueur du match, prolongations incluses)</li>
+<li>Blessures revérifiées environ 30 minutes avant le match</li>
+<li>Pas d'annonce de repos de dernière minute pour les joueurs clés</li></ul></div>
+<h2>Nuits précédentes</h2><div class="archives"><a href="{root}index.html">Prochaine nuit</a>{archives}</div>
+<footer>Outil d'aide à la décision : aucune analyse ne garantit un résultat. Joue une mise fixe et raisonnable.<br>
+Joueurs Info Service : 09 74 75 13 13 (appel non surtaxé). Source : {_e(slate.source_label)}.</footer>
 </main></body></html>"""
 
 
-def write_site(slate: Slate, evaluations: list[Evaluation], out_dir: Path) -> Path:
-    archive_dir = out_dir / "archive"
-    archive_dir.mkdir(parents=True, exist_ok=True)
-    day = slate.generated_at.astimezone(TZ).strftime("%Y-%m-%d")
-    days = sorted({p.stem for p in archive_dir.glob("*.html")} | {day}, reverse=True)
+def archive_path(out_dir: Path, slate: Slate) -> Path:
+    return out_dir / "archive" / f"{slate_day(slate).isoformat()}.html"
 
-    (archive_dir / f"{day}.html").write_text(build_html(slate, evaluations, days, root="../"), encoding="utf-8")
+
+def write_site(slate: Slate, evaluations: list[Evaluation], out_dir: Path) -> Path:
+    page = archive_path(out_dir, slate)
+    page.parent.mkdir(parents=True, exist_ok=True)
+    days = sorted({p.stem for p in page.parent.glob("*.html")} | {page.stem}, reverse=True)
+
+    page.write_text(build_html(slate, evaluations, days, root="../"), encoding="utf-8")
     index = out_dir / "index.html"
     index.write_text(build_html(slate, evaluations, days), encoding="utf-8")
     (out_dir / ".nojekyll").write_text("", encoding="utf-8")

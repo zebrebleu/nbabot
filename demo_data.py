@@ -5,6 +5,7 @@ Chaque match est construit pour déclencher (ou non) un filtre précis.
 from __future__ import annotations
 
 from datetime import datetime, timedelta, timezone
+from zoneinfo import ZoneInfo
 
 from models import Injury, Matchup, OddsQuote, Slate, TeamContext, TeamGame
 
@@ -99,6 +100,18 @@ def build_demo_slate() -> Slate:
             1.42, 2.90, 1.43, 2.85, OddsQuote(1.39, 3.20, "pinnacle")),
     ]
 
+    # 12. Cote Unibet pas encore publiée
+    m.append(Matchup("demo12", c + timedelta(hours=1),
+                     _team("warriors", "Golden State Warriors", "WWLWW", "HAHHA", c, today_home=True),
+                     _team("clippers", "LA Clippers", "WLLWL", "AHAHA", c, today_home=False),
+                     None, None))
+    # 13. Match déjà commencé (lancement tardif)
+    m.append(Matchup("demo13", c - timedelta(hours=9),
+                     _team("mavericks", "Dallas Mavericks", "WLWWL", "HAHAH", c, today_home=True),
+                     _team("rockets", "Houston Rockets", "WWWLW", "AHAHA", c, today_home=False),
+                     None, None, state="in", status_detail="3e quart-temps · 8:12",
+                     home_score=71, away_score=78))
+
     teams = sorted({t.key: t for mu in m for t in (mu.home, mu.away)}.values(),
                    key=lambda t: t.win_pct, reverse=True)
     for rank, t in enumerate(teams, 1):
@@ -111,4 +124,5 @@ def build_demo_slate() -> Slate:
         generated_at=now,
         key_players={"bucks": ["Franchise Demo", "Titulaire Demo"]},
         source_label="DONNÉES FICTIVES (--demo)",
+        slate_date=(c - timedelta(hours=6)).astimezone(ZoneInfo("America/New_York")).date(),
     )

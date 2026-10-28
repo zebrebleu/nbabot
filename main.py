@@ -1,15 +1,19 @@
 """
 Assistant d'analyse de paris NBA — point d'entrée.
 
-    python main.py                  # analyse réelle (clé The Odds API requise)
-    python main.py --demo           # données fictives, sans clé ni réseau
-    python main.py --show-rejected  # détaille toutes les causes de rejet
+    python main.py                    # prochaine nuit NBA (clé The Odds API requise)
+    python main.py --date 2026-10-28  # une date précise du calendrier NBA (date américaine)
+    python main.py --demo             # données fictives, sans clé ni réseau
+    python main.py --html docs        # génère aussi le site web
+    python main.py --show-rejected    # détaille toutes les causes de rejet
 """
 from __future__ import annotations
 
 import argparse
 import logging
 import sys
+from datetime import date
+from pathlib import Path
 
 import config
 from analyzer import build_report, save_report
@@ -17,10 +21,13 @@ from filters import FilterContext, evaluate_all
 
 
 def parse_args() -> argparse.Namespace:
-    p = argparse.ArgumentParser(description="Assistant d'analyse de paris NBA (combiné ~1.80)")
+    p = argparse.ArgumentParser(description="Assistant d'analyse de paris NBA")
     p.add_argument("--demo", action="store_true", help="utiliser des données fictives")
-    p.add_argument("--hours", type=float, default=config.LOOKAHEAD_HOURS,
-                   help=f"fenêtre d'analyse en heures (défaut {config.LOOKAHEAD_HOURS})")
+    p.add_argument("--date", type=date.fromisoformat, metavar="AAAA-MM-JJ",
+                   help="date du calendrier NBA à analyser (défaut : prochaine nuit avec des matchs)")
+    p.add_argument("--hours", type=float, help=argparse.SUPPRESS)   # ancienne option, ignorée
+    p.add_argument("--force", action="store_true",
+                   help="regénérer la page même si un match de la nuit a déjà commencé")
     p.add_argument("--show-rejected", action="store_true", help="lister toutes les causes de rejet")
     p.add_argument("--no-save", action="store_true", help="ne pas écrire le rapport dans reports/")
     p.add_argument("--html", metavar="DOSSIER", help="générer aussi le site web (ex. --html docs)")
@@ -48,7 +55,7 @@ def main() -> int:
         import requests
         from data_fetcher import DataFetcher
         try:
-            slate = DataFetcher().load_slate(args.hours)
+            slate = DataFetcher().load_slate(args.date)
         except requests.HTTPError as exc:
             code = exc.response.status_code if exc.response is not None else "?"
             hint = " (clé API invalide ?)" if code == 401 else " (quota épuisé ?)" if code == 429 else ""
@@ -58,8 +65,16 @@ def main() -> int:
             print(f"Erreur réseau : {exc}")
             return 2
 
+    # Analyse figée : une fois un match de la nuit commencé, on garde la page faite avant.
+    if args.html and slate.started and not args.force:
+        from web_report import archive_path
+        if archive_path(Path(args.html), slate).exists():
+            print(f"{len(slate.started)} match(s) de la nuit déjà commencé(s) : "
+                  "l'analyse d'avant le coup d'envoi est conservée (--force pour regénérer).")
+            return 0
+
     if not slate.matchups:
-        print("Aucun match NBA avec cotes dans la fenêtre d'analyse.")
+        print("Aucun match NBA au calendrier pour cette date.")
         if args.html:
             _write_site(slate, [], args.html)
         return 0
@@ -83,7 +98,6 @@ def main() -> int:
 
 
 def _write_site(slate, evaluations, out_dir: str) -> None:
-    from pathlib import Path
     from web_report import write_site
     index = write_site(slate, evaluations, Path(out_dir))
     print(f"Page web générée : {index}")
