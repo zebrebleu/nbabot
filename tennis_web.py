@@ -198,10 +198,13 @@ def build_html(slate, evaluations, bet, locked, archive_days: list[str], root: s
     legend = LEGEND.format(mx=f"{tc.BET_MAX_ODDS:.2f}", lo=f"{tc.ODDS_MIN:.2f}", hi=f"{tc.ODDS_MAX:.2f}",
                            fw=tc.FATIGUE_WINDOW_HOURS, rd=tc.RETIREMENT_DAYS,
                            fr=tc.FORM_MIN_RATE, sr=tc.SURFACE_MIN_RATE)
+    from tracker_web import TRACKER_CSS, picker_html, ticket_html     # « Ajouter à mes paris »
+    picker = picker_html("tennis", evaluations, legs) if root == "" else ""
+    ticket = ticket_html(root) if root == "" else ""
 
     return f"""<!doctype html><html lang="fr"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Pronostic Tennis</title>{FONTS}<style>{CSS}{TENNIS_CSS}</style></head><body><main>
+<title>Pronostic Tennis</title>{FONTS}<style>{CSS}{TENNIS_CSS}{TRACKER_CSS}</style></head><body><main>
 {nav_tabs("tennis", root)}
 <header class="top"><div class="kicker">Pronostic tennis · ATP + WTA</div>
 <h1>Tennis — {_e(_day_label(today).capitalize())}</h1>
@@ -221,6 +224,7 @@ def build_html(slate, evaluations, bet, locked, archive_days: list[str], root: s
 <li>Pas de forfait annoncé juste avant le match</li>
 <li>Heure de passage confirmée (au tennis, les matchs « à suivre » peuvent glisser)</li></ul></div>
 <h2>Jours précédents</h2><div class="archives"><a href="{root}tennis.html">Aujourd'hui</a>{archives}</div>
+{picker}{ticket}
 <footer>Outil d'aide à la décision : aucune analyse ne garantit un résultat. Joue une mise fixe et raisonnable.<br>
 Joueurs Info Service : 09 74 75 13 13 (appel non surtaxé). Source : {_e(slate.source_label)}.</footer>
 </main></body></html>"""
@@ -235,7 +239,6 @@ def write_site(slate, evaluations, bet, locked, out_dir: Path) -> Path:
     page = out_dir / "tennis.html"
     page.write_text(build_html(slate, evaluations, bet, locked, days), encoding="utf-8")
     (out_dir / ".nojekyll").write_text("", encoding="utf-8")
-    from tracker_web import export_picks, write_page      # onglet « Mes paris »
-    export_picks("tennis", evaluations, bet.legs if bet else [], out_dir, slate.generated_at)
-    write_page(out_dir)
+    from tracker_web import write_assets                 # onglet « Mes paris » + paris.js
+    write_assets(out_dir)
     return page

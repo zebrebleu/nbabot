@@ -366,9 +366,13 @@ def build_html(slate: Slate, evaluations: list[Evaluation], archive_days: list[s
         f'<a class="{"cur" if d == current else ""}" href="{root}archive/{_e(d)}.html">{_e(_archive_label(d))}</a>'
         for d in archive_days[:14])
 
+    from tracker_web import TRACKER_CSS, picker_html, ticket_html     # « Ajouter à mes paris »
+    picker = picker_html("nba", evaluations, legs) if root == "" else ""
+    ticket = ticket_html(root) if root == "" else ""
+
     return f"""<!doctype html><html lang="fr"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Pronostic NBA</title>{FONTS}<style>{CSS}</style></head><body><main>
+<title>Pronostic NBA</title>{FONTS}<style>{CSS}{TRACKER_CSS}</style></head><body><main>
 {nav_tabs("nba", root)}
 <header class="top"><div class="kicker">Pronostic NBA · aide à la décision</div>
 <h1>{_e(night_label(slate)[0].upper() + night_label(slate)[1:])}</h1>
@@ -388,6 +392,7 @@ def build_html(slate: Slate, evaluations: list[Evaluation], archive_days: list[s
 <li>Blessures revérifiées environ 30 minutes avant le match</li>
 <li>Pas d'annonce de repos de dernière minute pour les joueurs clés</li></ul></div>
 <h2>Nuits précédentes</h2><div class="archives"><a href="{root}index.html">Prochaine nuit</a>{archives}</div>
+{picker}{ticket}
 <footer>Outil d'aide à la décision : aucune analyse ne garantit un résultat. Joue une mise fixe et raisonnable.<br>
 Joueurs Info Service : 09 74 75 13 13 (appel non surtaxé). Source : {_e(slate.source_label)}.</footer>
 </main></body></html>"""
@@ -406,8 +411,6 @@ def write_site(slate: Slate, evaluations: list[Evaluation], out_dir: Path) -> Pa
     index = out_dir / "index.html"
     index.write_text(build_html(slate, evaluations, days), encoding="utf-8")
     (out_dir / ".nojekyll").write_text("", encoding="utf-8")
-    from tracker_web import export_picks, write_page      # onglet « Mes paris »
-    _, _, bet = select(evaluations)
-    export_picks("nba", evaluations, bet.legs if bet else [], out_dir, slate.generated_at)
-    write_page(out_dir)
+    from tracker_web import write_assets                 # onglet « Mes paris » + paris.js
+    write_assets(out_dir)
     return index
