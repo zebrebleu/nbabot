@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-28T20:29:42.721320+00:00",
+ "generated_at": "2026-10-28T20:33:02.605945+00:00",
  "espn_matches": {
   "atp": 5971,
   "wta": 3400
@@ -19,25 +19,25 @@
    "méthode": "identifiants"
   },
   "wta": {
-   "rattachés": 4,
-   "méthode": "noms"
+   "rattachés": 150,
+   "méthode": "identifiants"
   }
  },
  "samples": {
   "atp": {
    "joueurs": [
     {
-     "nom": "Lizette Cabrera",
+     "nom": "Raphael Collignon",
      "ids": [
-      "384df492-3336-3896-2299-c1f4a944d0ef",
-      "440"
+      "11222",
+      "a0f546b7-18a4-3864-9bc9-a53cc6517ca3"
      ]
     },
     {
-     "nom": "Rebecca Sramkova",
+     "nom": "Aleksandr Shevchenko",
      "ids": [
-      "2738",
-      "e2b78319-b985-971c-f976-2878158e78db"
+      "8710",
+      "de169e60-0a75-3e19-944b-9b685744b9ce"
      ]
     }
    ],
@@ -61,17 +61,17 @@
   "wta": {
    "joueurs": [
     {
-     "nom": "En-Shuo Liang",
+     "nom": "Lizette Cabrera",
      "ids": [
-      "3583",
-      "c8b7ba99-ca2f-f2b0-f045-afe7d8153c2a"
+      "384df492-3336-3896-2299-c1f4a944d0ef",
+      "440"
      ]
     },
     {
-     "nom": "Giselle Isabell Guillen",
+     "nom": "Rebecca Sramkova",
      "ids": [
-      "17660",
-      "607a268f-147e-385a-9a18-c24860ebcffc"
+      "2738",
+      "e2b78319-b985-971c-f976-2878158e78db"
      ]
     }
    ],
@@ -94,7 +94,7 @@
   }
  },
  "players": 1293,
- "ranked_players": 153,
+ "ranked_players": 300,
  "odds_events": 19,
  "upcoming_matches": 15,
  "unmatched_names": []
