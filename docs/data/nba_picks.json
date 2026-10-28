@@ -1,0 +1,233 @@
+{
+ "generated_at": "2026-10-28T20:46:52.841756+00:00",
+ "matches": [
+  {
+   "id": "nba:cc7f8bc2a4554b89f2a35abad3a633ef",
+   "sport": "nba",
+   "competition": "NBA",
+   "time": "2026-10-28T23:00:00+00:00",
+   "label": "Miami Heat @ Atlanta Hawks",
+   "sides": [
+    {
+     "name": "Miami Heat",
+     "odds": 2.0
+    },
+    {
+     "name": "Atlanta Hawks",
+     "odds": 1.67
+    }
+   ],
+   "pick": "Atlanta Hawks",
+   "verdict": "Écarté"
+  },
+  {
+   "id": "nba:f2a1271ffcfd7c85f51640ebff3b7ddd",
+   "sport": "nba",
+   "competition": "NBA",
+   "time": "2026-10-28T23:00:00+00:00",
+   "label": "Washington Wizards @ Cleveland Cavaliers",
+   "sides": [
+    {
+     "name": "Washington Wizards",
+     "odds": 3.5
+    },
+    {
+     "name": "Cleveland Cavaliers",
+     "odds": 1.23
+    }
+   ],
+   "pick": "Cleveland Cavaliers",
+   "verdict": "Écarté"
+  },
+  {
+   "id": "nba:7f5287957f506fbf705e198215fa952b",
+   "sport": "nba",
+   "competition": "NBA",
+   "time": "2026-10-28T23:00:00+00:00",
+   "label": "Charlotte Hornets @ Detroit Pistons",
+   "sides": [
+    {
+     "name": "Charlotte Hornets",
+     "odds": 3.0
+    },
+    {
+     "name": "Detroit Pistons",
+     "odds": 1.31
+    }
+   ],
+   "pick": "Detroit Pistons",
+   "verdict": "Validé"
+  },
+  {
+   "id": "nba:5997ee5c9fbdc53f9c86732b02f58158",
+   "sport": "nba",
+   "competition": "NBA",
+   "time": "2026-10-28T23:00:00+00:00",
+   "label": "Philadelphia 76ers @ Indiana Pacers",
+   "sides": [
+    {
+     "name": "Philadelphia 76ers",
+     "odds": 1.35
+    },
+    {
+     "name": "Indiana Pacers",
+     "odds": 2.95
+    }
+   ],
+   "pick": "Philadelphia 76ers",
+   "verdict": "Écarté"
+  },
+  {
+   "id": "nba:67550840fbe9bb9c550d3d4958e259ea",
+   "sport": "nba",
+   "competition": "NBA",
+   "time": "2026-10-28T23:30:00+00:00",
+   "label": "Orlando Magic @ Toronto Raptors",
+   "sides": [
+    {
+     "name": "Orlando Magic",
+     "odds": 2.35
+    },
+    {
+     "name": "Toronto Raptors",
+     "odds": 1.48
+    }
+   ],
+   "pick": "Toronto Raptors",
+   "verdict": "À jouer"
+  },
+  {
+   "id": "nba:7b9e02686c886a54c9a91dd3f3879326",
+   "sport": "nba",
+   "competition": "NBA",
+   "time": "2026-10-29T00:00:00+00:00",
+   "label": "New York Knicks @ Chicago Bulls",
+   "sides": [
+    {
+     "name": "New York Knicks",
+     "odds": 1.33
+    },
+    {
+     "name": "Chicago Bulls",
+     "odds": 2.9
+    }
+   ],
+   "pick": "New York Knicks",
+   "verdict": "Écarté"
+  },
+  {
+   "id": "nba:83ca338f605b5664b7b1da34c19a0222",
+   "sport": "nba",
+   "competition": "NBA",
+   "time": "2026-10-29T00:00:00+00:00",
+   "label": "Houston Rockets @ Milwaukee Bucks",
+   "sides": [
+    {
+     "name": "Houston Rockets",
+     "odds": 1.25
+    },
+    {
+     "name": "Milwaukee Bucks",
+     "odds": 3.35
+    }
+   ],
+   "pick": "Houston Rockets",
+   "verdict": "Écarté"
+  },
+  {
+   "id": "nba:c6d62b9457cbd8517860e222f1d4f953",
+   "sport": "nba",
+   "competition": "NBA",
+   "time": "2026-10-29T00:00:00+00:00",
+   "label": "Golden State Warriors @ Minnesota Timberwolves",
+   "sides": [
+    {
+     "name": "Golden State Warriors",
+     "odds": 2.3
+    },
+    {
+     "name": "Minnesota Timberwolves",
+     "odds": 1.6
+    }
+   ],
+   "pick": "Minnesota Timberwolves",
+   "verdict": "Écarté"
+  },
+  {
+   "id": "nba:782d6ce7f65b592ad1c43d2f4e53cc82",
+   "sport": "nba",
+   "competition": "NBA",
+   "time": "2026-10-29T00:00:00+00:00",
+   "label": "Denver Nuggets @ New Orleans Pelicans",
+   "sides": [
+    {
+     "name": "Denver Nuggets",
+     "odds": 1.49
+    },
+    {
+     "name": "New Orleans Pelicans",
+     "odds": 2.35
+    }
+   ],
+   "pick": "Denver Nuggets",
+   "verdict": "Écarté"
+  },
+  {
+   "id": "nba:e74d54621abaed183e569394f935c362",
+   "sport": "nba",
+   "competition": "NBA",
+   "time": "2026-10-29T01:00:00+00:00",
+   "label": "San Antonio Spurs @ Utah Jazz",
+   "sides": [
+    {
+     "name": "San Antonio Spurs",
+     "odds": 1.12
+    },
+    {
+     "name": "Utah Jazz",
+     "odds": 4.85
+    }
+   ],
+   "pick": "San Antonio Spurs",
+   "verdict": "Écarté"
+  },
+  {
+   "id": "nba:1e3ca91e27ded6e4b4bb35aabb67b505",
+   "sport": "nba",
+   "competition": "NBA",
+   "time": "2026-10-29T01:30:00+00:00",
+   "label": "Oklahoma City Thunder @ Dallas Mavericks",
+   "sides": [
+    {
+     "name": "Oklahoma City Thunder",
+     "odds": 1.44
+    },
+    {
+     "name": "Dallas Mavericks",
+     "odds": 2.45
+    }
+   ],
+   "pick": "Oklahoma City Thunder",
+   "verdict": "Écarté"
+  },
+  {
+   "id": "nba:6e8a41f3aeff105b0e10766515517d5e",
+   "sport": "nba",
+   "competition": "NBA",
+   "time": "2026-10-29T02:30:00+00:00",
+   "label": "Los Angeles Lakers @ LA Clippers",
+   "sides": [
+    {
+     "name": "Los Angeles Lakers",
+     "odds": 1.84
+    },
+    {
+     "name": "LA Clippers",
+     "odds": 1.8
+    }
+   ],
+   "pick": "LA Clippers",
+   "verdict": "Écarté"
+  }
+ ]
+}

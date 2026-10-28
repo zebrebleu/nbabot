@@ -1,0 +1,309 @@
+{
+ "generated_at": "2026-10-28T20:46:56.918081+00:00",
+ "matches": [
+  {
+   "id": "tennis:8cc69dee985efaaa4d02ce47ce9ae17a",
+   "sport": "tennis",
+   "competition": "WTA Pan Pacific Open",
+   "time": "2026-10-29T01:30:00+00:00",
+   "label": "Alycia Parks – Kimberly Birrell",
+   "sides": [
+    {
+     "name": "Alycia Parks",
+     "odds": 2.2
+    },
+    {
+     "name": "Kimberly Birrell",
+     "odds": 1.52
+    }
+   ],
+   "pick": "Kimberly Birrell",
+   "verdict": "Validé"
+  },
+  {
+   "id": "tennis:0148c3d6327ac9f98ddf4b277bfc8a3e",
+   "sport": "tennis",
+   "competition": "WTA Pan Pacific Open",
+   "time": "2026-10-29T02:30:00+00:00",
+   "label": "Leylah Fernandez – Elise Mertens",
+   "sides": [
+    {
+     "name": "Leylah Fernandez",
+     "odds": 1.85
+    },
+    {
+     "name": "Elise Mertens",
+     "odds": 1.76
+    }
+   ],
+   "pick": "Elise Mertens",
+   "verdict": "Validé"
+  },
+  {
+   "id": "tennis:d04e7e6ce329fccbd0b365240f807cca",
+   "sport": "tennis",
+   "competition": "WTA Pan Pacific Open",
+   "time": "2026-10-29T05:30:00+00:00",
+   "label": "Naomi Osaka – Mia Pohankova",
+   "sides": [
+    {
+     "name": "Naomi Osaka",
+     "odds": 1.2
+    },
+    {
+     "name": "Mia Pohankova",
+     "odds": 3.55
+    }
+   ],
+   "pick": "Naomi Osaka",
+   "verdict": "Écarté"
+  },
+  {
+   "id": "tennis:1fa60410ca17efcd43616ab025a3b0e4",
+   "sport": "tennis",
+   "competition": "WTA Pan Pacific Open",
+   "time": "2026-10-29T08:00:00+00:00",
+   "label": "Elena Rybakina – Yulia Putintseva",
+   "sides": [
+    {
+     "name": "Elena Rybakina",
+     "odds": 1.11
+    },
+    {
+     "name": "Yulia Putintseva",
+     "odds": 4.8
+    }
+   ],
+   "pick": "Elena Rybakina",
+   "verdict": "Écarté"
+  },
+  {
+   "id": "tennis:f7fa6060659fec573d7a7df3881aff82",
+   "sport": "tennis",
+   "competition": "ATP Swiss Indoors Basel",
+   "time": "2026-10-29T11:00:00+00:00",
+   "label": "Valentin Vacherot – Rafael Jodar",
+   "sides": [
+    {
+     "name": "Valentin Vacherot",
+     "odds": 3.15
+    },
+    {
+     "name": "Rafael Jodar",
+     "odds": 1.27
+    }
+   ],
+   "pick": "Rafael Jodar",
+   "verdict": "Validé"
+  },
+  {
+   "id": "tennis:9744d2cb822ca005f4607e336b1b2b81",
+   "sport": "tennis",
+   "competition": "ATP Vienna Open",
+   "time": "2026-10-29T12:30:00+00:00",
+   "label": "Cameron Norrie – Daniil Medvedev",
+   "sides": [
+    {
+     "name": "Cameron Norrie",
+     "odds": 4.4
+    },
+    {
+     "name": "Daniil Medvedev",
+     "odds": 1.13
+    }
+   ],
+   "pick": "Daniil Medvedev",
+   "verdict": "Écarté"
+  },
+  {
+   "id": "tennis:9f79477cee7d1e998aa4b8a7beec9b28",
+   "sport": "tennis",
+   "competition": "ATP Vienna Open",
+   "time": "2026-10-29T12:30:00+00:00",
+   "label": "Tommy Paul – Luciano Darderi",
+   "sides": [
+    {
+     "name": "Tommy Paul",
+     "odds": 1.2
+    },
+    {
+     "name": "Luciano Darderi",
+     "odds": 3.55
+    }
+   ],
+   "pick": "Tommy Paul",
+   "verdict": "Écarté"
+  },
+  {
+   "id": "tennis:17b7cfaa2dc6c21f39412e6017f54e9b",
+   "sport": "tennis",
+   "competition": "ATP Swiss Indoors Basel",
+   "time": "2026-10-29T13:00:00+00:00",
+   "label": "Alex Michelsen – Arthur Fils",
+   "sides": [
+    {
+     "name": "Alex Michelsen",
+     "odds": 2.65
+    },
+    {
+     "name": "Arthur Fils",
+     "odds": 1.39
+    }
+   ],
+   "pick": "Arthur Fils",
+   "verdict": "Validé"
+  },
+  {
+   "id": "tennis:dd5bca16b0bbd8de2684f82a2797f042",
+   "sport": "tennis",
+   "competition": "ATP Vienna Open",
+   "time": "2026-10-29T14:00:00+00:00",
+   "label": "Nikoloz Basilashvili – Carlos Alcaraz",
+   "sides": [
+    {
+     "name": "Nikoloz Basilashvili",
+     "odds": 5.8
+    },
+    {
+     "name": "Carlos Alcaraz",
+     "odds": 1.07
+    }
+   ],
+   "pick": "Carlos Alcaraz",
+   "verdict": "Écarté"
+  },
+  {
+   "id": "tennis:9da35734a02ec2627cd4034086584157",
+   "sport": "tennis",
+   "competition": "ATP Swiss Indoors Basel",
+   "time": "2026-10-29T14:10:00+00:00",
+   "label": "Taylor Fritz – Denis Shapovalov",
+   "sides": [
+    {
+     "name": "Taylor Fritz",
+     "odds": 1.31
+    },
+    {
+     "name": "Denis Shapovalov",
+     "odds": 2.85
+    }
+   ],
+   "pick": "Taylor Fritz",
+   "verdict": "Écarté"
+  },
+  {
+   "id": "tennis:381536c46bd1e16a9236502df3f748e5",
+   "sport": "tennis",
+   "competition": "ATP Swiss Indoors Basel",
+   "time": "2026-10-29T15:00:00+00:00",
+   "label": "Daniel Altmaier – Jiri Lehecka",
+   "sides": [
+    {
+     "name": "Daniel Altmaier",
+     "odds": 4.4
+    },
+    {
+     "name": "Jiri Lehecka",
+     "odds": 1.13
+    }
+   ],
+   "pick": "Jiri Lehecka",
+   "verdict": "Écarté"
+  },
+  {
+   "id": "tennis:704555fd36bea990169b89857cf51075",
+   "sport": "tennis",
+   "competition": "ATP Vienna Open",
+   "time": "2026-10-29T16:00:00+00:00",
+   "label": "Arthur Fery – Lorenzo Musetti",
+   "sides": [
+    {
+     "name": "Arthur Fery",
+     "odds": 3.05
+    },
+    {
+     "name": "Lorenzo Musetti",
+     "odds": 1.27
+    }
+   ],
+   "pick": "Lorenzo Musetti",
+   "verdict": "Validé"
+  },
+  {
+   "id": "tennis:6822571863f93fa4654e76e114874060",
+   "sport": "tennis",
+   "competition": "ATP Vienna Open",
+   "time": "2026-10-29T16:30:00+00:00",
+   "label": "Alexander Zverev – Tallon Griekspoor",
+   "sides": [
+    {
+     "name": "Alexander Zverev",
+     "odds": 1.19
+    },
+    {
+     "name": "Tallon Griekspoor",
+     "odds": 3.7
+    }
+   ],
+   "pick": "Alexander Zverev",
+   "verdict": "Écarté"
+  },
+  {
+   "id": "tennis:e17ec974bac4e8094cbe45dfeb471b1e",
+   "sport": "tennis",
+   "competition": "ATP Swiss Indoors Basel",
+   "time": "2026-10-29T17:00:00+00:00",
+   "label": "Novak Djokovic – Jan-Lennard Struff",
+   "sides": [
+    {
+     "name": "Novak Djokovic",
+     "odds": 1.21
+    },
+    {
+     "name": "Jan-Lennard Struff",
+     "odds": 3.65
+    }
+   ],
+   "pick": "Novak Djokovic",
+   "verdict": "Écarté"
+  },
+  {
+   "id": "tennis:53d4ccf860436088aa717efdf2c38d25",
+   "sport": "tennis",
+   "competition": "ATP Swiss Indoors Basel",
+   "time": "2026-10-29T18:10:00+00:00",
+   "label": "Ben Shelton – Jerome Kym",
+   "sides": [
+    {
+     "name": "Ben Shelton",
+     "odds": 1.26
+    },
+    {
+     "name": "Jerome Kym",
+     "odds": 3.15
+    }
+   ],
+   "pick": "Ben Shelton",
+   "verdict": "À jouer"
+  },
+  {
+   "id": "tennis:3b65bc657a2d7391944d9e343c189c52",
+   "sport": "tennis",
+   "competition": "ATP Vienna Open",
+   "time": "2026-10-29T19:00:00+00:00",
+   "label": "Flavio Cobolli – Matteo Berrettini",
+   "sides": [
+    {
+     "name": "Flavio Cobolli",
+     "odds": 1.8
+    },
+    {
+     "name": "Matteo Berrettini",
+     "odds": 1.8
+    }
+   ],
+   "pick": "Flavio Cobolli",
+   "verdict": "Écarté"
+  }
+ ]
+}
