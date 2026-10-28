@@ -34,7 +34,7 @@ CSS = """
 body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
 main{max-width:880px;margin:0 auto;padding:0 16px 56px}
 a{color:inherit}
-.top{padding:28px 0 18px}
+.top{padding:20px 0 18px}
 .kicker{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
 h1{font:700 34px/1.05 var(--num);margin:6px 0 6px;letter-spacing:.01em}
 .sub{color:var(--muted);font-size:13px;margin:0}
@@ -105,6 +105,10 @@ details[open] summary::before{content:"▾ "}
 .archives a{text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:13px}
 .archives a.cur{border-color:var(--accent);color:var(--accent);font-weight:600}
 footer{color:var(--muted);font-size:12px;margin-top:36px;line-height:1.6}
+.tabs{display:flex;gap:6px;padding-top:16px}
+.tabs a{text-decoration:none;font:700 15px/1 var(--num);letter-spacing:.04em;text-transform:uppercase;
+padding:9px 16px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--muted)}
+.tabs a.cur{background:var(--ink);color:var(--bg);border-color:var(--ink)}
 @media (max-width:600px){h1{font-size:28px}.stats{grid-template-columns:1fr 1fr}.stat.big{grid-column:1/3}
 .grid{grid-template-columns:1fr}.game{grid-template-columns:52px 1fr;gap:4px 8px}.status{grid-column:2;text-align:left}
 .time{font-size:18px}.team .nm{white-space:normal}
@@ -124,6 +128,13 @@ def _time(dt: datetime) -> str:
 
 def _money(x: float) -> str:
     return f"{x:.2f}".replace(".", ",") + " €"
+
+
+def nav_tabs(current: str, root: str = "") -> str:
+    """Onglets communs aux pages NBA et Tennis."""
+    tabs = [("nba", "NBA", f"{root}index.html"), ("tennis", "Tennis", f"{root}tennis.html")]
+    return '<nav class="tabs">' + "".join(
+        f'<a class="{"cur" if k == current else ""}" href="{href}">{label}</a>' for k, label, href in tabs) + "</nav>"
 
 
 def _abbr(team: TeamContext) -> str:
@@ -357,6 +368,7 @@ def build_html(slate: Slate, evaluations: list[Evaluation], archive_days: list[s
     return f"""<!doctype html><html lang="fr"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Pronostic NBA</title>{FONTS}<style>{CSS}</style></head><body><main>
+{nav_tabs("nba", root)}
 <header class="top"><div class="kicker">Pronostic NBA · aide à la décision</div>
 <h1>{_e(night_label(slate)[0].upper() + night_label(slate)[1:])}</h1>
 <p class="sub">Analyse du {_e(_fmt_dt(slate.generated_at))} (Paris) · heures des matchs à l'heure de Paris</p>

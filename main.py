@@ -22,6 +22,8 @@ from filters import FilterContext, evaluate_all
 
 def parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser(description="Assistant d'analyse de paris NBA")
+    p.add_argument("--sport", choices=["nba", "tennis", "all"], default="nba",
+                   help="sport à analyser (défaut : nba)")
     p.add_argument("--demo", action="store_true", help="utiliser des données fictives")
     p.add_argument("--date", type=date.fromisoformat, metavar="AAAA-MM-JJ",
                    help="date du calendrier NBA à analyser (défaut : prochaine nuit avec des matchs)")
@@ -44,6 +46,16 @@ def main() -> int:
     for problem in config.validate():
         print(f"[config] {problem}")
 
+    codes = []
+    if args.sport in ("nba", "all"):
+        codes.append(run_nba(args))
+    if args.sport in ("tennis", "all"):
+        import tennis_main
+        codes.append(tennis_main.run(demo=args.demo, html_dir=args.html))
+    return max(codes)
+
+
+def run_nba(args) -> int:
     if args.demo:
         from demo_data import build_demo_slate
         slate = build_demo_slate()
