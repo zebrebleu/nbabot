@@ -65,6 +65,7 @@ class Player:
     espn_id: str = ""
     rank: Optional[int] = None
     matches: list[PlayerMatch] = field(default_factory=list)   # triés par date
+    ids: set = field(default_factory=set)                      # tous les identifiants ESPN connus
 
     def before(self, t: datetime, margin_hours: float = 1.0) -> list[PlayerMatch]:
         limit = t - timedelta(hours=margin_hours)
@@ -143,11 +144,24 @@ def _athlete_id(athlete: dict) -> str:
     return m.group(1) if m else ""
 
 
+def _athlete_ids(athlete: dict) -> set[str]:
+    """Tous les identifiants ESPN repérables dans un objet joueur (id, uid, liens)."""
+    raw = json.dumps(athlete)
+    ids = set(re.findall(r"athletes/(\d+)", raw)) | set(re.findall(r"/id/(\d+)", raw)) \
+        | set(re.findall(r"a:(\d+)", raw))
+    for k in ("id", "guid"):
+        if athlete.get(k):
+            ids.add(str(athlete[k]))
+    return ids
+
+
 # ---------------------------------------------------------------------------
 # ESPN : historique de la saison et classements
 # ---------------------------------------------------------------------------
-def parse_season(data: dict, tour: str, players: dict[str, Player]) -> int:
-    """Ajoute à `players` tous les matchs de simple terminés. Renvoie le nombre de matchs lus."""
+def parse_season(data: dict, tour: str, players: dict[str, Player], seen: Optional[set] = None) -> int:
+    """Ajoute à `players` tous les matchs de simple terminés. Renvoie le nombre de matchs lus.
+    `seen` évite de compter deux fois un match qu'ESPN répète."""
+    seen = seen if seen is not None else set()
     count = 0
     for ev in data.get("events", []):
         tname = ev.get("name") or ev.get("shortName") or ""
@@ -182,11 +196,18 @@ def parse_season(data: dict, tour: str, players: dict[str, Player]) -> int:
                 names = [a.get("displayName") or a.get("fullName") or "" for a in athletes]
                 if not all(names):
                     continue
+                dedup = (tour, date.date().isoformat(), *sorted(norm_name(n) for n in names))
+                if (comp.get("id") and ("id", str(comp["id"])) in seen) or dedup in seen:
+                    continue
+                seen.add(dedup)
+                if comp.get("id"):
+                    seen.add(("id", str(comp["id"])))
                 for i in (0, 1):
                     me, opp = i, 1 - i
                     key = norm_name(names[me])
                     p = players.setdefault(key, Player(key, names[me], tour))
                     p.espn_id = p.espn_id or _athlete_id(athletes[me])
+                    p.ids |= _athlete_ids(athletes[me])
                     p.matches.append(PlayerMatch(
                         date=date, tournament=tname, surface=surface, round=rnd,
                         opponent=norm_name(names[opp]), opponent_name=names[opp],
@@ -216,7 +237,8 @@ class ESPNTennis:
         return self.http.get_json(f"{ESPN_SITE}/{tour}/scoreboard", params={"dates": str(year)},
                                   ttl_minutes=tc.ESPN_CACHE_HOURS * 60)
 
-    def rankings(self, tour: str, now: datetime) -> dict[str, int]:
+    def rankings(self, tour: str, now: datetime) -> list[dict]:
+        """[{rank, ids, ref, name}] — la liste du classement officiel (150 premiers environ)."""
         year, week = now.year, now.isocalendar()[1]
         for back in range(4):
             url = (f"{ESPN_CORE}/{tour}/seasons/{year}/types/2/weeks/{max(1, week - back)}"
@@ -225,14 +247,48 @@ class ESPNTennis:
                 data = self.http.get_json(url, ttl_minutes=12 * 60)
             except requests.RequestException:
                 continue
-            out = {}
+            out = []
             for r in data.get("ranks", []):
-                aid = _athlete_id(r.get("athlete", {}) if isinstance(r.get("athlete"), dict) else {})
-                if aid and r.get("current"):
-                    out[aid] = _num(r["current"])
+                a = r.get("athlete") if isinstance(r.get("athlete"), dict) else {}
+                if r.get("current"):
+                    out.append({"rank": _num(r["current"]), "ids": _athlete_ids(a), "ref": a.get("$ref", ""),
+                                "name": a.get("displayName") or a.get("fullName") or ""})
             if out:
                 return out
-        return {}
+        return []
+
+    def athlete_name(self, ref: str) -> str:
+        """Nom d'un joueur à partir de son lien ESPN (mis en cache 7 jours)."""
+        try:
+            data = self.http.get_json(ref.replace("http://", "https://"), ttl_minutes=7 * 24 * 60)
+        except (requests.RequestException, ValueError):
+            return ""
+        return data.get("displayName") or data.get("fullName") or ""
+
+
+def apply_rankings(ranks: list[dict], players: dict[str, "Player"], tour: str,
+                   espn: Optional[ESPNTennis] = None) -> tuple[int, str]:
+    """Rattache le classement aux joueurs : par identifiant, sinon par nom. Renvoie (nb, méthode)."""
+    by_id = {}
+    for p in players.values():
+        if p.tour == tour:
+            for i in p.ids | ({p.espn_id} if p.espn_id else set()):
+                by_id[i] = p
+    n = 0
+    for r in ranks:
+        p = next((by_id[i] for i in r["ids"] if i in by_id), None)
+        if p:
+            p.rank, n = r["rank"], n + 1
+    if n >= min(10, len(ranks)) or espn is None:
+        return n, "identifiants"
+    # Les identifiants ne concordent pas : on récupère le nom de chaque classé (une fois par semaine)
+    n = 0
+    for r in ranks:
+        name = r["name"] or (espn.athlete_name(r["ref"]) if r["ref"] else "")
+        p = find_player(name, {k: v for k, v in players.items() if v.tour == tour}) if name else None
+        if p:
+            p.rank, n = r["rank"], n + 1
+    return n, "noms"
 
 
 # ---------------------------------------------------------------------------
@@ -305,6 +361,9 @@ class TennisFetcher:
         players: dict[str, Player] = {}
         years = [now.year] + ([now.year - 1] if now.month <= tc.PREVIOUS_SEASON_UNTIL_MONTH else [])
         next_info = None
+        seen: set = set()
+        diag["ranking_match"] = {}
+        diag["samples"] = {}
         for tour in tc.TOURS:
             n = 0
             for y in years:
@@ -313,7 +372,7 @@ class TennisFetcher:
                 except requests.RequestException as exc:
                     log.warning("Saison ESPN %s %s indisponible : %s", tour, y, exc)
                     continue
-                n += parse_season(data, tour, players)
+                n += parse_season(data, tour, players, seen)
                 if y == now.year:
                     cand = next_event(data, now)
                     if cand and (next_info is None or cand[0] < next_info[0]):
@@ -321,9 +380,12 @@ class TennisFetcher:
             diag["espn_matches"][tour] = n
             ranks = self.espn.rankings(tour, now)
             diag["rankings"][tour] = len(ranks)
-            for p in players.values():
-                if p.tour == tour and p.espn_id in ranks:
-                    p.rank = ranks[p.espn_id]
+            matched, how = apply_rankings(ranks, players, tour, self.espn)
+            diag["ranking_match"][tour] = {"rattachés": matched, "méthode": how}
+            some = [p for p in players.values() if p.tour == tour][:2]
+            diag["samples"][tour] = {"joueurs": [{"nom": p.name, "ids": sorted(p.ids)[:5]} for p in some],
+                                     "classement": [{"rang": r["rank"], "ids": sorted(r["ids"])[:5],
+                                                     "ref": r["ref"][:120]} for r in ranks[:2]]}
         for p in players.values():
             p.matches.sort(key=lambda m: m.date)
         diag["players"] = len(players)
