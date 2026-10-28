@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-28T20:24:22.907452+00:00",
+ "generated_at": "2026-10-28T20:29:42.721320+00:00",
  "espn_matches": {
   "atp": 5971,
-  "wta": 7752
+  "wta": 3400
  },
  "rankings": {
   "atp": 150,
@@ -13,8 +13,88 @@
   "tennis_atp_vienna_open",
   "tennis_wta_pan_pacific_open"
  ],
+ "ranking_match": {
+  "atp": {
+   "rattachés": 150,
+   "méthode": "identifiants"
+  },
+  "wta": {
+   "rattachés": 4,
+   "méthode": "noms"
+  }
+ },
+ "samples": {
+  "atp": {
+   "joueurs": [
+    {
+     "nom": "Lizette Cabrera",
+     "ids": [
+      "384df492-3336-3896-2299-c1f4a944d0ef",
+      "440"
+     ]
+    },
+    {
+     "nom": "Rebecca Sramkova",
+     "ids": [
+      "2738",
+      "e2b78319-b985-971c-f976-2878158e78db"
+     ]
+    }
+   ],
+   "classement": [
+    {
+     "rang": 1,
+     "ids": [
+      "3623"
+     ],
+     "ref": "http://sports.core.api.espn.com/v2/sports/tennis/athletes/3623?lang=en&region=us"
+    },
+    {
+     "rang": 2,
+     "ids": [
+      "2375"
+     ],
+     "ref": "http://sports.core.api.espn.com/v2/sports/tennis/athletes/2375?lang=en&region=us"
+    }
+   ]
+  },
+  "wta": {
+   "joueurs": [
+    {
+     "nom": "En-Shuo Liang",
+     "ids": [
+      "3583",
+      "c8b7ba99-ca2f-f2b0-f045-afe7d8153c2a"
+     ]
+    },
+    {
+     "nom": "Giselle Isabell Guillen",
+     "ids": [
+      "17660",
+      "607a268f-147e-385a-9a18-c24860ebcffc"
+     ]
+    }
+   ],
+   "classement": [
+    {
+     "rang": 1,
+     "ids": [
+      "3126"
+     ],
+     "ref": "http://sports.core.api.espn.com/v2/sports/tennis/athletes/3126?lang=en&region=us"
+    },
+    {
+     "rang": 2,
+     "ids": [
+      "3038"
+     ],
+     "ref": "http://sports.core.api.espn.com/v2/sports/tennis/athletes/3038?lang=en&region=us"
+    }
+   ]
+  }
+ },
  "players": 1293,
- "ranked_players": 0,
+ "ranked_players": 153,
  "odds_events": 19,
  "upcoming_matches": 15,
  "unmatched_names": []
