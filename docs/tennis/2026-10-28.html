@@ -95,11 +95,56 @@ padding:9px 16px;border-radius:999px;border:1px solid var(--line);background:var
 .tourn{font:700 16px/1.2 var(--num);letter-spacing:.02em;margin:18px 0 2px;color:var(--accent)}
 .tourn:first-child{margin-top:0}.tourn span{font:500 12px Inter,sans-serif;color:var(--muted);margin-left:6px}
 .rk{color:var(--muted);font-size:12px;margin-left:4px}
+
+.pickgrp{font:700 16px/1.2 var(--num);letter-spacing:.02em;color:var(--accent);margin:16px 0 6px}
+.pickgrp:first-child{margin-top:0}
+.pm{padding:10px 0;border-top:1px solid var(--line)}.pickgrp+.pm{border-top:0}
+.pm .meta{display:flex;justify-content:space-between;gap:8px;font-size:12px;color:var(--muted);margin-bottom:6px}
+.sides{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.side{font:inherit;text-align:left;cursor:pointer;border:1.5px solid var(--line);background:var(--soft);
+color:var(--ink);border-radius:10px;padding:9px 11px;display:flex;justify-content:space-between;gap:8px;align-items:center}
+.side b{font:700 18px/1 var(--num)}.side span{font-size:14px;overflow-wrap:anywhere}
+.side:hover{border-color:var(--muted)}
+.side.on{border-color:var(--go);background:var(--go-bg)}.side.on b{color:var(--go)}
+.side.fav span{font-weight:600}
+.slip{position:sticky;bottom:12px;z-index:5;border:2px solid var(--go);box-shadow:0 8px 30px rgba(0,0,0,.18);margin-top:16px}
+.slip-head{display:flex;align-items:center;gap:8px}.slip-head .btn{margin-left:auto}
+.slip .row{display:flex;flex-wrap:wrap;gap:10px;align-items:end}
+.slip label{display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--muted);flex:1;min-width:120px}
+input,select{font:inherit;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:10px;padding:9px 10px}
+input:focus,select:focus,button:focus-visible,a.btn:focus-visible{outline:2px solid var(--info);outline-offset:1px}
+.btn{font:600 14px Inter,sans-serif;cursor:pointer;border-radius:10px;padding:10px 14px;border:1px solid var(--line);
+background:var(--card);color:var(--ink);text-decoration:none;display:inline-block}
+.btn.main{background:var(--go);border-color:var(--go);color:#fff}.btn.main:disabled{opacity:.45;cursor:not-allowed}
+.btn.ghost{background:none}.btn.small{padding:5px 10px;font-size:13px}
+.legs{margin:8px 0 10px;padding:0;list-style:none;font-size:14px}
+.legs li{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:3px 0}
+.legs li .x{border:0;background:none;color:var(--muted);cursor:pointer;font-size:15px;padding:2px 6px}
+.tot{font:700 26px/1 var(--num)}
+.bets{width:100%;border-collapse:collapse;font-size:14px}
+.bets th,.bets td{text-align:left;padding:10px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+.bets th{font-size:12px;color:var(--muted);font-weight:600}
+.bets td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
+.pos{color:var(--go);font-weight:700}.neg{color:var(--no);font-weight:700}
+.sel{font-size:13px}.sel div{padding:1px 0}
+.empty{color:var(--muted);font-size:14px;padding:6px 0}
+.tools{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.note{font-size:12px;color:var(--muted);margin-top:10px}
+.mrow{display:flex;flex-wrap:wrap;gap:10px;align-items:end}
+.mrow label{display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--muted);flex:1;min-width:110px}
+.mrow label.w{flex:2;min-width:180px}
+.toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:var(--ink);color:var(--bg);
+padding:10px 16px;border-radius:10px;font-size:14px;opacity:0;transition:opacity .2s;pointer-events:none;z-index:9}
+.toast.show{opacity:1;pointer-events:auto}.toast a,.toast button{color:inherit}
+@media (max-width:600px){.sides{grid-template-columns:1fr}
+.bets thead{display:none}.bets,.bets tbody,.bets tr,.bets td{display:block}
+.bets tr{border-bottom:1px solid var(--line);padding:10px 0}.bets td{border:0;padding:2px 0}
+.bets td[data-l]::before{content:attr(data-l);color:var(--muted);font-size:12px;margin-right:6px}}
 </style></head><body><main>
 <nav class="tabs"><a class="" href="../index.html">NBA</a><a class="cur" href="../tennis.html">Tennis</a><a class="" href="../mes-paris.html">Mes paris</a></nav>
 <header class="top"><div class="kicker">Pronostic tennis · ATP + WTA</div>
 <h1>Tennis — Mercredi 28 octobre</h1>
-<p class="sub">Analyse du mercredi 28/10 à 21:46 (Paris) · matchs des 30 prochaines heures
+<p class="sub">Analyse du mercredi 28/10 à 21:54 (Paris) · matchs des 30 prochaines heures
 · tournois : ATP Swiss Indoors Basel, ATP Vienna Open, WTA Pan Pacific Open</p>
 <div class="counts"><div class="count"><b>16</b><span>matchs avec cote</span></div>
 <div class="count go"><b>6</b><span>passent les contrôles</span></div>
@@ -223,6 +268,7 @@ padding:9px 16px;border-radius:999px;border:1px solid var(--line);background:var
 <li>Pas de forfait annoncé juste avant le match</li>
 <li>Heure de passage confirmée (au tennis, les matchs « à suivre » peuvent glisser)</li></ul></div>
 <h2>Jours précédents</h2><div class="archives"><a href="../tennis.html">Aujourd'hui</a><a class="cur" href="../tennis/2026-10-28.html">Mercredi 28 octobre</a></div>
+
 <footer>Outil d'aide à la décision : aucune analyse ne garantit un résultat. Joue une mise fixe et raisonnable.<br>
 Joueurs Info Service : 09 74 75 13 13 (appel non surtaxé). Source : The Odds API + ESPN.</footer>
 </main></body></html>
