@@ -1,61 +1,152 @@
 <!doctype html><html lang="fr"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Analyse NBA du jour</title><style>
-:root{--bg:#f6f5f2;--card:#fff;--ink:#1b1d21;--muted:#6b6f76;--line:#e4e2dc;
---ok:#1f7a4d;--ok-bg:#e6f3ec;--ko:#b3261e;--ko-bg:#fbeaea;--warn:#8a5a00;--warn-bg:#fdf3dc;--accent:#c8102e}
-@media (prefers-color-scheme:dark){:root{--bg:#121316;--card:#1c1e22;--ink:#ececec;--muted:#9a9ea6;
---line:#2c2f35;--ok:#5fd09a;--ok-bg:#16301f;--ko:#ff8a80;--ko-bg:#3a1a1a;--warn:#f0c060;--warn-bg:#3a2d10;--accent:#ff5470}}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
-font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-main{max-width:860px;margin:0 auto;padding:20px 16px 48px}
-header h1{font-size:22px;margin:0 0 4px}header p{margin:0;color:var(--muted);font-size:13px}
-h2{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:28px 0 10px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:12px}
-.combo{border:2px solid var(--accent)}
-.total{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
-.total b{font-size:34px;color:var(--accent);font-variant-numeric:tabular-nums}
-.pick h3{margin:0;font-size:17px}.meta{color:var(--muted);font-size:13px}
-.odds{float:right;font-size:22px;font-weight:700;font-variant-numeric:tabular-nums}
-ul{margin:8px 0 0;padding-left:0;list-style:none}li{padding:3px 0;font-size:14px}
-li .n{display:inline-block;min-width:160px;font-weight:600}
-.ok::before{content:"✓ ";color:var(--ok);font-weight:700}
-.wa{background:var(--warn-bg);color:var(--warn);border-radius:6px;padding:4px 8px;margin-top:4px}
-.empty{background:var(--warn-bg);color:var(--warn)}
-table{width:100%;border-collapse:collapse;font-size:14px}
-th,td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--line);vertical-align:top}
-th{color:var(--muted);font-weight:600;font-size:12px}td{overflow-wrap:break-word}
-details{margin-top:8px}summary{cursor:pointer;font-size:14px;font-weight:600;color:var(--muted)}td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
-.tag{display:inline-block;border-radius:999px;padding:1px 8px;font-size:12px;font-weight:600}
-.tag.v{background:var(--ok-bg);color:var(--ok)}.tag.r{background:var(--ko-bg);color:var(--ko)}
-.tag.m{background:var(--warn-bg);color:var(--warn)}
-.total small{color:var(--muted);font-size:13px}
-.sum{margin:10px 0 4px;font-size:15px}
-.sec h4{margin:12px 0 0;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
-.sec ul{margin-top:4px}.plus::before{content:"+ ";color:var(--ok);font-weight:700}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:0 20px}
-@media (max-width:600px){.grid{grid-template-columns:1fr}}
-.why{color:var(--muted);font-size:13px;display:block;margin-top:2px}
-.check li::before{content:"☐ ";color:var(--muted)}
-nav a{color:var(--ink);margin-right:12px;font-size:14px}
-footer{color:var(--muted);font-size:12px;margin-top:32px}
-@media (max-width:600px){.hide-sm{display:none}li .n{min-width:0;margin-right:6px}
-main{padding:16px 12px 40px}
-table,tbody,tr,td{display:block}thead{display:none}
-tr{position:relative;padding:10px 0 10px 52px;border-bottom:1px solid var(--line)}tr:last-child{border:0}
-td{border:0;padding:1px 0}td.t{position:absolute;left:0;top:10px;font-weight:600}
-td.mt br{display:none}td.mt{font-weight:600}
-td[data-l]::before{content:attr(data-l);color:var(--muted)}}
+<title>Pronostic NBA</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><style>
+:root{--bg:#f3f1ec;--card:#fff;--ink:#16181d;--muted:#646a73;--line:#e2ded5;--soft:#f7f5f0;
+--go:#13795b;--go-bg:#e3f4ec;--info:#1d5fbf;--info-bg:#e4eefb;--no:#b3261e;--no-bg:#fbe9e7;
+--warn:#8a5300;--warn-bg:#fdf1d8;--off:#6b7079;--off-bg:#eceae5;--accent:#e8590c;
+--num:"Barlow Condensed",system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#101216;--card:#1a1d22;--ink:#eceef1;
+--muted:#9aa1ab;--line:#2b2f36;--soft:#20242a;--go:#4cd19a;--go-bg:#123326;--info:#7fb0ff;--info-bg:#15263f;
+--no:#ff8f85;--no-bg:#3a1916;--warn:#f2bf5e;--warn-bg:#382a10;--off:#9aa1ab;--off-bg:#262a30;--accent:#ff7a33}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:880px;margin:0 auto;padding:0 16px 56px}
+a{color:inherit}
+.top{padding:28px 0 18px}
+.kicker{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+h1{font:700 34px/1.05 var(--num);margin:6px 0 6px;letter-spacing:.01em}
+.sub{color:var(--muted);font-size:13px;margin:0}
+.counts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px}
+.count{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.count b{display:block;font:700 28px/1 var(--num)}.count span{font-size:12px;color:var(--muted)}
+.count.go b{color:var(--go)}.count.no b{color:var(--no)}
+h2{font:700 22px/1.1 var(--num);margin:34px 0 4px;letter-spacing:.01em}
+.h2sub{color:var(--muted);font-size:13px;margin:0 0 12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;margin-bottom:12px}
+.verdict.go{border:2px solid var(--go)}
+.verdict.none{border:2px dashed var(--line)}
+.chip{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:3px 10px;
+font-size:12px;font-weight:700;letter-spacing:.02em;white-space:nowrap}
+.chip.go{background:var(--go-bg);color:var(--go)}.chip.info{background:var(--info-bg);color:var(--info)}
+.chip.no{background:var(--no-bg);color:var(--no)}.chip.off{background:var(--off-bg);color:var(--off)}
+.chip.warn{background:var(--warn-bg);color:var(--warn)}
+.verdict h3{font:700 26px/1.1 var(--num);margin:10px 0 14px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}
+.stat{background:var(--soft);border-radius:12px;padding:10px 12px}
+.stat span{display:block;font-size:12px;color:var(--muted)}
+.stat b{font:700 30px/1.1 var(--num)}.stat.big b{color:var(--go)}
+.leg{display:flex;align-items:center;gap:12px;padding:12px 0;border-top:1px solid var(--line)}
+.leg .who{flex:1;min-width:0}.leg .who b{display:block;font-size:16px}
+.leg .who span{color:var(--muted);font-size:13px}
+.pill{font:700 22px/1 var(--num);background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:8px 10px}
+.badge{flex:none;width:44px;height:44px;border-radius:12px;display:grid;place-items:center;
+font:700 15px/1 var(--num);letter-spacing:.03em}
+.badge.sm{width:34px;height:34px;border-radius:9px;font-size:13px}
+.why{font-size:15px;margin:4px 0 0}
+.reasons{margin:14px 0 0;padding:0;list-style:none}
+.reasons li{padding:4px 0 4px 24px;position:relative;font-size:14px}
+.reasons li::before{position:absolute;left:0;top:4px;font-weight:700}
+.reasons.plus li::before{content:"✓";color:var(--go)}
+.reasons.risk li::before{content:"!";color:var(--warn);left:6px}
+.reasons.ctrl li::before{content:"✓";color:var(--go)}
+.reasons.ctrl b{font-weight:600}
+.lbl{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:16px 0 0}
+.head{display:flex;align-items:flex-start;gap:12px}.head .who{flex:1}
+.head h3{margin:0;font-size:18px}.head p{margin:2px 0 0;color:var(--muted);font-size:13px}
+.meter{display:inline-flex;gap:3px;vertical-align:middle;margin-left:4px}
+.meter i{width:14px;height:6px;border-radius:3px;background:var(--line)}.meter i.on{background:var(--go)}
+details{margin-top:12px;border-top:1px solid var(--line);padding-top:10px}
+summary{cursor:pointer;font-weight:600;font-size:14px;color:var(--info);list-style:none}
+summary::-webkit-details-marker{display:none}summary::before{content:"▸ ";}
+details[open] summary::before{content:"▾ "}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:4px 24px}
+.grid h4{margin:12px 0 2px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.grid ul{margin:0;padding-left:16px;font-size:14px}
+.game{display:grid;grid-template-columns:54px 1fr auto;gap:4px 12px;padding:14px 0;border-top:1px solid var(--line)}
+.game:first-child{border-top:0;padding-top:0}
+.time{font:700 20px/1.2 var(--num)}.time small{display:block;font:500 11px Inter,sans-serif;color:var(--muted)}
+.teams{min-width:0}
+.team{display:flex;align-items:center;gap:10px;padding:3px 0}
+.team .nm{flex:1;min-width:0;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.team .nm em{font-style:normal;color:var(--muted);font-size:12px}
+.team .od{font:700 18px/1 var(--num);min-width:40px;text-align:right;color:var(--muted)}
+.team.fav .nm{font-weight:600}.team.fav .od{color:var(--ink)}
+.status{text-align:right}
+.reason{grid-column:2/4;font-size:13px;color:var(--muted);margin-top:2px}
+.reason b{color:var(--ink);font-weight:600}
+.legend{display:grid;gap:10px;margin:12px 0 0;padding:0;list-style:none}
+.legend li{display:flex;gap:10px;align-items:flex-start;font-size:14px}
+.legend .chip{min-width:92px;justify-content:center}
+.check{margin:0;padding:0;list-style:none}.check li{padding:5px 0 5px 28px;position:relative}
+.check li::before{content:"";position:absolute;left:0;top:7px;width:16px;height:16px;border:2px solid var(--muted);border-radius:4px}
+.archives{display:flex;flex-wrap:wrap;gap:8px}
+.archives a{text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:13px}
+.archives a.cur{border-color:var(--accent);color:var(--accent);font-weight:600}
+footer{color:var(--muted);font-size:12px;margin-top:36px;line-height:1.6}
+@media (max-width:600px){h1{font-size:28px}.stats{grid-template-columns:1fr 1fr}.stat.big{grid-column:1/3}
+.grid{grid-template-columns:1fr}.game{grid-template-columns:52px 1fr;gap:4px 8px}.status{grid-column:2;text-align:left}
+.time{font-size:18px}.team .nm{white-space:normal}
+.reason{grid-column:2}.counts b{font-size:24px}}
 </style></head><body><main>
-<header><h1>Analyse NBA — mercredi 28 octobre 2026</h1>
-<p>Mis à jour à 01:20 (Paris) · The Odds API + ESPN · début de saison (seuils assouplis)</p>
-<p>1 matchs analysés · 0 validés · 1 rejetés</p></header>
-<h2>Sélection</h2><div class="card empty"><b>Aucun pari aujourd'hui.</b> Aucun match ne passe tous les filtres : on ne force pas.</div><h2>Toutes les cotes du jour (1 matchs)</h2><div class='card'><table><thead><tr><th>Heure</th><th>Match</th><th>Unibet ext. / dom.</th><th class='hide-sm'>Marché</th><th>Analyse</th></tr></thead><tbody><tr><td class='num t'>04:10</td><td class='mt'>Portland Trail Blazers <br>@ Los Angeles Lakers</td><td class='num' data-l='Unibet ext. / dom. : '>1.92 / 1.72</td><td class='num hide-sm'>2.08 / 1.83</td><td><span class="tag r">Rejeté</span><span class="why">Forme dom./ext. : Données insuffisantes : 2 match(s) à domicile cette saison (3 requis)</span></td></tr></tbody></table></div>
-<h2>Avant de jouer sur Unibet</h2><div class="card"><ul class="check">
-<li>La cote totale affichée ne dépasse pas 1.80</li>
-<li>Marché « Face à face », prolongations incluses</li>
-<li>Rapport de blessures NBA revérifié ~30 min avant le match</li>
-<li>Aucune annonce de repos de dernière minute</li></ul></div>
-<h2>Jours précédents</h2><nav><a href="../index.html">Dernière analyse</a><a href="../archive/2026-10-28.html">2026-10-28</a><a href="../archive/2026-10-27.html">2026-10-27</a><a href="../archive/2026-10-26.html">2026-10-26</a></nav>
-<footer>Outil d'aide à la décision : aucun filtre ne garantit un résultat. Mise fixe et raisonnable.
-Joueurs Info Service : 09 74 75 13 13.</footer>
+<header class="top"><div class="kicker">Pronostic NBA · aide à la décision</div>
+<h1>Nuit du mercredi 28 au jeudi 29 octobre</h1>
+<p class="sub">Analyse du mercredi 28/10 à 17:43 (Paris) · heures des matchs à l'heure de Paris</p>
+<div class="counts"><div class="count"><b>12</b><span>matchs au programme</span></div>
+<div class="count go"><b>0</b><span>passent les contrôles</span></div>
+<div class="count no"><b>12</b><span>écartés</span></div></div>
+</header>
+<h2>Le pari du soir</h2><div class="card verdict none"><span class="chip off">PAS DE PARI</span>
+<h3>Ce soir, on ne joue pas</h3>
+<p class="why">Aucun match ne passe tous les filtres : on ne force pas. Ne pas parier fait aussi partie de la stratégie :
+le bot ne propose un match que s'il passe tous les contrôles.</p><p class="lbl">Pourquoi les matchs ont été écartés</p><ul class="reasons risk"><li><b>7 matchs</b> : pas assez de matchs joués</li><li><b>2 matchs</b> : cote trop basse</li><li><b>2 matchs</b> : fatigue</li><li><b>1 match</b> : match piège</li></ul></div>
+
+<h2>Programme de la nuit</h2><p class="h2sub">Cotes Unibet de chaque équipe · le favori est en gras.</p>
+<div class="card"><div class="game"><div class="time">00:00<small>Paris</small></div>
+<div class="teams"><div class="team"><span class="badge sm" style="background:#98002e;color:#fff">MIA</span><span class="nm">Miami Heat</span><span class="od">2.00</span></div><div class="team fav"><span class="badge sm" style="background:#c8102e;color:#fff">ATL</span><span class="nm">Atlanta Hawks <em>dom.</em></span><span class="od">1.67</span></div></div>
+<div class="status"><span class="chip no">ÉCARTÉ</span></div><div class="reason"><b>Match piège</b> — Le favori a un gros choc juste après et risque de se ménager. Choc contre Cavaliers (contender) dans 25 h</div></div><div class="game"><div class="time">00:00<small>Paris</small></div>
+<div class="teams"><div class="team"><span class="badge sm" style="background:#e31837;color:#fff">WSH</span><span class="nm">Washington Wizards</span><span class="od">3.65</span></div><div class="team fav"><span class="badge sm" style="background:#860038;color:#fff">CLE</span><span class="nm">Cleveland Cavaliers <em>dom.</em></span><span class="od">1.21</span></div></div>
+<div class="status"><span class="chip no">ÉCARTÉ</span></div><div class="reason"><b>Cote trop basse</b> — Favori à 1.21 : le gain serait trop faible pour le risque.</div></div><div class="game"><div class="time">00:00<small>Paris</small></div>
+<div class="teams"><div class="team"><span class="badge sm" style="background:#008ca8;color:#fff">CHA</span><span class="nm">Charlotte Hornets</span><span class="od">3.05</span></div><div class="team fav"><span class="badge sm" style="background:#1d428a;color:#fff">DET</span><span class="nm">Detroit Pistons <em>dom.</em></span><span class="od">1.30</span></div></div>
+<div class="status"><span class="chip no">ÉCARTÉ</span></div><div class="reason"><b>Pas assez de matchs joués</b> — Trop tôt dans la saison pour juger la forme. Données insuffisantes : 1 match(s) à domicile cette saison (3 requis)</div></div><div class="game"><div class="time">00:00<small>Paris</small></div>
+<div class="teams"><div class="team fav"><span class="badge sm" style="background:#1d428a;color:#fff">PHI</span><span class="nm">Philadelphia 76ers</span><span class="od">1.47</span></div><div class="team"><span class="badge sm" style="background:#0c2340;color:#fff">IND</span><span class="nm">Indiana Pacers <em>dom.</em></span><span class="od">2.55</span></div></div>
+<div class="status"><span class="chip no">ÉCARTÉ</span></div><div class="reason"><b>Pas assez de matchs joués</b> — Trop tôt dans la saison pour juger la forme. Données insuffisantes : 1 match(s) à l&#x27;extérieur cette saison (3 requis)</div></div><div class="game"><div class="time">00:30<small>Paris</small></div>
+<div class="teams"><div class="team"><span class="badge sm" style="background:#0150b5;color:#fff">ORL</span><span class="nm">Orlando Magic</span><span class="od">2.35</span></div><div class="team fav"><span class="badge sm" style="background:#d91244;color:#fff">TOR</span><span class="nm">Toronto Raptors <em>dom.</em></span><span class="od">1.48</span></div></div>
+<div class="status"><span class="chip no">ÉCARTÉ</span></div><div class="reason"><b>Pas assez de matchs joués</b> — Trop tôt dans la saison pour juger la forme. Données insuffisantes : 1 match(s) à domicile cette saison (3 requis)</div></div><div class="game"><div class="time">01:00<small>Paris</small></div>
+<div class="teams"><div class="team fav"><span class="badge sm" style="background:#1d428a;color:#fff">NY</span><span class="nm">New York Knicks</span><span class="od">1.33</span></div><div class="team"><span class="badge sm" style="background:#ce1141;color:#fff">CHI</span><span class="nm">Chicago Bulls <em>dom.</em></span><span class="od">2.90</span></div></div>
+<div class="status"><span class="chip no">ÉCARTÉ</span></div><div class="reason"><b>Fatigue</b> — Deuxième match en 24 h, à l&#x27;extérieur. 2e match en ~24 h ET à l&#x27;extérieur (veille vs Pistons)</div></div><div class="game"><div class="time">01:00<small>Paris</small></div>
+<div class="teams"><div class="team fav"><span class="badge sm" style="background:#ce0e2d;color:#fff">HOU</span><span class="nm">Houston Rockets</span><span class="od">1.25</span></div><div class="team"><span class="badge sm" style="background:#00471b;color:#fff">MIL</span><span class="nm">Milwaukee Bucks <em>dom.</em></span><span class="od">3.35</span></div></div>
+<div class="status"><span class="chip no">ÉCARTÉ</span></div><div class="reason"><b>Pas assez de matchs joués</b> — Trop tôt dans la saison pour juger la forme. Données insuffisantes : 2 match(s) à l&#x27;extérieur cette saison (3 requis)</div></div><div class="game"><div class="time">01:00<small>Paris</small></div>
+<div class="teams"><div class="team"><span class="badge sm" style="background:#fdb927;color:#111">GS</span><span class="nm">Golden State Warriors</span><span class="od">2.40</span></div><div class="team fav"><span class="badge sm" style="background:#266092;color:#fff">MIN</span><span class="nm">Minnesota Timberwolves <em>dom.</em></span><span class="od">1.53</span></div></div>
+<div class="status"><span class="chip no">ÉCARTÉ</span></div><div class="reason"><b>Pas assez de matchs joués</b> — Trop tôt dans la saison pour juger la forme. Données insuffisantes : 1 match(s) à domicile cette saison (3 requis)</div></div><div class="game"><div class="time">01:00<small>Paris</small></div>
+<div class="teams"><div class="team fav"><span class="badge sm" style="background:#0e2240;color:#fff">DEN</span><span class="nm">Denver Nuggets</span><span class="od">1.47</span></div><div class="team"><span class="badge sm" style="background:#0a2240;color:#fff">NO</span><span class="nm">New Orleans Pelicans <em>dom.</em></span><span class="od">2.40</span></div></div>
+<div class="status"><span class="chip no">ÉCARTÉ</span></div><div class="reason"><b>Pas assez de matchs joués</b> — Trop tôt dans la saison pour juger la forme. Données insuffisantes : 1 match(s) à l&#x27;extérieur cette saison (3 requis), et bilan 0V-1D</div></div><div class="game"><div class="time">02:00<small>Paris</small></div>
+<div class="teams"><div class="team fav"><span class="badge sm" style="background:#000000;color:#fff">SA</span><span class="nm">San Antonio Spurs</span><span class="od">1.13</span></div><div class="team"><span class="badge sm" style="background:#4e008e;color:#fff">UTAH</span><span class="nm">Utah Jazz <em>dom.</em></span><span class="od">4.65</span></div></div>
+<div class="status"><span class="chip no">ÉCARTÉ</span></div><div class="reason"><b>Cote trop basse</b> — Favori à 1.13 : le gain serait trop faible pour le risque.</div></div><div class="game"><div class="time">02:30<small>Paris</small></div>
+<div class="teams"><div class="team fav"><span class="badge sm" style="background:#007ac1;color:#fff">OKC</span><span class="nm">Oklahoma City Thunder</span><span class="od">1.40</span></div><div class="team"><span class="badge sm" style="background:#0064b1;color:#fff">DAL</span><span class="nm">Dallas Mavericks <em>dom.</em></span><span class="od">2.60</span></div></div>
+<div class="status"><span class="chip no">ÉCARTÉ</span></div><div class="reason"><b>Pas assez de matchs joués</b> — Trop tôt dans la saison pour juger la forme. Données insuffisantes : 1 match(s) à l&#x27;extérieur cette saison (3 requis)</div></div><div class="game"><div class="time">03:30<small>Paris</small></div>
+<div class="teams"><div class="team fav"><span class="badge sm" style="background:#552583;color:#fff">LAL</span><span class="nm">Los Angeles Lakers</span><span class="od">1.51</span></div><div class="team"><span class="badge sm" style="background:#12173f;color:#fff">LAC</span><span class="nm">LA Clippers <em>dom.</em></span><span class="od">2.30</span></div></div>
+<div class="status"><span class="chip no">ÉCARTÉ</span></div><div class="reason"><b>Fatigue</b> — Deuxième match en 24 h, à l&#x27;extérieur. 2e match en ~24 h ET à l&#x27;extérieur (veille vs Blazers)</div></div><details><summary>Comment lire cette page</summary>
+<ul class="legend">
+<li><span class="chip go">À JOUER</span><span>Le pari proposé ce soir : 1 ou 2 matchs, cote totale de 1,80 au maximum.</span></li>
+<li><span class="chip info">VALIDÉ</span><span>Le match passe tous les contrôles mais n'a pas été retenu dans le pari.</span></li>
+<li><span class="chip no">ÉCARTÉ</span><span>Au moins un contrôle a échoué : la raison est écrite en dessous.</span></li>
+<li><span class="chip off">EN ATTENTE</span><span>Unibet n'a pas encore publié de cote : le match sera analysé au prochain passage.</span></li>
+</ul>
+<p class="lbl">Les contrôles appliqués au favori</p>
+<ul class="reasons ctrl">
+<li><b>Cote</b> — entre 1.25 et 1.80, et pas de hausse suspecte avant le match.</li>
+<li><b>Fatigue</b> — pas de 2e match en 24 h à l'extérieur, pas de 3e match d'affilée en déplacement.</li>
+<li><b>Match piège</b> — pas de gros choc prévu dans les 48 h qui suivent.</li>
+<li><b>Forme</b> — bon bilan récent à domicile ou à l'extérieur, outsider pas en meilleure forme.</li>
+<li><b>Blessures</b> — star et titulaires majeurs disponibles.</li>
+<li><b>Fin de saison</b> — pas d'équipe du bas de tableau en mars ou avril.</li>
+</ul></details></div>
+<h2>Avant de valider sur Unibet</h2><div class="card"><ul class="check">
+<li>La cote totale affichée sur Unibet ne dépasse pas 1.80</li>
+<li>Pari « Face à face » (vainqueur du match, prolongations incluses)</li>
+<li>Blessures revérifiées environ 30 minutes avant le match</li>
+<li>Pas d'annonce de repos de dernière minute pour les joueurs clés</li></ul></div>
+<h2>Nuits précédentes</h2><div class="archives"><a href="../index.html">Prochaine nuit</a><a class="cur" href="../archive/2026-10-28.html">Nuit du mer. 28/10</a><a class="" href="../archive/2026-10-27.html">Nuit du mar. 27/10</a><a class="" href="../archive/2026-10-26.html">Nuit du lun. 26/10</a></div>
+<footer>Outil d'aide à la décision : aucune analyse ne garantit un résultat. Joue une mise fixe et raisonnable.<br>
+Joueurs Info Service : 09 74 75 13 13 (appel non surtaxé). Source : The Odds API + ESPN.</footer>
 </main></body></html>
