@@ -1,0 +1,18 @@
+{
+ "created": "2026-10-28T20:24:22.907452+00:00",
+ "created_label": "mercredi 28/10 à 21:24",
+ "kind": "Pari simple",
+ "total": 1.27,
+ "prob": 0.731,
+ "legs": [
+  {
+   "event_id": "704555fd36bea990169b89857cf51075",
+   "pick": "Lorenzo Musetti",
+   "opponent": "Arthur Fery",
+   "odds": 1.27,
+   "tournament": "ATP Vienna Open",
+   "commence": "2026-10-29T16:00:00+00:00",
+   "time": "29/10 17:00"
+  }
+ ]
+}

@@ -1,0 +1,21 @@
+{
+ "generated_at": "2026-10-28T20:24:22.907452+00:00",
+ "espn_matches": {
+  "atp": 5971,
+  "wta": 7752
+ },
+ "rankings": {
+  "atp": 150,
+  "wta": 150
+ },
+ "tournaments": [
+  "tennis_atp_swiss_indoors",
+  "tennis_atp_vienna_open",
+  "tennis_wta_pan_pacific_open"
+ ],
+ "players": 1293,
+ "ranked_players": 0,
+ "odds_events": 19,
+ "upcoming_matches": 15,
+ "unmatched_names": []
+}
