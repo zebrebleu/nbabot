@@ -95,6 +95,23 @@ def f_line_movement(e: Evaluation, ctx: FilterContext) -> FilterResult:
                         f"Cote {trend} sur {observed_min / 60:.1f} h : {open_pick:.2f} → {e.odds:.2f}")
 
 
+def f_season_start(e: Evaluation, ctx: FilterContext) -> FilterResult:
+    """Blocage de début de saison : chaque équipe doit avoir joué SEASON_MIN_GAMES matchs."""
+    need = config.SEASON_MIN_GAMES
+    t = e.matchup.commence_time
+    gp, go = len(e.pick.completed_before(t)), len(e.opponent.completed_before(t))
+    e.metrics.update(games_pick=gp, games_opp=go)
+    if need and min(gp, go) < need:
+        detail = (f"{e.pick.name} : {gp} match(s) joué(s), {e.opponent.name} : {go} "
+                  f"({need} requis pour chaque équipe)")
+        if config.EARLY_SEASON_ALLOW_BETS and ctx.thresholds is config.EARLY_SEASON:
+            return FilterResult("Début de saison", True,
+                                f"Peu de matchs joués, analyse moins fiable — {detail}", warning=True)
+        return FilterResult("Début de saison", False, detail)
+    return FilterResult("Début de saison", True,
+                        f"Assez de recul : {gp} et {go} matchs joués" if need else "Blocage désactivé")
+
+
 # ---------------------------------------------------------------------------
 # 2. Calendrier & fatigue
 # ---------------------------------------------------------------------------
@@ -255,6 +272,7 @@ def f_anti_tanking(e: Evaluation, ctx: FilterContext) -> FilterResult:
 
 
 FILTERS: list[Callable[[Evaluation, FilterContext], FilterResult]] = [
+    f_season_start,
     f_odds_range,
     f_line_movement,
     f_back_to_back,

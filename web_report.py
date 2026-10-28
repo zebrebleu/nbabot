@@ -154,6 +154,8 @@ def plain_reason(e: Evaluation) -> tuple[str, str]:
     insufficient = "insuffisantes" in txt
     if r.name == "Statut":
         return txt, "L'analyse a été faite avant le coup d'envoi."
+    if r.name == "Début de saison":
+        return "Pause début de saison", f"Pas de pronostic avant {config.SEASON_MIN_GAMES} matchs joués. {txt}."
     if r.name == "Cote":
         if e.pick is None:
             return "Pas encore de cote Unibet", "Unibet n'a pas encore ouvert les paris sur ce match."
@@ -177,7 +179,35 @@ def plain_reason(e: Evaluation) -> tuple[str, str]:
 # ---------------------------------------------------------------------------
 # Blocs
 # ---------------------------------------------------------------------------
-def _verdict(bet, passed: list[Evaluation], rejected: list[Evaluation]) -> str:
+def season_pause(evaluations: list[Evaluation], now: datetime):
+    """Si tous les matchs analysables sont bloqués par le début de saison :
+    (matchs joués min, max, date estimée de reprise). Sinon None."""
+    need = config.SEASON_MIN_GAMES
+    analysable = [e for e in evaluations if e.pick is not None]
+    if not need or not analysable or not all(
+            e.rejections and e.rejections[0].name == "Début de saison" for e in analysable):
+        return None
+    played = [e.metrics.get(k, 0) for e in analysable for k in ("games_pick", "games_opp")]
+    lo, hi = min(played), max(played)
+    typical = sorted(played)[len(played) // 2]
+    days = max(0.0, (need - typical) / config.GAMES_PER_WEEK * 7)
+    from datetime import timedelta
+    return lo, hi, (now + timedelta(days=days)).astimezone(TZ).date()
+
+
+def _verdict(bet, passed: list[Evaluation], rejected: list[Evaluation], pause=None) -> str:
+    if not bet and pause:
+        lo, hi, eta = pause
+        from analyzer import MOIS
+        return f"""<div class="card verdict none"><span class="chip warn">PAUSE DÉBUT DE SAISON</span>
+<h3>Pas de pronostic pour l'instant</h3>
+<p class="why">En début de saison, les équipes n'ont pas encore assez joué pour que les bilans
+soient fiables. Le bot attend que <b>chaque équipe ait joué {config.SEASON_MIN_GAMES} matchs</b>
+avant de proposer un pari.</p>
+<div class="stats"><div class="stat"><span>Matchs joués par les équipes de la nuit</span><b>{lo} à {hi}</b></div>
+<div class="stat"><span>Requis</span><b>{config.SEASON_MIN_GAMES}</b></div>
+<div class="stat big"><span>Reprise estimée</span><b>vers le {eta.day} {MOIS[eta.month - 1]}</b></div></div>
+<p class="sub">Les matchs restent affichés ci-dessous avec leurs cotes, pour suivre la saison.</p></div>"""
     if not bet:
         counts = Counter(plain_reason(e)[0] for e in rejected)
         rows = "".join(f"<li><b>{n} match{'s' if n > 1 else ''}</b> : {_e(t.lower())}</li>"
@@ -195,8 +225,12 @@ le bot ne propose un match que s'il passe tous les contrôles.</p>{detail}</div>
         legs += f"""<div class="leg">{_badge(e.pick)}<div class="who"><b>{_e(e.pick.name)} gagne</b>
 <span>contre {_e(e.opponent.name)} · {_time(e.matchup.commence_time)} · {lieu}</span></div>
 <span class="pill">{e.odds:.2f}</span></div>"""
+    early = any(r.name == "Début de saison" for e in bet.legs for r in e.warnings)
+    note = ("""<p class="why" style="margin:0 0 14px"><span class="chip warn">DÉBUT DE SAISON</span>
+Les équipes ont encore peu joué : ce pari repose surtout sur les cotes du marché.
+Confiance plafonnée à « Prudente », mise réduite conseillée.</p>""" if early else "")
     return f"""<div class="card verdict go"><span class="chip go">● À JOUER SUR UNIBET</span>
-<h3>{_e(bet.kind)}</h3>
+<h3>{_e(bet.kind)}</h3>{note}
 <div class="stats"><div class="stat big"><span>Cote totale</span><b>{bet.total:.2f}</b></div>
 <div class="stat"><span>Chances estimées</span><b>{bet.prob:.0%}</b></div>
 <div class="stat"><span>Pour 10 € misés</span><b>{_money(10 * bet.total)}</b></div></div>
@@ -251,8 +285,12 @@ def _game_row(e: Evaluation, bet_legs: list[Evaluation]) -> str:
         chip, reason = f'<span class="chip off">{_e(title.upper())}</span>', _e(m.status_detail or "")
     else:
         title, detail = plain_reason(e)
-        cls = "off" if e.pick is None else "no"
-        label = "EN ATTENTE" if e.pick is None else "ÉCARTÉ"
+        if e.pick is None:
+            cls, label = "off", "EN ATTENTE"
+        elif e.rejections[0].name == "Début de saison":
+            cls, label = "warn", "EN PAUSE"
+        else:
+            cls, label = "no", "ÉCARTÉ"
         chip, reason = f'<span class="chip {cls}">{label}</span>', f"<b>{_e(title)}</b> — {_e(detail)}"
 
     return f"""<div class="game"><div class="time">{_time(m.commence_time)}<small>Paris</small></div>
@@ -265,10 +303,13 @@ LEGEND = """<details><summary>Comment lire cette page</summary>
 <li><span class="chip go">À JOUER</span><span>Le pari proposé ce soir : 1 ou 2 matchs, cote totale de 1,80 au maximum.</span></li>
 <li><span class="chip info">VALIDÉ</span><span>Le match passe tous les contrôles mais n'a pas été retenu dans le pari.</span></li>
 <li><span class="chip no">ÉCARTÉ</span><span>Au moins un contrôle a échoué : la raison est écrite en dessous.</span></li>
+<li><span class="chip warn">EN PAUSE</span><span>Une des deux équipes a joué moins de {n} matchs (hors début de saison) : pas de pronostic.</span></li>
 <li><span class="chip off">EN ATTENTE</span><span>Unibet n'a pas encore publié de cote : le match sera analysé au prochain passage.</span></li>
 </ul>
 <p class="lbl">Les contrôles appliqués au favori</p>
 <ul class="reasons ctrl">
+<li><b>Début de saison</b> — en octobre-novembre, un pari reste possible avec peu de matchs joués
+(alerte + confiance « Prudente ») ; ensuite, {n} matchs minimum par équipe.</li>
 <li><b>Cote</b> — entre {lo} et {hi}, et pas de hausse suspecte avant le match.</li>
 <li><b>Fatigue</b> — pas de 2e match en 24 h à l'extérieur, pas de 3e match d'affilée en déplacement.</li>
 <li><b>Match piège</b> — pas de gros choc prévu dans les 48 h qui suivent.</li>
@@ -323,10 +364,11 @@ def build_html(slate: Slate, evaluations: list[Evaluation], archive_days: list[s
 <div class="count go"><b>{len(passed)}</b><span>passent les contrôles</span></div>
 <div class="count no"><b>{len(rejected) - n_pending}</b><span>écartés{f' · {n_pending} en attente' if n_pending else ''}</span></div></div>
 </header>
-<h2>Le pari du soir</h2>{_verdict(bet, passed, [e for e in rejected if e.matchup.state == 'pre'])}
+<h2>Le pari du soir</h2>{_verdict(bet, passed, [e for e in rejected if e.matchup.state == 'pre'],
+                                   season_pause(evaluations, slate.generated_at))}
 {analysis}
 <h2>Programme de la nuit</h2><p class="h2sub">Cotes Unibet de chaque équipe · le favori est en gras.</p>
-<div class="card">{games}{LEGEND.format(lo=f"{config.ODDS_MIN:.2f}", hi=f"{config.ODDS_MAX:.2f}")}</div>
+<div class="card">{games}{LEGEND.format(lo=f"{config.ODDS_MIN:.2f}", hi=f"{config.ODDS_MAX:.2f}", n=config.SEASON_MIN_GAMES)}</div>
 <h2>Avant de valider sur Unibet</h2><div class="card"><ul class="check">
 <li>La cote totale affichée sur Unibet ne dépasse pas {config.BET_MAX_ODDS:.2f}</li>
 <li>Pari « Face à face » (vainqueur du match, prolongations incluses)</li>

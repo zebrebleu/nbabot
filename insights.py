@@ -180,7 +180,7 @@ def build_insight(e: Evaluation, key_players: Optional[dict] = None) -> Insight:
         risks.append(f"{opp.name} a eu plus de repos ({_rest_label(o_rest)} contre {_rest_label(p_rest)})")
     if p_diff is not None and p_diff < 3:
         risks.append(f"Écart moyen de {pick.name} faible ({_fmt_diff(p_diff)}) : victoires souvent serrées")
-    if len(p_all) < 10:
+    if len(p_all) < 10 and not any(r.name == "Début de saison" for r in e.warnings):
         risks.append(f"Échantillon réduit : seulement {len(p_all)} matchs joués cette saison")
     if h2h and not any(g.won for g in h2h):
         risks.append(f"A perdu contre {opp.name} cette saison")
@@ -196,6 +196,8 @@ def build_insight(e: Evaluation, key_players: Optional[dict] = None) -> Insight:
         confidence = "Moyenne"
     else:
         confidence = "Prudente"
+    if any(r.name == "Début de saison" for r in e.warnings):
+        confidence = "Prudente"     # peu de matchs joués : jamais plus que prudente
 
     # --- Résumé ----------------------------------------------------------------
     summary = f"{pick.name} ({_record(p_all)}) est favori {lieu} face à {opp.name} ({_record(o_all)})."

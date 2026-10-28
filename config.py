@@ -114,9 +114,18 @@ EARLY_SEASON = SeasonThresholds(
     VENUE_FORM_GAMES=3,
     VENUE_FORM_MIN_WIN_RATE=0.6,      # 2/3
     # "reject" : une équipe sous ces minimums reste rejetée.
-    # "warn"   : elle passe ce filtre, avec une alerte "à vérifier" dans le rapport.
-    INSUFFICIENT_DATA="reject",
+    # "warn"   : elle passe ce filtre, avec une alerte "à vérifier" dans le rapport
+    #            (sauf si le peu de matchs joués est déjà négatif : là, rejet).
+    INSUFFICIENT_DATA="warn",
 )
+
+# Matchs joués minimum par équipe (SEASON_MIN_GAMES, 0 = aucun contrôle).
+#  - Pendant le début de saison (voir EARLY_SEASON_MODE) avec EARLY_SEASON_ALLOW_BETS = True :
+#    le match reste jouable, avec une alerte et une confiance plafonnée à « Prudente ».
+#  - Le reste de la saison (ou EARLY_SEASON_ALLOW_BETS = False) : aucun pronostic sur le match.
+SEASON_MIN_GAMES = 10
+EARLY_SEASON_ALLOW_BETS = True
+GAMES_PER_WEEK = 3.5            # rythme moyen d'une équipe NBA (pour estimer la reprise)
 
 # "auto" = début de saison du 1er octobre au EARLY_SEASON_END inclus ; "on" / "off" = forcé
 EARLY_SEASON_MODE = "auto"
