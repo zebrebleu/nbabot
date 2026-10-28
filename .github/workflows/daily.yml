@@ -1,9 +1,8 @@
-# Analyse la prochaine nuit NBA 4 fois par jour et publie la page sur GitHub Pages.
-# GitHub lance souvent ces tâches avec plusieurs heures de retard : d'où 4 passages.
+# Analyse NBA (4 fois par jour) et tennis (2 fois par jour) et publie le site sur GitHub Pages.
 # Heures en UTC. Paris = UTC+1 en hiver, UTC+2 en été.
-#   08:13 UTC = 09:13 Paris (hiver)   13:43 UTC = 14:43
-#   17:07 UTC = 18:07                 19:37 UTC = 20:37
-# Dès qu'un match de la nuit a commencé, l'analyse affichée est figée.
+#   08:13 UTC = 09:13 Paris -> NBA + tennis   13:43 UTC = 14:43 -> NBA
+#   17:07 UTC = 18:07       -> NBA + tennis   19:37 UTC = 20:37 -> NBA
+# Lancement manuel (Run workflow) : NBA + tennis.
 name: Analyse NBA quotidienne
 
 on:
@@ -35,16 +34,28 @@ jobs:
       - name: Installer les dépendances
         run: pip install -r requirements.txt
 
-      - name: Lancer l'analyse et générer la page
+      - name: Lancer l'analyse et générer le site
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
-        run: python main.py --html docs --no-save
+          SCHEDULE: ${{ github.event.schedule }}
+        run: |
+          case "$SCHEDULE" in
+            "13 8 * * *"|"7 17 * * *"|"") SPORT=all ;;
+            *) SPORT=nba ;;
+          esac
+          echo "Sport analysé : $SPORT"
+          python main.py --sport "$SPORT" --html docs --no-save
 
-      - name: Publier la page et l'historique des cotes
+      - name: Publier le site et l'historique
+        if: always()
         run: |
           git config user.name "nba-bot"
           git config user.email "nba-bot@users.noreply.github.com"
           git add -f docs
-          if [ -f data/odds_history.json ]; then git add -f data/odds_history.json; fi
+          for f in data/odds_history.json data/tennis_odds_history.json data/tennis_diag.json; do
+            if [ -f "$f" ]; then git add -f "$f"; fi
+          done
+          git rm -q --cached --ignore-unmatch data/tennis_bet.json 2>/dev/null || true
+          if [ -f data/tennis_bet.json ]; then git add -f data/tennis_bet.json; fi
           git diff --cached --quiet || git commit -m "Analyse du $(date -u '+%Y-%m-%d %H:%M') UTC"
           git push
