@@ -37,6 +37,7 @@ class TeamContext:
     wins: int = 0
     losses: int = 0
     league_rank: Optional[int] = None                         # 1 = meilleur bilan NBA
+    past: dict = field(default_factory=dict)                   # {saison ESPN: [TeamGame terminés]}
 
     @property
     def win_pct(self) -> float:

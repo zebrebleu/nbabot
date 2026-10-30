@@ -236,8 +236,11 @@ class ESPNTennis:
         self.http = http
 
     def season(self, tour: str, year: int) -> dict:
+        """Tous les matchs d'une année. Une année terminée ne change plus : cache longue durée."""
+        past = year < datetime.now(timezone.utc).year
         return self.http.get_json(f"{ESPN_SITE}/{tour}/scoreboard", params={"dates": str(year)},
-                                  ttl_minutes=tc.ESPN_CACHE_HOURS * 60)
+                                  ttl_minutes=60 * 24 * 60 if past else tc.ESPN_CACHE_HOURS * 60,
+                                  long_term=past)
 
     def rankings(self, tour: str, now: datetime) -> list[dict]:
         """[{rank, ids, ref, name}] — la liste du classement officiel (150 premiers environ)."""
@@ -360,7 +363,8 @@ class TennisFetcher:
         diag["tournaments"] = [s["key"] for s in sports]
 
         players: dict[str, Player] = {}
-        years = [now.year] + ([now.year - 1] if now.month <= tc.PREVIOUS_SEASON_UNTIL_MONTH else [])
+        years = [now.year - i for i in range(config.HISTORY_SEASONS + 1)]     # saison en cours + 3 précédentes
+        diag["years"] = years
         next_info = None
         seen: set = set()
         diag["ranking_match"] = {}

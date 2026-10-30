@@ -106,7 +106,7 @@ def f_surface(e: Evaluation) -> FilterResult:
     if len(ms) < tc.SURFACE_MIN_GAMES:
         return FilterResult("Surface", True, f"Peu de matchs sur {s} ({len(ms)}) : à vérifier", warning=True)
     ok = _rate(ms) >= tc.SURFACE_MIN_RATE
-    return FilterResult("Surface", ok, f"{_rec(ms)} sur {s} ({_rate(ms):.0%})")
+    return FilterResult("Surface", ok, f"{_rec(ms)} sur {s} depuis {ms[0].date.year} ({_rate(ms):.0%})")
 
 
 def f_dynamics(e: Evaluation) -> FilterResult:

@@ -183,6 +183,22 @@ BET_MIN_ODDS = 1.25           # cote totale minimale (ex. 1.50 pour écarter les
 BET_QUALITY_WEIGHT = 0.10
 MARKET_MARGIN = 0.045         # marge bookmaker retirée quand aucune cote de référence n'existe
 
+# ---------------------------------------------------------------------------
+# Mise conseillée (NBA et tennis) : part de la mise de base selon la confiance.
+# Combiné : on prend la confiance la plus basse de ses matchs.
+# ---------------------------------------------------------------------------
+BASE_STAKE = 100              # €
+STAKE_SHARE = {"Élevée": 0.40, "Moyenne": 0.25, "Prudente": 0.15}   # 40 € / 25 € / 15 €
+
+# ---------------------------------------------------------------------------
+# Historique : nombre de saisons passées chargées en plus de la saison en cours
+# ---------------------------------------------------------------------------
+HISTORY_SEASONS = 3
+LONG_CACHE_DIR = DATA_DIR / "cache_long"    # saisons terminées (conservé entre deux passages GitHub)
+
+# Adresse du site (utilisée dans les questions envoyées à Claude)
+SITE_URL = "https://zebrebleu.github.io/nbabot/"
+
 
 def validate() -> list[str]:
     """Repère les fautes de frappe dans les listes manuelles (sans bloquer le script)."""

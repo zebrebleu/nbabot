@@ -85,40 +85,24 @@ ATP/WTA.{nxt}</p></div>"""
 <p class="why">Aucun match ne passe tous les contrôles (ou aucune combinaison ne tient sous
 {tc.BET_MAX_ODDS:.2f}). Ne pas parier fait aussi partie de la stratégie.</p>
 {f'<p class="lbl">Pourquoi les matchs ont été écartés</p><ul class="reasons risk">{rows}</ul>' if rows else ''}</div>"""
-    legs = "".join(f"""<div class="leg">{_badge(e.pick)}<div class="who"><b>{_e(e.pick.name)} gagne</b>
-<span>contre {_e(e.opponent.name)} · {_e(e.matchup.tournament)} · {_time(e.matchup.commence_time)}</span></div>
-<span class="pill">{e.odds:.2f}</span></div>""" for e in bet.legs)
-    return f"""<div class="card verdict go"><span class="chip go">● À JOUER SUR UNIBET</span>
-<h3>{_e(bet.kind)}</h3>
-<div class="stats"><div class="stat big"><span>Cote totale</span><b>{bet.total:.2f}</b></div>
-<div class="stat"><span>Chances estimées</span><b>{bet.prob:.0%}</b></div>
-<div class="stat"><span>Pour 10 € misés</span><b>{_money(10 * bet.total)}</b></div></div>{legs}</div>"""
+    from web_report import bet_block
+    return bet_block(bet, "tennis", [build_insight(e) for e in bet.legs])
 
 
-def _analysis_card(e: Evaluation, opened: bool = True) -> str:
-    ins = build_insight(e)
+def _analysis_card(e: Evaluation, opened: bool = True, verdict: str = "Validé") -> str:
+    from web_report import analysis_card
     m = e.matchup
-    plus = "".join(f"<li>{_e(s)}</li>" for s in ins.strengths) or "<li>Tous les contrôles sont validés.</li>"
-    risk = "".join(f"<li>{_e(r)}</li>" for r in ins.risks)
-    grid = "".join(f"<div><h4>{_e(t)}</h4><ul>{''.join(f'<li>{_e(x)}</li>' for x in rows)}</ul></div>"
-                   for t, rows in ins.sections)
-    ctrl = "".join(f"<li><b>{_e(r.name)}</b> — {_e(r.reason)}</li>" for r in e.results)
-    body = f"""<p class="why">{_e(ins.summary)}</p>
-<p class="lbl">Ce qui joue pour lui</p><ul class="reasons plus">{plus}</ul>
-{f'<p class="lbl">À surveiller</p><ul class="reasons risk">{risk}</ul>' if risk else ''}
-<details><summary>Tous les chiffres du match</summary><div class="grid">{grid}</div></details>
-<details><summary>Contrôles de sécurité ({len(e.results)}/{len(e.results)} validés)</summary>
-<ul class="reasons ctrl">{ctrl}</ul></details>"""
-    if not opened:
-        body = f"<details><summary>Voir l'analyse</summary>{body}</details>"
-    return f"""<div class="card"><div class="head">{_badge(e.pick)}<div class="who">
-<h3>{_e(e.pick.name)} gagne · {e.odds:.2f}</h3>
-<p>contre {_e(e.opponent.name)} · {_e(m.tournament)} ({_e(m.surface)}) · {_time(m.commence_time)}</p>
-<p>Confiance : <b>{_e(ins.confidence)}</b>{_meter(ins.confidence)} · chances estimées {ins.win_prob:.0%}</p>
-</div></div>{body}</div>"""
+    sub = f"contre {_e(e.opponent.name)} · {_e(m.tournament)} ({_e(m.surface)}) · {_time(m.commence_time)}"
+    return analysis_card(e, build_insight(e), "tennis", sub, _badge(e.pick), verdict, opened)
 
 
 def _row(e: Evaluation, legs) -> str:
+    from explain import claude_url
+    from tracker_web import claude_button
+    from web_report import row_brief
+    ask = " " + claude_button(claude_url(row_brief(e, "tennis", legs, build_insight),
+                                         "Que penses-tu de ce match ? Explique simplement."),
+                              "Demander à Claude", small=True)
     m = e.matchup
     fav1 = m.unibet.home <= m.unibet.away if m.unibet else None
 
@@ -140,7 +124,7 @@ def _row(e: Evaluation, legs) -> str:
         chip, why = f'<span class="chip {cls}">{label}</span>', f"<b>{_e(title)}</b> — {_e(detail)}"
     return f"""<div class="game"><div class="time">{_time(m.commence_time)}<small>Paris</small></div>
 <div class="teams">{line(m.home, True)}{line(m.away, False)}</div>
-<div class="status">{chip}</div><div class="reason">{why}</div></div>"""
+<div class="status">{chip}</div><div class="reason">{why}{ask}</div></div>"""
 
 
 LEGEND = """<details><summary>Comment lire cette page</summary>
@@ -175,7 +159,7 @@ def build_html(slate, evaluations, bet, locked, archive_days: list[str], root: s
     analysis = ""
     if legs:
         analysis = ("<h2>Pourquoi ce choix</h2><p class='h2sub'>L'analyse détaillée de chaque match du pari.</p>"
-                    + "".join(_analysis_card(e) for e in legs))
+                    + "".join(_analysis_card(e, verdict="À jouer") for e in legs))
     others = [e for e in passed if e not in legs]
     if others:
         analysis += ("<h2>Validés mais non retenus</h2><p class='h2sub'>Alternatives si une cote change.</p>"
@@ -199,7 +183,9 @@ def build_html(slate, evaluations, bet, locked, archive_days: list[str], root: s
                            fw=tc.FATIGUE_WINDOW_HOURS, rd=tc.RETIREMENT_DAYS,
                            fr=tc.FORM_MIN_RATE, sr=tc.SURFACE_MIN_RATE)
     from tracker_web import TRACKER_CSS, picker_html, ticket_html     # « Ajouter à mes paris »
-    picker = picker_html("tennis", evaluations, legs) if root == "" else ""
+    from staking import stake_for
+    stakes = {f"tennis:{e.matchup.event_id}": stake_for(build_insight(e).confidence) for e in passed}
+    picker = picker_html("tennis", evaluations, legs, stakes) if root == "" else ""
     ticket = ticket_html(root) if root == "" else ""
 
     return f"""<!doctype html><html lang="fr"><head><meta charset="utf-8">
@@ -239,6 +225,18 @@ def write_site(slate, evaluations, bet, locked, out_dir: Path) -> Path:
     page = out_dir / "tennis.html"
     page.write_text(build_html(slate, evaluations, bet, locked, days), encoding="utf-8")
     (out_dir / ".nojekyll").write_text("", encoding="utf-8")
-    from tracker_web import write_assets                 # onglet « Mes paris » + paris.js
+    from tracker_web import write_assets, write_digest   # onglets « Mes paris » et « Chatbot »
+    from web_report import row_brief, row_line
+    legs = bet.legs if bet else []
+    items = []
+    for e in evaluations:
+        m = e.matchup
+        verdict = "À jouer" if e in legs else ("Validé" if e.passed else
+                                               ("En attente" if e.pick is None else "Écarté"))
+        items.append({"id": f"tennis:{m.event_id}", "sport": "tennis", "label": m.label,
+                      "competition": m.tournament, "time": m.commence_time.isoformat(), "verdict": verdict,
+                      "line": f"{row_line(e, 'tennis', legs)} [{m.tournament}]",
+                      "brief": row_brief(e, "tennis", legs, build_insight)})
+    write_digest("tennis", items, out_dir, slate.generated_at)
     write_assets(out_dir)
     return page

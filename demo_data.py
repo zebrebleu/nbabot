@@ -112,6 +112,21 @@ def build_demo_slate() -> Slate:
                      None, None, state="in", status_detail="3e quart-temps · 8:12",
                      home_score=71, away_score=78))
 
+    # Saisons passées fictives (3 saisons) avec quelques face-à-face
+    for mu in m:
+        for team, opp, rate in ((mu.home, mu.away, mu.home.win_pct), (mu.away, mu.home, mu.away.win_pct)):
+            for k, season in enumerate((2026, 2025, 2024)):
+                start = datetime(season - 1, 10, 25, tzinfo=timezone.utc)
+                games = []
+                for i in range(82):
+                    vs = opp.key if i in (10, 40, 70) else "adversaire"
+                    won = ((i * 7 + k * 3 + len(team.key)) % 100) < (rate * 100 - k * 5)
+                    if vs == opp.key:                       # face-à-face cohérents entre les deux équipes
+                        won = team.win_pct >= opp.win_pct if (i + k) % 3 else team.win_pct < opp.win_pct
+                    games.append(TeamGame(start + timedelta(days=2 * i), vs, i % 2 == 0, True, won,
+                                          110 + (i % 9), 104 + (i % 7)))
+                team.past[season] = games
+
     teams = sorted({t.key: t for mu in m for t in (mu.home, mu.away)}.values(),
                    key=lambda t: t.win_pct, reverse=True)
     for rank, t in enumerate(teams, 1):

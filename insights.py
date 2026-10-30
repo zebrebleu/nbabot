@@ -151,6 +151,40 @@ def build_insight(e: Evaluation, key_players: Optional[dict] = None) -> Insight:
         market.append(f"Évolution Unibet : {e.metrics['opening_odds']:.2f} → {e.odds:.2f}")
     sections.append(("Lecture du marché", market))
 
+    # --- Historique : 3 saisons précédentes ------------------------------------
+    from data_fetcher import season_label
+    seasons = sorted(set(pick.past) | set(opp.past), reverse=True)
+    h2h_all = sorted([g for s in seasons for g in pick.past.get(s, []) if g.opponent == opp.key] + h2h,
+                     key=lambda g: g.date)
+    hist_strengths, hist_risks = [], []
+    if seasons:
+        def by_season(t):
+            return " · ".join(f"{season_label(s)} {_record(t.past[s])}" for s in seasons if s in t.past) or "n.d."
+        sections.append(("Saisons précédentes", [f"{pick.name} : {by_season(pick)}",
+                                                 f"{opp.name} : {by_season(opp)}"]))
+        since = season_label(min(seasons))
+        if h2h_all:
+            w = sum(g.won for g in h2h_all)
+            last = ", ".join(f"{g.date:%m/%Y} {'V' if g.won else 'D'}"
+                             + (f" {int(g.points_for)}-{int(g.points_against)}" if g.points_for is not None else "")
+                             for g in h2h_all[-4:])
+            sections.append((f"Face-à-face depuis {since}", [f"{pick.name} {w}V-{len(h2h_all) - w}D contre {opp.name}",
+                                                              f"Derniers : {last}"]))
+            if len(h2h_all) >= 4 and w / len(h2h_all) >= 0.7:
+                hist_strengths.append(f"Domine les face-à-face : {w}-{len(h2h_all) - w} depuis {since}")
+            if len(h2h_all) >= 3 and len(h2h_all) - w > w:
+                hist_risks.append(f"Perd souvent contre {opp.name} : {w}-{len(h2h_all) - w} depuis {since}")
+        last_s = seasons[0]
+        if last_s in pick.past and last_s in opp.past:
+            rp = sum(g.won for g in pick.past[last_s]) / len(pick.past[last_s])
+            ro = sum(g.won for g in opp.past[last_s]) / len(opp.past[last_s])
+            if rp - ro >= 0.2:
+                hist_strengths.append(f"Bien meilleur la saison passée : {_record(pick.past[last_s])} "
+                                      f"contre {_record(opp.past[last_s])}")
+            elif ro - rp >= 0.15:
+                hist_risks.append(f"{opp.name} était meilleur la saison passée : {_record(opp.past[last_s])} "
+                                  f"contre {_record(pick.past[last_s])}")
+
     # --- Atouts ---------------------------------------------------------------
     strengths, risks = [], []
     if p10 and o10:
@@ -172,6 +206,7 @@ def build_insight(e: Evaluation, key_players: Optional[dict] = None) -> Insight:
         strengths.append(f"Unibet paie mieux que le marché ({prob:.0%} estimé contre {implied:.0%} implicite)")
     if h2h and all(g.won for g in h2h):
         strengths.append(f"A déjà battu {opp.name} cette saison")
+    strengths += hist_strengths
 
     # --- Points de vigilance --------------------------------------------------
     for r in e.warnings:
@@ -188,6 +223,7 @@ def build_insight(e: Evaluation, key_players: Optional[dict] = None) -> Insight:
         risks.append(f"Cote de {e.odds:.2f} : favori moins net, une défaite est plausible")
     if prob - implied <= -0.03:
         risks.append(f"Cote Unibet en dessous du marché ({implied:.0%} implicite contre {prob:.0%} estimé)")
+    risks += hist_risks
 
     # --- Confiance -------------------------------------------------------------
     if prob >= 0.72 and e.score >= 0.30 and len(risks) <= 1:

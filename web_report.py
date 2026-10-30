@@ -105,10 +105,11 @@ details[open] summary::before{content:"▾ "}
 .archives a{text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:13px}
 .archives a.cur{border-color:var(--accent);color:var(--accent);font-weight:600}
 footer{color:var(--muted);font-size:12px;margin-top:36px;line-height:1.6}
-.tabs{display:flex;gap:6px;padding-top:16px}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;padding-top:16px}
 .tabs a{text-decoration:none;font:700 15px/1 var(--num);letter-spacing:.04em;text-transform:uppercase;
 padding:9px 16px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--muted)}
 .tabs a.cur{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+@media (max-width:600px){.tabs{gap:4px}.tabs a{padding:8px 10px;font-size:13px}}
 @media (max-width:600px){h1{font-size:28px}.stats{grid-template-columns:1fr 1fr}.stat.big{grid-column:1/3}
 .grid{grid-template-columns:1fr}.game{grid-template-columns:52px 1fr;gap:4px 8px}.status{grid-column:2;text-align:left}
 .time{font-size:18px}.team .nm{white-space:normal}
@@ -133,7 +134,7 @@ def _money(x: float) -> str:
 def nav_tabs(current: str, root: str = "") -> str:
     """Onglets communs aux pages NBA et Tennis."""
     tabs = [("nba", "NBA", f"{root}index.html"), ("tennis", "Tennis", f"{root}tennis.html"),
-            ("paris", "Mes paris", f"{root}mes-paris.html")]
+            ("paris", "Mes paris", f"{root}mes-paris.html"), ("chat", "Chatbot", f"{root}discuter.html")]
     return '<nav class="tabs">' + "".join(
         f'<a class="{"cur" if k == current else ""}" href="{href}">{label}</a>' for k, label, href in tabs) + "</nav>"
 
@@ -207,7 +208,48 @@ def season_pause(evaluations: list[Evaluation], now: datetime):
     return lo, hi, (now + timedelta(days=days)).astimezone(TZ).date()
 
 
-def _verdict(bet, passed: list[Evaluation], rejected: list[Evaluation], pause=None) -> str:
+def bet_brief(bet, sport: str, insights: list, stake: int, conf: str) -> str:
+    """Fiche du pari proposé (pour la question à Claude)."""
+    from explain import brief
+    head = (f"Mon bot propose : {bet.kind.lower()}, cote totale {bet.total:.2f}, chances estimées "
+            f"{bet.prob:.0%}, mise conseillée {stake} € (confiance {conf.lower()}).")
+    per = max(500, 1400 // len(bet.legs))
+    legs = [brief(e, sport, ins, verdict="à jouer", stake=stake)[:per] for e, ins in zip(bet.legs, insights)]
+    return "\n\n".join([head] + legs)
+
+
+def bet_block(bet, sport: str, insights: list, note: str = "") -> str:
+    """Encadré « À jouer » commun NBA / tennis : cote, chances, mise conseillée, boutons."""
+    from explain import claude_url
+    from staking import bet_stake
+    from tracker_web import claude_button, ticket_button
+    stake, conf = bet_stake([i.confidence for i in insights])
+    legs = ""
+    for e in bet.legs:
+        if sport == "nba":
+            where = f"{_time(e.matchup.commence_time)} · {'à domicile' if e.pick_is_home else 'à l’extérieur'}"
+        else:
+            where = f"{_e(e.matchup.tournament)} · {_time(e.matchup.commence_time)}"
+        badge = _badge(e.pick) if sport == "nba" else __import__("tennis_web")._badge(e.pick)
+        legs += f"""<div class="leg">{badge}<div class="who"><b>{_e(e.pick.name)} gagne</b>
+<span>contre {_e(e.opponent.name)} · {where}</span></div><span class="pill">{e.odds:.2f}</span></div>"""
+    url = claude_url(bet_brief(bet, sport, insights, stake, conf),
+                     "Explique-moi ce pari simplement : pourquoi le jouer, quel est le vrai risque, "
+                     "et la mise conseillée est-elle raisonnable ?")
+    return f"""<div class="card verdict go"><span class="chip go">● À JOUER SUR UNIBET</span>
+<h3>{_e(bet.kind)}</h3>{note}
+<div class="stats four"><div class="stat big"><span>Cote totale</span><b>{bet.total:.2f}</b></div>
+<div class="stat"><span>Chances estimées</span><b>{bet.prob:.0%}</b></div>
+<div class="stat big"><span>Mise conseillée</span><b>{stake} €</b></div>
+<div class="stat"><span>Gain si gagné</span><b>{_money(stake * bet.total)}</b></div></div>
+<p class="sub">Confiance {_e(conf.lower())} → {stake} € sur une base de {config.BASE_STAKE} €
+(élevée {round(config.BASE_STAKE * config.STAKE_SHARE['Élevée'])} € · moyenne
+{round(config.BASE_STAKE * config.STAKE_SHARE['Moyenne'])} € · prudente
+{round(config.BASE_STAKE * config.STAKE_SHARE['Prudente'])} €).</p>
+{legs}<div class="actions">{ticket_button(sport, bet.legs, stake)}{claude_button(url, "Demander à Claude")}</div></div>"""
+
+
+def _verdict(bet, passed: list[Evaluation], rejected: list[Evaluation], pause=None, kp=None) -> str:
     if not bet and pause:
         lo, hi, eta = pause
         from analyzer import MOIS
@@ -231,49 +273,87 @@ avant de proposer un pari.</p>
 <p class="why">{_e(no_bet_reason(passed))} Ne pas parier fait aussi partie de la stratégie :
 le bot ne propose un match que s'il passe tous les contrôles.</p>{detail}</div>"""
 
-    legs = ""
-    for e in bet.legs:
-        lieu = "à domicile" if e.pick_is_home else "à l'extérieur"
-        legs += f"""<div class="leg">{_badge(e.pick)}<div class="who"><b>{_e(e.pick.name)} gagne</b>
-<span>contre {_e(e.opponent.name)} · {_time(e.matchup.commence_time)} · {lieu}</span></div>
-<span class="pill">{e.odds:.2f}</span></div>"""
     early = any(r.name == "Début de saison" for e in bet.legs for r in e.warnings)
     note = ("""<p class="why" style="margin:0 0 14px"><span class="chip warn">DÉBUT DE SAISON</span>
 Les équipes ont encore peu joué : ce pari repose surtout sur les cotes du marché.
-Confiance plafonnée à « Prudente », mise réduite conseillée.</p>""" if early else "")
-    return f"""<div class="card verdict go"><span class="chip go">● À JOUER SUR UNIBET</span>
-<h3>{_e(bet.kind)}</h3>{note}
-<div class="stats"><div class="stat big"><span>Cote totale</span><b>{bet.total:.2f}</b></div>
-<div class="stat"><span>Chances estimées</span><b>{bet.prob:.0%}</b></div>
-<div class="stat"><span>Pour 10 € misés</span><b>{_money(10 * bet.total)}</b></div></div>
-{legs}</div>"""
+Confiance plafonnée à « Prudente », mise réduite.</p>""" if early else "")
+    return bet_block(bet, "nba", [build_insight(e, kp) for e in bet.legs], note)
 
 
-def _analysis_card(e: Evaluation, key_players, opened: bool = True) -> str:
-    ins = build_insight(e, key_players)
-    lieu = "à domicile" if e.pick_is_home else "à l'extérieur"
+def analysis_card(e: Evaluation, ins, sport: str, subtitle: str, badge: str, verdict: str,
+                  opened: bool = True) -> str:
+    """Carte d'analyse commune NBA / tennis : « En clair » d'abord, détails repliés."""
+    from explain import brief, claude_url, plain_lines
+    from staking import stake_for
+    from tracker_web import claude_button, clair_box, ticket_button
+    stake = stake_for(ins.confidence)
     plus = "".join(f"<li>{_e(s)}</li>" for s in ins.strengths) or "<li>Tous les contrôles sont validés.</li>"
     risk = "".join(f"<li>{_e(r)}</li>" for r in ins.risks)
     grid = "".join(f"<div><h4>{_e(t)}</h4><ul>{''.join(f'<li>{_e(x)}</li>' for x in rows)}</ul></div>"
                    for t, rows in ins.sections)
     ctrl = "".join(f"<li><b>{_e(r.name)}</b> — {_e(r.reason)}</li>" for r in e.results)
-    body = f"""<p class="why">{_e(ins.summary)}</p>
+    url = claude_url(brief(e, sport, ins, verdict=verdict.lower(), stake=stake))
+    actions = (f'<div class="actions">{claude_button(url)}'
+               + ("" if verdict == "À jouer" else ticket_button(sport, [e], stake)) + "</div>")
+    body = f"""{clair_box(plain_lines(e, ins, stake))}{actions}
+<details><summary>Atouts et points de vigilance</summary>
 <p class="lbl">Ce qui joue pour lui</p><ul class="reasons plus">{plus}</ul>
-{f'<p class="lbl">À surveiller</p><ul class="reasons risk">{risk}</ul>' if risk else ''}
+{f'<p class="lbl">À surveiller</p><ul class="reasons risk">{risk}</ul>' if risk else ''}</details>
 <details><summary>Tous les chiffres du match</summary><div class="grid">{grid}</div></details>
 <details><summary>Contrôles de sécurité ({len(e.results)}/{len(e.results)} validés)</summary>
 <ul class="reasons ctrl">{ctrl}</ul></details>"""
     if not opened:
         body = f"<details><summary>Voir l'analyse</summary>{body}</details>"
-    return f"""<div class="card"><div class="head">{_badge(e.pick)}<div class="who">
+    return f"""<div class="card"><div class="head">{badge}<div class="who">
 <h3>{_e(e.pick.name)} gagne · {e.odds:.2f}</h3>
-<p>contre {_e(e.opponent.name)} · {_time(e.matchup.commence_time)} · {lieu}</p>
-<p>Confiance : <b>{_e(ins.confidence)}</b>{_meter(ins.confidence)} · chances estimées {ins.win_prob:.0%}</p>
+<p>{subtitle}</p>
+<p>Confiance : <b>{_e(ins.confidence)}</b>{_meter(ins.confidence)} · chances estimées {ins.win_prob:.0%}
+· mise conseillée <b>{stake} €</b></p>
 </div></div>{body}</div>"""
 
 
-def _game_row(e: Evaluation, bet_legs: list[Evaluation]) -> str:
+def _analysis_card(e: Evaluation, key_players, opened: bool = True, verdict: str = "Validé") -> str:
+    ins = build_insight(e, key_players)
+    lieu = "à domicile" if e.pick_is_home else "à l'extérieur"
+    sub = f"contre {_e(e.opponent.name)} · {_time(e.matchup.commence_time)} · {lieu}"
+    return analysis_card(e, ins, "nba", sub, _badge(e.pick), verdict, opened)
+
+
+def row_line(e: Evaluation, sport: str, legs) -> str:
+    """Une ligne de résumé d'un match (pour le résumé de la soirée envoyé à Claude)."""
     m = e.matchup
+    label = f"{m.away.name} @ {m.home.name}" if sport == "nba" else f"{m.home.name} – {m.away.name}"
+    head = f"{_time(m.commence_time)} {label}"
+    if e.pick is None:
+        return f"{head} — pas encore de cote Unibet"
+    if e in legs or e.passed:
+        tag = "À JOUER" if e in legs else "validé"
+        return f"{head} — {tag} : {e.pick.name} {e.odds:.2f} ({leg_probability(e):.0%} estimé)"
+    title = plain_reason(e)[0] if sport == "nba" else __import__("tennis_web").plain_reason(e)[0]
+    return f"{head} — écarté ({title.lower()}) : favori {e.pick.name} {e.odds:.2f}"
+
+
+def row_brief(e: Evaluation, sport: str, legs, ins_fn) -> str:
+    """Fiche d'un match du programme (validé ou écarté) pour Claude."""
+    from explain import brief
+    if e.pick is not None and (e.passed or e in legs):
+        return brief(e, sport, ins_fn(e), verdict="à jouer" if e in legs else "validé, non retenu")
+    if sport == "nba":
+        title, detail = plain_reason(e)
+    else:
+        title, detail = __import__("tennis_web").plain_reason(e)
+    return brief(e, sport, None, verdict="écarté", reason=f"{title} : {detail}")
+
+
+def _game_row(e: Evaluation, bet_legs: list[Evaluation], kp=None) -> str:
+    m = e.matchup
+    ask = ""
+    if m.state == "pre":
+        from explain import claude_url
+        from tracker_web import claude_button
+        ask = " " + claude_button(claude_url(row_brief(e, "nba", bet_legs, lambda x: build_insight(x, kp)),
+                                             "Que penses-tu de ce match ? Explique simplement."),
+                                  "Demander à Claude", small=True)
     fav_home = m.unibet.home <= m.unibet.away if m.unibet else None
 
     def team_line(team: TeamContext, home: bool) -> str:
@@ -307,7 +387,7 @@ def _game_row(e: Evaluation, bet_legs: list[Evaluation]) -> str:
 
     return f"""<div class="game"><div class="time">{_time(m.commence_time)}<small>Paris</small></div>
 <div class="teams">{team_line(m.away, False)}{team_line(m.home, True)}</div>
-<div class="status">{chip}</div><div class="reason">{reason}</div></div>"""
+<div class="status">{chip}</div><div class="reason">{reason}{ask}</div></div>"""
 
 
 LEGEND = """<details><summary>Comment lire cette page</summary>
@@ -350,8 +430,8 @@ def build_html(slate: Slate, evaluations: list[Evaluation], archive_days: list[s
 
     analysis = ""
     if legs:
-        analysis = ("<h2>Pourquoi ce choix</h2><p class='h2sub'>L'analyse détaillée de chaque match du pari.</p>"
-                    + "".join(_analysis_card(e, kp) for e in legs))
+        analysis = ("<h2>Pourquoi ce choix</h2><p class='h2sub'>L'explication en clair de chaque match du pari.</p>"
+                    + "".join(_analysis_card(e, kp, verdict="À jouer") for e in legs))
     others = [e for e in passed if e not in legs]
     if others:
         analysis += ("<h2>Validés mais non retenus</h2><p class='h2sub'>Alternatives possibles si une cote "
@@ -359,7 +439,7 @@ def build_html(slate: Slate, evaluations: list[Evaluation], archive_days: list[s
                      + "".join(_analysis_card(e, kp, opened=False) for e in others))
 
     ordered = sorted(evaluations, key=lambda e: e.matchup.commence_time)
-    games = "".join(_game_row(e, legs) for e in ordered) or "<p class='sub'>Aucun match au calendrier.</p>"
+    games = "".join(_game_row(e, legs, kp) for e in ordered) or "<p class='sub'>Aucun match au calendrier.</p>"
     n_pending = sum(1 for e in evaluations if e.pick is None and e.matchup.state == "pre")
 
     archives = "".join(
@@ -367,7 +447,9 @@ def build_html(slate: Slate, evaluations: list[Evaluation], archive_days: list[s
         for d in archive_days[:14])
 
     from tracker_web import TRACKER_CSS, picker_html, ticket_html     # « Ajouter à mes paris »
-    picker = picker_html("nba", evaluations, legs) if root == "" else ""
+    from staking import stake_for
+    stakes = {f"nba:{e.matchup.event_id}": stake_for(build_insight(e, kp).confidence) for e in passed}
+    picker = picker_html("nba", evaluations, legs, stakes) if root == "" else ""
     ticket = ticket_html(root) if root == "" else ""
 
     return f"""<!doctype html><html lang="fr"><head><meta charset="utf-8">
@@ -382,7 +464,7 @@ def build_html(slate: Slate, evaluations: list[Evaluation], archive_days: list[s
 <div class="count no"><b>{len(rejected) - n_pending}</b><span>écartés{f' · {n_pending} en attente' if n_pending else ''}</span></div></div>
 </header>
 <h2>Le pari du soir</h2>{_verdict(bet, passed, [e for e in rejected if e.matchup.state == 'pre'],
-                                   season_pause(evaluations, slate.generated_at))}
+                                   season_pause(evaluations, slate.generated_at), kp)}
 {analysis}
 <h2>Programme de la nuit</h2><p class="h2sub">Cotes Unibet de chaque équipe · le favori est en gras.</p>
 <div class="card">{games}{LEGEND.format(lo=f"{config.ODDS_MIN:.2f}", hi=f"{config.ODDS_MAX:.2f}", n=config.SEASON_MIN_GAMES)}</div>
@@ -411,6 +493,21 @@ def write_site(slate: Slate, evaluations: list[Evaluation], out_dir: Path) -> Pa
     index = out_dir / "index.html"
     index.write_text(build_html(slate, evaluations, days), encoding="utf-8")
     (out_dir / ".nojekyll").write_text("", encoding="utf-8")
-    from tracker_web import write_assets                 # onglet « Mes paris » + paris.js
+    from tracker_web import write_assets, write_digest   # onglets « Mes paris » et « Chatbot »
+    _, _, bet = select(evaluations)
+    legs = bet.legs if bet else []
+    kp = slate.key_players
+    items = []
+    for e in sorted(evaluations, key=lambda x: x.matchup.commence_time):
+        m = e.matchup
+        if m.state != "pre":
+            continue
+        verdict = "À jouer" if e in legs else ("Validé" if e.passed else
+                                               ("En attente" if e.pick is None else "Écarté"))
+        items.append({"id": f"nba:{m.event_id}", "sport": "nba", "label": f"{m.away.name} @ {m.home.name}",
+                      "time": m.commence_time.isoformat(), "verdict": verdict,
+                      "line": row_line(e, "nba", legs),
+                      "brief": row_brief(e, "nba", legs, lambda x: build_insight(x, kp))})
+    write_digest("nba", items, out_dir, slate.generated_at)
     write_assets(out_dir)
     return index

@@ -52,12 +52,10 @@ FAV_DOUBT_RATE = 0.50           # favori à 50 % ou moins sur ses 10 derniers
 # Classement : le favori ne doit pas être nettement moins bien classé que l'outsider
 RANK_TOLERANCE = 10             # places
 
-# Confrontations directes (données chargées : saison en cours, + saison passée en début d'année)
+# Confrontations directes (sur la saison en cours + les 3 précédentes : config.HISTORY_SEASONS)
 H2H_MIN_MEETINGS = 2
 
-# Années d'historique chargées : la saison passée n'est ajoutée que jusqu'à ce mois inclus
-# (janvier-mars : la saison en cours a encore trop peu de matchs).
-PREVIOUS_SEASON_UNTIL_MONTH = 3
+# Forme sur la surface : calculée sur la saison en cours + les 3 précédentes
 
 # ---------------------------------------------------------------------------
 # Surfaces : mots-clés dans le nom du tournoi (le reste = dur)

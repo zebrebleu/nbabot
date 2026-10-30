@@ -44,6 +44,15 @@ def team_key(name: str) -> str:
     return name.strip().split()[-1].lower() if name else ""
 
 
+def espn_season(now: datetime) -> int:
+    """Saison NBA en cours au format ESPN (année de fin) : octobre 2026 -> 2027 (saison 2026-27)."""
+    return now.year + 1 if now.month >= 8 else now.year
+
+
+def season_label(season: int) -> str:
+    return f"{season - 1}-{str(season)[-2:]}"
+
+
 def parse_dt(value: str) -> datetime:
     dt = datetime.fromisoformat(value.replace("Z", "+00:00"))
     return dt if dt.tzinfo else dt.replace(tzinfo=timezone.utc)
@@ -81,10 +90,14 @@ class CachedHttp:
         self.last_headers: Any = {}
 
     def get_json(self, url: str, params: Optional[dict] = None, ttl_minutes: float = 60,
-                 cache_key_params: Optional[dict] = None) -> Any:
+                 cache_key_params: Optional[dict] = None, long_term: bool = False) -> Any:
+        """`long_term=True` : données qui ne changent plus (saisons terminées), rangées dans
+        config.LONG_CACHE_DIR, que GitHub conserve d'un passage à l'autre."""
         key_params = cache_key_params if cache_key_params is not None else (params or {})
         key = hashlib.sha1((url + json.dumps(key_params, sort_keys=True)).encode()).hexdigest()
-        path = self.cache_dir / f"{key}.json"
+        folder = config.LONG_CACHE_DIR if long_term else self.cache_dir
+        folder.mkdir(parents=True, exist_ok=True)
+        path = folder / f"{key}.json"
         if ttl_minutes > 0 and path.exists() and time.time() - path.stat().st_mtime < ttl_minutes * 60:
             return json.loads(path.read_text(encoding="utf-8"))
 
@@ -182,9 +195,13 @@ class ESPNClient:
             out[team_key(name)] = items
         return out
 
-    def team_schedule(self, team_id: str) -> list[TeamGame]:
-        data = self.http.get_json(f"{ESPN_SITE}/teams/{team_id}/schedule",
-                                  params={"seasontype": 2}, ttl_minutes=config.ESPN_CACHE_MINUTES)
+    def team_schedule(self, team_id: str, season: Optional[int] = None) -> list[TeamGame]:
+        """Calendrier de saison régulière. `season` = année de fin ESPN (2025-26 -> 2026) ;
+        une saison terminée est mise en cache longue durée."""
+        params = {"seasontype": 2} | ({"season": season} if season else {})
+        data = self.http.get_json(f"{ESPN_SITE}/teams/{team_id}/schedule", params=params,
+                                  ttl_minutes=30 * 24 * 60 if season else config.ESPN_CACHE_MINUTES,
+                                  long_term=bool(season))
         games: list[TeamGame] = []
         for ev in data.get("events", []):
             comps = ev.get("competitions") or []
@@ -336,17 +353,26 @@ class DataFetcher:
         ranks = self._ranks(standings)
 
         contexts: dict[str, TeamContext] = {}
+        current = espn_season(now)
 
         def context(key: str) -> TeamContext:
             if key not in contexts:
                 info = teams[key]
                 w, l = standings.get(key, (0, 0))
+                past = {}
+                for s in range(current - 1, current - 1 - config.HISTORY_SEASONS, -1):
+                    try:
+                        games = [g for g in self.espn.team_schedule(info["id"], s) if g.completed]
+                        if games:
+                            past[s] = games
+                    except requests.RequestException as exc:
+                        log.info("Saison %s indisponible pour %s : %s", s, info["name"], exc)
                 contexts[key] = TeamContext(
                     key=key, name=info["name"], abbr=info["abbr"], espn_id=info["id"],
                     color=info.get("color", ""),
                     schedule=self.espn.team_schedule(info["id"]),
                     injuries=injuries.get(key, []),
-                    wins=w, losses=l, league_rank=ranks.get(key),
+                    wins=w, losses=l, league_rank=ranks.get(key), past=past,
                 )
             return contexts[key]
 
