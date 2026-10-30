@@ -218,7 +218,26 @@ def bet_brief(bet, sport: str, insights: list, stake: int, conf: str) -> str:
     return "\n\n".join([head] + legs)
 
 
-def bet_block(bet, sport: str, insights: list, note: str = "") -> str:
+def proposals_html(props, sport: str, ins_fn, passed, max_odds: float, note_fn=lambda b: "") -> str:
+    """Les deux options du bot : pari simple puis combiné (avec la raison si l'un manque)."""
+    from analyzer import no_combo_reason
+    out = []
+    if props.single:
+        out.append(bet_block(props.single, sport, [ins_fn(e) for e in props.single.legs], note_fn(props.single),
+                             "Option 1 · Pari simple", "le plus sûr"))
+    else:
+        out.append('<div class="card verdict none"><span class="chip off">OPTION 1 · PARI SIMPLE</span>'
+                   '<p class="why">Aucun match seul ne passe tous les contrôles avec une cote jouable.</p></div>')
+    if props.combo:
+        out.append(bet_block(props.combo, sport, [ins_fn(e) for e in props.combo.legs], note_fn(props.combo),
+                             "Option 2 · Combiné", "gain plus élevé, risque plus élevé"))
+    else:
+        out.append('<div class="card verdict none"><span class="chip off">OPTION 2 · COMBINÉ</span>'
+                   f'<p class="why">Pas de combiné possible : {_e(no_combo_reason(passed, max_odds))}.</p></div>')
+    return "".join(out)
+
+
+def bet_block(bet, sport: str, insights: list, note: str = "", title: str = "", hint: str = "") -> str:
     """Encadré « À jouer » commun NBA / tennis : cote, chances, mise conseillée, boutons."""
     from explain import claude_url
     from staking import bet_stake
@@ -236,8 +255,10 @@ def bet_block(bet, sport: str, insights: list, note: str = "") -> str:
     url = claude_url(bet_brief(bet, sport, insights, stake, conf),
                      "Explique-moi ce pari simplement : pourquoi le jouer, quel est le vrai risque, "
                      "et la mise conseillée est-elle raisonnable ?")
-    return f"""<div class="card verdict go"><span class="chip go">● À JOUER SUR UNIBET</span>
-<h3>{_e(bet.kind)}</h3>{note}
+    label = _e(title.upper()) if title else "À JOUER SUR UNIBET"
+    head = f"{_e(bet.kind)}" + (f' <span class="sub">· {_e(hint)}</span>' if hint else "")
+    return f"""<div class="card verdict go"><span class="chip go">● {label}</span>
+<h3>{head}</h3>{note}
 <div class="stats four"><div class="stat big"><span>Cote totale</span><b>{bet.total:.2f}</b></div>
 <div class="stat"><span>Chances estimées</span><b>{bet.prob:.0%}</b></div>
 <div class="stat big"><span>Mise conseillée</span><b>{stake} €</b></div>
@@ -273,11 +294,12 @@ avant de proposer un pari.</p>
 <p class="why">{_e(no_bet_reason(passed))} Ne pas parier fait aussi partie de la stratégie :
 le bot ne propose un match que s'il passe tous les contrôles.</p>{detail}</div>"""
 
-    early = any(r.name == "Début de saison" for e in bet.legs for r in e.warnings)
-    note = ("""<p class="why" style="margin:0 0 14px"><span class="chip warn">DÉBUT DE SAISON</span>
+    def note(b):
+        early = any(r.name == "Début de saison" for e in b.legs for r in e.warnings)
+        return ("""<p class="why" style="margin:0 0 14px"><span class="chip warn">DÉBUT DE SAISON</span>
 Les équipes ont encore peu joué : ce pari repose surtout sur les cotes du marché.
 Confiance plafonnée à « Prudente », mise réduite.</p>""" if early else "")
-    return bet_block(bet, "nba", [build_insight(e, kp) for e in bet.legs], note)
+    return proposals_html(bet, "nba", lambda e: build_insight(e, kp), passed, config.BET_MAX_ODDS, note)
 
 
 def analysis_card(e: Evaluation, ins, sport: str, subtitle: str, badge: str, verdict: str,
@@ -463,7 +485,8 @@ def build_html(slate: Slate, evaluations: list[Evaluation], archive_days: list[s
 <div class="count go"><b>{len(passed)}</b><span>passent les contrôles</span></div>
 <div class="count no"><b>{len(rejected) - n_pending}</b><span>écartés{f' · {n_pending} en attente' if n_pending else ''}</span></div></div>
 </header>
-<h2>Le pari du soir</h2>{_verdict(bet, passed, [e for e in rejected if e.matchup.state == 'pre'],
+<h2>Les paris du soir</h2><p class="h2sub">Deux options : un pari simple, plus sûr, et un combiné,
+qui rapporte plus mais demande que les deux matchs passent.</p>{_verdict(bet, passed, [e for e in rejected if e.matchup.state == 'pre'],
                                    season_pause(evaluations, slate.generated_at), kp)}
 {analysis}
 <h2>Programme de la nuit</h2><p class="h2sub">Cotes Unibet de chaque équipe · le favori est en gras.</p>

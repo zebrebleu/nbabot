@@ -74,31 +74,73 @@ class Bet:
         return self.prob * self.total
 
 
-def best_bet(candidates: list[Evaluation]) -> tuple[Optional[Bet], list[Bet]]:
-    """Meilleure option parmi les simples et combinés autorisés. Renvoie (meilleur, toutes options)."""
+@dataclass
+class Proposals:
+    """Les deux propositions du bot : un pari simple et un combiné (chacun peut manquer)."""
+    single: Optional[Bet] = None
+    combo: Optional[Bet] = None
+
+    @property
+    def bets(self) -> list[Bet]:
+        return [b for b in (self.single, self.combo) if b]
+
+    @property
+    def legs(self) -> list[Evaluation]:
+        """Tous les matchs « à jouer » (simple + combiné), sans doublon."""
+        out = []
+        for b in self.bets:
+            out += [e for e in b.legs if e not in out]
+        return out
+
+    def __bool__(self) -> bool:
+        return bool(self.bets)
+
+
+def rank_options(candidates: list[Evaluation], max_legs: int, lo: float, hi: float,
+                 quality_weight: float = config.BET_QUALITY_WEIGHT) -> list[Bet]:
+    """Toutes les options (simples et combinés) dont la cote totale est dans [lo, hi], de la meilleure à la moins bonne.
+    Valeur = probabilité estimée x cote (valeur attendue) + bonus de qualité des filtres."""
     options: list[Bet] = []
-    for size in range(1, config.BET_MAX_LEGS + 1):
+    for size in range(1, max_legs + 1):
         for legs in combinations(candidates, size):
-            total = math.prod(e.odds for e in legs)
-            if not config.BET_MIN_ODDS <= total <= config.BET_MAX_ODDS:
+            total = round(math.prod(e.odds for e in legs), 2)          # arrondi comme Unibet
+            if not lo <= total <= hi:
                 continue
             prob = math.prod(leg_probability(e) for e in legs)
             quality = sum(e.score for e in legs) / len(legs)
-            value = prob * total + config.BET_QUALITY_WEIGHT * quality
-            options.append(Bet(list(legs), total, prob, value))
+            options.append(Bet(list(legs), total, prob, prob * total + quality_weight * quality))
     options.sort(key=lambda b: b.value, reverse=True)
+    return options
+
+
+def proposals_from(options: list[Bet]) -> Proposals:
+    return Proposals(single=next((b for b in options if len(b.legs) == 1), None),
+                     combo=next((b for b in options if len(b.legs) >= 2), None))
+
+
+def best_bet(candidates: list[Evaluation]) -> tuple[Optional[Bet], list[Bet]]:
+    """Meilleure option toutes catégories (compatibilité). Renvoie (meilleure, toutes options)."""
+    options = rank_options(candidates, config.BET_MAX_LEGS, config.BET_MIN_ODDS, config.BET_MAX_ODDS)
     return (options[0] if options else None), options
 
 
 def select(evaluations: list[Evaluation]):
-    """Renvoie (validés triés par qualité, rejetés, meilleur pari ou None)."""
+    """Renvoie (validés triés par qualité, rejetés, Proposals : pari simple + combiné)."""
     passed = [e for e in evaluations if e.passed]
     rejected = [e for e in evaluations if not e.passed]
     for e in passed:
         score_evaluation(e)
     passed.sort(key=lambda e: e.score, reverse=True)
-    bet, _ = best_bet(passed)
-    return passed, rejected, bet
+    _, options = best_bet(passed)
+    return passed, rejected, proposals_from(options)
+
+
+def no_combo_reason(passed: list[Evaluation], max_odds: float) -> str:
+    if len(passed) < 2:
+        return "il faut au moins 2 matchs validés"
+    lowest = sorted(e.odds for e in passed)[:2]
+    return (f"les 2 cotes validées les plus basses ({lowest[0]:.2f} × {lowest[1]:.2f} = "
+            f"{lowest[0] * lowest[1]:.2f}) dépassent la limite de {max_odds:.2f}")
 
 
 def no_bet_reason(passed: list[Evaluation]) -> str:
@@ -188,10 +230,17 @@ def build_report(slate: Slate, evaluations: list[Evaluation], show_rejected: boo
     ]
 
     if bet:
-        out += [f" {bet.kind.upper()} — COTE TOTALE {bet.total:.2f} (max {config.BET_MAX_ODDS:.2f})",
-                f" Probabilité estimée que le pari passe : {bet.prob:.0%}", SUB]
-        for i, e in enumerate(bet.legs, 1):
-            out += _pick_block(i, e, build_insight(e, kp)) + [""]
+        from staking import bet_stake
+        for n, b in enumerate(bet.bets, 1):
+            stake, conf = bet_stake([build_insight(e, kp).confidence for e in b.legs])
+            out += [f" OPTION {n} · {b.kind.upper()} — COTE TOTALE {b.total:.2f} (max {config.BET_MAX_ODDS:.2f})",
+                    f" Probabilité estimée que le pari passe : {b.prob:.0%} · mise conseillée {stake} € "
+                    f"(confiance {conf.lower()})", SUB]
+            for i, e in enumerate(b.legs, 1):
+                out += _pick_block(i, e, build_insight(e, kp)) + [""]
+        if not bet.combo:
+            from analyzer import no_combo_reason
+            out += [f" Pas de combiné possible : {no_combo_reason(passed, config.BET_MAX_ODDS)}.", ""]
         others = [e for e in passed if e not in bet.legs]
         if others:
             out.append(" Autres matchs validés (non retenus) :")

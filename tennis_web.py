@@ -62,13 +62,16 @@ def plain_reason(e: Evaluation) -> tuple[str, str]:
 # ---------------------------------------------------------------------------
 def _verdict(bet, locked: Optional[dict], passed, rejected, slate) -> str:
     if locked:
-        legs = "".join(f"""<div class="leg"><div class="who"><b>{_e(l['pick'])} gagne</b>
+        out = []
+        for b in locked.get("bets", []):
+            legs = "".join(f"""<div class="leg"><div class="who"><b>{_e(l['pick'])} gagne</b>
 <span>contre {_e(l['opponent'])} · {_e(l['tournament'])} · {_e(l['time'])}</span></div>
-<span class="pill">{l['odds']:.2f}</span></div>""" for l in locked["legs"])
-        return f"""<div class="card verdict go"><span class="chip info">PARI EN COURS</span>
-<h3>{_e(locked['kind'])} · cote {locked['total']:.2f}</h3>
-<p class="why">Ce pari a été proposé le {_e(locked['created_label'])} et un de ses matchs a commencé :
-il est conservé tel quel. Un nouveau pari sera proposé au prochain passage après la fin des matchs.</p>{legs}</div>"""
+<span class="pill">{l['odds']:.2f}</span></div>""" for l in b["legs"])
+            stake = f" · mise conseillée {b['stake']} €" if b.get("stake") else ""
+            out.append(f"""<div class="card verdict go"><span class="chip info">EN COURS · {_e(b.get('option', '').upper())}</span>
+<h3>{_e(b['kind'])} · cote {b['total']:.2f}{stake}</h3>{legs}</div>""")
+        return (f"""<p class="why">Ces paris ont été proposés le {_e(locked['created_label'])} et un de leurs matchs
+a commencé : ils sont conservés tels quels jusqu'à la fin des matchs.</p>""" + "".join(out))
     if not slate.tournaments:
         nxt = f" Prochain tournoi : <b>{_e(slate.next_tournament)}</b>." if slate.next_tournament else \
               " La saison reprend début janvier (Brisbane, Auckland, puis l'Open d'Australie)."
@@ -85,23 +88,27 @@ ATP/WTA.{nxt}</p></div>"""
 <p class="why">Aucun match ne passe tous les contrôles (ou aucune combinaison ne tient sous
 {tc.BET_MAX_ODDS:.2f}). Ne pas parier fait aussi partie de la stratégie.</p>
 {f'<p class="lbl">Pourquoi les matchs ont été écartés</p><ul class="reasons risk">{rows}</ul>' if rows else ''}</div>"""
-    from web_report import bet_block
-    return bet_block(bet, "tennis", [build_insight(e) for e in bet.legs])
+    from web_report import proposals_html
+    return proposals_html(bet, "tennis", build_insight, passed, tc.BET_MAX_ODDS)
 
 
 def _last_bet(last: Optional[dict]) -> str:
-    """Rappel du résultat du dernier pari proposé par le bot."""
+    """Rappel du résultat des derniers paris proposés par le bot."""
     if not last:
         return ""
-    st = last.get("status", "")
-    chip = {"gagné": '<span class="chip go">✓ GAGNÉ</span>', "perdu": '<span class="chip no">✗ PERDU</span>'}.get(
-        st, '<span class="chip off">RÉSULTAT INCONNU</span>')
-    legs = " + ".join(f"{_e(l['pick'])} contre {_e(l['opponent'])} ({l['odds']:.2f})"
-                      + (" ✓" if l.get("result") is True else " ✗" if l.get("result") is False else "")
-                      for l in last.get("legs", []))
-    return (f'<div class="card"><p class="lbl" style="margin-top:0">Dernier pari proposé · '
-            f'{_e(last.get("created_label", ""))}</p><p class="why" style="margin:4px 0 0">{chip} '
-            f'{_e(last.get("kind", ""))} à {last.get("total", 0):.2f} : {legs}</p></div>')
+    bets = last.get("bets") or [last]          # ancien format : un seul pari
+    rows = []
+    for b in bets:
+        st = b.get("status", "")
+        chip = {"gagné": '<span class="chip go">✓ GAGNÉ</span>', "perdu": '<span class="chip no">✗ PERDU</span>'}.get(
+            st, '<span class="chip off">RÉSULTAT INCONNU</span>')
+        legs = " + ".join(f"{_e(l['pick'])} contre {_e(l['opponent'])} ({l['odds']:.2f})"
+                          + (" ✓" if l.get("result") is True else " ✗" if l.get("result") is False else "")
+                          for l in b.get("legs", []))
+        rows.append(f'<p class="why" style="margin:6px 0 0">{chip} {_e(b.get("kind", ""))} à '
+                    f'{b.get("total", 0):.2f} : {legs}</p>')
+    return (f'<div class="card"><p class="lbl" style="margin-top:0">Derniers paris proposés · '
+            f'{_e(last.get("created_label", ""))}</p>{"".join(rows)}</div>')
 
 
 def _analysis_card(e: Evaluation, opened: bool = True, verdict: str = "Validé") -> str:
@@ -215,7 +222,8 @@ def build_html(slate, evaluations, bet, locked, archive_days: list[str], root: s
 <div class="count go"><b>{len(passed)}</b><span>passent les contrôles</span></div>
 <div class="count no"><b>{len(rejected) - n_pending}</b><span>écartés{f' · {n_pending} en attente' if n_pending else ''}</span></div></div>
 </header>
-<h2>Le pari tennis</h2>{_verdict(bet, locked, passed, [e for e in rejected if e.pick is not None], slate)}
+<h2>Les paris tennis</h2><p class="h2sub">Deux options : un pari simple, plus sûr, et un combiné,
+qui rapporte plus mais demande que les deux matchs passent.</p>{_verdict(bet, locked, passed, [e for e in rejected if e.pick is not None], slate)}
 {_last_bet(getattr(slate, "last_bet", None)) if not locked else ""}
 {analysis}
 <h2>Programme</h2><p class="h2sub">Cotes Unibet de chaque joueur · le favori est en gras · classement en gris.</p>

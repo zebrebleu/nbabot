@@ -29,7 +29,21 @@ def _read_lock(now: datetime) -> Optional[dict]:
         created = datetime.fromisoformat(lock["created"])
     except (OSError, ValueError, KeyError):
         return None
+    if "bets" not in lock and "legs" in lock:          # ancien format : un seul pari
+        lock["bets"] = [{"option": "Pari", "kind": lock.get("kind", "Pari"), "total": lock.get("total", 0),
+                         "legs": lock["legs"]}]
     return lock if now - created <= timedelta(hours=LOCK_HOURS) else None
+
+
+def _all_legs(lock: dict) -> list[dict]:
+    seen, out = set(), []
+    for b in lock.get("bets", []):
+        for l in b["legs"]:
+            k = (l["pick"], l["commence"])
+            if k not in seen:
+                seen.add(k)
+                out.append(l)
+    return out
 
 
 def leg_result(leg: dict, players: dict) -> Optional[bool]:
@@ -46,25 +60,31 @@ def leg_result(leg: dict, players: dict) -> Optional[bool]:
     return None
 
 
-def lock_state(lock: Optional[dict], players: dict, now: datetime) -> tuple[str, list]:
-    """('none' | 'pending' | 'live' | 'finished', résultats des matchs)."""
-    if not lock:
-        return "none", []
-    results = [leg_result(l, players) for l in lock["legs"]]
-    starts = [datetime.fromisoformat(l["commence"]) for l in lock["legs"]]
+def lock_state(lock: Optional[dict], players: dict, now: datetime) -> tuple[str, dict]:
+    """('none' | 'pending' | 'live' | 'finished', {(joueur, début): résultat}) sur tous les matchs des paris."""
+    if not lock or not lock.get("bets"):
+        return "none", {}
+    legs = _all_legs(lock)
+    results = {(l["pick"], l["commence"]): leg_result(l, players) for l in legs}
+    starts = [datetime.fromisoformat(l["commence"]) for l in legs]
     if not any(s <= now for s in starts):
         return "pending", results
-    done = [r is not None or now > s + timedelta(hours=MATCH_HOURS.get(l.get("best_of", 3), 3.5))
-            for r, s, l in zip(results, starts, lock["legs"])]
+    done = [results[(l["pick"], l["commence"])] is not None
+            or now > s + timedelta(hours=MATCH_HOURS.get(l.get("best_of", 3), 3.5)) for l, s in zip(legs, starts)]
     return ("finished" if all(done) else "live"), results
 
 
-def _save_last(lock: dict, results: list, html_dir: Optional[str]) -> Optional[dict]:
-    """Garde le résultat du dernier pari proposé (affiché sur la page tennis)."""
-    status = ("gagné" if all(r is True for r in results) else
-              "perdu" if any(r is False for r in results) else "résultat non disponible")
-    last = {"created_label": lock.get("created_label", ""), "kind": lock["kind"], "total": lock["total"],
-            "legs": [dict(l, result=r) for l, r in zip(lock["legs"], results)], "status": status}
+def _save_last(lock: dict, results: dict, html_dir: Optional[str]) -> Optional[dict]:
+    """Garde le résultat des derniers paris proposés (affichés sur la page tennis)."""
+    bets = []
+    for b in lock.get("bets", []):
+        rs = [results.get((l["pick"], l["commence"])) for l in b["legs"]]
+        status = ("gagné" if all(r is True for r in rs) else
+                  "perdu" if any(r is False for r in rs) else "résultat non disponible")
+        bets.append({"option": b.get("option", ""), "kind": b["kind"], "total": b["total"],
+                     "legs": [dict(l, result=r) for l, r in zip(b["legs"], rs)], "status": status})
+    last = {"created_label": lock.get("created_label", ""), "bets": bets,
+            "status": " / ".join(f"{b['kind'].lower()} {b['status']}" for b in bets)}
     if html_dir:
         path = Path(html_dir) / "data" / "tennis_last_bet.json"
         path.parent.mkdir(parents=True, exist_ok=True)
@@ -81,19 +101,23 @@ def _read_last(html_dir: Optional[str]) -> Optional[dict]:
         return None
 
 
-def _save_lock(bet, now: datetime) -> None:
-    if bet is None:
+def _save_lock(props, now: datetime) -> None:
+    from staking import bet_stake
+    if not props:
         LOCK_FILE.unlink(missing_ok=True)
         return
-    lock = {
-        "created": now.isoformat(),
-        "created_label": _fmt_dt(now),
-        "kind": bet.kind, "total": round(bet.total, 2), "prob": round(bet.prob, 3),
-        "legs": [{"event_id": e.matchup.event_id, "pick": e.pick.name, "opponent": e.opponent.name,
-                  "odds": e.odds, "tournament": e.matchup.tournament, "best_of": e.matchup.best_of,
-                  "commence": e.matchup.commence_time.isoformat(),
-                  "time": f"{e.matchup.commence_time.astimezone(TZ):%d/%m %H:%M}"} for e in bet.legs],
-    }
+    bets = []
+    for option, b in (("Option 1 · Pari simple", props.single), ("Option 2 · Combiné", props.combo)):
+        if not b:
+            continue
+        stake, _ = bet_stake([build_insight(e).confidence for e in b.legs])
+        bets.append({"option": option, "kind": b.kind, "total": round(b.total, 2), "prob": round(b.prob, 3),
+                     "stake": stake,
+                     "legs": [{"event_id": e.matchup.event_id, "pick": e.pick.name, "opponent": e.opponent.name,
+                               "odds": e.odds, "tournament": e.matchup.tournament, "best_of": e.matchup.best_of,
+                               "commence": e.matchup.commence_time.isoformat(),
+                               "time": f"{e.matchup.commence_time.astimezone(TZ):%d/%m %H:%M}"} for e in b.legs]})
+    lock = {"created": now.isoformat(), "created_label": _fmt_dt(now), "bets": bets}
     LOCK_FILE.parent.mkdir(parents=True, exist_ok=True)
     LOCK_FILE.write_text(json.dumps(lock, indent=1, ensure_ascii=False), encoding="utf-8")
 
@@ -104,20 +128,22 @@ def _print(slate, evaluations, bet, locked) -> None:
     print(f" Tournois : {', '.join(slate.tournaments) or 'aucun'}")
     print("═" * 72)
     if locked:
-        print(f" PARI EN COURS (verrouillé) : {locked['kind']} — cote {locked['total']:.2f}")
-        for l in locked["legs"]:
-            print(f"   • {l['pick']} gagne contre {l['opponent']} ({l['tournament']}, {l['time']}) — {l['odds']:.2f}")
+        for b in locked["bets"]:
+            print(f" EN COURS (verrouillé) · {b.get('option', '')} : {b['kind']} — cote {b['total']:.2f}")
+            for l in b["legs"]:
+                print(f"   • {l['pick']} gagne contre {l['opponent']} ({l['tournament']}, {l['time']}) — {l['odds']:.2f}")
     elif bet:
-        print(f" {bet.kind.upper()} — COTE TOTALE {bet.total:.2f} · chances estimées {bet.prob:.0%}")
-        for e in bet.legs:
-            ins = build_insight(e)
-            print(f"   • {e.pick.name} gagne contre {e.opponent.name} ({e.matchup.tournament}) — {e.odds:.2f}"
-                  f" — confiance {ins.confidence}")
-            print(f"     {ins.summary}")
-            for s in ins.strengths:
-                print(f"       + {s}")
-            for r in ins.risks:
-                print(f"       ! {r}")
+        from staking import bet_stake
+        for n, b in enumerate(bet.bets, 1):
+            stake, conf = bet_stake([build_insight(e).confidence for e in b.legs])
+            print(f" OPTION {n} · {b.kind.upper()} — COTE {b.total:.2f} · chances {b.prob:.0%} · mise {stake} € ({conf.lower()})")
+            for e in b.legs:
+                ins = build_insight(e)
+                print(f"   • {e.pick.name} gagne contre {e.opponent.name} ({e.matchup.tournament}) — {e.odds:.2f}")
+                for s in ins.strengths[:3]:
+                    print(f"       + {s}")
+        if not bet.combo:
+            print(" Pas de combiné possible sous la cote maximale.")
     else:
         print(" Aucun pari tennis : aucun match ne passe tous les contrôles.")
     print("─" * 72)

@@ -143,15 +143,7 @@ def build_insight(e: Evaluation) -> Insight:
     return Insight(summary, sections, strengths, risks, confidence, prob)
 
 
-def best_bet(candidates: list[Evaluation]) -> Optional[Bet]:
-    options = []
-    for size in range(1, tc.BET_MAX_LEGS + 1):
-        for legs in combinations(candidates, size):
-            total = math.prod(e.odds for e in legs)
-            if not tc.BET_MIN_ODDS <= total <= tc.BET_MAX_ODDS:
-                continue
-            prob = math.prod(leg_probability(e) for e in legs)
-            value = prob * total + 0.10 * sum(e.score for e in legs) / len(legs)
-            options.append(Bet(list(legs), total, prob, value))
-    options.sort(key=lambda b: b.value, reverse=True)
-    return options[0] if options else None
+def best_bet(candidates: list[Evaluation]):
+    """Les deux propositions tennis : meilleur pari simple + meilleur combiné (Proposals)."""
+    from analyzer import proposals_from, rank_options
+    return proposals_from(rank_options(candidates, tc.BET_MAX_LEGS, tc.BET_MIN_ODDS, tc.BET_MAX_ODDS, 0.10))
