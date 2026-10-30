@@ -176,7 +176,7 @@ TANKING_BOTTOM_N = 8
 # Pari proposé : 1 match (simple) ou 2 matchs (combiné), cote totale plafonnée
 # ---------------------------------------------------------------------------
 BET_MAX_LEGS = 2              # 1 ou 2 matchs maximum
-BET_MAX_ODDS = 1.80           # cote totale maximale du pari proposé
+BET_MAX_ODDS = 2.00           # cote totale maximale du pari proposé (simple ou combiné)
 BET_MIN_ODDS = 1.25           # cote totale minimale (ex. 1.50 pour écarter les simples trop bas)
 # Le bot choisit l'option (simple ou combiné) qui maximise :
 #   valeur attendue estimée (proba. marché x cote) + BET_QUALITY_WEIGHT x qualité des filtres

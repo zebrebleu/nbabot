@@ -21,7 +21,7 @@ LINE_RISE_MAX_PCT = 0.04
 
 # Pari tennis (séparé du pari NBA) : 1 ou 2 matchs, cote totale max
 BET_MAX_LEGS = 2
-BET_MAX_ODDS = 1.80
+BET_MAX_ODDS = 2.00           # cote totale maximale (simple ou combiné)
 BET_MIN_ODDS = 1.25
 
 # ---------------------------------------------------------------------------

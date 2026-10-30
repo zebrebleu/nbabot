@@ -414,7 +414,7 @@ def _game_row(e: Evaluation, bet_legs: list[Evaluation], kp=None) -> str:
 
 LEGEND = """<details><summary>Comment lire cette page</summary>
 <ul class="legend">
-<li><span class="chip go">À JOUER</span><span>Le pari proposé ce soir : 1 ou 2 matchs, cote totale de 1,80 au maximum.</span></li>
+<li><span class="chip go">À JOUER</span><span>Les paris proposés ce soir : un pari simple et un combiné de 2 matchs, cote totale de {mx} au maximum.</span></li>
 <li><span class="chip info">VALIDÉ</span><span>Le match passe tous les contrôles mais n'a pas été retenu dans le pari.</span></li>
 <li><span class="chip no">ÉCARTÉ</span><span>Au moins un contrôle a échoué : la raison est écrite en dessous.</span></li>
 <li><span class="chip warn">EN PAUSE</span><span>Une des deux équipes a joué moins de {n} matchs (hors début de saison) : pas de pronostic.</span></li>
@@ -490,7 +490,8 @@ qui rapporte plus mais demande que les deux matchs passent.</p>{_verdict(bet, pa
                                    season_pause(evaluations, slate.generated_at), kp)}
 {analysis}
 <h2>Programme de la nuit</h2><p class="h2sub">Cotes Unibet de chaque équipe · le favori est en gras.</p>
-<div class="card">{games}{LEGEND.format(lo=f"{config.ODDS_MIN:.2f}", hi=f"{config.ODDS_MAX:.2f}", n=config.SEASON_MIN_GAMES)}</div>
+<div class="card">{games}{LEGEND.format(lo=f"{config.ODDS_MIN:.2f}", hi=f"{config.ODDS_MAX:.2f}", n=config.SEASON_MIN_GAMES,
+                                      mx=f"{config.BET_MAX_ODDS:.2f}")}</div>
 <h2>Avant de valider sur Unibet</h2><div class="card"><ul class="check">
 <li>La cote totale affichée sur Unibet ne dépasse pas {config.BET_MAX_ODDS:.2f}</li>
 <li>Pari « Face à face » (vainqueur du match, prolongations incluses)</li>
