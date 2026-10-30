@@ -1,13 +1,13 @@
 {
- "created": "2026-10-30T15:53:30.592152+00:00",
- "created_label": "vendredi 30/10 à 16:53",
+ "created": "2026-10-30T16:10:44.166144+00:00",
+ "created_label": "vendredi 30/10 à 17:10",
  "bets": [
   {
    "option": "Option 1 · Pari simple",
    "kind": "Pari simple",
    "total": 1.27,
    "prob": 0.741,
-   "stake": 15,
+   "stake": 25,
    "legs": [
     {
      "event_id": "c1a54362fbf98df45c2174b84374dd0c",
@@ -26,7 +26,7 @@
    "kind": "Combiné de 2 matchs",
    "total": 1.61,
    "prob": 0.539,
-   "stake": 15,
+   "stake": 25,
    "legs": [
     {
      "event_id": "e01a16acf3ce50a010714d85d5ff6374",
