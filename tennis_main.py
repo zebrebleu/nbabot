@@ -19,19 +19,66 @@ from tennis_filters import evaluate_all
 from tennis_insights import best_bet, build_insight
 
 LOCK_FILE = config.DATA_DIR / "tennis_bet.json"
-LOCK_HOURS = 20
+LOCK_HOURS = 48                 # garde-fou : un verrou n'est jamais gardé plus longtemps
+MATCH_HOURS = {3: 3.5, 5: 5.5}  # durée max d'un match (2 ou 3 sets gagnants) si le résultat n'est pas encore connu
 
 
-def _load_lock(now: datetime) -> Optional[dict]:
+def _read_lock(now: datetime) -> Optional[dict]:
     try:
         lock = json.loads(LOCK_FILE.read_text(encoding="utf-8"))
         created = datetime.fromisoformat(lock["created"])
     except (OSError, ValueError, KeyError):
         return None
-    if now - created > timedelta(hours=LOCK_HOURS):
+    return lock if now - created <= timedelta(hours=LOCK_HOURS) else None
+
+
+def leg_result(leg: dict, players: dict) -> Optional[bool]:
+    """Résultat d'un match du pari d'après l'historique ESPN : True gagné, False perdu, None inconnu."""
+    from tennis_fetcher import find_player, norm_name
+    p = find_player(leg["pick"], players) if players else None
+    if p is None:
         return None
+    start = datetime.fromisoformat(leg["commence"])
+    opp = norm_name(leg["opponent"])
+    for m in reversed(p.matches):
+        if m.date >= start - timedelta(hours=8) and (m.opponent == opp or m.opponent.split()[-1:] == opp.split()[-1:]):
+            return m.won
+    return None
+
+
+def lock_state(lock: Optional[dict], players: dict, now: datetime) -> tuple[str, list]:
+    """('none' | 'pending' | 'live' | 'finished', résultats des matchs)."""
+    if not lock:
+        return "none", []
+    results = [leg_result(l, players) for l in lock["legs"]]
     starts = [datetime.fromisoformat(l["commence"]) for l in lock["legs"]]
-    return lock if any(s <= now for s in starts) else None
+    if not any(s <= now for s in starts):
+        return "pending", results
+    done = [r is not None or now > s + timedelta(hours=MATCH_HOURS.get(l.get("best_of", 3), 3.5))
+            for r, s, l in zip(results, starts, lock["legs"])]
+    return ("finished" if all(done) else "live"), results
+
+
+def _save_last(lock: dict, results: list, html_dir: Optional[str]) -> Optional[dict]:
+    """Garde le résultat du dernier pari proposé (affiché sur la page tennis)."""
+    status = ("gagné" if all(r is True for r in results) else
+              "perdu" if any(r is False for r in results) else "résultat non disponible")
+    last = {"created_label": lock.get("created_label", ""), "kind": lock["kind"], "total": lock["total"],
+            "legs": [dict(l, result=r) for l, r in zip(lock["legs"], results)], "status": status}
+    if html_dir:
+        path = Path(html_dir) / "data" / "tennis_last_bet.json"
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(json.dumps(last, indent=1, ensure_ascii=False), encoding="utf-8")
+    return last
+
+
+def _read_last(html_dir: Optional[str]) -> Optional[dict]:
+    if not html_dir:
+        return None
+    try:
+        return json.loads((Path(html_dir) / "data" / "tennis_last_bet.json").read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return None
 
 
 def _save_lock(bet, now: datetime) -> None:
@@ -43,7 +90,7 @@ def _save_lock(bet, now: datetime) -> None:
         "created_label": _fmt_dt(now),
         "kind": bet.kind, "total": round(bet.total, 2), "prob": round(bet.prob, 3),
         "legs": [{"event_id": e.matchup.event_id, "pick": e.pick.name, "opponent": e.opponent.name,
-                  "odds": e.odds, "tournament": e.matchup.tournament,
+                  "odds": e.odds, "tournament": e.matchup.tournament, "best_of": e.matchup.best_of,
                   "commence": e.matchup.commence_time.isoformat(),
                   "time": f"{e.matchup.commence_time.astimezone(TZ):%d/%m %H:%M}"} for e in bet.legs],
     }
@@ -106,8 +153,16 @@ def run(demo: bool = False, html_dir: Optional[str] = None) -> int:
 
     now = slate.generated_at
     evaluations = evaluate_all(slate.matches, now)
-    locked = None if demo else _load_lock(now)
-    bet = None
+    locked, bet = None, None
+    slate.last_bet = _read_last(html_dir)
+    if not demo:
+        lock = _read_lock(now)
+        state, results = lock_state(lock, slate.players, now)
+        if state == "live":                       # un match du pari est en cours : on n'y touche pas
+            locked = lock
+        elif state == "finished":                 # matchs terminés : on garde le résultat, on libère
+            slate.last_bet = _save_last(lock, results, html_dir)
+            print(f"Dernier pari tennis : {slate.last_bet['status']}")
     if not locked:
         bet = best_bet([e for e in evaluations if e.passed])
         if not demo:

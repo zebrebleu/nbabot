@@ -105,6 +105,8 @@ class TennisSlate:
     next_tournament: Optional[str] = None
     source_label: str = "The Odds API + ESPN"
     diag: dict = field(default_factory=dict)
+    players: dict = field(default_factory=dict)          # historique complet (pour lire les résultats)
+    last_bet: Optional[dict] = None                      # résultat du dernier pari proposé
 
 
 # ---------------------------------------------------------------------------
@@ -445,4 +447,5 @@ class TennisFetcher:
 
         matches.sort(key=lambda m: m.commence_time)
         nxt = f"{next_info[1]} (à partir du {next_info[0]:%d/%m})" if next_info else None
-        return TennisSlate(matches, now, [s.get("title") or s["key"] for s in sports], nxt, diag=diag)
+        return TennisSlate(matches, now, [s.get("title") or s["key"] for s in sports], nxt, diag=diag,
+                           players=players)
