@@ -1,19 +1,54 @@
 {
- "created": "2026-10-30T15:45:56.802434+00:00",
- "created_label": "vendredi 30/10 à 16:45",
- "kind": "Pari simple",
- "total": 1.27,
- "prob": 0.741,
- "legs": [
+ "created": "2026-10-30T15:53:30.592152+00:00",
+ "created_label": "vendredi 30/10 à 16:53",
+ "bets": [
   {
-   "event_id": "c1a54362fbf98df45c2174b84374dd0c",
-   "pick": "Leylah Fernandez",
-   "opponent": "Kamilla Rakhimova",
-   "odds": 1.27,
-   "tournament": "WTA Pan Pacific Open",
-   "best_of": 3,
-   "commence": "2026-10-31T03:00:00+00:00",
-   "time": "31/10 04:00"
+   "option": "Option 1 · Pari simple",
+   "kind": "Pari simple",
+   "total": 1.27,
+   "prob": 0.741,
+   "stake": 15,
+   "legs": [
+    {
+     "event_id": "c1a54362fbf98df45c2174b84374dd0c",
+     "pick": "Leylah Fernandez",
+     "opponent": "Kamilla Rakhimova",
+     "odds": 1.27,
+     "tournament": "WTA Pan Pacific Open",
+     "best_of": 3,
+     "commence": "2026-10-31T03:00:00+00:00",
+     "time": "31/10 04:00"
+    }
+   ]
+  },
+  {
+   "option": "Option 2 · Combiné",
+   "kind": "Combiné de 2 matchs",
+   "total": 1.61,
+   "prob": 0.539,
+   "stake": 15,
+   "legs": [
+    {
+     "event_id": "e01a16acf3ce50a010714d85d5ff6374",
+     "pick": "Jiri Lehecka",
+     "opponent": "Jerome Kym",
+     "odds": 1.27,
+     "tournament": "ATP Swiss Indoors Basel",
+     "best_of": 3,
+     "commence": "2026-10-30T17:00:00+00:00",
+     "time": "30/10 18:00"
+    },
+    {
+     "event_id": "c1a54362fbf98df45c2174b84374dd0c",
+     "pick": "Leylah Fernandez",
+     "opponent": "Kamilla Rakhimova",
+     "odds": 1.27,
+     "tournament": "WTA Pan Pacific Open",
+     "best_of": 3,
+     "commence": "2026-10-31T03:00:00+00:00",
+     "time": "31/10 04:00"
+    }
+   ]
   }
  ]
 }
