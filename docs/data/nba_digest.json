@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-30T16:10:39.812105+00:00",
+ "generated_at": "2026-10-30T18:52:07.086230+00:00",
  "matches": [
   {
    "id": "nba:45ebc54751ef3e435192eaeb0470acfb",
@@ -7,8 +7,8 @@
    "label": "Charlotte Hornets @ Washington Wizards",
    "time": "2026-10-30T23:00:00+00:00",
    "verdict": "Écarté",
-   "line": "00:00 Charlotte Hornets @ Washington Wizards — écarté (favori pas assez net) : favori Washington Wizards 1.81",
-   "brief": "Match NBA : Charlotte Hornets (extérieur) contre Washington Wizards (domicile), le 31/10 à 00:00 (heure de Paris).\nCotes Unibet : Charlotte Hornets 1.86, Washington Wizards 1.81.\nAvis du bot : écarté — Favori pas assez net : Cote de 1.81, au-dessus de la limite de 1.80..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "00:00 Charlotte Hornets @ Washington Wizards — écarté (favori pas assez net) : favori Charlotte Hornets 1.81",
+   "brief": "Match NBA : Charlotte Hornets (extérieur) contre Washington Wizards (domicile), le 31/10 à 00:00 (heure de Paris).\nCotes Unibet : Charlotte Hornets 1.81, Washington Wizards 1.86.\nAvis du bot : écarté — Favori pas assez net : Cote de 1.81, au-dessus de la limite de 1.80..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:036a93ca33d6261c21d4bfa6e0d02568",
@@ -17,7 +17,7 @@
    "time": "2026-10-30T23:30:00+00:00",
    "verdict": "Écarté",
    "line": "00:30 Chicago Bulls @ Boston Celtics — écarté (cote trop basse) : favori Boston Celtics 1.09",
-   "brief": "Match NBA : Chicago Bulls (extérieur) contre Boston Celtics (domicile), le 31/10 à 00:30 (heure de Paris).\nCotes Unibet : Chicago Bulls 5.80, Boston Celtics 1.09.\nAvis du bot : écarté — Cote trop basse : Favori à 1.09 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "brief": "Match NBA : Chicago Bulls (extérieur) contre Boston Celtics (domicile), le 31/10 à 00:30 (heure de Paris).\nCotes Unibet : Chicago Bulls 5.90, Boston Celtics 1.09.\nAvis du bot : écarté — Cote trop basse : Favori à 1.09 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:64df299b882ea19ad5f8cb0ed5516a6f",
@@ -25,8 +25,8 @@
    "label": "Detroit Pistons @ Brooklyn Nets",
    "time": "2026-10-30T23:30:00+00:00",
    "verdict": "À jouer",
-   "line": "00:30 Detroit Pistons @ Brooklyn Nets — À JOUER : Detroit Pistons 1.28 (73% estimé)",
-   "brief": "Match NBA : Detroit Pistons (extérieur) contre Brooklyn Nets (domicile), le 31/10 à 00:30 (heure de Paris).\nCotes Unibet : Detroit Pistons 1.28, Brooklyn Nets 3.25.\nAvis du bot : à jouer — Detroit Pistons gagne, confiance prudente, chances estimées 73%, mise conseillée 15 €.\nAtouts : Nette différence de forme : 4V-1D contre 0V-4D ; Écart de niveau marqué : +6.4 pts/match contre -9.8 pts/match ; Brooklyn Nets diminué : 3 absents ou incertains ; Bien meilleur la saison passée : 60V-22D contre 20V-62D.\nPoints de vigilance : Début de saison : Peu de matchs joués, analyse moins fiable — Detroit Pistons : 5 match(s) joué(s), Brooklyn Nets : 4 (10 requis pour chaque équipe) ; Dynamique croisée : Données insuffisantes : 5 et 4 matchs joués (5 requis) — Detroit Pistons 4-1 vs Brooklyn Nets 0-4 sur les 5 derniers — toléré en début de saison (seuils assouplis) ; Cote Unibet en dessous du marché (78% implicite contre 73% estimé).\nForme récente (10 derniers matchs) : Detroit Pistons : 4V-1D, 1 victoire de suite, écart moyen +6.4 pts/match / Brooklyn Nets : 0V-4D, 4 défaites de suite, écart moyen -9.8 pts/match\nFace-à-face depuis 2023-24 : Detroit Pistons 7V-4D contre Brooklyn Nets / Derniers : 11/2025 V 125-107, 02/2026 V 130-77, 03/2026 D 105-107, 03/2026 V 138-100\nConfrontations cette saison : Première confrontation de la saison\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "00:30 Detroit Pistons @ Brooklyn Nets — À JOUER : Detroit Pistons 1.30 (73% estimé)",
+   "brief": "Match NBA : Detroit Pistons (extérieur) contre Brooklyn Nets (domicile), le 31/10 à 00:30 (heure de Paris).\nCotes Unibet : Detroit Pistons 1.30, Brooklyn Nets 3.10.\nAvis du bot : à jouer — Detroit Pistons gagne, confiance prudente, chances estimées 73%, mise conseillée 15 €.\nAtouts : Nette différence de forme : 4V-1D contre 0V-4D ; Écart de niveau marqué : +6.4 pts/match contre -9.8 pts/match ; Brooklyn Nets diminué : 3 absents ou incertains ; Bien meilleur la saison passée : 60V-22D contre 20V-62D.\nPoints de vigilance : Début de saison : Peu de matchs joués, analyse moins fiable — Detroit Pistons : 5 match(s) joué(s), Brooklyn Nets : 4 (10 requis pour chaque équipe) ; Dynamique croisée : Données insuffisantes : 5 et 4 matchs joués (5 requis) — Detroit Pistons 4-1 vs Brooklyn Nets 0-4 sur les 5 derniers — toléré en début de saison (seuils assouplis) ; Cote Unibet en dessous du marché (77% implicite contre 73% estimé).\nForme récente (10 derniers matchs) : Detroit Pistons : 4V-1D, 1 victoire de suite, écart moyen +6.4 pts/match / Brooklyn Nets : 0V-4D, 4 défaites de suite, écart moyen -9.8 pts/match\nFace-à-face depuis 2023-24 : Detroit Pistons 7V-4D contre Brooklyn Nets / Derniers : 11/2025 V 125-107, 02/2026 V 130-77, 03/2026 D 105-107, 03/2026 V 138-100\nConfrontations cette saison : Première confrontation de la saison\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:96a166bbd49782dbd9a61c2fb9069787",
@@ -52,8 +52,8 @@
    "label": "Indiana Pacers @ Miami Heat",
    "time": "2026-10-31T00:00:00+00:00",
    "verdict": "Écarté",
-   "line": "01:00 Indiana Pacers @ Miami Heat — écarté (forme insuffisante) : favori Miami Heat 1.28",
-   "brief": "Match NBA : Indiana Pacers (extérieur) contre Miami Heat (domicile), le 31/10 à 01:00 (heure de Paris).\nCotes Unibet : Indiana Pacers 3.25, Miami Heat 1.28.\nAvis du bot : écarté — Forme insuffisante : 0V-3D sur ses 3 derniers à domicile (2 V requises).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "01:00 Indiana Pacers @ Miami Heat — écarté (forme insuffisante) : favori Miami Heat 1.29",
+   "brief": "Match NBA : Indiana Pacers (extérieur) contre Miami Heat (domicile), le 31/10 à 01:00 (heure de Paris).\nCotes Unibet : Indiana Pacers 3.15, Miami Heat 1.29.\nAvis du bot : écarté — Forme insuffisante : 0V-3D sur ses 3 derniers à domicile (2 V requises).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:b9778d0e3a26167eb49901dcae7eeb98",
@@ -61,8 +61,8 @@
    "label": "Houston Rockets @ Dallas Mavericks",
    "time": "2026-10-31T00:00:00+00:00",
    "verdict": "Écarté",
-   "line": "01:00 Houston Rockets @ Dallas Mavericks — écarté (match piège) : favori Houston Rockets 1.39",
-   "brief": "Match NBA : Houston Rockets (extérieur) contre Dallas Mavericks (domicile), le 31/10 à 01:00 (heure de Paris).\nCotes Unibet : Houston Rockets 1.39, Dallas Mavericks 2.70.\nAvis du bot : écarté — Match piège : Le favori a un gros choc juste après et risque de se ménager. Choc contre Thunder (contender) dans 24 h.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "01:00 Houston Rockets @ Dallas Mavericks — écarté (match piège) : favori Houston Rockets 1.40",
+   "brief": "Match NBA : Houston Rockets (extérieur) contre Dallas Mavericks (domicile), le 31/10 à 01:00 (heure de Paris).\nCotes Unibet : Houston Rockets 1.40, Dallas Mavericks 2.65.\nAvis du bot : écarté — Match piège : Le favori a un gros choc juste après et risque de se ménager. Choc contre Thunder (contender) dans 24 h.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:cac1461f5983a88fac612685395aa897",
