@@ -1,0 +1,18 @@
+{
+ "created_label": "jeudi 29/10 à 22:44",
+ "kind": "Pari simple",
+ "total": 1.66,
+ "legs": [
+  {
+   "event_id": "4eebb3b42f713eff0e760f9abef41572",
+   "pick": "Holger Rune",
+   "opponent": "Valentin Vacherot",
+   "odds": 1.66,
+   "tournament": "ATP Swiss Indoors Basel",
+   "commence": "2026-10-30T13:00:00+00:00",
+   "time": "30/10 14:00",
+   "result": false
+  }
+ ],
+ "status": "perdu"
+}

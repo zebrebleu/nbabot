@@ -1,18 +1,19 @@
 {
- "created": "2026-10-29T21:44:59.423724+00:00",
- "created_label": "jeudi 29/10 à 22:44",
+ "created": "2026-10-30T15:45:56.802434+00:00",
+ "created_label": "vendredi 30/10 à 16:45",
  "kind": "Pari simple",
- "total": 1.66,
- "prob": 0.574,
+ "total": 1.27,
+ "prob": 0.741,
  "legs": [
   {
-   "event_id": "4eebb3b42f713eff0e760f9abef41572",
-   "pick": "Holger Rune",
-   "opponent": "Valentin Vacherot",
-   "odds": 1.66,
-   "tournament": "ATP Swiss Indoors Basel",
-   "commence": "2026-10-30T13:00:00+00:00",
-   "time": "30/10 14:00"
+   "event_id": "c1a54362fbf98df45c2174b84374dd0c",
+   "pick": "Leylah Fernandez",
+   "opponent": "Kamilla Rakhimova",
+   "odds": 1.27,
+   "tournament": "WTA Pan Pacific Open",
+   "best_of": 3,
+   "commence": "2026-10-31T03:00:00+00:00",
+   "time": "31/10 04:00"
   }
  ]
 }
