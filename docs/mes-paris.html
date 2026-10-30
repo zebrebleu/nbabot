@@ -83,10 +83,11 @@ details[open] summary::before{content:"▾ "}
 .archives a{text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:13px}
 .archives a.cur{border-color:var(--accent);color:var(--accent);font-weight:600}
 footer{color:var(--muted);font-size:12px;margin-top:36px;line-height:1.6}
-.tabs{display:flex;gap:6px;padding-top:16px}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;padding-top:16px}
 .tabs a{text-decoration:none;font:700 15px/1 var(--num);letter-spacing:.04em;text-transform:uppercase;
 padding:9px 16px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--muted)}
 .tabs a.cur{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+@media (max-width:600px){.tabs{gap:4px}.tabs a{padding:8px 10px;font-size:13px}}
 @media (max-width:600px){h1{font-size:28px}.stats{grid-template-columns:1fr 1fr}.stat.big{grid-column:1/3}
 .grid{grid-template-columns:1fr}.game{grid-template-columns:52px 1fr;gap:4px 8px}.status{grid-column:2;text-align:left}
 .time{font-size:18px}.team .nm{white-space:normal}
@@ -132,12 +133,19 @@ background:var(--card);color:var(--ink);text-decoration:none;display:inline-bloc
 .toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:var(--ink);color:var(--bg);
 padding:10px 16px;border-radius:10px;font-size:14px;opacity:0;transition:opacity .2s;pointer-events:none;z-index:9}
 .toast.show{opacity:1;pointer-events:auto}.toast a,.toast button{color:inherit}
+.clair{background:var(--soft);border-radius:12px;padding:12px 14px;margin:12px 0 4px}
+.clair .lbl{margin:0 0 4px}.clair ul{margin:0;padding-left:18px}.clair li{padding:3px 0;font-size:15px}
+.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.btn.ask{border-color:var(--info);color:var(--info)}
+a.ask.small{font-size:12px;font-weight:600;color:var(--info);text-decoration:none;white-space:nowrap}
+.stats.four{grid-template-columns:repeat(4,1fr)}
+@media (max-width:600px){.stats.four{grid-template-columns:1fr 1fr}.stats.four .stat.big{grid-column:auto}}
 @media (max-width:600px){.sides{grid-template-columns:1fr}
 .bets thead{display:none}.bets,.bets tbody,.bets tr,.bets td{display:block}
 .bets tr{border-bottom:1px solid var(--line);padding:10px 0}.bets td{border:0;padding:2px 0}
 .bets td[data-l]::before{content:attr(data-l);color:var(--muted);font-size:12px;margin-right:6px}}
 </style></head><body><main>
-<nav class="tabs"><a class="" href="index.html">NBA</a><a class="" href="tennis.html">Tennis</a><a class="cur" href="mes-paris.html">Mes paris</a></nav>
+<nav class="tabs"><a class="" href="index.html">NBA</a><a class="" href="tennis.html">Tennis</a><a class="cur" href="mes-paris.html">Mes paris</a><a class="" href="discuter.html">Chatbot</a></nav>
 <header class="top"><div class="kicker">Suivi personnel</div><h1>Mes paris</h1>
 <p class="sub">Pour ajouter un pari : sélectionne tes matchs en bas des pages
 <a href="index.html#ajouter">NBA</a> ou <a href="tennis.html#ajouter">Tennis</a>, puis indique ta mise.</p>

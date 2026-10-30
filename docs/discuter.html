@@ -1,0 +1,260 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chatbot paris</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><style>
+:root{--bg:#f3f1ec;--card:#fff;--ink:#16181d;--muted:#646a73;--line:#e2ded5;--soft:#f7f5f0;
+--go:#13795b;--go-bg:#e3f4ec;--info:#1d5fbf;--info-bg:#e4eefb;--no:#b3261e;--no-bg:#fbe9e7;
+--warn:#8a5300;--warn-bg:#fdf1d8;--off:#6b7079;--off-bg:#eceae5;--accent:#e8590c;
+--num:"Barlow Condensed",system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#101216;--card:#1a1d22;--ink:#eceef1;
+--muted:#9aa1ab;--line:#2b2f36;--soft:#20242a;--go:#4cd19a;--go-bg:#123326;--info:#7fb0ff;--info-bg:#15263f;
+--no:#ff8f85;--no-bg:#3a1916;--warn:#f2bf5e;--warn-bg:#382a10;--off:#9aa1ab;--off-bg:#262a30;--accent:#ff7a33}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:880px;margin:0 auto;padding:0 16px 56px}
+a{color:inherit}
+.top{padding:20px 0 18px}
+.kicker{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+h1{font:700 34px/1.05 var(--num);margin:6px 0 6px;letter-spacing:.01em}
+.sub{color:var(--muted);font-size:13px;margin:0}
+.counts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px}
+.count{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.count b{display:block;font:700 28px/1 var(--num)}.count span{font-size:12px;color:var(--muted)}
+.count.go b{color:var(--go)}.count.no b{color:var(--no)}
+h2{font:700 22px/1.1 var(--num);margin:34px 0 4px;letter-spacing:.01em}
+.h2sub{color:var(--muted);font-size:13px;margin:0 0 12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;margin-bottom:12px}
+.verdict.go{border:2px solid var(--go)}
+.verdict.none{border:2px dashed var(--line)}
+.chip{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:3px 10px;
+font-size:12px;font-weight:700;letter-spacing:.02em;white-space:nowrap}
+.chip.go{background:var(--go-bg);color:var(--go)}.chip.info{background:var(--info-bg);color:var(--info)}
+.chip.no{background:var(--no-bg);color:var(--no)}.chip.off{background:var(--off-bg);color:var(--off)}
+.chip.warn{background:var(--warn-bg);color:var(--warn)}
+.verdict h3{font:700 26px/1.1 var(--num);margin:10px 0 14px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}
+.stat{background:var(--soft);border-radius:12px;padding:10px 12px}
+.stat span{display:block;font-size:12px;color:var(--muted)}
+.stat b{font:700 30px/1.1 var(--num)}.stat.big b{color:var(--go)}
+.leg{display:flex;align-items:center;gap:12px;padding:12px 0;border-top:1px solid var(--line)}
+.leg .who{flex:1;min-width:0}.leg .who b{display:block;font-size:16px}
+.leg .who span{color:var(--muted);font-size:13px}
+.pill{font:700 22px/1 var(--num);background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:8px 10px}
+.badge{flex:none;width:44px;height:44px;border-radius:12px;display:grid;place-items:center;
+font:700 15px/1 var(--num);letter-spacing:.03em}
+.badge.sm{width:34px;height:34px;border-radius:9px;font-size:13px}
+.why{font-size:15px;margin:4px 0 0}
+.reasons{margin:14px 0 0;padding:0;list-style:none}
+.reasons li{padding:4px 0 4px 24px;position:relative;font-size:14px}
+.reasons li::before{position:absolute;left:0;top:4px;font-weight:700}
+.reasons.plus li::before{content:"✓";color:var(--go)}
+.reasons.risk li::before{content:"!";color:var(--warn);left:6px}
+.reasons.ctrl li::before{content:"✓";color:var(--go)}
+.reasons.ctrl b{font-weight:600}
+.lbl{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:16px 0 0}
+.head{display:flex;align-items:flex-start;gap:12px}.head .who{flex:1}
+.head h3{margin:0;font-size:18px}.head p{margin:2px 0 0;color:var(--muted);font-size:13px}
+.meter{display:inline-flex;gap:3px;vertical-align:middle;margin-left:4px}
+.meter i{width:14px;height:6px;border-radius:3px;background:var(--line)}.meter i.on{background:var(--go)}
+details{margin-top:12px;border-top:1px solid var(--line);padding-top:10px}
+summary{cursor:pointer;font-weight:600;font-size:14px;color:var(--info);list-style:none}
+summary::-webkit-details-marker{display:none}summary::before{content:"▸ ";}
+details[open] summary::before{content:"▾ "}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:4px 24px}
+.grid h4{margin:12px 0 2px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.grid ul{margin:0;padding-left:16px;font-size:14px}
+.game{display:grid;grid-template-columns:54px 1fr auto;gap:4px 12px;padding:14px 0;border-top:1px solid var(--line)}
+.game:first-child{border-top:0;padding-top:0}
+.time{font:700 20px/1.2 var(--num)}.time small{display:block;font:500 11px Inter,sans-serif;color:var(--muted)}
+.teams{min-width:0}
+.team{display:flex;align-items:center;gap:10px;padding:3px 0}
+.team .nm{flex:1;min-width:0;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.team .nm em{font-style:normal;color:var(--muted);font-size:12px}
+.team .od{font:700 18px/1 var(--num);min-width:40px;text-align:right;color:var(--muted)}
+.team.fav .nm{font-weight:600}.team.fav .od{color:var(--ink)}
+.status{text-align:right}
+.reason{grid-column:2/4;font-size:13px;color:var(--muted);margin-top:2px}
+.reason b{color:var(--ink);font-weight:600}
+.legend{display:grid;gap:10px;margin:12px 0 0;padding:0;list-style:none}
+.legend li{display:flex;gap:10px;align-items:flex-start;font-size:14px}
+.legend .chip{min-width:92px;justify-content:center}
+.check{margin:0;padding:0;list-style:none}.check li{padding:5px 0 5px 28px;position:relative}
+.check li::before{content:"";position:absolute;left:0;top:7px;width:16px;height:16px;border:2px solid var(--muted);border-radius:4px}
+.archives{display:flex;flex-wrap:wrap;gap:8px}
+.archives a{text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:13px}
+.archives a.cur{border-color:var(--accent);color:var(--accent);font-weight:600}
+footer{color:var(--muted);font-size:12px;margin-top:36px;line-height:1.6}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;padding-top:16px}
+.tabs a{text-decoration:none;font:700 15px/1 var(--num);letter-spacing:.04em;text-transform:uppercase;
+padding:9px 16px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--muted)}
+.tabs a.cur{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+@media (max-width:600px){.tabs{gap:4px}.tabs a{padding:8px 10px;font-size:13px}}
+@media (max-width:600px){h1{font-size:28px}.stats{grid-template-columns:1fr 1fr}.stat.big{grid-column:1/3}
+.grid{grid-template-columns:1fr}.game{grid-template-columns:52px 1fr;gap:4px 8px}.status{grid-column:2;text-align:left}
+.time{font-size:18px}.team .nm{white-space:normal}
+.reason{grid-column:2}.counts b{font-size:24px}}
+
+.pickgrp{font:700 16px/1.2 var(--num);letter-spacing:.02em;color:var(--accent);margin:16px 0 6px}
+.pickgrp:first-child{margin-top:0}
+.pm{padding:10px 0;border-top:1px solid var(--line)}.pickgrp+.pm{border-top:0}
+.pm .meta{display:flex;justify-content:space-between;gap:8px;font-size:12px;color:var(--muted);margin-bottom:6px}
+.sides{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.side{font:inherit;text-align:left;cursor:pointer;border:1.5px solid var(--line);background:var(--soft);
+color:var(--ink);border-radius:10px;padding:9px 11px;display:flex;justify-content:space-between;gap:8px;align-items:center}
+.side b{font:700 18px/1 var(--num)}.side span{font-size:14px;overflow-wrap:anywhere}
+.side:hover{border-color:var(--muted)}
+.side.on{border-color:var(--go);background:var(--go-bg)}.side.on b{color:var(--go)}
+.side.fav span{font-weight:600}
+.slip{position:sticky;bottom:12px;z-index:5;border:2px solid var(--go);box-shadow:0 8px 30px rgba(0,0,0,.18);margin-top:16px}
+.slip-head{display:flex;align-items:center;gap:8px}.slip-head .btn{margin-left:auto}
+.slip .row{display:flex;flex-wrap:wrap;gap:10px;align-items:end}
+.slip label{display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--muted);flex:1;min-width:120px}
+input,select{font:inherit;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:10px;padding:9px 10px}
+input:focus,select:focus,button:focus-visible,a.btn:focus-visible{outline:2px solid var(--info);outline-offset:1px}
+.btn{font:600 14px Inter,sans-serif;cursor:pointer;border-radius:10px;padding:10px 14px;border:1px solid var(--line);
+background:var(--card);color:var(--ink);text-decoration:none;display:inline-block}
+.btn.main{background:var(--go);border-color:var(--go);color:#fff}.btn.main:disabled{opacity:.45;cursor:not-allowed}
+.btn.ghost{background:none}.btn.small{padding:5px 10px;font-size:13px}
+.legs{margin:8px 0 10px;padding:0;list-style:none;font-size:14px}
+.legs li{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:3px 0}
+.legs li .x{border:0;background:none;color:var(--muted);cursor:pointer;font-size:15px;padding:2px 6px}
+.tot{font:700 26px/1 var(--num)}
+.bets{width:100%;border-collapse:collapse;font-size:14px}
+.bets th,.bets td{text-align:left;padding:10px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+.bets th{font-size:12px;color:var(--muted);font-weight:600}
+.bets td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
+.pos{color:var(--go);font-weight:700}.neg{color:var(--no);font-weight:700}
+.sel{font-size:13px}.sel div{padding:1px 0}
+.empty{color:var(--muted);font-size:14px;padding:6px 0}
+.tools{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.note{font-size:12px;color:var(--muted);margin-top:10px}
+.mrow{display:flex;flex-wrap:wrap;gap:10px;align-items:end}
+.mrow label{display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--muted);flex:1;min-width:110px}
+.mrow label.w{flex:2;min-width:180px}
+.toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:var(--ink);color:var(--bg);
+padding:10px 16px;border-radius:10px;font-size:14px;opacity:0;transition:opacity .2s;pointer-events:none;z-index:9}
+.toast.show{opacity:1;pointer-events:auto}.toast a,.toast button{color:inherit}
+.clair{background:var(--soft);border-radius:12px;padding:12px 14px;margin:12px 0 4px}
+.clair .lbl{margin:0 0 4px}.clair ul{margin:0;padding-left:18px}.clair li{padding:3px 0;font-size:15px}
+.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.btn.ask{border-color:var(--info);color:var(--info)}
+a.ask.small{font-size:12px;font-weight:600;color:var(--info);text-decoration:none;white-space:nowrap}
+.stats.four{grid-template-columns:repeat(4,1fr)}
+@media (max-width:600px){.stats.four{grid-template-columns:1fr 1fr}.stats.four .stat.big{grid-column:auto}}
+@media (max-width:600px){.sides{grid-template-columns:1fr}
+.bets thead{display:none}.bets,.bets tbody,.bets tr,.bets td{display:block}
+.bets tr{border-bottom:1px solid var(--line);padding:10px 0}.bets td{border:0;padding:2px 0}
+.bets td[data-l]::before{content:attr(data-l);color:var(--muted);font-size:12px;margin-right:6px}}
+
+.topic{width:100%}
+textarea{font:inherit;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:10px;
+padding:10px 12px;width:100%;min-height:96px;resize:vertical}
+textarea:focus{outline:2px solid var(--info);outline-offset:1px}
+.sugg{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 0}
+.sugg button{font:500 13px Inter,sans-serif;cursor:pointer;border:1px solid var(--line);background:var(--soft);
+color:var(--ink);border-radius:999px;padding:6px 11px}
+.sugg button:hover{border-color:var(--info);color:var(--info)}
+pre.brief{white-space:pre-wrap;font:13px/1.5 Inter,sans-serif;color:var(--muted);background:var(--soft);
+border-radius:10px;padding:10px 12px;margin:8px 0 0;max-height:280px;overflow:auto}
+.count-chars{font-size:12px;color:var(--muted);margin-top:6px}
+</style></head><body><main>
+<nav class="tabs"><a class="" href="index.html">NBA</a><a class="" href="tennis.html">Tennis</a><a class="" href="mes-paris.html">Mes paris</a><a class="cur" href="discuter.html">Chatbot</a></nav>
+<header class="top"><div class="kicker">Chatbot · avec Claude</div><h1>Pose tes questions</h1>
+<p class="sub">Choisis un match ou la soirée, écris ta question : Claude s'ouvre dans un nouvel onglet avec
+l'analyse du bot déjà jointe. Il peut aussi chercher les dernières infos sur le web.</p></header>
+
+<h2>1. De quoi veux-tu parler ?</h2>
+<div class="card"><select id="topic" class="topic" aria-label="Sujet"><option>Chargement…</option></select>
+<details><summary>Ce qui sera envoyé à Claude</summary><pre class="brief" id="brief"></pre></details></div>
+
+<h2>2. Ta question</h2>
+<div class="card"><textarea id="question" placeholder="Faut-il jouer ce match, et combien miser ?" aria-label="Ta question"></textarea>
+<div class="sugg"><button type="button">Faut-il jouer ce match, et combien miser ?</button><button type="button">Quel est le vrai risque sur ce pari ?</button><button type="button">Y a-t-il des blessures ou des forfaits de dernière minute ?</button><button type="button">Explique-moi les cotes simplement</button><button type="button">Quel est le meilleur pari de la soirée ?</button><button type="button">Analyse mon bilan : est-ce que je mise trop ?</button></div>
+<div class="actions"><button class="btn main" id="ask" type="button">Demander à Claude ↗</button>
+<button class="btn" id="copy" type="button">Copier la question</button></div>
+<p class="count-chars" id="chars"></p><p class="note" id="copyMsg"></p>
+<p class="note">Il faut être connecté à ton compte Claude. Si la question n'est pas envoyée toute seule,
+appuie sur Entrée dans Claude. Claude donne des explications, pas de garantie : garde des mises raisonnables.</p></div>
+<footer>Joueurs Info Service : 09 74 75 13 13 (appel non surtaxé).</footer>
+</main><script>(function () {
+const $ = s => document.querySelector(s);
+const INTRO = "Tu es mon assistant pour analyser des paris sportifs (je parie sur Unibet, mise de base 100 €). Voici la fiche préparée par mon bot. Réponds en français, simplement, sans jargon, et rappelle les risques. Si c'est utile, cherche sur le web les dernières infos (blessures, forfaits, compositions).", SITE = "https://zebrebleu.github.io/nbabot/", MAX = 2400;
+const fmt = x => (Math.round(x * 100) / 100).toFixed(2).replace('.', ',');
+let data = {nba: [], tennis: []};
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+async function load() {
+  for (const s of ['nba', 'tennis']) {
+    try { const r = await fetch(`data/${s}_digest.json?t=${Date.now()}`); if (r.ok) data[s] = (await r.json()).matches || []; } catch (e) {}
+  }
+  const now = Date.now() - 3 * 3600e3;
+  for (const s of ['nba', 'tennis']) data[s] = data[s].filter(m => new Date(m.time).getTime() > now);
+  const sel = $('#topic');
+  const opt = (v, t) => `<option value="${esc(v)}">${esc(t)}</option>`;
+  const hh = iso => new Date(iso).toLocaleString('fr-FR', {weekday: 'short', hour: '2-digit', minute: '2-digit'});
+  let html = '<optgroup label="Vue d\'ensemble">' + opt('free', 'Question libre (sans match précis)');
+  if (data.nba.length) html += opt('all:nba', `Toute la nuit NBA (${data.nba.length} matchs)`);
+  if (data.tennis.length) html += opt('all:tennis', `Tout le tennis à venir (${data.tennis.length} matchs)`);
+  html += opt('mybets', 'Mes paris (mon bilan)') + '</optgroup>';
+  const order = {'À jouer': 0, 'Validé': 1, 'Écarté': 2, 'En attente': 3};
+  for (const [s, label] of [['nba', 'NBA'], ['tennis', 'Tennis']]) {
+    if (!data[s].length) continue;
+    const list = [...data[s]].sort((a, b) => (order[a.verdict] - order[b.verdict]) || a.time.localeCompare(b.time));
+    html += `<optgroup label="${label}">` + list.map(m => opt(m.id, `${m.verdict === 'À jouer' ? '★ ' : ''}${m.label} · ${hh(m.time)} · ${m.verdict}`)).join('') + '</optgroup>';
+  }
+  sel.innerHTML = html;
+  const best = [...data.nba, ...data.tennis].find(m => m.verdict === 'À jouer');
+  const wanted = new URLSearchParams(location.search).get('match');
+  sel.value = wanted && [...sel.options].some(o => o.value === wanted) ? wanted : (best ? best.id : 'free');
+  update();
+}
+
+function myBets() {
+  let bets = []; try { bets = JSON.parse(localStorage.getItem('mes_paris_v1') || '[]'); } catch (e) {}
+  if (!Array.isArray(bets) || !bets.length) return "Je n'ai encore enregistré aucun pari.";
+  const st = {en_cours: 'en cours', gagne: 'gagné', perdu: 'perdu', rembourse: 'remboursé'};
+  const net = bets.reduce((s, b) => s + (b.status === 'gagne' ? b.stake * b.total - b.stake : b.status === 'perdu' ? -b.stake : 0), 0);
+  const lines = bets.slice(0, 15).map(b => `${(b.date || '').split('-').reverse().join('/')} : ${b.legs.map(l => `${l.pick} ${fmt(l.odds)}`).join(' + ')} · cote ${fmt(b.total)} · mise ${fmt(b.stake)} € · ${st[b.status] || b.status}`);
+  return `Mes paris enregistrés (${bets.length} au total, bénéfice net ${fmt(net)} €, ${bets.filter(b => b.status === 'gagne').length} gagnés, ${bets.filter(b => b.status === 'perdu').length} perdus) :\n` + lines.join('\n');
+}
+
+function context() {
+  const v = $('#topic').value;
+  if (v === 'free') return `Les analyses du jour de mon bot sont sur ${SITE}`;
+  if (v === 'mybets') return myBets();
+  if (v.startsWith('all:')) {
+    const s = v.slice(4), list = data[s];
+    const head = s === 'nba' ? 'Résumé de la nuit NBA selon mon bot (heures de Paris) :' : 'Résumé des matchs de tennis à venir selon mon bot (heures de Paris) :';
+    let txt = head + '\n' + list.map(m => m.line).join('\n') + `\nAnalyses détaillées : ${SITE}`;
+    return txt.length > 1600 ? txt.slice(0, 1597) + '…' : txt;
+  }
+  const m = [...data.nba, ...data.tennis].find(x => x.id === v);
+  return m ? m.brief : '';
+}
+
+function buildPrompt() {
+  const q = $('#question').value.trim() || $('#question').placeholder;
+  let p = `${INTRO}\n\n${context()}\n\nMa question : ${q}`;
+  if (p.length > MAX) p = p.slice(0, MAX - 1) + '…';
+  return p;
+}
+
+function update() {
+  $('#brief').textContent = context();
+  const p = buildPrompt();
+  $('#chars').textContent = `${p.length} caractères envoyés à Claude`;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  $('#topic').addEventListener('change', update);
+  $('#question').addEventListener('input', update);
+  document.querySelectorAll('.sugg button').forEach(b => b.onclick = () => { $('#question').value = b.textContent; update(); $('#question').focus(); });
+  $('#ask').onclick = () => window.open('https://claude.ai/new?q=' + encodeURIComponent(buildPrompt()), '_blank', 'noopener');
+  $('#copy').onclick = async () => {
+    const t = $('#copyMsg');
+    try { await navigator.clipboard.writeText(buildPrompt()); t.textContent = 'Question copiée : colle-la dans Claude.'; }
+    catch (e) { t.textContent = 'Copie impossible ici : sélectionne le texte ci-dessus à la main.'; }
+  };
+  load();
+});
+})();
+</script></body></html>

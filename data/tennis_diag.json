@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-30T15:03:39.472745+00:00",
+ "generated_at": "2026-10-30T15:30:22.545021+00:00",
  "espn_matches": {
-  "atp": 5986,
-  "wta": 3400
+  "atp": 24667,
+  "wta": 12776
  },
  "rankings": {
   "atp": 150,
@@ -12,6 +12,12 @@
   "tennis_atp_swiss_indoors",
   "tennis_atp_vienna_open",
   "tennis_wta_pan_pacific_open"
+ ],
+ "years": [
+  2026,
+  2025,
+  2024,
+  2023
  ],
  "ranking_match": {
   "atp": {
@@ -93,9 +99,9 @@
    ]
   }
  },
- "players": 1293,
+ "players": 2106,
  "ranked_players": 300,
- "odds_events": 9,
- "upcoming_matches": 7,
+ "odds_events": 8,
+ "upcoming_matches": 6,
  "unmatched_names": []
 }

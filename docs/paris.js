@@ -41,6 +41,8 @@ function renderTicket() {
   $('#slipLegs').querySelectorAll('[data-rm]').forEach(b => b.onclick = () => { const l = ticket(); l.splice(+b.dataset.rm, 1); setTicket(l); });
   const total = totalOf(legs);
   $('#slipTotal').textContent = fmt(total);
+  const rec = legs.every(l => l.stake) ? Math.min(...legs.map(l => l.stake)) : null;   // confiance la plus basse
+  $('#stake').placeholder = rec ? `conseillé : ${rec} €` : 'ex. 20';
   const st = num($('#stake').value);
   $('#slipGain').textContent = st > 0 ? eur(st * total) : '—';
   $('#addBet').disabled = !(st > 0);
@@ -53,8 +55,19 @@ function initPicker() {
     legs = legs.filter(l => l.id !== b.dataset.id);
     if (!same || same.pick !== b.dataset.pick)
       legs.push({id: b.dataset.id, sport: b.dataset.sport, competition: b.dataset.comp, time: b.dataset.time,
-                 pick: b.dataset.pick, opponent: b.dataset.opp, odds: num(b.dataset.odds)});
+                 pick: b.dataset.pick, opponent: b.dataset.opp, odds: num(b.dataset.odds),
+                 stake: b.dataset.stake ? +b.dataset.stake : null});
     setTicket(legs);
+  }));
+  // « Mettre ce pari dans mon ticket » : pari proposé par le bot, avec sa mise conseillée
+  document.querySelectorAll('[data-addbet]').forEach(b => b.addEventListener('click', () => {
+    let add = []; try { add = JSON.parse(b.dataset.addbet); } catch (e) { return; }
+    const st = +b.dataset.stake || null;
+    const legs = ticket().filter(l => !add.some(a => a.id === l.id)).concat(add.map(a => ({...a, stake: st})));
+    setTicket(legs);
+    if (st && $('#stake')) { $('#stake').value = String(st); renderTicket(); }
+    const slip = $('#slip'); if (slip) slip.scrollIntoView({behavior: 'smooth', block: 'end'});
+    toast('Pari ajouté au ticket : vérifie la mise puis enregistre-le');
   }));
 }
 
