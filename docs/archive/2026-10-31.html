@@ -1,0 +1,226 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pronostic NBA</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><style>
+:root{--bg:#f3f1ec;--card:#fff;--ink:#16181d;--muted:#646a73;--line:#e2ded5;--soft:#f7f5f0;
+--go:#13795b;--go-bg:#e3f4ec;--info:#1d5fbf;--info-bg:#e4eefb;--no:#b3261e;--no-bg:#fbe9e7;
+--warn:#8a5300;--warn-bg:#fdf1d8;--off:#6b7079;--off-bg:#eceae5;--accent:#e8590c;
+--num:"Barlow Condensed",system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#101216;--card:#1a1d22;--ink:#eceef1;
+--muted:#9aa1ab;--line:#2b2f36;--soft:#20242a;--go:#4cd19a;--go-bg:#123326;--info:#7fb0ff;--info-bg:#15263f;
+--no:#ff8f85;--no-bg:#3a1916;--warn:#f2bf5e;--warn-bg:#382a10;--off:#9aa1ab;--off-bg:#262a30;--accent:#ff7a33}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:880px;margin:0 auto;padding:0 16px 56px}
+a{color:inherit}
+.top{padding:20px 0 18px}
+.kicker{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+h1{font:700 34px/1.05 var(--num);margin:6px 0 6px;letter-spacing:.01em}
+.sub{color:var(--muted);font-size:13px;margin:0}
+.counts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px}
+.count{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.count b{display:block;font:700 28px/1 var(--num)}.count span{font-size:12px;color:var(--muted)}
+.count.go b{color:var(--go)}.count.no b{color:var(--no)}
+h2{font:700 22px/1.1 var(--num);margin:34px 0 4px;letter-spacing:.01em}
+.h2sub{color:var(--muted);font-size:13px;margin:0 0 12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;margin-bottom:12px}
+.verdict.go{border:2px solid var(--go)}
+.verdict.none{border:2px dashed var(--line)}
+.chip{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:3px 10px;
+font-size:12px;font-weight:700;letter-spacing:.02em;white-space:nowrap}
+.chip.go{background:var(--go-bg);color:var(--go)}.chip.info{background:var(--info-bg);color:var(--info)}
+.chip.no{background:var(--no-bg);color:var(--no)}.chip.off{background:var(--off-bg);color:var(--off)}
+.chip.warn{background:var(--warn-bg);color:var(--warn)}
+.verdict h3{font:700 26px/1.1 var(--num);margin:10px 0 14px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}
+.stat{background:var(--soft);border-radius:12px;padding:10px 12px}
+.stat span{display:block;font-size:12px;color:var(--muted)}
+.stat b{font:700 30px/1.1 var(--num)}.stat.big b{color:var(--go)}
+.leg{display:flex;align-items:center;gap:12px;padding:12px 0;border-top:1px solid var(--line)}
+.leg .who{flex:1;min-width:0}.leg .who b{display:block;font-size:16px}
+.leg .who span{color:var(--muted);font-size:13px}
+.pill{font:700 22px/1 var(--num);background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:8px 10px}
+.badge{flex:none;width:44px;height:44px;border-radius:12px;display:grid;place-items:center;
+font:700 15px/1 var(--num);letter-spacing:.03em}
+.badge.sm{width:34px;height:34px;border-radius:9px;font-size:13px}
+.why{font-size:15px;margin:4px 0 0}
+.reasons{margin:14px 0 0;padding:0;list-style:none}
+.reasons li{padding:4px 0 4px 24px;position:relative;font-size:14px}
+.reasons li::before{position:absolute;left:0;top:4px;font-weight:700}
+.reasons.plus li::before{content:"✓";color:var(--go)}
+.reasons.risk li::before{content:"!";color:var(--warn);left:6px}
+.reasons.ctrl li::before{content:"✓";color:var(--go)}
+.reasons.ctrl b{font-weight:600}
+.lbl{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:16px 0 0}
+.head{display:flex;align-items:flex-start;gap:12px}.head .who{flex:1}
+.head h3{margin:0;font-size:18px}.head p{margin:2px 0 0;color:var(--muted);font-size:13px}
+.meter{display:inline-flex;gap:3px;vertical-align:middle;margin-left:4px}
+.meter i{width:14px;height:6px;border-radius:3px;background:var(--line)}.meter i.on{background:var(--go)}
+details{margin-top:12px;border-top:1px solid var(--line);padding-top:10px}
+summary{cursor:pointer;font-weight:600;font-size:14px;color:var(--info);list-style:none}
+summary::-webkit-details-marker{display:none}summary::before{content:"▸ ";}
+details[open] summary::before{content:"▾ "}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:4px 24px}
+.grid h4{margin:12px 0 2px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.grid ul{margin:0;padding-left:16px;font-size:14px}
+.game{display:grid;grid-template-columns:54px 1fr auto;gap:4px 12px;padding:14px 0;border-top:1px solid var(--line)}
+.game:first-child{border-top:0;padding-top:0}
+.time{font:700 20px/1.2 var(--num)}.time small{display:block;font:500 11px Inter,sans-serif;color:var(--muted)}
+.teams{min-width:0}
+.team{display:flex;align-items:center;gap:10px;padding:3px 0}
+.team .nm{flex:1;min-width:0;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.team .nm em{font-style:normal;color:var(--muted);font-size:12px}
+.team .od{font:700 18px/1 var(--num);min-width:40px;text-align:right;color:var(--muted)}
+.team.fav .nm{font-weight:600}.team.fav .od{color:var(--ink)}
+.status{text-align:right}
+.reason{grid-column:2/4;font-size:13px;color:var(--muted);margin-top:2px}
+.reason b{color:var(--ink);font-weight:600}
+.legend{display:grid;gap:10px;margin:12px 0 0;padding:0;list-style:none}
+.legend li{display:flex;gap:10px;align-items:flex-start;font-size:14px}
+.legend .chip{min-width:92px;justify-content:center}
+.check{margin:0;padding:0;list-style:none}.check li{padding:5px 0 5px 28px;position:relative}
+.check li::before{content:"";position:absolute;left:0;top:7px;width:16px;height:16px;border:2px solid var(--muted);border-radius:4px}
+.archives{display:flex;flex-wrap:wrap;gap:8px}
+.archives a{text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:13px}
+.archives a.cur{border-color:var(--accent);color:var(--accent);font-weight:600}
+footer{color:var(--muted);font-size:12px;margin-top:36px;line-height:1.6}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;padding-top:16px}
+.tabs a{text-decoration:none;font:700 15px/1 var(--num);letter-spacing:.04em;text-transform:uppercase;
+padding:9px 16px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--muted)}
+.tabs a.cur{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+@media (max-width:600px){.tabs{gap:4px}.tabs a{padding:8px 10px;font-size:13px}}
+@media (max-width:600px){h1{font-size:28px}.stats{grid-template-columns:1fr 1fr}.stat.big{grid-column:1/3}
+.grid{grid-template-columns:1fr}.game{grid-template-columns:52px 1fr;gap:4px 8px}.status{grid-column:2;text-align:left}
+.time{font-size:18px}.team .nm{white-space:normal}
+.reason{grid-column:2}.counts b{font-size:24px}}
+
+.pickgrp{font:700 16px/1.2 var(--num);letter-spacing:.02em;color:var(--accent);margin:16px 0 6px}
+.pickgrp:first-child{margin-top:0}
+.pm{padding:10px 0;border-top:1px solid var(--line)}.pickgrp+.pm{border-top:0}
+.pm .meta{display:flex;justify-content:space-between;gap:8px;font-size:12px;color:var(--muted);margin-bottom:6px}
+.sides{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.side{font:inherit;text-align:left;cursor:pointer;border:1.5px solid var(--line);background:var(--soft);
+color:var(--ink);border-radius:10px;padding:9px 11px;display:flex;justify-content:space-between;gap:8px;align-items:center}
+.side b{font:700 18px/1 var(--num)}.side span{font-size:14px;overflow-wrap:anywhere}
+.side:hover{border-color:var(--muted)}
+.side.on{border-color:var(--go);background:var(--go-bg)}.side.on b{color:var(--go)}
+.side.fav span{font-weight:600}
+.slip{position:sticky;bottom:12px;z-index:5;border:2px solid var(--go);box-shadow:0 8px 30px rgba(0,0,0,.18);margin-top:16px}
+.slip-head{display:flex;align-items:center;gap:8px}.slip-head .btn{margin-left:auto}
+.slip .row{display:flex;flex-wrap:wrap;gap:10px;align-items:end}
+.slip label{display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--muted);flex:1;min-width:120px}
+input,select{font:inherit;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:10px;padding:9px 10px}
+input:focus,select:focus,button:focus-visible,a.btn:focus-visible{outline:2px solid var(--info);outline-offset:1px}
+.btn{font:600 14px Inter,sans-serif;cursor:pointer;border-radius:10px;padding:10px 14px;border:1px solid var(--line);
+background:var(--card);color:var(--ink);text-decoration:none;display:inline-block}
+.btn.main{background:var(--go);border-color:var(--go);color:#fff}.btn.main:disabled{opacity:.45;cursor:not-allowed}
+.btn.ghost{background:none}.btn.small{padding:5px 10px;font-size:13px}
+.legs{margin:8px 0 10px;padding:0;list-style:none;font-size:14px}
+.legs li{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:3px 0}
+.legs li .x{border:0;background:none;color:var(--muted);cursor:pointer;font-size:15px;padding:2px 6px}
+.tot{font:700 26px/1 var(--num)}
+.bets{width:100%;border-collapse:collapse;font-size:14px}
+.bets th,.bets td{text-align:left;padding:10px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+.bets th{font-size:12px;color:var(--muted);font-weight:600}
+.bets td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
+.pos{color:var(--go);font-weight:700}.neg{color:var(--no);font-weight:700}
+.sel{font-size:13px}.sel div{padding:1px 0}
+.empty{color:var(--muted);font-size:14px;padding:6px 0}
+.tools{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.note{font-size:12px;color:var(--muted);margin-top:10px}
+.mrow{display:flex;flex-wrap:wrap;gap:10px;align-items:end}
+.mrow label{display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--muted);flex:1;min-width:110px}
+.mrow label.w{flex:2;min-width:180px}
+.toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:var(--ink);color:var(--bg);
+padding:10px 16px;border-radius:10px;font-size:14px;opacity:0;transition:opacity .2s;pointer-events:none;z-index:9}
+.toast.show{opacity:1;pointer-events:auto}.toast a,.toast button{color:inherit}
+.clair{background:var(--soft);border-radius:12px;padding:12px 14px;margin:12px 0 4px}
+.clair .lbl{margin:0 0 4px}.clair ul{margin:0;padding-left:18px}.clair li{padding:3px 0;font-size:15px}
+.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.btn.ask{border-color:var(--info);color:var(--info)}
+a.ask.small{font-size:12px;font-weight:600;color:var(--info);text-decoration:none;white-space:nowrap}
+.stats.four{grid-template-columns:repeat(4,1fr)}
+@media (max-width:600px){.stats.four{grid-template-columns:1fr 1fr}.stats.four .stat.big{grid-column:auto}}
+@media (max-width:600px){.sides{grid-template-columns:1fr}
+.bets thead{display:none}.bets,.bets tbody,.bets tr,.bets td{display:block}
+.bets tr{border-bottom:1px solid var(--line);padding:10px 0}.bets td{border:0;padding:2px 0}
+.bets td[data-l]::before{content:attr(data-l);color:var(--muted);font-size:12px;margin-right:6px}}
+</style></head><body><main>
+<nav class="tabs"><a class="cur" href="../index.html">NBA</a><a class="" href="../tennis.html">Tennis</a><a class="" href="../mes-paris.html">Mes paris</a><a class="" href="../discuter.html">Chatbot</a></nav>
+<header class="top"><div class="kicker">Pronostic NBA · aide à la décision</div>
+<h1>Nuit du samedi 31 octobre au dimanche 1 novembre</h1>
+<p class="sub">Analyse du samedi 31/10 à 15:32 (Paris) · heures des matchs à l'heure de Paris</p>
+<div class="counts"><div class="count"><b>7</b><span>matchs au programme</span></div>
+<div class="count go"><b>1</b><span>passent les contrôles</span></div>
+<div class="count no"><b>6</b><span>écartés</span></div></div>
+</header>
+<h2>Les paris du soir</h2><p class="h2sub">Deux options : un pari simple, plus sûr, et un combiné,
+qui rapporte plus mais demande que les deux matchs passent.</p><div class="card verdict go"><span class="chip go">● OPTION 1 · PARI SIMPLE</span>
+<h3>Pari simple <span class="sub">· le plus sûr</span></h3><p class="why" style="margin:0 0 14px"><span class="chip warn">DÉBUT DE SAISON</span>
+Les équipes ont encore peu joué : ce pari repose surtout sur les cotes du marché.
+Confiance plafonnée à « Prudente », mise réduite.</p>
+<div class="stats four"><div class="stat big"><span>Cote totale</span><b>1.51</b></div>
+<div class="stat"><span>Chances estimées</span><b>62%</b></div>
+<div class="stat big"><span>Mise conseillée</span><b>15 €</b></div>
+<div class="stat"><span>Gain si gagné</span><b>22,65 €</b></div></div>
+<p class="sub">Confiance prudente → 15 € sur une base de 100 €
+(élevée 40 € · moyenne
+25 € · prudente
+15 €).</p>
+<div class="leg"><span class="badge" style="background:#c8102e;color:#fff">ATL</span><div class="who"><b>Atlanta Hawks gagne</b>
+<span>contre New Orleans Pelicans · 00:00 · à l’extérieur</span></div><span class="pill">1.51</span></div><div class="actions"><button type="button" class="btn main" data-addbet="[{&quot;id&quot;: &quot;nba:77270837bc694d198c10f42937690d75&quot;, &quot;sport&quot;: &quot;nba&quot;, &quot;competition&quot;: &quot;NBA&quot;, &quot;time&quot;: &quot;2026-10-31T23:00:00+00:00&quot;, &quot;pick&quot;: &quot;Atlanta Hawks&quot;, &quot;opponent&quot;: &quot;New Orleans Pelicans&quot;, &quot;odds&quot;: 1.51}]" data-stake="15">Mettre ce pari dans mon ticket (15 €)</button><a class="btn ask" href="https://claude.ai/new?q=Tu%20es%20mon%20assistant%20pour%20analyser%20des%20paris%20sportifs%20%28je%20parie%20sur%20Unibet%2C%20mise%20de%20base%20100%20%E2%82%AC%29.%20Voici%20la%20fiche%20pr%C3%A9par%C3%A9e%20par%20mon%20bot.%20R%C3%A9ponds%20en%20fran%C3%A7ais%2C%20simplement%2C%20sans%20jargon%2C%20et%20rappelle%20les%20risques.%20Si%20c%27est%20utile%2C%20cherche%20sur%20le%20web%20les%20derni%C3%A8res%20infos%20%28blessures%2C%20forfaits%2C%20compositions%29.%0A%0AMon%20bot%20propose%20%3A%20pari%20simple%2C%20cote%20totale%201.51%2C%20chances%20estim%C3%A9es%2062%25%2C%20mise%20conseill%C3%A9e%2015%20%E2%82%AC%20%28confiance%20prudente%29.%0A%0AMatch%20NBA%20%3A%20Atlanta%20Hawks%20%28ext%C3%A9rieur%29%20contre%20New%20Orleans%20Pelicans%20%28domicile%29%2C%20le%2001%2F11%20%C3%A0%2000%3A00%20%28heure%20de%20Paris%29.%0ACotes%20Unibet%20%3A%20Atlanta%20Hawks%201.51%2C%20New%20Orleans%20Pelicans%202.35.%0AAvis%20du%20bot%20%3A%20%C3%A0%20jouer%20%E2%80%94%20Atlanta%20Hawks%20gagne%2C%20confiance%20prudente%2C%20chances%20estim%C3%A9es%2062%25%2C%20mise%20conseill%C3%A9e%2015%20%E2%82%AC.%0AAtouts%20%3A%20Nette%20diff%C3%A9rence%20de%20forme%20%3A%203V-3D%20contre%201V-4D%20%3B%20New%20Orleans%20Pelicans%20diminu%C3%A9%20%3A%202%20absents%20ou%20incertains%20%3B%20Domine%20les%20face-%C3%A0-face%20%3A%205-1%20depuis%202023-24%20%3B%20Bien%20meilleur%20la%20saison%20pass%C3%A9e%20%3A%2046V-36D%20contre%2026V-56D.%0APoints%20de%20vigilance%20%3A%20D%C3%A9but%20de%20saison%20%3A%20Peu%20de%20matchs%20jou%C3%A9s%2C%20analyse%20moins%20fiable%20%E2%80%94%20Atlanta%20Hawks%20%3A%206%20match%28s%29%20jou%C3%A9%28s%29%2C%20New%20Orleans%20Pelicans%20%3A%205%20%2810%20requis%20pour%20chaque%20%C3%A9quipe%29%20%3B%20Cote%20Unibet%20en%20dessous%20du%20march%C3%A9%20%2866%25%20implicite%20contre%2062%25%20estim%C3%A9%29.%0AForme%20r%C3%A9cente%20%2810%20derniers%20matchs%29%20%3A%20Atlanta%20Hawks%20%3A%203V-3D%2C%201%20victoire%20de%20suite%2C%20%C3%A9cart%20moyen%20%2B4.7%20pts%2Fmatch%20%2F%20New%20Orleans%20Pelicans%20%3A%201V-4D%2C%201%20victoire%20de%20suite%2C%20%C3%A9cart%20moyen%20-2.2%20pts%2Fmatch%0AFace-%C3%A0-face%20depuis%202023-24%20%3A%20Atlanta%20Hawks%205V-1D%20contre%20New%20Orleans%20Pelicans%20%2F%20Derniers%20%3A%2011%2F2024%20V%20126-111%2C%2012%2F2024%20V%20124-112%2C%2011%2F2025%20V%20115-98%2C%2001%2F2026%20V%20117-100%0AConfrontations%20cette%20saison%20%3A%20Premi%C3%A8re%20confrontation%20de%20la%20saison%0ASaisons%20pr%C3%A9c%C3%A9dentes%20%3A%20Atlanta%20Hawks%20%3A%202025-26%2046V-36D%20%C2%B7%202024-25%2040V-42D%20%C2%B7%202023-24%2036V-46D%20%2F%20New%20Orleans%20Pelicans%20%3A%202025-26%2026V-56D%20%C2%B7%202024-25%2021V-61D%20%C2%B7%202023-24%2049V-33D%0AAnalyse%20compl%C3%A8te%20sur%20mon%20site%20%3A%20https%3A%2F%2Fzebrebleu.github.io%2Fnbabot%2F%0A%0AMa%20question%20%3A%20Explique-moi%20ce%20pari%20simplement%20%3A%20pourquoi%20le%20jouer%2C%20quel%20est%20le%20vrai%20risque%2C%20et%20la%20mise%20conseill%C3%A9e%20est-elle%20raisonnable%20%3F" target="_blank" rel="noopener">Demander à Claude ↗</a></div></div><div class="card verdict none"><span class="chip off">OPTION 2 · COMBINÉ</span><p class="why">Pas de combiné possible : il faut au moins 2 matchs validés.</p></div>
+<h2>Pourquoi ce choix</h2><p class='h2sub'>L'explication en clair de chaque match du pari.</p><div class="card"><div class="head"><span class="badge" style="background:#c8102e;color:#fff">ATL</span><div class="who">
+<h3>Atlanta Hawks gagne · 1.51</h3>
+<p>contre New Orleans Pelicans · 00:00 · à l'extérieur</p>
+<p>Confiance : <b>Prudente</b><span class="meter"><i class="on"></i><i class=""></i><i class=""></i></span> · chances estimées 62%
+· mise conseillée <b>15 €</b></p>
+</div></div><div class="clair"><p class="lbl">En clair</p><ul><li>On joue Atlanta Hawks à 1.51. Le bot estime ses chances à 62%, soit environ 6 victoires sur 10 dans ce genre de match.</li><li>Pourquoi : nette différence de forme : 3V-3D contre 1V-4D ; new Orleans Pelicans diminué : 2 absents ou incertains ; domine les face-à-face : 5-1 depuis 2023-24.</li><li>Attention : début de saison : Peu de matchs joués, analyse moins fiable — Atlanta Hawks : 6 match(s) joué(s), New Orleans Pelicans : 5 (10 requis pour chaque équipe).</li><li>Mise conseillée : 15 € (confiance prudente, sur une base de 100 €).</li></ul></div><div class="actions"><a class="btn ask" href="https://claude.ai/new?q=Tu%20es%20mon%20assistant%20pour%20analyser%20des%20paris%20sportifs%20%28je%20parie%20sur%20Unibet%2C%20mise%20de%20base%20100%20%E2%82%AC%29.%20Voici%20la%20fiche%20pr%C3%A9par%C3%A9e%20par%20mon%20bot.%20R%C3%A9ponds%20en%20fran%C3%A7ais%2C%20simplement%2C%20sans%20jargon%2C%20et%20rappelle%20les%20risques.%20Si%20c%27est%20utile%2C%20cherche%20sur%20le%20web%20les%20derni%C3%A8res%20infos%20%28blessures%2C%20forfaits%2C%20compositions%29.%0A%0AMatch%20NBA%20%3A%20Atlanta%20Hawks%20%28ext%C3%A9rieur%29%20contre%20New%20Orleans%20Pelicans%20%28domicile%29%2C%20le%2001%2F11%20%C3%A0%2000%3A00%20%28heure%20de%20Paris%29.%0ACotes%20Unibet%20%3A%20Atlanta%20Hawks%201.51%2C%20New%20Orleans%20Pelicans%202.35.%0AAvis%20du%20bot%20%3A%20%C3%A0%20jouer%20%E2%80%94%20Atlanta%20Hawks%20gagne%2C%20confiance%20prudente%2C%20chances%20estim%C3%A9es%2062%25%2C%20mise%20conseill%C3%A9e%2015%20%E2%82%AC.%0AAtouts%20%3A%20Nette%20diff%C3%A9rence%20de%20forme%20%3A%203V-3D%20contre%201V-4D%20%3B%20New%20Orleans%20Pelicans%20diminu%C3%A9%20%3A%202%20absents%20ou%20incertains%20%3B%20Domine%20les%20face-%C3%A0-face%20%3A%205-1%20depuis%202023-24%20%3B%20Bien%20meilleur%20la%20saison%20pass%C3%A9e%20%3A%2046V-36D%20contre%2026V-56D.%0APoints%20de%20vigilance%20%3A%20D%C3%A9but%20de%20saison%20%3A%20Peu%20de%20matchs%20jou%C3%A9s%2C%20analyse%20moins%20fiable%20%E2%80%94%20Atlanta%20Hawks%20%3A%206%20match%28s%29%20jou%C3%A9%28s%29%2C%20New%20Orleans%20Pelicans%20%3A%205%20%2810%20requis%20pour%20chaque%20%C3%A9quipe%29%20%3B%20Cote%20Unibet%20en%20dessous%20du%20march%C3%A9%20%2866%25%20implicite%20contre%2062%25%20estim%C3%A9%29.%0AForme%20r%C3%A9cente%20%2810%20derniers%20matchs%29%20%3A%20Atlanta%20Hawks%20%3A%203V-3D%2C%201%20victoire%20de%20suite%2C%20%C3%A9cart%20moyen%20%2B4.7%20pts%2Fmatch%20%2F%20New%20Orleans%20Pelicans%20%3A%201V-4D%2C%201%20victoire%20de%20suite%2C%20%C3%A9cart%20moyen%20-2.2%20pts%2Fmatch%0AFace-%C3%A0-face%20depuis%202023-24%20%3A%20Atlanta%20Hawks%205V-1D%20contre%20New%20Orleans%20Pelicans%20%2F%20Derniers%20%3A%2011%2F2024%20V%20126-111%2C%2012%2F2024%20V%20124-112%2C%2011%2F2025%20V%20115-98%2C%2001%2F2026%20V%20117-100%0AConfrontations%20cette%20saison%20%3A%20Premi%C3%A8re%20confrontation%20de%20la%20saison%0ASaisons%20pr%C3%A9c%C3%A9dentes%20%3A%20Atlanta%20Hawks%20%3A%202025-26%2046V-36D%20%C2%B7%202024-25%2040V-42D%20%C2%B7%202023-24%2036V-46D%20%2F%20New%20Orleans%20Pelicans%20%3A%202025-26%2026V-56D%20%C2%B7%202024-25%2021V-61D%20%C2%B7%202023-24%2049V-33D%0AAnalyse%20compl%C3%A8te%20sur%20mon%20site%20%3A%20https%3A%2F%2Fzebrebleu.github.io%2Fnbabot%2F%0A%0AMa%20question%20%3A%20Explique-moi%20ce%20match%20simplement%20%3A%20faut-il%20le%20jouer%2C%20et%20combien%20miser%20%3F" target="_blank" rel="noopener">Discuter de ce match avec Claude ↗</a></div>
+<details><summary>Atouts et points de vigilance</summary>
+<p class="lbl">Ce qui joue pour lui</p><ul class="reasons plus"><li>Nette différence de forme : 3V-3D contre 1V-4D</li><li>New Orleans Pelicans diminué : 2 absents ou incertains</li><li>Domine les face-à-face : 5-1 depuis 2023-24</li><li>Bien meilleur la saison passée : 46V-36D contre 26V-56D</li></ul>
+<p class="lbl">À surveiller</p><ul class="reasons risk"><li>Début de saison : Peu de matchs joués, analyse moins fiable — Atlanta Hawks : 6 match(s) joué(s), New Orleans Pelicans : 5 (10 requis pour chaque équipe)</li><li>Mouvement de cote : 1re observation il y a 0 min : mouvement non vérifiable, relance le script plus près du match</li><li>Infirmerie : 2 absent(s)/incertain(s) &lt; 3 — règle de secours (Atlanta Hawks absente de KEY_PLAYERS) : Mouhamed Gueye (Out), Henri Veesaar (Out). Vérifie qu&#x27;aucun n&#x27;est un titulaire</li><li>Cote Unibet en dessous du marché (66% implicite contre 62% estimé)</li></ul></details>
+<details><summary>Tous les chiffres du match</summary><div class="grid"><div><h4>Bilan de la saison</h4><ul><li>Atlanta Hawks : 3V-3D (15e NBA) · à l&#x27;extérieur 2V-1D</li><li>New Orleans Pelicans : 1V-4D (26e NBA) · à domicile 1V-2D</li></ul></div><div><h4>Forme récente (10 derniers matchs)</h4><ul><li>Atlanta Hawks : 3V-3D, 1 victoire de suite, écart moyen +4.7 pts/match</li><li>New Orleans Pelicans : 1V-4D, 1 victoire de suite, écart moyen -2.2 pts/match</li></ul></div><div><h4>Repos et calendrier</h4><ul><li>Atlanta Hawks : 2 jour(s) de repos</li><li>New Orleans Pelicans : 2 jour(s) de repos</li></ul></div><div><h4>Effectifs</h4><ul><li>Atlanta Hawks : Mouhamed Gueye (Out), Henri Veesaar (Out)</li><li>New Orleans Pelicans : Yves Missi (Out), Jordan Poole (Out)</li></ul></div><div><h4>Confrontations cette saison</h4><ul><li>Première confrontation de la saison</li></ul></div><div><h4>Lecture du marché</h4><ul><li>Cote Unibet 1.51 → probabilité implicite 66%</li><li>Référence marché (pinnacle) 1.57 → probabilité réelle estimée 62% (marge retirée)</li><li>Évolution Unibet : 1.51 → 1.51</li></ul></div><div><h4>Saisons précédentes</h4><ul><li>Atlanta Hawks : 2025-26 46V-36D · 2024-25 40V-42D · 2023-24 36V-46D</li><li>New Orleans Pelicans : 2025-26 26V-56D · 2024-25 21V-61D · 2023-24 49V-33D</li></ul></div><div><h4>Face-à-face depuis 2023-24</h4><ul><li>Atlanta Hawks 5V-1D contre New Orleans Pelicans</li><li>Derniers : 11/2024 V 126-111, 12/2024 V 124-112, 11/2025 V 115-98, 01/2026 V 117-100</li></ul></div></div></details>
+<details><summary>Contrôles de sécurité (10/10 validés)</summary>
+<ul class="reasons ctrl"><li><b>Début de saison</b> — Peu de matchs joués, analyse moins fiable — Atlanta Hawks : 6 match(s) joué(s), New Orleans Pelicans : 5 (10 requis pour chaque équipe)</li><li><b>Cote</b> — Cote Unibet 1.51 dans la fourchette 1.25–1.80</li><li><b>Mouvement de cote</b> — 1re observation il y a 0 min : mouvement non vérifiable, relance le script plus près du match</li><li><b>Back-to-back</b> — Pas de B2B : 2.0 jour(s) depuis le dernier match</li><li><b>Trap game</b> — Pas de piège de calendrier (prochain match vs Pacers)</li><li><b>Road trip</b> — 1e match consécutif à l&#x27;extérieur seulement</li><li><b>Forme dom./ext.</b> — 2V-1D sur ses 3 derniers à l&#x27;extérieur (2 V requises)</li><li><b>Dynamique croisée</b> — Atlanta Hawks 3-3 vs New Orleans Pelicans 1-4 sur les 6 derniers</li><li><b>Infirmerie</b> — 2 absent(s)/incertain(s) &lt; 3 — règle de secours (Atlanta Hawks absente de KEY_PLAYERS) : Mouhamed Gueye (Out), Henri Veesaar (Out). Vérifie qu&#x27;aucun n&#x27;est un titulaire</li><li><b>Anti-tanking</b> — Hors période de fin de saison</li></ul></details></div>
+<h2>Programme de la nuit</h2><p class="h2sub">Cotes Unibet de chaque équipe · le favori est en gras.</p>
+<div class="card"><div class="game"><div class="time">20:00<small>Paris</small></div>
+<div class="teams"><div class="team fav"><span class="badge sm" style="background:#e03a3e;color:#fff">POR</span><span class="nm">Portland Trail Blazers</span><span class="od">1.28</span></div><div class="team"><span class="badge sm" style="background:#4e008e;color:#fff">UTAH</span><span class="nm">Utah Jazz <em>dom.</em></span><span class="od">3.25</span></div></div>
+<div class="status"><span class="chip no">ÉCARTÉ</span></div><div class="reason"><b>Blessure importante</b> — 4 joueurs absents/incertains, seuil de 3 atteint — règle de secours (Portland Trail Blazers absente de KEY_PLAYERS) : Robert Williams III (Day-To-Day), Chris Youngblood (Out), Ja Morant (Out), Shaedon Sharpe (Out) <a class="ask small" href="https://claude.ai/new?q=Tu%20es%20mon%20assistant%20pour%20analyser%20des%20paris%20sportifs%20%28je%20parie%20sur%20Unibet%2C%20mise%20de%20base%20100%20%E2%82%AC%29.%20Voici%20la%20fiche%20pr%C3%A9par%C3%A9e%20par%20mon%20bot.%20R%C3%A9ponds%20en%20fran%C3%A7ais%2C%20simplement%2C%20sans%20jargon%2C%20et%20rappelle%20les%20risques.%20Si%20c%27est%20utile%2C%20cherche%20sur%20le%20web%20les%20derni%C3%A8res%20infos%20%28blessures%2C%20forfaits%2C%20compositions%29.%0A%0AMatch%20NBA%20%3A%20Portland%20Trail%20Blazers%20%28ext%C3%A9rieur%29%20contre%20Utah%20Jazz%20%28domicile%29%2C%20le%2031%2F10%20%C3%A0%2020%3A00%20%28heure%20de%20Paris%29.%0ACotes%20Unibet%20%3A%20Portland%20Trail%20Blazers%201.28%2C%20Utah%20Jazz%203.25.%0AAvis%20du%20bot%20%3A%20%C3%A9cart%C3%A9%20%E2%80%94%20Blessure%20importante%20%3A%204%20joueurs%20absents%2Fincertains%2C%20seuil%20de%203%20atteint%20%E2%80%94%20r%C3%A8gle%20de%20secours%20%28Portland%20Trail%20Blazers%20absente%20de%20KEY_PLAYERS%29%20%3A%20Robert%20Williams%20III%20%28Day-To-Day%29%2C%20Chris%20Youngblood%20%28Out%29%2C%20Ja%20Morant%20%28Out%29%2C%20Shaedon%20Sharpe%20%28Out%29.%0AAnalyse%20compl%C3%A8te%20sur%20mon%20site%20%3A%20https%3A%2F%2Fzebrebleu.github.io%2Fnbabot%2F%0A%0AMa%20question%20%3A%20Que%20penses-tu%20de%20ce%20match%20%3F%20Explique%20simplement." target="_blank" rel="noopener">Demander à Claude ↗</a></div></div><div class="game"><div class="time">23:00<small>Paris</small></div>
+<div class="teams"><div class="team fav"><span class="badge sm" style="background:#1d428a;color:#fff">PHI</span><span class="nm">Philadelphia 76ers</span><span class="od">1.76</span></div><div class="team"><span class="badge sm" style="background:#008ca8;color:#fff">CHA</span><span class="nm">Charlotte Hornets <em>dom.</em></span><span class="od">1.92</span></div></div>
+<div class="status"><span class="chip no">ÉCARTÉ</span></div><div class="reason"><b>Fatigue</b> — Deuxième match en 24 h, à l&#x27;extérieur. 2e match en ~24 h ET à l&#x27;extérieur (veille vs Knicks) <a class="ask small" href="https://claude.ai/new?q=Tu%20es%20mon%20assistant%20pour%20analyser%20des%20paris%20sportifs%20%28je%20parie%20sur%20Unibet%2C%20mise%20de%20base%20100%20%E2%82%AC%29.%20Voici%20la%20fiche%20pr%C3%A9par%C3%A9e%20par%20mon%20bot.%20R%C3%A9ponds%20en%20fran%C3%A7ais%2C%20simplement%2C%20sans%20jargon%2C%20et%20rappelle%20les%20risques.%20Si%20c%27est%20utile%2C%20cherche%20sur%20le%20web%20les%20derni%C3%A8res%20infos%20%28blessures%2C%20forfaits%2C%20compositions%29.%0A%0AMatch%20NBA%20%3A%20Philadelphia%2076ers%20%28ext%C3%A9rieur%29%20contre%20Charlotte%20Hornets%20%28domicile%29%2C%20le%2031%2F10%20%C3%A0%2023%3A00%20%28heure%20de%20Paris%29.%0ACotes%20Unibet%20%3A%20Philadelphia%2076ers%201.76%2C%20Charlotte%20Hornets%201.92.%0AAvis%20du%20bot%20%3A%20%C3%A9cart%C3%A9%20%E2%80%94%20Fatigue%20%3A%20Deuxi%C3%A8me%20match%20en%2024%20h%2C%20%C3%A0%20l%27ext%C3%A9rieur.%202e%20match%20en%20~24%20h%20ET%20%C3%A0%20l%27ext%C3%A9rieur%20%28veille%20vs%20Knicks%29.%0AAnalyse%20compl%C3%A8te%20sur%20mon%20site%20%3A%20https%3A%2F%2Fzebrebleu.github.io%2Fnbabot%2F%0A%0AMa%20question%20%3A%20Que%20penses-tu%20de%20ce%20match%20%3F%20Explique%20simplement." target="_blank" rel="noopener">Demander à Claude ↗</a></div></div><div class="game"><div class="time">00:00<small>Paris</small></div>
+<div class="teams"><div class="team fav"><span class="badge sm" style="background:#c8102e;color:#fff">ATL</span><span class="nm">Atlanta Hawks</span><span class="od">1.51</span></div><div class="team"><span class="badge sm" style="background:#0a2240;color:#fff">NO</span><span class="nm">New Orleans Pelicans <em>dom.</em></span><span class="od">2.35</span></div></div>
+<div class="status"><span class="chip go">À JOUER</span></div><div class="reason"><b>Atlanta Hawks gagne</b> — voir l'analyse plus haut. <a class="ask small" href="https://claude.ai/new?q=Tu%20es%20mon%20assistant%20pour%20analyser%20des%20paris%20sportifs%20%28je%20parie%20sur%20Unibet%2C%20mise%20de%20base%20100%20%E2%82%AC%29.%20Voici%20la%20fiche%20pr%C3%A9par%C3%A9e%20par%20mon%20bot.%20R%C3%A9ponds%20en%20fran%C3%A7ais%2C%20simplement%2C%20sans%20jargon%2C%20et%20rappelle%20les%20risques.%20Si%20c%27est%20utile%2C%20cherche%20sur%20le%20web%20les%20derni%C3%A8res%20infos%20%28blessures%2C%20forfaits%2C%20compositions%29.%0A%0AMatch%20NBA%20%3A%20Atlanta%20Hawks%20%28ext%C3%A9rieur%29%20contre%20New%20Orleans%20Pelicans%20%28domicile%29%2C%20le%2001%2F11%20%C3%A0%2000%3A00%20%28heure%20de%20Paris%29.%0ACotes%20Unibet%20%3A%20Atlanta%20Hawks%201.51%2C%20New%20Orleans%20Pelicans%202.35.%0AAvis%20du%20bot%20%3A%20%C3%A0%20jouer%20%E2%80%94%20Atlanta%20Hawks%20gagne%2C%20confiance%20prudente%2C%20chances%20estim%C3%A9es%2062%25%2C%20mise%20conseill%C3%A9e%2015%20%E2%82%AC.%0AAtouts%20%3A%20Nette%20diff%C3%A9rence%20de%20forme%20%3A%203V-3D%20contre%201V-4D%20%3B%20New%20Orleans%20Pelicans%20diminu%C3%A9%20%3A%202%20absents%20ou%20incertains%20%3B%20Domine%20les%20face-%C3%A0-face%20%3A%205-1%20depuis%202023-24%20%3B%20Bien%20meilleur%20la%20saison%20pass%C3%A9e%20%3A%2046V-36D%20contre%2026V-56D.%0APoints%20de%20vigilance%20%3A%20D%C3%A9but%20de%20saison%20%3A%20Peu%20de%20matchs%20jou%C3%A9s%2C%20analyse%20moins%20fiable%20%E2%80%94%20Atlanta%20Hawks%20%3A%206%20match%28s%29%20jou%C3%A9%28s%29%2C%20New%20Orleans%20Pelicans%20%3A%205%20%2810%20requis%20pour%20chaque%20%C3%A9quipe%29%20%3B%20Cote%20Unibet%20en%20dessous%20du%20march%C3%A9%20%2866%25%20implicite%20contre%2062%25%20estim%C3%A9%29.%0AForme%20r%C3%A9cente%20%2810%20derniers%20matchs%29%20%3A%20Atlanta%20Hawks%20%3A%203V-3D%2C%201%20victoire%20de%20suite%2C%20%C3%A9cart%20moyen%20%2B4.7%20pts%2Fmatch%20%2F%20New%20Orleans%20Pelicans%20%3A%201V-4D%2C%201%20victoire%20de%20suite%2C%20%C3%A9cart%20moyen%20-2.2%20pts%2Fmatch%0AFace-%C3%A0-face%20depuis%202023-24%20%3A%20Atlanta%20Hawks%205V-1D%20contre%20New%20Orleans%20Pelicans%20%2F%20Derniers%20%3A%2011%2F2024%20V%20126-111%2C%2012%2F2024%20V%20124-112%2C%2011%2F2025%20V%20115-98%2C%2001%2F2026%20V%20117-100%0AConfrontations%20cette%20saison%20%3A%20Premi%C3%A8re%20confrontation%20de%20la%20saison%0ASaisons%20pr%C3%A9c%C3%A9dentes%20%3A%20Atlanta%20Hawks%20%3A%202025-26%2046V-36D%20%C2%B7%202024-25%2040V-42D%20%C2%B7%202023-24%2036V-46D%20%2F%20New%20Orleans%20Pelicans%20%3A%202025-26%2026V-56D%20%C2%B7%202024-25%2021V-61D%20%C2%B7%202023-24%2049V-33D%0AAnalyse%20compl%C3%A8te%20sur%20mon%20site%20%3A%20https%3A%2F%2Fzebrebleu.github.io%2Fnbabot%2F%0A%0AMa%20question%20%3A%20Que%20penses-tu%20de%20ce%20match%20%3F%20Explique%20simplement." target="_blank" rel="noopener">Demander à Claude ↗</a></div></div><div class="game"><div class="time">01:00<small>Paris</small></div>
+<div class="teams"><div class="team"><span class="badge sm" style="background:#5a2d81;color:#fff">SAC</span><span class="nm">Sacramento Kings</span><span class="od">3.55</span></div><div class="team fav"><span class="badge sm" style="background:#5d76a9;color:#fff">MEM</span><span class="nm">Memphis Grizzlies <em>dom.</em></span><span class="od">1.24</span></div></div>
+<div class="status"><span class="chip no">ÉCARTÉ</span></div><div class="reason"><b>Cote trop basse</b> — Favori à 1.24 : le gain serait trop faible pour le risque. <a class="ask small" href="https://claude.ai/new?q=Tu%20es%20mon%20assistant%20pour%20analyser%20des%20paris%20sportifs%20%28je%20parie%20sur%20Unibet%2C%20mise%20de%20base%20100%20%E2%82%AC%29.%20Voici%20la%20fiche%20pr%C3%A9par%C3%A9e%20par%20mon%20bot.%20R%C3%A9ponds%20en%20fran%C3%A7ais%2C%20simplement%2C%20sans%20jargon%2C%20et%20rappelle%20les%20risques.%20Si%20c%27est%20utile%2C%20cherche%20sur%20le%20web%20les%20derni%C3%A8res%20infos%20%28blessures%2C%20forfaits%2C%20compositions%29.%0A%0AMatch%20NBA%20%3A%20Sacramento%20Kings%20%28ext%C3%A9rieur%29%20contre%20Memphis%20Grizzlies%20%28domicile%29%2C%20le%2001%2F11%20%C3%A0%2001%3A00%20%28heure%20de%20Paris%29.%0ACotes%20Unibet%20%3A%20Sacramento%20Kings%203.55%2C%20Memphis%20Grizzlies%201.24.%0AAvis%20du%20bot%20%3A%20%C3%A9cart%C3%A9%20%E2%80%94%20Cote%20trop%20basse%20%3A%20Favori%20%C3%A0%201.24%20%3A%20le%20gain%20serait%20trop%20faible%20pour%20le%20risque..%0AAnalyse%20compl%C3%A8te%20sur%20mon%20site%20%3A%20https%3A%2F%2Fzebrebleu.github.io%2Fnbabot%2F%0A%0AMa%20question%20%3A%20Que%20penses-tu%20de%20ce%20match%20%3F%20Explique%20simplement." target="_blank" rel="noopener">Demander à Claude ↗</a></div></div><div class="game"><div class="time">01:00<small>Paris</small></div>
+<div class="teams"><div class="team fav"><span class="badge sm" style="background:#860038;color:#fff">CLE</span><span class="nm">Cleveland Cavaliers</span><span class="od">1.23</span></div><div class="team"><span class="badge sm" style="background:#00471b;color:#fff">MIL</span><span class="nm">Milwaukee Bucks <em>dom.</em></span><span class="od">3.65</span></div></div>
+<div class="status"><span class="chip no">ÉCARTÉ</span></div><div class="reason"><b>Cote trop basse</b> — Favori à 1.23 : le gain serait trop faible pour le risque. <a class="ask small" href="https://claude.ai/new?q=Tu%20es%20mon%20assistant%20pour%20analyser%20des%20paris%20sportifs%20%28je%20parie%20sur%20Unibet%2C%20mise%20de%20base%20100%20%E2%82%AC%29.%20Voici%20la%20fiche%20pr%C3%A9par%C3%A9e%20par%20mon%20bot.%20R%C3%A9ponds%20en%20fran%C3%A7ais%2C%20simplement%2C%20sans%20jargon%2C%20et%20rappelle%20les%20risques.%20Si%20c%27est%20utile%2C%20cherche%20sur%20le%20web%20les%20derni%C3%A8res%20infos%20%28blessures%2C%20forfaits%2C%20compositions%29.%0A%0AMatch%20NBA%20%3A%20Cleveland%20Cavaliers%20%28ext%C3%A9rieur%29%20contre%20Milwaukee%20Bucks%20%28domicile%29%2C%20le%2001%2F11%20%C3%A0%2001%3A00%20%28heure%20de%20Paris%29.%0ACotes%20Unibet%20%3A%20Cleveland%20Cavaliers%201.23%2C%20Milwaukee%20Bucks%203.65.%0AAvis%20du%20bot%20%3A%20%C3%A9cart%C3%A9%20%E2%80%94%20Cote%20trop%20basse%20%3A%20Favori%20%C3%A0%201.23%20%3A%20le%20gain%20serait%20trop%20faible%20pour%20le%20risque..%0AAnalyse%20compl%C3%A8te%20sur%20mon%20site%20%3A%20https%3A%2F%2Fzebrebleu.github.io%2Fnbabot%2F%0A%0AMa%20question%20%3A%20Que%20penses-tu%20de%20ce%20match%20%3F%20Explique%20simplement." target="_blank" rel="noopener">Demander à Claude ↗</a></div></div><div class="game"><div class="time">01:00<small>Paris</small></div>
+<div class="teams"><div class="team"><span class="badge sm" style="background:#266092;color:#fff">MIN</span><span class="nm">Minnesota Timberwolves</span><span class="od">5.30</span></div><div class="team fav"><span class="badge sm" style="background:#000000;color:#fff">SA</span><span class="nm">San Antonio Spurs <em>dom.</em></span><span class="od">1.15</span></div></div>
+<div class="status"><span class="chip no">ÉCARTÉ</span></div><div class="reason"><b>Cote trop basse</b> — Favori à 1.15 : le gain serait trop faible pour le risque. <a class="ask small" href="https://claude.ai/new?q=Tu%20es%20mon%20assistant%20pour%20analyser%20des%20paris%20sportifs%20%28je%20parie%20sur%20Unibet%2C%20mise%20de%20base%20100%20%E2%82%AC%29.%20Voici%20la%20fiche%20pr%C3%A9par%C3%A9e%20par%20mon%20bot.%20R%C3%A9ponds%20en%20fran%C3%A7ais%2C%20simplement%2C%20sans%20jargon%2C%20et%20rappelle%20les%20risques.%20Si%20c%27est%20utile%2C%20cherche%20sur%20le%20web%20les%20derni%C3%A8res%20infos%20%28blessures%2C%20forfaits%2C%20compositions%29.%0A%0AMatch%20NBA%20%3A%20Minnesota%20Timberwolves%20%28ext%C3%A9rieur%29%20contre%20San%20Antonio%20Spurs%20%28domicile%29%2C%20le%2001%2F11%20%C3%A0%2001%3A00%20%28heure%20de%20Paris%29.%0ACotes%20Unibet%20%3A%20Minnesota%20Timberwolves%205.30%2C%20San%20Antonio%20Spurs%201.15.%0AAvis%20du%20bot%20%3A%20%C3%A9cart%C3%A9%20%E2%80%94%20Cote%20trop%20basse%20%3A%20Favori%20%C3%A0%201.15%20%3A%20le%20gain%20serait%20trop%20faible%20pour%20le%20risque..%0AAnalyse%20compl%C3%A8te%20sur%20mon%20site%20%3A%20https%3A%2F%2Fzebrebleu.github.io%2Fnbabot%2F%0A%0AMa%20question%20%3A%20Que%20penses-tu%20de%20ce%20match%20%3F%20Explique%20simplement." target="_blank" rel="noopener">Demander à Claude ↗</a></div></div><div class="game"><div class="time">01:30<small>Paris</small></div>
+<div class="teams"><div class="team"><span class="badge sm" style="background:#007ac1;color:#fff">OKC</span><span class="nm">Oklahoma City Thunder</span><span class="od">2.15</span></div><div class="team fav"><span class="badge sm" style="background:#ce0e2d;color:#fff">HOU</span><span class="nm">Houston Rockets <em>dom.</em></span><span class="od">1.68</span></div></div>
+<div class="status"><span class="chip no">ÉCARTÉ</span></div><div class="reason"><b>Blessure importante</b> — 3 joueurs absents/incertains, seuil de 3 atteint — règle de secours (Houston Rockets absente de KEY_PLAYERS) : Reed Sheppard (Day-To-Day), Alperen Sengun (Day-To-Day), Steven Adams (Out) <a class="ask small" href="https://claude.ai/new?q=Tu%20es%20mon%20assistant%20pour%20analyser%20des%20paris%20sportifs%20%28je%20parie%20sur%20Unibet%2C%20mise%20de%20base%20100%20%E2%82%AC%29.%20Voici%20la%20fiche%20pr%C3%A9par%C3%A9e%20par%20mon%20bot.%20R%C3%A9ponds%20en%20fran%C3%A7ais%2C%20simplement%2C%20sans%20jargon%2C%20et%20rappelle%20les%20risques.%20Si%20c%27est%20utile%2C%20cherche%20sur%20le%20web%20les%20derni%C3%A8res%20infos%20%28blessures%2C%20forfaits%2C%20compositions%29.%0A%0AMatch%20NBA%20%3A%20Oklahoma%20City%20Thunder%20%28ext%C3%A9rieur%29%20contre%20Houston%20Rockets%20%28domicile%29%2C%20le%2001%2F11%20%C3%A0%2001%3A30%20%28heure%20de%20Paris%29.%0ACotes%20Unibet%20%3A%20Oklahoma%20City%20Thunder%202.15%2C%20Houston%20Rockets%201.68.%0AAvis%20du%20bot%20%3A%20%C3%A9cart%C3%A9%20%E2%80%94%20Blessure%20importante%20%3A%203%20joueurs%20absents%2Fincertains%2C%20seuil%20de%203%20atteint%20%E2%80%94%20r%C3%A8gle%20de%20secours%20%28Houston%20Rockets%20absente%20de%20KEY_PLAYERS%29%20%3A%20Reed%20Sheppard%20%28Day-To-Day%29%2C%20Alperen%20Sengun%20%28Day-To-Day%29%2C%20Steven%20Adams%20%28Out%29.%0AAnalyse%20compl%C3%A8te%20sur%20mon%20site%20%3A%20https%3A%2F%2Fzebrebleu.github.io%2Fnbabot%2F%0A%0AMa%20question%20%3A%20Que%20penses-tu%20de%20ce%20match%20%3F%20Explique%20simplement." target="_blank" rel="noopener">Demander à Claude ↗</a></div></div><details><summary>Comment lire cette page</summary>
+<ul class="legend">
+<li><span class="chip go">À JOUER</span><span>Les paris proposés ce soir : un pari simple et un combiné de 2 matchs, cote totale de 2.00 au maximum.</span></li>
+<li><span class="chip info">VALIDÉ</span><span>Le match passe tous les contrôles mais n'a pas été retenu dans le pari.</span></li>
+<li><span class="chip no">ÉCARTÉ</span><span>Au moins un contrôle a échoué : la raison est écrite en dessous.</span></li>
+<li><span class="chip warn">EN PAUSE</span><span>Une des deux équipes a joué moins de 10 matchs (hors début de saison) : pas de pronostic.</span></li>
+<li><span class="chip off">EN ATTENTE</span><span>Unibet n'a pas encore publié de cote : le match sera analysé au prochain passage.</span></li>
+</ul>
+<p class="lbl">Les contrôles appliqués au favori</p>
+<ul class="reasons ctrl">
+<li><b>Début de saison</b> — en octobre-novembre, un pari reste possible avec peu de matchs joués
+(alerte + confiance « Prudente ») ; ensuite, 10 matchs minimum par équipe.</li>
+<li><b>Cote</b> — entre 1.25 et 1.80, et pas de hausse suspecte avant le match.</li>
+<li><b>Fatigue</b> — pas de 2e match en 24 h à l'extérieur, pas de 3e match d'affilée en déplacement.</li>
+<li><b>Match piège</b> — pas de gros choc prévu dans les 48 h qui suivent.</li>
+<li><b>Forme</b> — bon bilan récent à domicile ou à l'extérieur, outsider pas en meilleure forme.</li>
+<li><b>Blessures</b> — star et titulaires majeurs disponibles.</li>
+<li><b>Fin de saison</b> — pas d'équipe du bas de tableau en mars ou avril.</li>
+</ul></details></div>
+<h2>Avant de valider sur Unibet</h2><div class="card"><ul class="check">
+<li>La cote totale affichée sur Unibet ne dépasse pas 2.00</li>
+<li>Pari « Face à face » (vainqueur du match, prolongations incluses)</li>
+<li>Blessures revérifiées environ 30 minutes avant le match</li>
+<li>Pas d'annonce de repos de dernière minute pour les joueurs clés</li></ul></div>
+<h2>Nuits précédentes</h2><div class="archives"><a href="../index.html">Prochaine nuit</a><a class="cur" href="../archive/2026-10-31.html">Nuit du sam. 31/10</a><a class="" href="../archive/2026-10-30.html">Nuit du ven. 30/10</a><a class="" href="../archive/2026-10-29.html">Nuit du jeu. 29/10</a><a class="" href="../archive/2026-10-28.html">Nuit du mer. 28/10</a><a class="" href="../archive/2026-10-27.html">Nuit du mar. 27/10</a><a class="" href="../archive/2026-10-26.html">Nuit du lun. 26/10</a></div>
+
+<footer>Outil d'aide à la décision : aucune analyse ne garantit un résultat. Joue une mise fixe et raisonnable.<br>
+Joueurs Info Service : 09 74 75 13 13 (appel non surtaxé). Source : The Odds API + ESPN.</footer>
+</main></body></html>
