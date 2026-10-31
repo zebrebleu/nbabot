@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-31T14:32:33.975240+00:00",
+ "generated_at": "2026-10-31T17:55:55.786895+00:00",
  "matches": [
   {
    "id": "nba:d47417c3b1a2cd427cce74c9d00f1046",
@@ -7,8 +7,8 @@
    "label": "Portland Trail Blazers @ Utah Jazz",
    "time": "2026-10-31T19:00:00+00:00",
    "verdict": "Écarté",
-   "line": "20:00 Portland Trail Blazers @ Utah Jazz — écarté (blessure importante) : favori Portland Trail Blazers 1.28",
-   "brief": "Match NBA : Portland Trail Blazers (extérieur) contre Utah Jazz (domicile), le 31/10 à 20:00 (heure de Paris).\nCotes Unibet : Portland Trail Blazers 1.28, Utah Jazz 3.25.\nAvis du bot : écarté — Blessure importante : 4 joueurs absents/incertains, seuil de 3 atteint — règle de secours (Portland Trail Blazers absente de KEY_PLAYERS) : Robert Williams III (Day-To-Day), Chris Youngblood (Out), Ja Morant (Out), Shaedon Sharpe (Out).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "20:00 Portland Trail Blazers @ Utah Jazz — écarté (blessure importante) : favori Portland Trail Blazers 1.27",
+   "brief": "Match NBA : Portland Trail Blazers (extérieur) contre Utah Jazz (domicile), le 31/10 à 20:00 (heure de Paris).\nCotes Unibet : Portland Trail Blazers 1.27, Utah Jazz 3.35.\nAvis du bot : écarté — Blessure importante : 4 joueurs absents/incertains, seuil de 3 atteint — règle de secours (Portland Trail Blazers absente de KEY_PLAYERS) : Robert Williams III (Day-To-Day), Chris Youngblood (Out), Ja Morant (Out), Shaedon Sharpe (Out).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:067d97a124c10ea2d206546384500c5e",
@@ -16,8 +16,8 @@
    "label": "Philadelphia 76ers @ Charlotte Hornets",
    "time": "2026-10-31T22:00:00+00:00",
    "verdict": "Écarté",
-   "line": "23:00 Philadelphia 76ers @ Charlotte Hornets — écarté (fatigue) : favori Philadelphia 76ers 1.76",
-   "brief": "Match NBA : Philadelphia 76ers (extérieur) contre Charlotte Hornets (domicile), le 31/10 à 23:00 (heure de Paris).\nCotes Unibet : Philadelphia 76ers 1.76, Charlotte Hornets 1.92.\nAvis du bot : écarté — Fatigue : Deuxième match en 24 h, à l'extérieur. 2e match en ~24 h ET à l'extérieur (veille vs Knicks).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "23:00 Philadelphia 76ers @ Charlotte Hornets — écarté (favori pas assez net) : favori Philadelphia 76ers 1.83",
+   "brief": "Match NBA : Philadelphia 76ers (extérieur) contre Charlotte Hornets (domicile), le 31/10 à 23:00 (heure de Paris).\nCotes Unibet : Philadelphia 76ers 1.83, Charlotte Hornets 1.84.\nAvis du bot : écarté — Favori pas assez net : Cote de 1.83, au-dessus de la limite de 1.80..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:77270837bc694d198c10f42937690d75",
@@ -53,7 +53,7 @@
    "time": "2026-11-01T00:00:00+00:00",
    "verdict": "Écarté",
    "line": "01:00 Minnesota Timberwolves @ San Antonio Spurs — écarté (cote trop basse) : favori San Antonio Spurs 1.15",
-   "brief": "Match NBA : Minnesota Timberwolves (extérieur) contre San Antonio Spurs (domicile), le 01/11 à 01:00 (heure de Paris).\nCotes Unibet : Minnesota Timberwolves 5.30, San Antonio Spurs 1.15.\nAvis du bot : écarté — Cote trop basse : Favori à 1.15 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "brief": "Match NBA : Minnesota Timberwolves (extérieur) contre San Antonio Spurs (domicile), le 01/11 à 01:00 (heure de Paris).\nCotes Unibet : Minnesota Timberwolves 5.00, San Antonio Spurs 1.15.\nAvis du bot : écarté — Cote trop basse : Favori à 1.15 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:c30d3bdf126e98ced5b9389db8617926",
@@ -61,8 +61,8 @@
    "label": "Oklahoma City Thunder @ Houston Rockets",
    "time": "2026-11-01T00:30:00+00:00",
    "verdict": "Écarté",
-   "line": "01:30 Oklahoma City Thunder @ Houston Rockets — écarté (blessure importante) : favori Houston Rockets 1.68",
-   "brief": "Match NBA : Oklahoma City Thunder (extérieur) contre Houston Rockets (domicile), le 01/11 à 01:30 (heure de Paris).\nCotes Unibet : Oklahoma City Thunder 2.15, Houston Rockets 1.68.\nAvis du bot : écarté — Blessure importante : 3 joueurs absents/incertains, seuil de 3 atteint — règle de secours (Houston Rockets absente de KEY_PLAYERS) : Reed Sheppard (Day-To-Day), Alperen Sengun (Day-To-Day), Steven Adams (Out).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "01:30 Oklahoma City Thunder @ Houston Rockets — écarté (blessure importante) : favori Houston Rockets 1.66",
+   "brief": "Match NBA : Oklahoma City Thunder (extérieur) contre Houston Rockets (domicile), le 01/11 à 01:30 (heure de Paris).\nCotes Unibet : Oklahoma City Thunder 2.15, Houston Rockets 1.66.\nAvis du bot : écarté — Blessure importante : 3 joueurs absents/incertains, seuil de 3 atteint — règle de secours (Houston Rockets absente de KEY_PLAYERS) : Reed Sheppard (Out), Fred VanVleet (Out), Steven Adams (Out).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   }
  ]
 }
