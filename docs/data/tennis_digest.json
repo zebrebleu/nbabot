@@ -1,55 +1,15 @@
 {
- "generated_at": "2026-11-01T12:53:37.337119+00:00",
+ "generated_at": "2026-11-01T15:10:26.848371+00:00",
  "matches": [
-  {
-   "id": "tennis:ffcb837b0caf57b860936111d914874c",
-   "sport": "tennis",
-   "label": "Adolfo Daniel Vallejo – Lorenzo Sonego",
-   "competition": "ATP Paris Masters",
-   "time": "2026-11-01T13:00:00+00:00",
-   "verdict": "Écarté",
-   "line": "14:00 Adolfo Daniel Vallejo – Lorenzo Sonego — écarté (fatigue) : favori Lorenzo Sonego 1.53 [ATP Paris Masters]",
-   "brief": "Match de tennis (ATP Paris Masters, dur) : Adolfo Daniel Vallejo contre Lorenzo Sonego, le 01/11 à 14:00 (heure de Paris).\nCotes Unibet : Adolfo Daniel Vallejo 2.10, Lorenzo Sonego 1.53.\nAvis du bot : écarté — Fatigue : Match long il y a 23 h : 3 sets, 32 jeux contre Jaume Munar.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
-  },
-  {
-   "id": "tennis:39b752c46a334d801ef2449710faa164",
-   "sport": "tennis",
-   "label": "Alex de Minaur – Carlos Alcaraz",
-   "competition": "ATP Vienna Open",
-   "time": "2026-11-01T13:00:00+00:00",
-   "verdict": "Écarté",
-   "line": "14:00 Alex de Minaur – Carlos Alcaraz — écarté (cote trop basse) : favori Carlos Alcaraz 1.18 [ATP Vienna Open]",
-   "brief": "Match de tennis (ATP Vienna Open, dur) : Alex de Minaur contre Carlos Alcaraz, le 01/11 à 14:00 (heure de Paris).\nCotes Unibet : Alex de Minaur 4.25, Carlos Alcaraz 1.18.\nAvis du bot : écarté — Cote trop basse : Favori à 1.18 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
-  },
-  {
-   "id": "tennis:45420e4ccaa96290ca605d63fe10dcc6",
-   "sport": "tennis",
-   "label": "Jiri Lehecka – Valentin Vacherot",
-   "competition": "ATP Swiss Indoors Basel",
-   "time": "2026-11-01T14:30:00+00:00",
-   "verdict": "Écarté",
-   "line": "15:30 Jiri Lehecka – Valentin Vacherot — écarté (fatigue) : favori Jiri Lehecka 1.48 [ATP Swiss Indoors Basel]",
-   "brief": "Match de tennis (ATP Swiss Indoors Basel, dur) : Jiri Lehecka contre Valentin Vacherot, le 01/11 à 15:30 (heure de Paris).\nCotes Unibet : Jiri Lehecka 1.48, Valentin Vacherot 2.55.\nAvis du bot : écarté — Fatigue : Match long il y a 22 h : 3 sets, 31 jeux contre Jan-Lennard Struff.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
-  },
-  {
-   "id": "tennis:3f537c10e972402ec718dc4dfa47786b",
-   "sport": "tennis",
-   "label": "Nuno Borges – Alex Molcan",
-   "competition": "ATP Paris Masters",
-   "time": "2026-11-01T14:45:00+00:00",
-   "verdict": "Écarté",
-   "line": "15:45 Nuno Borges – Alex Molcan — écarté (fatigue) : favori Nuno Borges 1.54 [ATP Paris Masters]",
-   "brief": "Match de tennis (ATP Paris Masters, dur) : Nuno Borges contre Alex Molcan, le 01/11 à 15:45 (heure de Paris).\nCotes Unibet : Nuno Borges 1.54, Alex Molcan 2.10.\nAvis du bot : écarté — Fatigue : Match long il y a 23 h : 3 sets, 29 jeux contre Adrian Mannarino.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
-  },
   {
    "id": "tennis:b04959d8930aba4535db09fe57f9d093",
    "sport": "tennis",
    "label": "Alejandro Davidovich Fokina – Moise Kouame",
    "competition": "ATP Paris Masters",
    "time": "2026-11-02T10:00:00+00:00",
-   "verdict": "Validé",
-   "line": "11:00 Alejandro Davidovich Fokina – Moise Kouame — validé : Alejandro Davidovich Fokina 1.27 (73% estimé) [ATP Paris Masters]",
-   "brief": "Match de tennis (ATP Paris Masters, dur) : Alejandro Davidovich Fokina contre Moise Kouame, le 02/11 à 11:00 (heure de Paris).\nCotes Unibet : Alejandro Davidovich Fokina 1.27, Moise Kouame 3.05.\nAvis du bot : validé, non retenu — Alejandro Davidovich Fokina gagne, confiance prudente, chances estimées 73%, mise conseillée 15 €.\nAtouts : Nette différence de forme : 9V-1D contre 3V-7D.\nPoints de vigilance : Cote Unibet en dessous du marché (79% contre 73%).\nForme récente (10 derniers matchs) : Alejandro Davidovich Fokina : 9V-1D, 6 victoires de suite / Moise Kouame : 3V-7D, 1 défaite de suite\nConfrontations depuis 2023 : Aucune confrontation sur les 3 dernières saisons\nClassement : Alejandro Davidovich Fokina : 15e mondial / Moise Kouame : classement n.d.\nSaisons précédentes : Alejandro Davidovich Fokina : 2025 44V-25D (dur 30V-17D) · 2024 19V-23D (dur 16V-18D) · 2023 30V-25D (dur 19V-16D) / Moise Kouame : 2025 0V-2D\nSur dur : Alejandro Davidovich Fokina : 86V-60D (59%) / Moise Kouame : 4V-7D (36%)\nDernier match : Alejandro Davidovich Fokina : il y a 15 jours : victoire contre Rafael Jodar (3 sets, 30 jeux) / Moise Kouame : il y a 12 jours : défaite contre Lorenzo Musetti (2 sets, 20 jeux)\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "verdict": "À jouer",
+   "line": "11:00 Alejandro Davidovich Fokina – Moise Kouame — À JOUER : Alejandro Davidovich Fokina 1.27 (73% estimé) [ATP Paris Masters]",
+   "brief": "Match de tennis (ATP Paris Masters, dur) : Alejandro Davidovich Fokina contre Moise Kouame, le 02/11 à 11:00 (heure de Paris).\nCotes Unibet : Alejandro Davidovich Fokina 1.27, Moise Kouame 3.05.\nAvis du bot : à jouer — Alejandro Davidovich Fokina gagne, confiance moyenne, chances estimées 73%, mise conseillée 25 €.\nAtouts : Nette différence de forme : 9V-1D contre 3V-7D.\nPoints de vigilance : Cote Unibet en dessous du marché (79% contre 73%).\nForme récente (10 derniers matchs) : Alejandro Davidovich Fokina : 9V-1D, 6 victoires de suite / Moise Kouame : 3V-7D, 1 défaite de suite\nConfrontations depuis 2023 : Aucune confrontation sur les 3 dernières saisons\nClassement : Alejandro Davidovich Fokina : 15e mondial / Moise Kouame : classement n.d.\nSaisons précédentes : Alejandro Davidovich Fokina : 2025 44V-25D (dur 30V-17D) · 2024 19V-23D (dur 16V-18D) · 2023 30V-25D (dur 19V-16D) / Moise Kouame : 2025 0V-2D\nSur dur : Alejandro Davidovich Fokina : 86V-60D (59%) / Moise Kouame : 4V-7D (36%)\nDernier match : Alejandro Davidovich Fokina : il y a 15 jours : victoire contre Rafael Jodar (3 sets, 30 jeux) / Moise Kouame : il y a 12 jours : défaite contre Lorenzo Musetti (2 sets, 20 jeux)\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "tennis:0b15b685479df1479050365848bcfe54",
@@ -60,6 +20,16 @@
    "verdict": "Écarté",
    "line": "11:00 Alejandro Tabilo – Rafael Jodar — écarté (cote trop basse) : favori Rafael Jodar 1.18 [ATP Paris Masters]",
    "brief": "Match de tennis (ATP Paris Masters, dur) : Alejandro Tabilo contre Rafael Jodar, le 02/11 à 11:00 (heure de Paris).\nCotes Unibet : Alejandro Tabilo 3.65, Rafael Jodar 1.18.\nAvis du bot : écarté — Cote trop basse : Favori à 1.18 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+  },
+  {
+   "id": "tennis:766892f0324922ef7aab73a2713af3c2",
+   "sport": "tennis",
+   "label": "Alex Michelsen – Jiri Lehecka",
+   "competition": "ATP Paris Masters",
+   "time": "2026-11-02T10:00:00+00:00",
+   "verdict": "À jouer",
+   "line": "11:00 Alex Michelsen – Jiri Lehecka — À JOUER : Jiri Lehecka 1.46 (61% estimé) [ATP Paris Masters]",
+   "brief": "Match de tennis (ATP Paris Masters, dur) : Alex Michelsen contre Jiri Lehecka, le 02/11 à 11:00 (heure de Paris).\nCotes Unibet : Alex Michelsen 2.30, Jiri Lehecka 1.46.\nAvis du bot : à jouer — Jiri Lehecka gagne, confiance moyenne, chances estimées 61%, mise conseillée 25 €.\nPoints de vigilance : Cote Unibet en dessous du marché (68% contre 61%).\nForme récente (10 derniers matchs) : Jiri Lehecka : 7V-3D, 4 victoires de suite / Alex Michelsen : 5V-5D, 1 défaite de suite\nConfrontations depuis 2023 : Jiri Lehecka 1V-1D · derniers : 01/2024 Australian Open (D), 04/2026 Mutua Madrid Open (V)\nClassement : Jiri Lehecka : 21e mondial / Alex Michelsen : 34e mondial\nSaisons précédentes : Jiri Lehecka : 2025 37V-22D (dur 29V-15D) · 2024 30V-15D (dur 26V-14D) · 2023 31V-24D (dur 23V-17D) / Alex Michelsen : 2025 23V-26D (dur 20V-19D) · 2024 43V-31D (dur 39V-23D) · 2023 10V-10D (dur 9V-8D)\nSur dur : Jiri Lehecka : 104V-60D (63%) / Alex Michelsen : 93V-67D (58%)\nDernier match : Jiri Lehecka : il y a 42 h : victoire contre Jan-Lennard Struff (3 sets, 31 jeux) / Alex Michelsen : il y a 4 jours : défaite contre Arthur Fils (3 sets, 32 jeux)\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "tennis:d54412ae826f63d7234c2ea00d4809ac",
@@ -88,8 +58,8 @@
    "competition": "ATP Paris Masters",
    "time": "2026-11-02T10:00:00+00:00",
    "verdict": "Écarté",
-   "line": "11:00 Quentin Halys – Arthur Fery — écarté (la cote du favori monte) : favori Quentin Halys 1.60 [ATP Paris Masters]",
-   "brief": "Match de tennis (ATP Paris Masters, dur) : Quentin Halys contre Arthur Fery, le 02/11 à 11:00 (heure de Paris).\nCotes Unibet : Quentin Halys 1.60, Arthur Fery 2.00.\nAvis du bot : écarté — La cote du favori monte : Hausse anormale : 1.46 → 1.60 (+9.6%).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "11:00 Quentin Halys – Arthur Fery — écarté (la cote du favori monte) : favori Quentin Halys 1.58 [ATP Paris Masters]",
+   "brief": "Match de tennis (ATP Paris Masters, dur) : Quentin Halys contre Arthur Fery, le 02/11 à 11:00 (heure de Paris).\nCotes Unibet : Quentin Halys 1.58, Arthur Fery 2.05.\nAvis du bot : écarté — La cote du favori monte : Hausse anormale : 1.46 → 1.58 (+8.2%).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "tennis:db55f6491d2491e31599e3af63c11471",
@@ -108,8 +78,8 @@
    "competition": "ATP Paris Masters",
    "time": "2026-11-02T10:00:00+00:00",
    "verdict": "Écarté",
-   "line": "11:00 Ugo Humbert – Botic Van De Zandschulp — écarté (forme insuffisante) : favori Ugo Humbert 1.52 [ATP Paris Masters]",
-   "brief": "Match de tennis (ATP Paris Masters, dur) : Ugo Humbert contre Botic Van De Zandschulp, le 02/11 à 11:00 (heure de Paris).\nCotes Unibet : Ugo Humbert 1.52, Botic Van De Zandschulp 2.15.\nAvis du bot : écarté — Forme insuffisante : 2V-8D sur ses 10 derniers matchs.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "11:00 Ugo Humbert – Botic Van De Zandschulp — écarté (forme insuffisante) : favori Ugo Humbert 1.50 [ATP Paris Masters]",
+   "brief": "Match de tennis (ATP Paris Masters, dur) : Ugo Humbert contre Botic Van De Zandschulp, le 02/11 à 11:00 (heure de Paris).\nCotes Unibet : Ugo Humbert 1.50, Botic Van De Zandschulp 2.20.\nAvis du bot : écarté — Forme insuffisante : 2V-8D sur ses 10 derniers matchs.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "tennis:18d9ea3abcfe85f9ae47dc0433ac57c7",
@@ -198,8 +168,8 @@
    "competition": "ATP Paris Masters",
    "time": "2026-11-02T10:00:00+00:00",
    "verdict": "Écarté",
-   "line": "11:00 Novak Djokovic – Valentin Vacherot — écarté (l'outsider est en forme) : favori Novak Djokovic 1.37 [ATP Paris Masters]",
-   "brief": "Match de tennis (ATP Paris Masters, dur) : Novak Djokovic contre Valentin Vacherot, le 02/11 à 11:00 (heure de Paris).\nCotes Unibet : Novak Djokovic 1.37, Valentin Vacherot 2.55.\nAvis du bot : écarté — L'outsider est en forme : L'outsider est en meilleure forme : Novak Djokovic 6V-4D vs Valentin Vacherot 7V-3D.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "11:00 Novak Djokovic – Valentin Vacherot — écarté (l'outsider est en forme) : favori Novak Djokovic 1.36 [ATP Paris Masters]",
+   "brief": "Match de tennis (ATP Paris Masters, dur) : Novak Djokovic contre Valentin Vacherot, le 02/11 à 11:00 (heure de Paris).\nCotes Unibet : Novak Djokovic 1.36, Valentin Vacherot 2.60.\nAvis du bot : écarté — L'outsider est en forme : L'outsider est en meilleure forme : Novak Djokovic 6V-4D vs Valentin Vacherot 7V-3D.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   }
  ]
 }

@@ -1,16 +1,16 @@
 {
- "generated_at": "2026-11-01T12:53:46.452569+00:00",
+ "generated_at": "2026-11-01T15:10:34.703902+00:00",
  "leagues": {
   "Ligue 1": {
-   "matchs_espn": 5,
+   "matchs_espn": 4,
    "cotes": 14,
-   "rapprochés": 5,
+   "rapprochés": 4,
    "matchs_lus_sur_10_jours": 9
   },
   "Liga": {
-   "matchs_espn": 5,
+   "matchs_espn": 4,
    "cotes": 15,
-   "rapprochés": 5,
+   "rapprochés": 4,
    "matchs_lus_sur_10_jours": 10
   },
   "Premier League": {
@@ -20,23 +20,23 @@
    "matchs_lus_sur_10_jours": 10
   },
   "Serie A": {
-   "matchs_espn": 6,
-   "cotes": 17,
-   "rapprochés": 6,
+   "matchs_espn": 4,
+   "cotes": 16,
+   "rapprochés": 4,
    "matchs_lus_sur_10_jours": 20
   },
   "Bundesliga": {
-   "matchs_espn": 2,
+   "matchs_espn": 1,
    "cotes": 11,
-   "rapprochés": 2,
+   "rapprochés": 1,
    "matchs_lus_sur_10_jours": 9
   }
  },
  "credits_used": 5,
  "unmatched": [],
- "matches": 20,
- "equipes_avec_resultats": 40,
- "equipes_avec_historique": 38,
+ "matches": 15,
+ "equipes_avec_resultats": 30,
+ "equipes_avec_historique": 28,
  "espn_brut": {
   "uefa.champions (jour par jour)": 18,
   "uefa.europa (jour par jour)": 18,
