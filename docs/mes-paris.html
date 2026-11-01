@@ -101,6 +101,7 @@ padding:9px 16px;border-radius:999px;border:1px solid var(--line);background:var
 .side{font:inherit;text-align:left;cursor:pointer;border:1.5px solid var(--line);background:var(--soft);
 color:var(--ink);border-radius:10px;padding:9px 11px;display:flex;justify-content:space-between;gap:8px;align-items:center}
 .side b{font:700 18px/1 var(--num)}.side span{font-size:14px;overflow-wrap:anywhere}
+.sides.three{grid-template-columns:1fr .8fr 1fr}
 .side:hover{border-color:var(--muted)}
 .side.on{border-color:var(--go);background:var(--go-bg)}.side.on b{color:var(--go)}
 .side.fav span{font-weight:600}
@@ -140,7 +141,7 @@ padding:10px 16px;border-radius:10px;font-size:14px;opacity:0;transition:opacity
 a.ask.small{font-size:12px;font-weight:600;color:var(--info);text-decoration:none;white-space:nowrap}
 .stats.four{grid-template-columns:repeat(4,1fr)}
 @media (max-width:600px){.stats.four{grid-template-columns:1fr 1fr}.stats.four .stat.big{grid-column:auto}}
-@media (max-width:600px){.sides{grid-template-columns:1fr}
+@media (max-width:600px){.sides,.sides.three{grid-template-columns:1fr}
 .bets thead{display:none}.bets,.bets tbody,.bets tr,.bets td{display:block}
 .bets tr{border-bottom:1px solid var(--line);padding:10px 0}.bets td{border:0;padding:2px 0}
 .bets td[data-l]::before{content:attr(data-l);color:var(--muted);font-size:12px;margin-right:6px}}

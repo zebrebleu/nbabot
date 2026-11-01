@@ -101,6 +101,7 @@ padding:9px 16px;border-radius:999px;border:1px solid var(--line);background:var
 .side{font:inherit;text-align:left;cursor:pointer;border:1.5px solid var(--line);background:var(--soft);
 color:var(--ink);border-radius:10px;padding:9px 11px;display:flex;justify-content:space-between;gap:8px;align-items:center}
 .side b{font:700 18px/1 var(--num)}.side span{font-size:14px;overflow-wrap:anywhere}
+.sides.three{grid-template-columns:1fr .8fr 1fr}
 .side:hover{border-color:var(--muted)}
 .side.on{border-color:var(--go);background:var(--go-bg)}.side.on b{color:var(--go)}
 .side.fav span{font-weight:600}
@@ -140,7 +141,7 @@ padding:10px 16px;border-radius:10px;font-size:14px;opacity:0;transition:opacity
 a.ask.small{font-size:12px;font-weight:600;color:var(--info);text-decoration:none;white-space:nowrap}
 .stats.four{grid-template-columns:repeat(4,1fr)}
 @media (max-width:600px){.stats.four{grid-template-columns:1fr 1fr}.stats.four .stat.big{grid-column:auto}}
-@media (max-width:600px){.sides{grid-template-columns:1fr}
+@media (max-width:600px){.sides,.sides.three{grid-template-columns:1fr}
 .bets thead{display:none}.bets,.bets tbody,.bets tr,.bets td{display:block}
 .bets tr{border-bottom:1px solid var(--line);padding:10px 0}.bets td{border:0;padding:2px 0}
 .bets td[data-l]::before{content:attr(data-l);color:var(--muted);font-size:12px;margin-right:6px}}
@@ -179,30 +180,31 @@ appuie sur Entrée dans Claude. Claude donne des explications, pas de garantie :
 const $ = s => document.querySelector(s);
 const INTRO = "Tu es mon assistant pour analyser des paris sportifs (je parie sur Unibet, mise de base 100 €). Voici la fiche préparée par mon bot. Réponds en français, simplement, sans jargon, et rappelle les risques. Si c'est utile, cherche sur le web les dernières infos (blessures, forfaits, compositions).", SITE = "https://zebrebleu.github.io/nbabot/", MAX = 2400;
 const fmt = x => (Math.round(x * 100) / 100).toFixed(2).replace('.', ',');
-let data = {nba: [], tennis: []};
+let data = {nba: [], tennis: [], foot: []};
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
 async function load() {
-  for (const s of ['nba', 'tennis']) {
+  for (const s of ['nba', 'tennis', 'foot']) {
     try { const r = await fetch(`data/${s}_digest.json?t=${Date.now()}`); if (r.ok) data[s] = (await r.json()).matches || []; } catch (e) {}
   }
   const now = Date.now() - 3 * 3600e3;
-  for (const s of ['nba', 'tennis']) data[s] = data[s].filter(m => new Date(m.time).getTime() > now);
+  for (const s of ['nba', 'tennis', 'foot']) data[s] = data[s].filter(m => new Date(m.time).getTime() > now);
   const sel = $('#topic');
   const opt = (v, t) => `<option value="${esc(v)}">${esc(t)}</option>`;
   const hh = iso => new Date(iso).toLocaleString('fr-FR', {weekday: 'short', hour: '2-digit', minute: '2-digit'});
   let html = '<optgroup label="Vue d\'ensemble">' + opt('free', 'Question libre (sans match précis)');
   if (data.nba.length) html += opt('all:nba', `Toute la nuit NBA (${data.nba.length} matchs)`);
   if (data.tennis.length) html += opt('all:tennis', `Tout le tennis à venir (${data.tennis.length} matchs)`);
+  if (data.foot.length) html += opt('all:foot', `Tout le foot à venir (${data.foot.length} matchs)`);
   html += opt('mybets', 'Mes paris (mon bilan)') + '</optgroup>';
   const order = {'À jouer': 0, 'Validé': 1, 'Écarté': 2, 'En attente': 3};
-  for (const [s, label] of [['nba', 'NBA'], ['tennis', 'Tennis']]) {
+  for (const [s, label] of [['nba', 'NBA'], ['tennis', 'Tennis'], ['foot', 'Foot']]) {
     if (!data[s].length) continue;
     const list = [...data[s]].sort((a, b) => (order[a.verdict] - order[b.verdict]) || a.time.localeCompare(b.time));
     html += `<optgroup label="${label}">` + list.map(m => opt(m.id, `${m.verdict === 'À jouer' ? '★ ' : ''}${m.label} · ${hh(m.time)} · ${m.verdict}`)).join('') + '</optgroup>';
   }
   sel.innerHTML = html;
-  const best = [...data.nba, ...data.tennis].find(m => m.verdict === 'À jouer');
+  const best = [...data.nba, ...data.tennis, ...data.foot].find(m => m.verdict === 'À jouer');
   const wanted = new URLSearchParams(location.search).get('match');
   sel.value = wanted && [...sel.options].some(o => o.value === wanted) ? wanted : (best ? best.id : 'free');
   update();
@@ -223,11 +225,11 @@ function context() {
   if (v === 'mybets') return myBets();
   if (v.startsWith('all:')) {
     const s = v.slice(4), list = data[s];
-    const head = s === 'nba' ? 'Résumé de la nuit NBA selon mon bot (heures de Paris) :' : 'Résumé des matchs de tennis à venir selon mon bot (heures de Paris) :';
+    const head = {nba: 'Résumé de la nuit NBA selon mon bot (heures de Paris) :', tennis: 'Résumé des matchs de tennis à venir selon mon bot (heures de Paris) :', foot: 'Résumé des matchs de foot à venir selon mon bot (heures de Paris) :'}[s];
     let txt = head + '\n' + list.map(m => m.line).join('\n') + `\nAnalyses détaillées : ${SITE}`;
     return txt.length > 1600 ? txt.slice(0, 1597) + '…' : txt;
   }
-  const m = [...data.nba, ...data.tennis].find(x => x.id === v);
+  const m = [...data.nba, ...data.tennis, ...data.foot].find(x => x.id === v);
   return m ? m.brief : '';
 }
 
