@@ -1,0 +1,33 @@
+{
+ "generated_at": "2026-11-01T12:41:24.914286+00:00",
+ "leagues": {
+  "Ligue 1": {
+   "matchs_espn": 0,
+   "cotes": 0,
+   "rapprochés": 0
+  },
+  "Liga": {
+   "matchs_espn": 0,
+   "cotes": 0,
+   "rapprochés": 0
+  },
+  "Premier League": {
+   "matchs_espn": 0,
+   "cotes": 0,
+   "rapprochés": 0
+  },
+  "Serie A": {
+   "matchs_espn": 0,
+   "cotes": 0,
+   "rapprochés": 0
+  },
+  "Bundesliga": {
+   "matchs_espn": 0,
+   "cotes": 0,
+   "rapprochés": 0
+  }
+ },
+ "credits_used": 0,
+ "unmatched": [],
+ "matches": 0
+}
