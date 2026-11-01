@@ -224,6 +224,13 @@ def _games_for(events: list[dict], team_id: str) -> list[FGame]:
 class ESPNSoccer:
     def __init__(self, http: CachedHttp):
         self.http = http
+        self.errors: list[str] = []              # erreurs rencontrées (copiées dans le diagnostic)
+        self.raw: dict[str, int] = {}            # nombre d'événements bruts reçus par compétition
+
+    def _note(self, where: str, exc: Exception) -> None:
+        msg = f"{where} : {type(exc).__name__} {str(exc)[:160]}"
+        if msg not in self.errors and len(self.errors) < 40:
+            self.errors.append(msg)
 
     def teams(self, lg: str) -> dict[str, dict]:
         data = self.http.get_json(f"{ESPN_SITE}/{lg}/teams", ttl_minutes=24 * 60)
@@ -253,10 +260,29 @@ class ESPNSoccer:
         return rows
 
     def scoreboard(self, code: str, start: datetime, end: datetime, label: str, ttl: float = 30) -> list[dict]:
-        rng = f"{start:%Y%m%d}-{end:%Y%m%d}"
-        data = self.http.get_json(f"{ESPN_SITE}/{code}/scoreboard", params={"dates": rng, "limit": 300},
-                                  ttl_minutes=ttl)
-        return _parse_events(data, label)
+        """Matchs d'une compétition entre deux dates : d'abord en une requête (plage de dates),
+        sinon jour par jour (format le plus courant de l'API ESPN)."""
+        url = f"{ESPN_SITE}/{code}/scoreboard"
+        try:
+            data = self.http.get_json(url, params={"dates": f"{start:%Y%m%d}-{end:%Y%m%d}"}, ttl_minutes=ttl)
+            self.raw[f"{code} (plage)"] = len(data.get("events", []))
+            events = _parse_events(data, label)
+            if events:
+                return events
+        except (requests.RequestException, ValueError) as exc:
+            self._note(f"{code} plage", exc)
+        out, day = [], start
+        n = 0
+        while day.date() <= end.date():
+            try:
+                data = self.http.get_json(url, params={"dates": f"{day:%Y%m%d}"}, ttl_minutes=ttl)
+                n += len(data.get("events", []))
+                out += _parse_events(data, label)
+            except (requests.RequestException, ValueError) as exc:
+                self._note(f"{code} {day:%d/%m}", exc)
+            day += timedelta(days=1)
+        self.raw[f"{code} (jour par jour)"] = n
+        return out
 
     def team_season(self, lg: str, team_id: str, season: int, past: bool) -> list[dict]:
         data = self.http.get_json(f"{ESPN_SITE}/{lg}/teams/{team_id}/schedule", params={"season": season},
@@ -321,10 +347,7 @@ class FootFetcher:
         # Toutes compétitions autour de la date (fatigue / rotation)
         around: list[dict] = []
         for code, label in fc.OTHER_COMPETITIONS.items():
-            try:
-                around += self.espn.scoreboard(code, win_start, win_end, label, ttl=60)
-            except requests.RequestException:
-                pass
+            around += self.espn.scoreboard(code, win_start, win_end, label, ttl=60)
 
         teams: dict[str, FTeam] = {}
         matches: list[FootMatch] = []
@@ -332,22 +355,33 @@ class FootFetcher:
         for lg_key, (odds_key, code, lg_name) in fc.LEAGUES.items():
             d = {"matchs_espn": 0, "cotes": 0, "rapprochés": 0}
             diag["leagues"][lg_name] = d
-            try:
-                fixtures = self.espn.scoreboard(code, win_start, win_end, lg_name)
-                around += fixtures
-                upcoming = [f for f in fixtures if f["state"] == "pre" and now < f["date"] <= horizon]
-                d["matchs_espn"] = len(upcoming)
-                if not upcoming:
-                    continue
-                team_info = self.espn.teams(code)
-                table = self.espn.standings(code)
-                odds = self._odds_events(odds_key, now)
-                if odds:
-                    diag["credits_used"] += 1
-                d["cotes"] = len(odds)
-            except requests.RequestException as exc:
-                log.warning("%s indisponible : %s", lg_name, exc)
+            fixtures = self.espn.scoreboard(code, win_start, win_end, lg_name)
+            around += fixtures
+            upcoming = [f for f in fixtures if f["state"] == "pre" and now < f["date"] <= horizon]
+            d["matchs_espn"] = len(upcoming)
+            d["matchs_lus_sur_10_jours"] = len(fixtures)
+            if not upcoming:
                 continue
+            team_info, table, odds = {}, {}, []          # chaque source peut manquer sans bloquer le reste
+            try:
+                team_info = self.espn.teams(code)
+            except (requests.RequestException, ValueError) as exc:
+                self.espn._note(f"{lg_name} équipes", exc)
+            try:
+                table = self.espn.standings(code)
+            except (requests.RequestException, ValueError) as exc:
+                self.espn._note(f"{lg_name} classement", exc)
+            try:
+                odds = self._odds_events(odds_key, now)
+            except requests.HTTPError as exc:
+                if exc.response is not None and exc.response.status_code in (401, 429):
+                    raise                                  # clé invalide ou quota épuisé : on le signale
+                self.espn._note(f"{lg_name} cotes", exc)
+            except (requests.RequestException, ValueError) as exc:
+                self.espn._note(f"{lg_name} cotes", exc)
+            if odds:
+                diag["credits_used"] += 1
+            d["cotes"] = len(odds)
             leagues_with_games.append(lg_name)
 
             def team(tid: str, fallback: str) -> FTeam:
@@ -361,16 +395,16 @@ class FootFetcher:
                     try:
                         t.games = [g for g in _games_for(self.espn.team_season(code, tid, cur, False), tid)
                                    if g.completed and g.gf is not None]
-                    except requests.RequestException:
-                        pass
+                    except (requests.RequestException, ValueError) as exc:
+                        self.espn._note(f"{info['name']} saison en cours", exc)
                     for s in range(cur - 1, cur - 1 - config.HISTORY_SEASONS, -1):
                         try:
                             gs = [g for g in _games_for(self.espn.team_season(code, tid, s, True), tid)
                                   if g.completed and g.gf is not None]
                             if gs:
                                 t.past[s] = gs
-                        except requests.RequestException:
-                            pass
+                        except (requests.RequestException, ValueError) as exc:
+                            self.espn._note(f"{info['name']} saison {s}", exc)
                     teams[tid] = t
                 return teams[tid]
 
@@ -421,6 +455,10 @@ class FootFetcher:
         self.history.purge(now)
         self.history.save()
         diag["matches"] = len(matches)
+        diag["equipes_avec_resultats"] = sum(1 for t in teams.values() if t.games)
+        diag["equipes_avec_historique"] = sum(1 for t in teams.values() if t.past)
+        diag["espn_brut"] = self.espn.raw
+        diag["erreurs"] = self.espn.errors
         try:
             DIAG_FILE.parent.mkdir(parents=True, exist_ok=True)
             DIAG_FILE.write_text(json.dumps(diag, indent=1, ensure_ascii=False), encoding="utf-8")

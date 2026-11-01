@@ -65,11 +65,14 @@ def picks_items(sport: str, evaluations, legs) -> list[dict]:
             continue
         a, b = (m.away, m.home) if sport == "nba" else (m.home, m.away)
         oa, ob = (m.unibet.away, m.unibet.home) if sport == "nba" else (m.unibet.home, m.unibet.away)
+        sides = [(a.name, round(oa, 2)), (b.name, round(ob, 2))]
+        if sport == "foot":                                  # 1 / N / 2
+            sides = [(a.name, round(oa, 2)), ("Match nul", round(m.unibet.draw, 2)), (b.name, round(ob, 2))]
         items.append({
             "id": f"{sport}:{m.event_id}", "sport": sport,
             "competition": getattr(m, "tournament", None) or "NBA",
             "time": m.commence_time,
-            "sides": [(a.name, round(oa, 2)), (b.name, round(ob, 2))],
+            "sides": sides,
             "pick": e.pick.name if e.pick else None,
             "verdict": "À jouer" if e in legs else ("Validé" if e.passed else "Écarté"),
         })
@@ -92,7 +95,11 @@ def picker_html(sport: str, evaluations, legs, stakes: dict | None = None) -> st
         t = it["time"].astimezone(TZ)
         btns = []
         for i, (name, odds) in enumerate(it["sides"]):
-            opp = it["sides"][1 - i][0]
+            names = [s[0] for s in it["sides"]]
+            if len(names) == 3:                              # foot : l'adversaire, ou les deux équipes pour le nul
+                opp = f"{names[0]} – {names[2]}" if i == 1 else names[2 - i]
+            else:
+                opp = names[1 - i]
             st = stakes.get(it["id"]) if name == it["pick"] else None
             stake_attr = f' data-stake="{st}"' if st else ""
             btns.append(
@@ -101,7 +108,7 @@ def picker_html(sport: str, evaluations, legs, stakes: dict | None = None) -> st
                 f'data-time="{_e(it["time"].isoformat())}" data-pick="{_e(name)}" data-opp="{_e(opp)}" '
                 f'data-odds="{odds}"{stake_attr} aria-pressed="false"><span>{_e(name)}</span><b>{odds:.2f}</b></button>')
         rows.append(f'<div class="pm"><div class="meta"><span>{t:%d/%m %H:%M}</span>{chips[it["verdict"]]}</div>'
-                    f'<div class="sides">{"".join(btns)}</div></div>')
+                    f'<div class="sides{" three" if len(btns) == 3 else ""}">{"".join(btns)}</div></div>')
     body = "".join(rows) or '<p class="empty">Aucun match avec cote à venir pour le moment.</p>'
     return f"""<h2 id="ajouter">Ajouter à mes paris</h2>
 <p class="h2sub">Clique sur l'équipe ou le joueur que tu as joué. Ton ticket apparaît en bas de l'écran
@@ -136,6 +143,7 @@ TRACKER_CSS = """
 .side{font:inherit;text-align:left;cursor:pointer;border:1.5px solid var(--line);background:var(--soft);
 color:var(--ink);border-radius:10px;padding:9px 11px;display:flex;justify-content:space-between;gap:8px;align-items:center}
 .side b{font:700 18px/1 var(--num)}.side span{font-size:14px;overflow-wrap:anywhere}
+.sides.three{grid-template-columns:1fr .8fr 1fr}
 .side:hover{border-color:var(--muted)}
 .side.on{border-color:var(--go);background:var(--go-bg)}.side.on b{color:var(--go)}
 .side.fav span{font-weight:600}
@@ -175,7 +183,7 @@ padding:10px 16px;border-radius:10px;font-size:14px;opacity:0;transition:opacity
 a.ask.small{font-size:12px;font-weight:600;color:var(--info);text-decoration:none;white-space:nowrap}
 .stats.four{grid-template-columns:repeat(4,1fr)}
 @media (max-width:600px){.stats.four{grid-template-columns:1fr 1fr}.stats.four .stat.big{grid-column:auto}}
-@media (max-width:600px){.sides{grid-template-columns:1fr}
+@media (max-width:600px){.sides,.sides.three{grid-template-columns:1fr}
 .bets thead{display:none}.bets,.bets tbody,.bets tr,.bets td{display:block}
 .bets tr{border-bottom:1px solid var(--line);padding:10px 0}.bets td{border:0;padding:2px 0}
 .bets td[data-l]::before{content:attr(data-l);color:var(--muted);font-size:12px;margin-right:6px}}
@@ -414,30 +422,31 @@ CHAT_JS = r"""(function () {
 const $ = s => document.querySelector(s);
 const INTRO = %INTRO%, SITE = %SITE%, MAX = %MAX%;
 const fmt = x => (Math.round(x * 100) / 100).toFixed(2).replace('.', ',');
-let data = {nba: [], tennis: []};
+let data = {nba: [], tennis: [], foot: []};
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
 async function load() {
-  for (const s of ['nba', 'tennis']) {
+  for (const s of ['nba', 'tennis', 'foot']) {
     try { const r = await fetch(`data/${s}_digest.json?t=${Date.now()}`); if (r.ok) data[s] = (await r.json()).matches || []; } catch (e) {}
   }
   const now = Date.now() - 3 * 3600e3;
-  for (const s of ['nba', 'tennis']) data[s] = data[s].filter(m => new Date(m.time).getTime() > now);
+  for (const s of ['nba', 'tennis', 'foot']) data[s] = data[s].filter(m => new Date(m.time).getTime() > now);
   const sel = $('#topic');
   const opt = (v, t) => `<option value="${esc(v)}">${esc(t)}</option>`;
   const hh = iso => new Date(iso).toLocaleString('fr-FR', {weekday: 'short', hour: '2-digit', minute: '2-digit'});
   let html = '<optgroup label="Vue d\'ensemble">' + opt('free', 'Question libre (sans match précis)');
   if (data.nba.length) html += opt('all:nba', `Toute la nuit NBA (${data.nba.length} matchs)`);
   if (data.tennis.length) html += opt('all:tennis', `Tout le tennis à venir (${data.tennis.length} matchs)`);
+  if (data.foot.length) html += opt('all:foot', `Tout le foot à venir (${data.foot.length} matchs)`);
   html += opt('mybets', 'Mes paris (mon bilan)') + '</optgroup>';
   const order = {'À jouer': 0, 'Validé': 1, 'Écarté': 2, 'En attente': 3};
-  for (const [s, label] of [['nba', 'NBA'], ['tennis', 'Tennis']]) {
+  for (const [s, label] of [['nba', 'NBA'], ['tennis', 'Tennis'], ['foot', 'Foot']]) {
     if (!data[s].length) continue;
     const list = [...data[s]].sort((a, b) => (order[a.verdict] - order[b.verdict]) || a.time.localeCompare(b.time));
     html += `<optgroup label="${label}">` + list.map(m => opt(m.id, `${m.verdict === 'À jouer' ? '★ ' : ''}${m.label} · ${hh(m.time)} · ${m.verdict}`)).join('') + '</optgroup>';
   }
   sel.innerHTML = html;
-  const best = [...data.nba, ...data.tennis].find(m => m.verdict === 'À jouer');
+  const best = [...data.nba, ...data.tennis, ...data.foot].find(m => m.verdict === 'À jouer');
   const wanted = new URLSearchParams(location.search).get('match');
   sel.value = wanted && [...sel.options].some(o => o.value === wanted) ? wanted : (best ? best.id : 'free');
   update();
@@ -458,11 +467,11 @@ function context() {
   if (v === 'mybets') return myBets();
   if (v.startsWith('all:')) {
     const s = v.slice(4), list = data[s];
-    const head = s === 'nba' ? 'Résumé de la nuit NBA selon mon bot (heures de Paris) :' : 'Résumé des matchs de tennis à venir selon mon bot (heures de Paris) :';
+    const head = {nba: 'Résumé de la nuit NBA selon mon bot (heures de Paris) :', tennis: 'Résumé des matchs de tennis à venir selon mon bot (heures de Paris) :', foot: 'Résumé des matchs de foot à venir selon mon bot (heures de Paris) :'}[s];
     let txt = head + '\n' + list.map(m => m.line).join('\n') + `\nAnalyses détaillées : ${SITE}`;
     return txt.length > 1600 ? txt.slice(0, 1597) + '…' : txt;
   }
-  const m = [...data.nba, ...data.tennis].find(x => x.id === v);
+  const m = [...data.nba, ...data.tennis, ...data.foot].find(x => x.id === v);
   return m ? m.brief : '';
 }
 
