@@ -59,6 +59,9 @@ def _odds_line(e, sport: str) -> str:
     m = e.matchup
     if m.unibet is None:
         return "Cotes Unibet : pas encore publiées."
+    if sport == "foot":
+        return (f"Cotes Unibet (1N2) : {m.home.name} {m.unibet.home:.2f}, nul {m.unibet.draw:.2f}, "
+                f"{m.away.name} {m.unibet.away:.2f}.")
     if sport == "nba":
         return f"Cotes Unibet : {m.away.name} {m.unibet.away:.2f}, {m.home.name} {m.unibet.home:.2f}."
     return f"Cotes Unibet : {m.home.name} {m.unibet.home:.2f}, {m.away.name} {m.unibet.away:.2f}."
@@ -68,6 +71,9 @@ def _title(e, sport: str) -> str:
     m = e.matchup
     if sport == "nba":
         return f"Match NBA : {m.away.name} (extérieur) contre {m.home.name} (domicile), le {_when(e)}."
+    if sport == "foot":
+        return (f"Match de foot ({m.league_name}) : {m.home.name} (domicile) contre {m.away.name} "
+                f"(extérieur), le {_when(e)}. Pari étudié : victoire du favori (le nul fait perdre).")
     return f"Match de tennis ({m.tournament}, {m.surface}) : {m.home.name} contre {m.away.name}, le {_when(e)}."
 
 
@@ -84,8 +90,8 @@ def brief(e, sport: str, ins=None, verdict: str = "", reason: str = "", stake: i
         if risks:
             parts.append("Points de vigilance : " + " ; ".join(risks[:3]) + ".")
         # Chiffres : les plus utiles d'abord (forme, historique), puis le reste si la place le permet
-        prio = ("Forme", "Face-à-face", "Confrontations", "Saisons précédentes", "Bilan", "Sur ",
-                "Classement", "Repos", "Dernier", "Effectifs", "Parcours", "Lecture")
+        prio = ("Forme", "Face-à-face", "Confrontations", "Classement", "Domicile", "Calendrier",
+                "Saisons précédentes", "Bilan", "Sur ", "Buts", "Repos", "Dernier", "Effectifs", "Parcours", "Lecture")
         ordered = sorted(ins.sections, key=lambda s: next((i for i, p in enumerate(prio) if s[0].startswith(p)), 99))
         for title, rows in ordered:
             parts.append(f"{title} : " + " / ".join(rows))

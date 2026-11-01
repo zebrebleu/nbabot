@@ -109,7 +109,7 @@ footer{color:var(--muted);font-size:12px;margin-top:36px;line-height:1.6}
 .tabs a{text-decoration:none;font:700 15px/1 var(--num);letter-spacing:.04em;text-transform:uppercase;
 padding:9px 16px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--muted)}
 .tabs a.cur{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-@media (max-width:600px){.tabs{gap:4px}.tabs a{padding:8px 10px;font-size:13px}}
+@media (max-width:600px){.tabs{gap:4px}.tabs a{padding:7px 8px;font-size:12.5px;letter-spacing:.02em}}
 @media (max-width:600px){h1{font-size:28px}.stats{grid-template-columns:1fr 1fr}.stat.big{grid-column:1/3}
 .grid{grid-template-columns:1fr}.game{grid-template-columns:52px 1fr;gap:4px 8px}.status{grid-column:2;text-align:left}
 .time{font-size:18px}.team .nm{white-space:normal}
@@ -134,6 +134,7 @@ def _money(x: float) -> str:
 def nav_tabs(current: str, root: str = "") -> str:
     """Onglets communs aux pages NBA et Tennis."""
     tabs = [("nba", "NBA", f"{root}index.html"), ("tennis", "Tennis", f"{root}tennis.html"),
+            ("foot", "Foot", f"{root}foot.html"),
             ("paris", "Mes paris", f"{root}mes-paris.html"), ("chat", "Chatbot", f"{root}discuter.html")]
     return '<nav class="tabs">' + "".join(
         f'<a class="{"cur" if k == current else ""}" href="{href}">{label}</a>' for k, label, href in tabs) + "</nav>"
@@ -249,7 +250,8 @@ def bet_block(bet, sport: str, insights: list, note: str = "", title: str = "", 
             where = f"{_time(e.matchup.commence_time)} · {'à domicile' if e.pick_is_home else 'à l’extérieur'}"
         else:
             where = f"{_e(e.matchup.tournament)} · {_time(e.matchup.commence_time)}"
-        badge = _badge(e.pick) if sport == "nba" else __import__("tennis_web")._badge(e.pick)
+        badge = (_badge(e.pick) if sport == "nba" else
+                 __import__("tennis_web" if sport == "tennis" else "foot_web")._badge(e.pick))
         legs += f"""<div class="leg">{badge}<div class="who"><b>{_e(e.pick.name)} gagne</b>
 <span>contre {_e(e.opponent.name)} · {where}</span></div><span class="pill">{e.odds:.2f}</span></div>"""
     url = claude_url(bet_brief(bet, sport, insights, stake, conf),
@@ -341,6 +343,13 @@ def _analysis_card(e: Evaluation, key_players, opened: bool = True, verdict: str
     return analysis_card(e, ins, "nba", sub, _badge(e.pick), verdict, opened)
 
 
+def reason_for(e: Evaluation, sport: str) -> tuple[str, str]:
+    """Raison d'un rejet en langage simple, selon le sport."""
+    if sport == "nba":
+        return plain_reason(e)
+    return __import__("tennis_web" if sport == "tennis" else "foot_web").plain_reason(e)
+
+
 def row_line(e: Evaluation, sport: str, legs) -> str:
     """Une ligne de résumé d'un match (pour le résumé de la soirée envoyé à Claude)."""
     m = e.matchup
@@ -351,7 +360,7 @@ def row_line(e: Evaluation, sport: str, legs) -> str:
     if e in legs or e.passed:
         tag = "À JOUER" if e in legs else "validé"
         return f"{head} — {tag} : {e.pick.name} {e.odds:.2f} ({leg_probability(e):.0%} estimé)"
-    title = plain_reason(e)[0] if sport == "nba" else __import__("tennis_web").plain_reason(e)[0]
+    title = reason_for(e, sport)[0]
     return f"{head} — écarté ({title.lower()}) : favori {e.pick.name} {e.odds:.2f}"
 
 
@@ -360,10 +369,7 @@ def row_brief(e: Evaluation, sport: str, legs, ins_fn) -> str:
     from explain import brief
     if e.pick is not None and (e.passed or e in legs):
         return brief(e, sport, ins_fn(e), verdict="à jouer" if e in legs else "validé, non retenu")
-    if sport == "nba":
-        title, detail = plain_reason(e)
-    else:
-        title, detail = __import__("tennis_web").plain_reason(e)
+    title, detail = reason_for(e, sport)
     return brief(e, sport, None, verdict="écarté", reason=f"{title} : {detail}")
 
 

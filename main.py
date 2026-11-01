@@ -22,8 +22,8 @@ from filters import FilterContext, evaluate_all
 
 def parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser(description="Assistant d'analyse de paris NBA")
-    p.add_argument("--sport", choices=["nba", "tennis", "all"], default="nba",
-                   help="sport à analyser (défaut : nba)")
+    p.add_argument("--sport", default="nba",
+                   help="sport(s) à analyser : nba, tennis, foot, all, ou une liste (ex. nba,tennis)")
     p.add_argument("--demo", action="store_true", help="utiliser des données fictives")
     p.add_argument("--date", type=date.fromisoformat, metavar="AAAA-MM-JJ",
                    help="date du calendrier NBA à analyser (défaut : prochaine nuit avec des matchs)")
@@ -46,12 +46,20 @@ def main() -> int:
     for problem in config.validate():
         print(f"[config] {problem}")
 
+    sports = {"nba", "tennis", "foot"} if args.sport == "all" else {s.strip() for s in args.sport.split(",")}
+    unknown = sports - {"nba", "tennis", "foot"}
+    if unknown:
+        print(f"Sport inconnu : {', '.join(unknown)} (choix : nba, tennis, foot, all)")
+        return 1
     codes = []
-    if args.sport in ("nba", "all"):
+    if "nba" in sports:
         codes.append(run_nba(args))
-    if args.sport in ("tennis", "all"):
+    if "tennis" in sports:
         import tennis_main
         codes.append(tennis_main.run(demo=args.demo, html_dir=args.html))
+    if "foot" in sports:
+        import foot_main
+        codes.append(foot_main.run(demo=args.demo, html_dir=args.html))
     return max(codes)
 
 
