@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-01T20:27:19.867155+00:00",
+ "generated_at": "2026-11-01T21:06:46.751312+00:00",
  "matches": [
   {
    "id": "tennis:b04959d8930aba4535db09fe57f9d093",
@@ -18,8 +18,8 @@
    "competition": "ATP Paris Masters",
    "time": "2026-11-02T10:00:00+00:00",
    "verdict": "Validé",
-   "line": "11:00 Lorenzo Musetti – Hubert Hurkacz — validé : Hubert Hurkacz 1.76 (51% estimé) [ATP Paris Masters]",
-   "brief": "Match de tennis (ATP Paris Masters, dur) : Lorenzo Musetti contre Hubert Hurkacz, le 02/11 à 11:00 (heure de Paris).\nCotes Unibet : Lorenzo Musetti 1.82, Hubert Hurkacz 1.76.\nAvis du bot : validé, non retenu — Hubert Hurkacz gagne, confiance prudente, chances estimées 51%, mise conseillée 15 €.\nPoints de vigilance : Confrontations : A perdu la dernière confrontation (1-1 en faveur de Hubert Hurkacz) ; Cote de 1.76 : favori moins net, une défaite est plausible ; Cote Unibet en dessous du marché (57% contre 51%).\nForme récente (10 derniers matchs) : Hubert Hurkacz : 7V-3D, 1 défaite de suite / Lorenzo Musetti : 7V-3D, 1 défaite de suite\nConfrontations depuis 2023 : Hubert Hurkacz 1V-1D · derniers : 07/2023 Wimbledon (V), 04/2026 Mutua Madrid Open (D)\nClassement : Hubert Hurkacz : 28e mondial / Lorenzo Musetti : 26e mondial\nSaisons précédentes : Hubert Hurkacz : 2025 13V-9D (dur 6V-5D) · 2024 36V-17D (dur 21V-12D) · 2023 43V-21D (dur 33V-14D) / Lorenzo Musetti : 2025 45V-23D (dur 27V-18D) · 2024 41V-27D (dur 26V-18D) · 2023 29V-26D (dur 12V-17D)\nSur dur : Hubert Hurkacz : 77V-46D (63%) / Lorenzo Musetti : 85V-62D (58%)\nDernier match : Hubert Hurkacz : il y a 5 jours : défaite contre Holger Rune (3 sets, 31 jeux) / Lorenzo Musetti : il y a 4 jours : défaite contre Arthur Fery (3 sets, 32 jeux)\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "11:00 Lorenzo Musetti – Hubert Hurkacz — validé : Hubert Hurkacz 1.76 (50% estimé) [ATP Paris Masters]",
+   "brief": "Match de tennis (ATP Paris Masters, dur) : Lorenzo Musetti contre Hubert Hurkacz, le 02/11 à 11:00 (heure de Paris).\nCotes Unibet : Lorenzo Musetti 1.82, Hubert Hurkacz 1.76.\nAvis du bot : validé, non retenu — Hubert Hurkacz gagne, confiance prudente, chances estimées 50%, mise conseillée 15 €.\nPoints de vigilance : Confrontations : A perdu la dernière confrontation (1-1 en faveur de Hubert Hurkacz) ; Cote de 1.76 : favori moins net, une défaite est plausible ; Cote Unibet en dessous du marché (57% contre 50%).\nForme récente (10 derniers matchs) : Hubert Hurkacz : 7V-3D, 1 défaite de suite / Lorenzo Musetti : 7V-3D, 1 défaite de suite\nConfrontations depuis 2023 : Hubert Hurkacz 1V-1D · derniers : 07/2023 Wimbledon (V), 04/2026 Mutua Madrid Open (D)\nClassement : Hubert Hurkacz : 28e mondial / Lorenzo Musetti : 26e mondial\nSaisons précédentes : Hubert Hurkacz : 2025 13V-9D (dur 6V-5D) · 2024 36V-17D (dur 21V-12D) · 2023 43V-21D (dur 33V-14D) / Lorenzo Musetti : 2025 45V-23D (dur 27V-18D) · 2024 41V-27D (dur 26V-18D) · 2023 29V-26D (dur 12V-17D)\nSur dur : Hubert Hurkacz : 77V-46D (63%) / Lorenzo Musetti : 85V-62D (58%)\nDernier match : Hubert Hurkacz : il y a 5 jours : défaite contre Holger Rune (3 sets, 31 jeux) / Lorenzo Musetti : il y a 4 jours : défaite contre Arthur Fery (3 sets, 32 jeux)\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "tennis:ab2cc6778482917ac72005c2edb26824",
@@ -28,8 +28,8 @@
    "competition": "ATP Paris Masters",
    "time": "2026-11-02T10:00:00+00:00",
    "verdict": "Écarté",
-   "line": "11:00 Ignacio Buse – Zizou Bergs — écarté (forme insuffisante) : favori Zizou Bergs 1.29 [ATP Paris Masters]",
-   "brief": "Match de tennis (ATP Paris Masters, dur) : Ignacio Buse contre Zizou Bergs, le 02/11 à 11:00 (heure de Paris).\nCotes Unibet : Ignacio Buse 2.90, Zizou Bergs 1.29.\nAvis du bot : écarté — Forme insuffisante : 5V-5D sur ses 10 derniers matchs.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "11:00 Ignacio Buse – Zizou Bergs — écarté (forme insuffisante) : favori Zizou Bergs 1.30 [ATP Paris Masters]",
+   "brief": "Match de tennis (ATP Paris Masters, dur) : Ignacio Buse contre Zizou Bergs, le 02/11 à 11:00 (heure de Paris).\nCotes Unibet : Ignacio Buse 2.85, Zizou Bergs 1.30.\nAvis du bot : écarté — Forme insuffisante : 5V-5D sur ses 10 derniers matchs.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "tennis:f510a63a2e3852e183f84eb8cd44fcac",
@@ -38,8 +38,8 @@
    "competition": "ATP Paris Masters",
    "time": "2026-11-02T10:00:00+00:00",
    "verdict": "Écarté",
-   "line": "11:00 Luciano Darderi – Rinky Hijikata — écarté (forme insuffisante) : favori Luciano Darderi 1.77 [ATP Paris Masters]",
-   "brief": "Match de tennis (ATP Paris Masters, dur) : Luciano Darderi contre Rinky Hijikata, le 02/11 à 11:00 (heure de Paris).\nCotes Unibet : Luciano Darderi 1.77, Rinky Hijikata 1.81.\nAvis du bot : écarté — Forme insuffisante : 5V-5D sur ses 10 derniers matchs.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "11:00 Luciano Darderi – Rinky Hijikata — écarté (forme insuffisante) : favori Luciano Darderi 1.78 [ATP Paris Masters]",
+   "brief": "Match de tennis (ATP Paris Masters, dur) : Luciano Darderi contre Rinky Hijikata, le 02/11 à 11:00 (heure de Paris).\nCotes Unibet : Luciano Darderi 1.78, Rinky Hijikata 1.79.\nAvis du bot : écarté — Forme insuffisante : 5V-5D sur ses 10 derniers matchs.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "tennis:1ead1ee3704640aea824a5759ad1cc28",
@@ -58,8 +58,8 @@
    "competition": "ATP Paris Masters",
    "time": "2026-11-02T11:10:00+00:00",
    "verdict": "Écarté",
-   "line": "12:10 Alejandro Tabilo – Rafael Jodar — écarté (cote trop basse) : favori Rafael Jodar 1.20 [ATP Paris Masters]",
-   "brief": "Match de tennis (ATP Paris Masters, dur) : Alejandro Tabilo contre Rafael Jodar, le 02/11 à 12:10 (heure de Paris).\nCotes Unibet : Alejandro Tabilo 3.45, Rafael Jodar 1.20.\nAvis du bot : écarté — Cote trop basse : Favori à 1.20 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "12:10 Alejandro Tabilo – Rafael Jodar — écarté (cote trop basse) : favori Rafael Jodar 1.19 [ATP Paris Masters]",
+   "brief": "Match de tennis (ATP Paris Masters, dur) : Alejandro Tabilo contre Rafael Jodar, le 02/11 à 12:10 (heure de Paris).\nCotes Unibet : Alejandro Tabilo 3.60, Rafael Jodar 1.19.\nAvis du bot : écarté — Cote trop basse : Favori à 1.19 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "tennis:35c20c072dc49b1f1762bd71838ad56b",
@@ -68,8 +68,8 @@
    "competition": "ATP Paris Masters",
    "time": "2026-11-02T11:10:00+00:00",
    "verdict": "Écarté",
-   "line": "12:10 Luca Van Assche – Mariano Navone — écarté (forme insuffisante) : favori Luca Van Assche 1.50 [ATP Paris Masters]",
-   "brief": "Match de tennis (ATP Paris Masters, dur) : Luca Van Assche contre Mariano Navone, le 02/11 à 12:10 (heure de Paris).\nCotes Unibet : Luca Van Assche 1.50, Mariano Navone 2.20.\nAvis du bot : écarté — Forme insuffisante : 3V-7D sur ses 10 derniers matchs.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "12:10 Luca Van Assche – Mariano Navone — écarté (forme insuffisante) : favori Luca Van Assche 1.52 [ATP Paris Masters]",
+   "brief": "Match de tennis (ATP Paris Masters, dur) : Luca Van Assche contre Mariano Navone, le 02/11 à 12:10 (heure de Paris).\nCotes Unibet : Luca Van Assche 1.52, Mariano Navone 2.35.\nAvis du bot : écarté — Forme insuffisante : 3V-7D sur ses 10 derniers matchs.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "tennis:d54412ae826f63d7234c2ea00d4809ac",
@@ -78,8 +78,8 @@
    "competition": "ATP Paris Masters",
    "time": "2026-11-02T12:20:00+00:00",
    "verdict": "Écarté",
-   "line": "13:20 Juan Carlos Aguilar – Alexander Blockx — écarté (forme insuffisante) : favori Alexander Blockx 1.54 [ATP Paris Masters]",
-   "brief": "Match de tennis (ATP Paris Masters, dur) : Juan Carlos Aguilar contre Alexander Blockx, le 02/11 à 13:20 (heure de Paris).\nCotes Unibet : Juan Carlos Aguilar 2.10, Alexander Blockx 1.54.\nAvis du bot : écarté — Forme insuffisante : 5V-5D sur ses 10 derniers matchs.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "13:20 Juan Carlos Aguilar – Alexander Blockx — écarté (forme insuffisante) : favori Alexander Blockx 1.56 [ATP Paris Masters]",
+   "brief": "Match de tennis (ATP Paris Masters, dur) : Juan Carlos Aguilar contre Alexander Blockx, le 02/11 à 13:20 (heure de Paris).\nCotes Unibet : Juan Carlos Aguilar 2.10, Alexander Blockx 1.56.\nAvis du bot : écarté — Forme insuffisante : 5V-5D sur ses 10 derniers matchs.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "tennis:a397cd2c21e2038f589dfcc1bbf4a5d9",
@@ -98,8 +98,8 @@
    "competition": "ATP Paris Masters",
    "time": "2026-11-02T12:20:00+00:00",
    "verdict": "Écarté",
-   "line": "13:20 Casper Ruud – Juan Manuel Cerundolo — écarté (forme insuffisante) : favori Casper Ruud 1.30 [ATP Paris Masters]",
-   "brief": "Match de tennis (ATP Paris Masters, dur) : Casper Ruud contre Juan Manuel Cerundolo, le 02/11 à 13:20 (heure de Paris).\nCotes Unibet : Casper Ruud 1.30, Juan Manuel Cerundolo 2.85.\nAvis du bot : écarté — Forme insuffisante : 5V-5D sur ses 10 derniers matchs.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "13:20 Casper Ruud – Juan Manuel Cerundolo — écarté (forme insuffisante) : favori Casper Ruud 1.29 [ATP Paris Masters]",
+   "brief": "Match de tennis (ATP Paris Masters, dur) : Casper Ruud contre Juan Manuel Cerundolo, le 02/11 à 13:20 (heure de Paris).\nCotes Unibet : Casper Ruud 1.29, Juan Manuel Cerundolo 2.90.\nAvis du bot : écarté — Forme insuffisante : 5V-5D sur ses 10 derniers matchs.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "tennis:a916463c001545483b340777daefd7c6",
@@ -148,8 +148,8 @@
    "competition": "ATP Paris Masters",
    "time": "2026-11-02T19:30:00+00:00",
    "verdict": "Écarté",
-   "line": "20:30 Ugo Humbert – Botic Van De Zandschulp — écarté (forme insuffisante) : favori Ugo Humbert 1.49 [ATP Paris Masters]",
-   "brief": "Match de tennis (ATP Paris Masters, dur) : Ugo Humbert contre Botic Van De Zandschulp, le 02/11 à 20:30 (heure de Paris).\nCotes Unibet : Ugo Humbert 1.49, Botic Van De Zandschulp 2.20.\nAvis du bot : écarté — Forme insuffisante : 2V-8D sur ses 10 derniers matchs.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "20:30 Ugo Humbert – Botic Van De Zandschulp — écarté (forme insuffisante) : favori Ugo Humbert 1.51 [ATP Paris Masters]",
+   "brief": "Match de tennis (ATP Paris Masters, dur) : Ugo Humbert contre Botic Van De Zandschulp, le 02/11 à 20:30 (heure de Paris).\nCotes Unibet : Ugo Humbert 1.51, Botic Van De Zandschulp 2.40.\nAvis du bot : écarté — Forme insuffisante : 2V-8D sur ses 10 derniers matchs.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   }
  ]
 }
