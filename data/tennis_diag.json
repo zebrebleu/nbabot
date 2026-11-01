@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-11-01T15:10:26.848371+00:00",
+ "generated_at": "2026-11-01T20:27:19.867155+00:00",
  "espn_matches": {
-  "atp": 24697,
+  "atp": 24700,
   "wta": 12776
  },
  "rankings": {
@@ -9,8 +9,7 @@
   "wta": 150
  },
  "tournaments": [
-  "tennis_atp_paris_masters",
-  "tennis_atp_swiss_indoors"
+  "tennis_atp_paris_masters"
  ],
  "years": [
   2026,
@@ -100,7 +99,7 @@
  },
  "players": 2106,
  "ranked_players": 300,
- "odds_events": 20,
- "upcoming_matches": 17,
+ "odds_events": 24,
+ "upcoming_matches": 15,
  "unmatched_names": []
 }

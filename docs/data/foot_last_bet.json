@@ -1,12 +1,10 @@
 {
- "created": "2026-11-01T12:53:46.452569+00:00",
  "created_label": "dimanche 01/11 à 13:53",
  "bets": [
   {
    "option": "Option 1 · Pari simple",
    "kind": "Pari simple",
    "total": 1.4,
-   "stake": 25,
    "legs": [
     {
      "event_id": "3f9f4bc9a19bf36dcb74be2f29610d55",
@@ -17,9 +15,11 @@
      "odds": 1.4,
      "tournament": "Serie A",
      "commence": "2026-11-01T14:00:00+00:00",
-     "time": "01/11 15:00"
+     "time": "01/11 15:00",
+     "result": true
     }
-   ]
+   ],
+   "status": "gagné"
   }
  ]
 }

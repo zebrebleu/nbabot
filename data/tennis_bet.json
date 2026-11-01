@@ -1,19 +1,19 @@
 {
- "created": "2026-11-01T15:10:26.848371+00:00",
- "created_label": "dimanche 01/11 à 16:10",
+ "created": "2026-11-01T20:27:19.867155+00:00",
+ "created_label": "dimanche 01/11 à 21:27",
  "bets": [
   {
    "option": "Option 1 · Pari simple",
    "kind": "Pari simple",
-   "total": 1.27,
-   "prob": 0.725,
+   "total": 1.3,
+   "prob": 0.712,
    "stake": 25,
    "legs": [
     {
      "event_id": "b04959d8930aba4535db09fe57f9d093",
      "pick": "Alejandro Davidovich Fokina",
      "opponent": "Moise Kouame",
-     "odds": 1.27,
+     "odds": 1.3,
      "tournament": "ATP Paris Masters",
      "best_of": 3,
      "commence": "2026-11-02T10:00:00+00:00",
@@ -24,29 +24,29 @@
   {
    "option": "Option 2 · Combiné",
    "kind": "Combiné de 2 matchs",
-   "total": 1.85,
-   "prob": 0.446,
+   "total": 1.94,
+   "prob": 0.427,
    "stake": 25,
    "legs": [
     {
      "event_id": "b04959d8930aba4535db09fe57f9d093",
      "pick": "Alejandro Davidovich Fokina",
      "opponent": "Moise Kouame",
-     "odds": 1.27,
+     "odds": 1.3,
      "tournament": "ATP Paris Masters",
      "best_of": 3,
      "commence": "2026-11-02T10:00:00+00:00",
      "time": "02/11 11:00"
     },
     {
-     "event_id": "766892f0324922ef7aab73a2713af3c2",
-     "pick": "Jiri Lehecka",
-     "opponent": "Alex Michelsen",
-     "odds": 1.46,
+     "event_id": "1a6898d788e3c5c7ecfb78edf5d4e8ab",
+     "pick": "Karen Khachanov",
+     "opponent": "Denis Shapovalov",
+     "odds": 1.49,
      "tournament": "ATP Paris Masters",
      "best_of": 3,
-     "commence": "2026-11-02T10:00:00+00:00",
-     "time": "02/11 11:00"
+     "commence": "2026-11-02T18:00:00+00:00",
+     "time": "02/11 19:00"
     }
    ]
   }

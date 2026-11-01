@@ -1,42 +1,42 @@
 {
- "generated_at": "2026-11-01T15:10:34.703902+00:00",
+ "generated_at": "2026-11-01T20:27:28.665934+00:00",
  "leagues": {
   "Ligue 1": {
-   "matchs_espn": 4,
-   "cotes": 14,
-   "rapprochés": 4,
-   "matchs_lus_sur_10_jours": 9
-  },
-  "Liga": {
-   "matchs_espn": 4,
-   "cotes": 15,
-   "rapprochés": 4,
-   "matchs_lus_sur_10_jours": 10
-  },
-  "Premier League": {
-   "matchs_espn": 2,
-   "cotes": 13,
-   "rapprochés": 2,
-   "matchs_lus_sur_10_jours": 10
-  },
-  "Serie A": {
-   "matchs_espn": 4,
-   "cotes": 16,
-   "rapprochés": 4,
-   "matchs_lus_sur_10_jours": 20
-  },
-  "Bundesliga": {
    "matchs_espn": 1,
    "cotes": 11,
    "rapprochés": 1,
    "matchs_lus_sur_10_jours": 9
+  },
+  "Liga": {
+   "matchs_espn": 1,
+   "cotes": 12,
+   "rapprochés": 1,
+   "matchs_lus_sur_10_jours": 10
+  },
+  "Premier League": {
+   "matchs_espn": 1,
+   "cotes": 12,
+   "rapprochés": 1,
+   "matchs_lus_sur_10_jours": 10
+  },
+  "Serie A": {
+   "matchs_espn": 2,
+   "cotes": 13,
+   "rapprochés": 2,
+   "matchs_lus_sur_10_jours": 20
+  },
+  "Bundesliga": {
+   "matchs_espn": 0,
+   "cotes": 0,
+   "rapprochés": 0,
+   "matchs_lus_sur_10_jours": 9
   }
  },
- "credits_used": 5,
+ "credits_used": 4,
  "unmatched": [],
- "matches": 15,
- "equipes_avec_resultats": 30,
- "equipes_avec_historique": 28,
+ "matches": 5,
+ "equipes_avec_resultats": 10,
+ "equipes_avec_historique": 9,
  "espn_brut": {
   "uefa.champions (jour par jour)": 18,
   "uefa.europa (jour par jour)": 18,
