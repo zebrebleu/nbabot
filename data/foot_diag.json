@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-02T14:29:00.286419+00:00",
+ "generated_at": "2026-11-02T18:23:38.006105+00:00",
  "leagues": {
   "Ligue 1": {
    "matchs_espn": 1,
@@ -20,9 +20,9 @@
    "matchs_lus_sur_10_jours": 11
   },
   "Serie A": {
-   "matchs_espn": 2,
+   "matchs_espn": 1,
    "cotes": 12,
-   "rapprochés": 2,
+   "rapprochés": 1,
    "matchs_lus_sur_10_jours": 18
   },
   "Bundesliga": {
@@ -34,9 +34,9 @@
  },
  "credits_used": 4,
  "unmatched": [],
- "matches": 5,
- "equipes_avec_resultats": 10,
- "equipes_avec_historique": 9,
+ "matches": 4,
+ "equipes_avec_resultats": 8,
+ "equipes_avec_historique": 7,
  "espn_brut": {
   "uefa.champions (jour par jour)": 18,
   "uefa.europa (jour par jour)": 18,
