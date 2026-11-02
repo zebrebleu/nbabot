@@ -1,25 +1,15 @@
 {
- "generated_at": "2026-11-02T18:23:31.505839+00:00",
+ "generated_at": "2026-11-02T23:51:32.166231+00:00",
  "matches": [
-  {
-   "id": "tennis:85efb20e93a6ca08964f6239e9956dae",
-   "sport": "tennis",
-   "label": "Ugo Humbert – Botic Van De Zandschulp",
-   "competition": "ATP Paris Masters",
-   "time": "2026-11-02T19:30:00+00:00",
-   "verdict": "Écarté",
-   "line": "20:30 Ugo Humbert – Botic Van De Zandschulp — écarté (forme insuffisante) : favori Ugo Humbert 1.52 [ATP Paris Masters]",
-   "brief": "Match de tennis (ATP Paris Masters, dur) : Ugo Humbert contre Botic Van De Zandschulp, le 02/11 à 20:30 (heure de Paris).\nCotes Unibet : Ugo Humbert 1.52, Botic Van De Zandschulp 2.40.\nAvis du bot : écarté — Forme insuffisante : 2V-8D sur ses 10 derniers matchs.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
-  },
   {
    "id": "tennis:b04959d8930aba4535db09fe57f9d093",
    "sport": "tennis",
    "label": "Alejandro Davidovich Fokina – Moise Kouame",
    "competition": "ATP Paris Masters",
    "time": "2026-11-03T09:00:00+00:00",
-   "verdict": "Validé",
-   "line": "10:00 Alejandro Davidovich Fokina – Moise Kouame — validé : Alejandro Davidovich Fokina 1.30 (71% estimé) [ATP Paris Masters]",
-   "brief": "Match de tennis (ATP Paris Masters, dur) : Alejandro Davidovich Fokina contre Moise Kouame, le 03/11 à 10:00 (heure de Paris).\nCotes Unibet : Alejandro Davidovich Fokina 1.30, Moise Kouame 3.30.\nAvis du bot : validé, non retenu — Alejandro Davidovich Fokina gagne, confiance moyenne, chances estimées 71%, mise conseillée 25 €.\nAtouts : Nette différence de forme : 9V-1D contre 3V-7D ; Gros écart de classement : 17e contre 132e.\nPoints de vigilance : Cote Unibet en dessous du marché (77% contre 71%).\nForme récente (10 derniers matchs) : Alejandro Davidovich Fokina : 9V-1D, 6 victoires de suite / Moise Kouame : 3V-7D, 1 défaite de suite\nConfrontations depuis 2023 : Aucune confrontation sur les 3 dernières saisons\nClassement : Alejandro Davidovich Fokina : 17e mondial / Moise Kouame : 132e mondial\nSaisons précédentes : Alejandro Davidovich Fokina : 2025 44V-25D (dur 30V-17D) · 2024 19V-23D (dur 16V-18D) · 2023 30V-25D (dur 19V-16D) / Moise Kouame : 2025 0V-2D\nSur dur : Alejandro Davidovich Fokina : 86V-60D (59%) / Moise Kouame : 4V-7D (36%)\nDernier match : Alejandro Davidovich Fokina : il y a 16 jours : victoire contre Rafael Jodar (3 sets, 30 jeux) / Moise Kouame : il y a 13 jours : défaite contre Lorenzo Musetti (2 sets, 20 jeux)\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "verdict": "À jouer",
+   "line": "10:00 Alejandro Davidovich Fokina – Moise Kouame — À JOUER : Alejandro Davidovich Fokina 1.30 (72% estimé) [ATP Paris Masters]",
+   "brief": "Match de tennis (ATP Paris Masters, dur) : Alejandro Davidovich Fokina contre Moise Kouame, le 03/11 à 10:00 (heure de Paris).\nCotes Unibet : Alejandro Davidovich Fokina 1.30, Moise Kouame 3.30.\nAvis du bot : à jouer — Alejandro Davidovich Fokina gagne, confiance moyenne, chances estimées 72%, mise conseillée 25 €.\nAtouts : Nette différence de forme : 9V-1D contre 3V-7D ; Gros écart de classement : 17e contre 132e.\nPoints de vigilance : Cote Unibet en dessous du marché (77% contre 72%).\nForme récente (10 derniers matchs) : Alejandro Davidovich Fokina : 9V-1D, 6 victoires de suite / Moise Kouame : 3V-7D, 1 défaite de suite\nConfrontations depuis 2023 : Aucune confrontation sur les 3 dernières saisons\nClassement : Alejandro Davidovich Fokina : 17e mondial / Moise Kouame : 132e mondial\nSaisons précédentes : Alejandro Davidovich Fokina : 2025 44V-25D (dur 30V-17D) · 2024 19V-23D (dur 16V-18D) · 2023 30V-25D (dur 19V-16D) / Moise Kouame : 2025 0V-2D\nSur dur : Alejandro Davidovich Fokina : 86V-60D (59%) / Moise Kouame : 4V-7D (36%)\nDernier match : Alejandro Davidovich Fokina : il y a 16 jours : victoire contre Rafael Jodar (3 sets, 30 jeux) / Moise Kouame : il y a 13 jours : défaite contre Lorenzo Musetti (2 sets, 20 jeux)\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "tennis:1ead1ee3704640aea824a5759ad1cc28",
@@ -38,8 +28,8 @@
    "competition": "ATP Paris Masters",
    "time": "2026-11-03T10:00:00+00:00",
    "verdict": "Écarté",
-   "line": "11:00 Andrey Rublev – Tomas Martin Etcheverry — écarté (forme insuffisante) : favori Andrey Rublev 1.31 [ATP Paris Masters]",
-   "brief": "Match de tennis (ATP Paris Masters, dur) : Andrey Rublev contre Tomas Martin Etcheverry, le 03/11 à 11:00 (heure de Paris).\nCotes Unibet : Andrey Rublev 1.31, Tomas Martin Etcheverry 2.65.\nAvis du bot : écarté — Forme insuffisante : 5V-5D sur ses 10 derniers matchs.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "11:00 Andrey Rublev – Tomas Martin Etcheverry — écarté (forme insuffisante) : favori Andrey Rublev 1.32 [ATP Paris Masters]",
+   "brief": "Match de tennis (ATP Paris Masters, dur) : Andrey Rublev contre Tomas Martin Etcheverry, le 03/11 à 11:00 (heure de Paris).\nCotes Unibet : Andrey Rublev 1.32, Tomas Martin Etcheverry 2.60.\nAvis du bot : écarté — Forme insuffisante : 5V-5D sur ses 10 derniers matchs.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "tennis:90da92cf3a7e75dbd2eb358af0340fa8",
@@ -108,8 +98,8 @@
    "competition": "ATP Paris Masters",
    "time": "2026-11-03T14:30:00+00:00",
    "verdict": "Écarté",
-   "line": "15:30 Benjamin Bonzi – Taylor Fritz — écarté (cote trop basse) : favori Taylor Fritz 1.20 [ATP Paris Masters]",
-   "brief": "Match de tennis (ATP Paris Masters, dur) : Benjamin Bonzi contre Taylor Fritz, le 03/11 à 15:30 (heure de Paris).\nCotes Unibet : Benjamin Bonzi 3.25, Taylor Fritz 1.20.\nAvis du bot : écarté — Cote trop basse : Favori à 1.20 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "15:30 Benjamin Bonzi – Taylor Fritz — écarté (cote trop basse) : favori Taylor Fritz 1.18 [ATP Paris Masters]",
+   "brief": "Match de tennis (ATP Paris Masters, dur) : Benjamin Bonzi contre Taylor Fritz, le 03/11 à 15:30 (heure de Paris).\nCotes Unibet : Benjamin Bonzi 3.40, Taylor Fritz 1.18.\nAvis du bot : écarté — Cote trop basse : Favori à 1.18 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "tennis:232e9e6ce004ffcdda5130a7f432eb15",
@@ -127,9 +117,9 @@
    "label": "Ben Shelton – Cameron Norrie",
    "competition": "ATP Paris Masters",
    "time": "2026-11-03T18:00:00+00:00",
-   "verdict": "Validé",
-   "line": "19:00 Ben Shelton – Cameron Norrie — validé : Ben Shelton 1.26 (71% estimé) [ATP Paris Masters]",
-   "brief": "Match de tennis (ATP Paris Masters, dur) : Ben Shelton contre Cameron Norrie, le 03/11 à 19:00 (heure de Paris).\nCotes Unibet : Ben Shelton 1.26, Cameron Norrie 2.90.\nAvis du bot : validé, non retenu — Ben Shelton gagne, confiance moyenne, chances estimées 71%, mise conseillée 25 €.\nAtouts : Nette différence de forme : 7V-3D contre 3V-7D ; Gros écart de classement : 4e contre 45e ; Cameron Norrie sort d'un match long (3 sets, 26 jeux).\nPoints de vigilance : Cote Unibet en dessous du marché (79% contre 71%).\nForme récente (10 derniers matchs) : Ben Shelton : 7V-3D, 1 défaite de suite / Cameron Norrie : 3V-7D, 1 victoire de suite\nConfrontations depuis 2023 : Aucune confrontation sur les 3 dernières saisons\nClassement : Ben Shelton : 4e mondial / Cameron Norrie : 45e mondial\nSaisons précédentes : Ben Shelton : 2025 41V-24D (dur 31V-17D) · 2024 41V-24D (dur 33V-17D) · 2023 25V-24D (dur 22V-15D) / Cameron Norrie : 2025 36V-28D (dur 18V-19D) · 2024 21V-19D (dur 12V-11D) · 2023 31V-22D (dur 19V-16D)\nSur dur : Ben Shelton : 121V-60D (67%) / Cameron Norrie : 66V-62D (52%)\nDernier match : Ben Shelton : il y a 5 jours : défaite contre Jerome Kym (3 sets, 35 jeux) / Cameron Norrie : il y a 28 h : victoire contre Matteo Arnaldi (3 sets, 26 jeux)\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "verdict": "À jouer",
+   "line": "19:00 Ben Shelton – Cameron Norrie — À JOUER : Ben Shelton 1.29 (72% estimé) [ATP Paris Masters]",
+   "brief": "Match de tennis (ATP Paris Masters, dur) : Ben Shelton contre Cameron Norrie, le 03/11 à 19:00 (heure de Paris).\nCotes Unibet : Ben Shelton 1.29, Cameron Norrie 2.75.\nAvis du bot : à jouer — Ben Shelton gagne, confiance moyenne, chances estimées 72%, mise conseillée 25 €.\nAtouts : Nette différence de forme : 7V-3D contre 3V-7D ; Gros écart de classement : 4e contre 45e ; Cameron Norrie sort d'un match long (3 sets, 26 jeux).\nPoints de vigilance : Cote Unibet en dessous du marché (78% contre 72%).\nForme récente (10 derniers matchs) : Ben Shelton : 7V-3D, 1 défaite de suite / Cameron Norrie : 3V-7D, 1 victoire de suite\nConfrontations depuis 2023 : Aucune confrontation sur les 3 dernières saisons\nClassement : Ben Shelton : 4e mondial / Cameron Norrie : 45e mondial\nSaisons précédentes : Ben Shelton : 2025 41V-24D (dur 31V-17D) · 2024 41V-24D (dur 33V-17D) · 2023 25V-24D (dur 22V-15D) / Cameron Norrie : 2025 36V-28D (dur 18V-19D) · 2024 21V-19D (dur 12V-11D) · 2023 31V-22D (dur 19V-16D)\nSur dur : Ben Shelton : 121V-60D (67%) / Cameron Norrie : 66V-62D (52%)\nDernier match : Ben Shelton : il y a 5 jours : défaite contre Jerome Kym (3 sets, 35 jeux) / Cameron Norrie : il y a 28 h : victoire contre Matteo Arnaldi (3 sets, 26 jeux)\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "tennis:42bb4ea6113cbbd3effbb4904bf80c9b",
@@ -138,8 +128,8 @@
    "competition": "ATP Paris Masters",
    "time": "2026-11-03T19:30:00+00:00",
    "verdict": "Validé",
-   "line": "20:30 Casper Ruud – Rafael Jodar — validé : Rafael Jodar 1.40 (64% estimé) [ATP Paris Masters]",
-   "brief": "Match de tennis (ATP Paris Masters, dur) : Casper Ruud contre Rafael Jodar, le 03/11 à 20:30 (heure de Paris).\nCotes Unibet : Casper Ruud 2.50, Rafael Jodar 1.40.\nAvis du bot : validé, non retenu — Rafael Jodar gagne, confiance moyenne, chances estimées 64%, mise conseillée 25 €.\nAtouts : Très à l'aise sur dur : 36V-14D ; Mène les confrontations : 1-0.\nPoints de vigilance : Cote Unibet en dessous du marché (71% contre 64%).\nForme récente (10 derniers matchs) : Rafael Jodar : 7V-3D, 1 victoire de suite / Casper Ruud : 5V-5D, 1 victoire de suite\nConfrontations depuis 2023 : Rafael Jodar 1V-0D · derniers : 10/2026 Rolex Shanghai Masters (V)\nClassement : Rafael Jodar : 10e mondial / Casper Ruud : 23e mondial\nSaisons précédentes : Rafael Jodar : 2025 2V-1D (dur 2V-1D) / Casper Ruud : 2025 34V-17D (dur 20V-12D) · 2024 47V-24D (dur 24V-18D) · 2023 35V-22D (dur 15V-14D)\nSur dur : Rafael Jodar : 36V-14D (72%) / Casper Ruud : 71V-55D (56%)\nDernier match : Rafael Jodar : il y a 31 h : victoire contre Alejandro Tabilo (2 sets, 17 jeux) / Casper Ruud : il y a 30 h : victoire contre Juan Manuel Cerundolo (2 sets, 17 jeux)\nParcours à ATP Paris Masters : Rafael Jodar : Round 1 : V vs Alejandro Tabilo (2 sets) / Casper Ruud : Round 2 : D vs Francisco Cerundolo (2 sets), Round 2 : D vs Jordan Thompson (3 sets), Round 2 : D vs Daniel Altmaier (2 sets), Round 1 : V vs Juan Manuel Cerundolo (2 sets)\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "20:30 Casper Ruud – Rafael Jodar — validé : Rafael Jodar 1.44 (62% estimé) [ATP Paris Masters]",
+   "brief": "Match de tennis (ATP Paris Masters, dur) : Casper Ruud contre Rafael Jodar, le 03/11 à 20:30 (heure de Paris).\nCotes Unibet : Casper Ruud 2.45, Rafael Jodar 1.44.\nAvis du bot : validé, non retenu — Rafael Jodar gagne, confiance moyenne, chances estimées 62%, mise conseillée 25 €.\nAtouts : Très à l'aise sur dur : 36V-14D ; Mène les confrontations : 1-0.\nPoints de vigilance : Cote Unibet en dessous du marché (69% contre 62%).\nForme récente (10 derniers matchs) : Rafael Jodar : 7V-3D, 1 victoire de suite / Casper Ruud : 5V-5D, 1 victoire de suite\nConfrontations depuis 2023 : Rafael Jodar 1V-0D · derniers : 10/2026 Rolex Shanghai Masters (V)\nClassement : Rafael Jodar : 10e mondial / Casper Ruud : 23e mondial\nSaisons précédentes : Rafael Jodar : 2025 2V-1D (dur 2V-1D) / Casper Ruud : 2025 34V-17D (dur 20V-12D) · 2024 47V-24D (dur 24V-18D) · 2023 35V-22D (dur 15V-14D)\nSur dur : Rafael Jodar : 36V-14D (72%) / Casper Ruud : 71V-55D (56%)\nDernier match : Rafael Jodar : il y a 31 h : victoire contre Alejandro Tabilo (2 sets, 17 jeux) / Casper Ruud : il y a 30 h : victoire contre Juan Manuel Cerundolo (2 sets, 17 jeux)\nParcours à ATP Paris Masters : Rafael Jodar : Round 1 : V vs Alejandro Tabilo (2 sets) / Casper Ruud : Round 2 : D vs Francisco Cerundolo (2 sets), Round 2 : D vs Jordan Thompson (3 sets), Round 2 : D vs Daniel Altmaier (2 sets), Round 1 : V vs Juan Manuel Cerundolo (2 sets)\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   }
  ]
 }
