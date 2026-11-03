@@ -1,76 +1,6 @@
 {
- "generated_at": "2026-11-03T16:16:28.297744+00:00",
+ "generated_at": "2026-11-03T22:16:00.242765+00:00",
  "matches": [
-  {
-   "id": "tennis:dcf8effd6f985422ab07f5c909334937",
-   "sport": "tennis",
-   "label": "Benjamin Bonzi – Taylor Fritz",
-   "competition": "ATP Paris Masters",
-   "time": "2026-11-03T16:20:00+00:00",
-   "verdict": "Écarté",
-   "line": "17:20 Benjamin Bonzi – Taylor Fritz — écarté (cote trop basse) : favori Taylor Fritz 1.15 [ATP Paris Masters]",
-   "brief": "Match de tennis (ATP Paris Masters, dur) : Benjamin Bonzi contre Taylor Fritz, le 03/11 à 17:20 (heure de Paris).\nCotes Unibet : Benjamin Bonzi 3.70, Taylor Fritz 1.15.\nAvis du bot : écarté — Cote trop basse : Favori à 1.15 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
-  },
-  {
-   "id": "tennis:232e9e6ce004ffcdda5130a7f432eb15",
-   "sport": "tennis",
-   "label": "Jan-Lennard Struff – Arthur Gea",
-   "competition": "ATP Paris Masters",
-   "time": "2026-11-03T17:30:00+00:00",
-   "verdict": "Écarté",
-   "line": "18:30 Jan-Lennard Struff – Arthur Gea — écarté (blessure possible) : favori Arthur Gea 1.70 [ATP Paris Masters]",
-   "brief": "Match de tennis (ATP Paris Masters, dur) : Jan-Lennard Struff contre Arthur Gea, le 03/11 à 18:30 (heure de Paris).\nCotes Unibet : Jan-Lennard Struff 1.85, Arthur Gea 1.70.\nAvis du bot : écarté — Blessure possible : Abandon ou forfait le 15/10 contre Alejandro Davidovich Fokina (Rolex Shanghai Masters).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
-  },
-  {
-   "id": "tennis:158872469ece00415aefaa0eaecab4f0",
-   "sport": "tennis",
-   "label": "Ben Shelton – Cameron Norrie",
-   "competition": "ATP Paris Masters",
-   "time": "2026-11-03T18:00:00+00:00",
-   "verdict": "Validé",
-   "line": "19:00 Ben Shelton – Cameron Norrie — validé : Ben Shelton 1.26 (71% estimé) [ATP Paris Masters]",
-   "brief": "Match de tennis (ATP Paris Masters, dur) : Ben Shelton contre Cameron Norrie, le 03/11 à 19:00 (heure de Paris).\nCotes Unibet : Ben Shelton 1.26, Cameron Norrie 3.00.\nAvis du bot : validé, non retenu — Ben Shelton gagne, confiance moyenne, chances estimées 71%, mise conseillée 25 €.\nAtouts : Nette différence de forme : 7V-3D contre 3V-7D ; Gros écart de classement : 4e contre 45e ; Cameron Norrie sort d'un match long (3 sets, 26 jeux).\nPoints de vigilance : Cote Unibet en dessous du marché (79% contre 71%).\nForme récente (10 derniers matchs) : Ben Shelton : 7V-3D, 1 défaite de suite / Cameron Norrie : 3V-7D, 1 victoire de suite\nConfrontations depuis 2023 : Aucune confrontation sur les 3 dernières saisons\nClassement : Ben Shelton : 4e mondial / Cameron Norrie : 45e mondial\nSaisons précédentes : Ben Shelton : 2025 41V-24D (dur 31V-17D) · 2024 41V-24D (dur 33V-17D) · 2023 25V-24D (dur 22V-15D) / Cameron Norrie : 2025 36V-28D (dur 18V-19D) · 2024 21V-19D (dur 12V-11D) · 2023 31V-22D (dur 19V-16D)\nSur dur : Ben Shelton : 121V-60D (67%) / Cameron Norrie : 66V-62D (52%)\nDernier match : Ben Shelton : il y a 5 jours : défaite contre Jerome Kym (3 sets, 35 jeux) / Cameron Norrie : il y a 28 h : victoire contre Matteo Arnaldi (3 sets, 26 jeux)\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
-  },
-  {
-   "id": "tennis:42bb4ea6113cbbd3effbb4904bf80c9b",
-   "sport": "tennis",
-   "label": "Casper Ruud – Rafael Jodar",
-   "competition": "ATP Paris Masters",
-   "time": "2026-11-03T19:30:00+00:00",
-   "verdict": "Validé",
-   "line": "20:30 Casper Ruud – Rafael Jodar — validé : Rafael Jodar 1.43 (62% estimé) [ATP Paris Masters]",
-   "brief": "Match de tennis (ATP Paris Masters, dur) : Casper Ruud contre Rafael Jodar, le 03/11 à 20:30 (heure de Paris).\nCotes Unibet : Casper Ruud 2.65, Rafael Jodar 1.43.\nAvis du bot : validé, non retenu — Rafael Jodar gagne, confiance moyenne, chances estimées 62%, mise conseillée 25 €.\nAtouts : Très à l'aise sur dur : 36V-14D ; Mène les confrontations : 1-0.\nPoints de vigilance : Cote Unibet en dessous du marché (70% contre 62%).\nForme récente (10 derniers matchs) : Rafael Jodar : 7V-3D, 1 victoire de suite / Casper Ruud : 5V-5D, 1 victoire de suite\nConfrontations depuis 2023 : Rafael Jodar 1V-0D · derniers : 10/2026 Rolex Shanghai Masters (V)\nClassement : Rafael Jodar : 10e mondial / Casper Ruud : 23e mondial\nSaisons précédentes : Rafael Jodar : 2025 2V-1D (dur 2V-1D) / Casper Ruud : 2025 34V-17D (dur 20V-12D) · 2024 47V-24D (dur 24V-18D) · 2023 35V-22D (dur 15V-14D)\nSur dur : Rafael Jodar : 36V-14D (72%) / Casper Ruud : 71V-55D (56%)\nDernier match : Rafael Jodar : il y a 31 h : victoire contre Alejandro Tabilo (2 sets, 17 jeux) / Casper Ruud : il y a 30 h : victoire contre Juan Manuel Cerundolo (2 sets, 17 jeux)\nParcours à ATP Paris Masters : Rafael Jodar : Round 1 : V vs Alejandro Tabilo (2 sets) / Casper Ruud : Round 2 : D vs Francisco Cerundolo (2 sets), Round 2 : D vs Jordan Thompson (3 sets), Round 2 : D vs Daniel Altmaier (2 sets), Round 1 : V vs Juan Manuel Cerundolo (2 sets)\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
-  },
-  {
-   "id": "tennis:9f0cefd1f030d8ad5ba4085132aff58d",
-   "sport": "tennis",
-   "label": "Tomas Martin Etcheverry – Alex de Minaur",
-   "competition": "ATP Paris Masters",
-   "time": "2026-11-04T10:00:00+00:00",
-   "verdict": "Écarté",
-   "line": "11:00 Tomas Martin Etcheverry – Alex de Minaur — écarté (cote trop basse) : favori Alex de Minaur 1.22 [ATP Paris Masters]",
-   "brief": "Match de tennis (ATP Paris Masters, dur) : Tomas Martin Etcheverry contre Alex de Minaur, le 04/11 à 11:00 (heure de Paris).\nCotes Unibet : Tomas Martin Etcheverry 3.10, Alex de Minaur 1.22.\nAvis du bot : écarté — Cote trop basse : Favori à 1.22 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
-  },
-  {
-   "id": "tennis:25d8efdbfad95b30f2e8c67fd47f72fc",
-   "sport": "tennis",
-   "label": "Alexander Zverev – Lorenzo Musetti",
-   "competition": "ATP Paris Masters",
-   "time": "2026-11-04T10:00:00+00:00",
-   "verdict": "Écarté",
-   "line": "11:00 Alexander Zverev – Lorenzo Musetti — écarté (l'outsider mène les face-à-face) : favori Alexander Zverev 1.30 [ATP Paris Masters]",
-   "brief": "Match de tennis (ATP Paris Masters, dur) : Alexander Zverev contre Lorenzo Musetti, le 04/11 à 11:00 (heure de Paris).\nCotes Unibet : Alexander Zverev 1.30, Lorenzo Musetti 2.70.\nAvis du bot : écarté — L'outsider mène les face-à-face : L'outsider mène les confrontations : 1-3 en faveur de Lorenzo Musetti.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
-  },
-  {
-   "id": "tennis:1cd952bfa7bc99f45d2ced1b80209056",
-   "sport": "tennis",
-   "label": "Arthur Fils – Tomas Machac",
-   "competition": "ATP Paris Masters",
-   "time": "2026-11-04T10:00:00+00:00",
-   "verdict": "Écarté",
-   "line": "11:00 Arthur Fils – Tomas Machac — écarté (blessure possible) : favori Arthur Fils 1.43 [ATP Paris Masters]",
-   "brief": "Match de tennis (ATP Paris Masters, dur) : Arthur Fils contre Tomas Machac, le 04/11 à 11:00 (heure de Paris).\nCotes Unibet : Arthur Fils 1.43, Tomas Machac 2.65.\nAvis du bot : écarté — Blessure possible : Abandon ou forfait le 30/10 contre Taylor Fritz (Swiss Indoors Basel).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
-  },
   {
    "id": "tennis:3d3a05094b9f2796c2b3d68ef4b43c66",
    "sport": "tennis",
@@ -78,18 +8,8 @@
    "competition": "ATP Paris Masters",
    "time": "2026-11-04T10:00:00+00:00",
    "verdict": "Écarté",
-   "line": "11:00 Mattia Bellucci – Arthur Rinderknech — écarté (pas à l'aise sur la surface) : favori Mattia Bellucci 1.61 [ATP Paris Masters]",
-   "brief": "Match de tennis (ATP Paris Masters, dur) : Mattia Bellucci contre Arthur Rinderknech, le 04/11 à 11:00 (heure de Paris).\nCotes Unibet : Mattia Bellucci 1.61, Arthur Rinderknech 1.93.\nAvis du bot : écarté — Pas à l'aise sur la surface : 52V-49D sur dur depuis 2022 (51%).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
-  },
-  {
-   "id": "tennis:bc5dffba531009c0a80d3facb9410062",
-   "sport": "tennis",
-   "label": "Ignacio Buse – Daniil Medvedev",
-   "competition": "ATP Paris Masters",
-   "time": "2026-11-04T10:00:00+00:00",
-   "verdict": "Écarté",
-   "line": "11:00 Ignacio Buse – Daniil Medvedev — écarté (cote trop basse) : favori Daniil Medvedev 1.10 [ATP Paris Masters]",
-   "brief": "Match de tennis (ATP Paris Masters, dur) : Ignacio Buse contre Daniil Medvedev, le 04/11 à 11:00 (heure de Paris).\nCotes Unibet : Ignacio Buse 4.40, Daniil Medvedev 1.10.\nAvis du bot : écarté — Cote trop basse : Favori à 1.10 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "11:00 Mattia Bellucci – Arthur Rinderknech — écarté (pas à l'aise sur la surface) : favori Mattia Bellucci 1.58 [ATP Paris Masters]",
+   "brief": "Match de tennis (ATP Paris Masters, dur) : Mattia Bellucci contre Arthur Rinderknech, le 04/11 à 11:00 (heure de Paris).\nCotes Unibet : Mattia Bellucci 1.58, Arthur Rinderknech 1.96.\nAvis du bot : écarté — Pas à l'aise sur la surface : 52V-49D sur dur depuis 2022 (51%).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "tennis:b1f8e4cc08a752752738c51105899ad6",
@@ -97,19 +17,129 @@
    "label": "Quentin Halys – Frances Tiafoe",
    "competition": "ATP Paris Masters",
    "time": "2026-11-04T10:00:00+00:00",
-   "verdict": "Validé",
-   "line": "11:00 Quentin Halys – Frances Tiafoe — validé : Frances Tiafoe 1.56 (58% estimé) [ATP Paris Masters]",
-   "brief": "Match de tennis (ATP Paris Masters, dur) : Quentin Halys contre Frances Tiafoe, le 04/11 à 11:00 (heure de Paris).\nCotes Unibet : Quentin Halys 2.00, Frances Tiafoe 1.56.\nAvis du bot : validé, non retenu — Frances Tiafoe gagne, confiance prudente, chances estimées 58%, mise conseillée 15 €.\nAtouts : Gros écart de classement : 8e contre 46e.\nPoints de vigilance : Cote Unibet en dessous du marché (64% contre 58%).\nForme récente (10 derniers matchs) : Frances Tiafoe : 6V-4D, 2 défaites de suite / Quentin Halys : 5V-5D, 1 victoire de suite\nConfrontations depuis 2023 : Aucune confrontation sur les 3 dernières saisons\nClassement : Frances Tiafoe : 8e mondial / Quentin Halys : 46e mondial\nSaisons précédentes : Frances Tiafoe : 2025 25V-21D (dur 16V-14D) · 2024 33V-25D (dur 29V-20D) · 2023 34V-19D (dur 24V-14D) / Quentin Halys : 2025 18V-28D (dur 14V-21D) · 2024 26V-13D (dur 13V-9D) · 2023 17V-22D (dur 11V-18D)\nSur dur : Frances Tiafoe : 104V-63D (62%) / Quentin Halys : 66V-65D (50%)\nDernier match : Frances Tiafoe : il y a 7 jours : défaite contre Lorenzo Musetti (2 sets, 25 jeux) / Quentin Halys : il y a 24 h : victoire contre Arthur Fery (2 sets, 25 jeux)\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "verdict": "À jouer",
+   "line": "11:00 Quentin Halys – Frances Tiafoe — À JOUER : Frances Tiafoe 1.59 (58% estimé) [ATP Paris Masters]",
+   "brief": "Match de tennis (ATP Paris Masters, dur) : Quentin Halys contre Frances Tiafoe, le 04/11 à 11:00 (heure de Paris).\nCotes Unibet : Quentin Halys 2.15, Frances Tiafoe 1.59.\nAvis du bot : à jouer — Frances Tiafoe gagne, confiance prudente, chances estimées 58%, mise conseillée 15 €.\nAtouts : Gros écart de classement : 8e contre 46e.\nPoints de vigilance : Cote Unibet en dessous du marché (63% contre 58%).\nForme récente (10 derniers matchs) : Frances Tiafoe : 6V-4D, 2 défaites de suite / Quentin Halys : 5V-5D, 1 victoire de suite\nConfrontations depuis 2023 : Aucune confrontation sur les 3 dernières saisons\nClassement : Frances Tiafoe : 8e mondial / Quentin Halys : 46e mondial\nSaisons précédentes : Frances Tiafoe : 2025 25V-21D (dur 16V-14D) · 2024 33V-25D (dur 29V-20D) · 2023 34V-19D (dur 24V-14D) / Quentin Halys : 2025 18V-28D (dur 14V-21D) · 2024 26V-13D (dur 13V-9D) · 2023 17V-22D (dur 11V-18D)\nSur dur : Frances Tiafoe : 104V-63D (62%) / Quentin Halys : 66V-65D (50%)\nDernier match : Frances Tiafoe : il y a 7 jours : défaite contre Lorenzo Musetti (2 sets, 25 jeux) / Quentin Halys : il y a 24 h : victoire contre Arthur Fery (2 sets, 25 jeux)\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+  },
+  {
+   "id": "tennis:4ce1d6b1ec3f3a58daf5d9c774afc3f6",
+   "sport": "tennis",
+   "label": "Luca Van Assche – Learner Tien",
+   "competition": "ATP Paris Masters",
+   "time": "2026-11-04T11:10:00+00:00",
+   "verdict": "Écarté",
+   "line": "12:10 Luca Van Assche – Learner Tien — écarté (fatigue) : favori Learner Tien 1.37 [ATP Paris Masters]",
+   "brief": "Match de tennis (ATP Paris Masters, dur) : Luca Van Assche contre Learner Tien, le 04/11 à 12:10 (heure de Paris).\nCotes Unibet : Luca Van Assche 2.40, Learner Tien 1.37.\nAvis du bot : écarté — Fatigue : Match long il y a 23 h : 3 sets, 33 jeux contre Adolfo Daniel Vallejo.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+  },
+  {
+   "id": "tennis:bff9716e2c2e4b207744b20ff82a2241",
+   "sport": "tennis",
+   "label": "Tommy Paul – Juan Carlos Aguilar",
+   "competition": "ATP Paris Masters",
+   "time": "2026-11-04T11:30:00+00:00",
+   "verdict": "Écarté",
+   "line": "12:30 Tommy Paul – Juan Carlos Aguilar — écarté (cote trop basse) : favori Tommy Paul 1.19 [ATP Paris Masters]",
+   "brief": "Match de tennis (ATP Paris Masters, dur) : Tommy Paul contre Juan Carlos Aguilar, le 04/11 à 12:30 (heure de Paris).\nCotes Unibet : Tommy Paul 1.19, Juan Carlos Aguilar 3.30.\nAvis du bot : écarté — Cote trop basse : Favori à 1.19 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+  },
+  {
+   "id": "tennis:bc5dffba531009c0a80d3facb9410062",
+   "sport": "tennis",
+   "label": "Ignacio Buse – Daniil Medvedev",
+   "competition": "ATP Paris Masters",
+   "time": "2026-11-04T12:20:00+00:00",
+   "verdict": "Écarté",
+   "line": "13:20 Ignacio Buse – Daniil Medvedev — écarté (cote trop basse) : favori Daniil Medvedev 1.10 [ATP Paris Masters]",
+   "brief": "Match de tennis (ATP Paris Masters, dur) : Ignacio Buse contre Daniil Medvedev, le 04/11 à 13:20 (heure de Paris).\nCotes Unibet : Ignacio Buse 4.40, Daniil Medvedev 1.10.\nAvis du bot : écarté — Cote trop basse : Favori à 1.10 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+  },
+  {
+   "id": "tennis:25d8efdbfad95b30f2e8c67fd47f72fc",
+   "sport": "tennis",
+   "label": "Alexander Zverev – Lorenzo Musetti",
+   "competition": "ATP Paris Masters",
+   "time": "2026-11-04T12:30:00+00:00",
+   "verdict": "Écarté",
+   "line": "13:30 Alexander Zverev – Lorenzo Musetti — écarté (l'outsider mène les face-à-face) : favori Alexander Zverev 1.30 [ATP Paris Masters]",
+   "brief": "Match de tennis (ATP Paris Masters, dur) : Alexander Zverev contre Lorenzo Musetti, le 04/11 à 13:30 (heure de Paris).\nCotes Unibet : Alexander Zverev 1.30, Lorenzo Musetti 2.70.\nAvis du bot : écarté — L'outsider mène les face-à-face : L'outsider mène les confrontations : 1-3 en faveur de Lorenzo Musetti.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+  },
+  {
+   "id": "tennis:9f0cefd1f030d8ad5ba4085132aff58d",
+   "sport": "tennis",
+   "label": "Tomas Martin Etcheverry – Alex de Minaur",
+   "competition": "ATP Paris Masters",
+   "time": "2026-11-04T12:40:00+00:00",
+   "verdict": "Écarté",
+   "line": "13:40 Tomas Martin Etcheverry – Alex de Minaur — écarté (cote trop basse) : favori Alex de Minaur 1.16 [ATP Paris Masters]",
+   "brief": "Match de tennis (ATP Paris Masters, dur) : Tomas Martin Etcheverry contre Alex de Minaur, le 04/11 à 13:40 (heure de Paris).\nCotes Unibet : Tomas Martin Etcheverry 3.65, Alex de Minaur 1.16.\nAvis du bot : écarté — Cote trop basse : Favori à 1.16 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+  },
+  {
+   "id": "tennis:1be19552d8710b4628e2747163b4cf78",
+   "sport": "tennis",
+   "label": "Novak Djokovic – Rinky Hijikata",
+   "competition": "ATP Paris Masters",
+   "time": "2026-11-04T13:40:00+00:00",
+   "verdict": "Écarté",
+   "line": "14:40 Novak Djokovic – Rinky Hijikata — écarté (cote trop basse) : favori Novak Djokovic 1.19 [ATP Paris Masters]",
+   "brief": "Match de tennis (ATP Paris Masters, dur) : Novak Djokovic contre Rinky Hijikata, le 04/11 à 14:40 (heure de Paris).\nCotes Unibet : Novak Djokovic 1.19, Rinky Hijikata 3.35.\nAvis du bot : écarté — Cote trop basse : Favori à 1.19 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+  },
+  {
+   "id": "tennis:d9db521dae7522d7d24255286307307f",
+   "sport": "tennis",
+   "label": "Alex Molcan – Taylor Fritz",
+   "competition": "ATP Paris Masters",
+   "time": "2026-11-04T13:50:00+00:00",
+   "verdict": "Écarté",
+   "line": "14:50 Alex Molcan – Taylor Fritz — écarté (cote trop basse) : favori Taylor Fritz 1.19 [ATP Paris Masters]",
+   "brief": "Match de tennis (ATP Paris Masters, dur) : Alex Molcan contre Taylor Fritz, le 04/11 à 14:50 (heure de Paris).\nCotes Unibet : Alex Molcan 3.35, Taylor Fritz 1.19.\nAvis du bot : écarté — Cote trop basse : Favori à 1.19 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "tennis:b92f417b119f280893500cc87bd8714e",
    "sport": "tennis",
    "label": "Nuno Borges – Karen Khachanov",
    "competition": "ATP Paris Masters",
-   "time": "2026-11-04T10:00:00+00:00",
+   "time": "2026-11-04T14:30:00+00:00",
    "verdict": "Validé",
-   "line": "11:00 Nuno Borges – Karen Khachanov — validé : Karen Khachanov 1.39 (64% estimé) [ATP Paris Masters]",
-   "brief": "Match de tennis (ATP Paris Masters, dur) : Nuno Borges contre Karen Khachanov, le 04/11 à 11:00 (heure de Paris).\nCotes Unibet : Nuno Borges 2.40, Karen Khachanov 1.39.\nAvis du bot : validé, non retenu — Karen Khachanov gagne, confiance moyenne, chances estimées 64%, mise conseillée 25 €.\nAtouts : Gros écart de classement : 25e contre 49e ; Mène les confrontations : 1-0.\nPoints de vigilance : Cote Unibet en dessous du marché (72% contre 64%).\nForme récente (10 derniers matchs) : Karen Khachanov : 6V-4D, 1 victoire de suite / Nuno Borges : 5V-5D, 1 victoire de suite\nConfrontations depuis 2023 : Karen Khachanov 1V-0D · derniers : 07/2025 Wimbledon (V)\nClassement : Karen Khachanov : 25e mondial / Nuno Borges : 49e mondial\nSaisons précédentes : Karen Khachanov : 2025 32V-24D (dur 19V-17D) · 2024 37V-22D (dur 28V-17D) · 2023 34V-18D (dur 24V-13D) / Nuno Borges : 2025 29V-28D (dur 20V-21D) · 2024 27V-24D (dur 22V-18D) · 2023 11V-19D (dur 8V-12D)\nSur dur : Karen Khachanov : 90V-63D (59%) / Nuno Borges : 70V-69D (50%)\nDernier match : Karen Khachanov : il y a 40 h : victoire contre Denis Shapovalov (3 sets, 27 jeux) / Nuno Borges : il y a 22 h : victoire contre Moise Kouame (2 sets, 16 jeux)\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "15:30 Nuno Borges – Karen Khachanov — validé : Karen Khachanov 1.39 (66% estimé) [ATP Paris Masters]",
+   "brief": "Match de tennis (ATP Paris Masters, dur) : Nuno Borges contre Karen Khachanov, le 04/11 à 15:30 (heure de Paris).\nCotes Unibet : Nuno Borges 2.40, Karen Khachanov 1.39.\nAvis du bot : validé, non retenu — Karen Khachanov gagne, confiance moyenne, chances estimées 66%, mise conseillée 25 €.\nAtouts : Gros écart de classement : 25e contre 49e ; Mène les confrontations : 1-0.\nPoints de vigilance : Cote Unibet en dessous du marché (72% contre 66%).\nForme récente (10 derniers matchs) : Karen Khachanov : 6V-4D, 1 victoire de suite / Nuno Borges : 5V-5D, 1 victoire de suite\nConfrontations depuis 2023 : Karen Khachanov 1V-0D · derniers : 07/2025 Wimbledon (V)\nClassement : Karen Khachanov : 25e mondial / Nuno Borges : 49e mondial\nSaisons précédentes : Karen Khachanov : 2025 32V-24D (dur 19V-17D) · 2024 37V-22D (dur 28V-17D) · 2023 34V-18D (dur 24V-13D) / Nuno Borges : 2025 29V-28D (dur 20V-21D) · 2024 27V-24D (dur 22V-18D) · 2023 11V-19D (dur 8V-12D)\nSur dur : Karen Khachanov : 90V-63D (59%) / Nuno Borges : 70V-69D (50%)\nDernier match : Karen Khachanov : il y a 44 h : victoire contre Denis Shapovalov (3 sets, 27 jeux) / Nuno Borges : il y a 26 h : victoire contre Moise Kouame (2 sets, 16 jeux)\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+  },
+  {
+   "id": "tennis:83e3278f7f08fc8e5f9d88ec513d0aeb",
+   "sport": "tennis",
+   "label": "Thiago Agustin Tirante – Jan-Lennard Struff",
+   "competition": "ATP Paris Masters",
+   "time": "2026-11-04T15:00:00+00:00",
+   "verdict": "Écarté",
+   "line": "16:00 Thiago Agustin Tirante – Jan-Lennard Struff — écarté (pas à l'aise sur la surface) : favori Jan-Lennard Struff 1.30 [ATP Paris Masters]",
+   "brief": "Match de tennis (ATP Paris Masters, dur) : Thiago Agustin Tirante contre Jan-Lennard Struff, le 04/11 à 16:00 (heure de Paris).\nCotes Unibet : Thiago Agustin Tirante 2.70, Jan-Lennard Struff 1.30.\nAvis du bot : écarté — Pas à l'aise sur la surface : 63V-58D sur dur depuis 2023 (52%).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+  },
+  {
+   "id": "tennis:9c047eea4b968d8a8c3f35fd16ce9e6d",
+   "sport": "tennis",
+   "label": "Matteo Berrettini – Ugo Humbert",
+   "competition": "ATP Paris Masters",
+   "time": "2026-11-04T15:40:00+00:00",
+   "verdict": "Écarté",
+   "line": "16:40 Matteo Berrettini – Ugo Humbert — écarté (forme insuffisante) : favori Ugo Humbert 1.68 [ATP Paris Masters]",
+   "brief": "Match de tennis (ATP Paris Masters, dur) : Matteo Berrettini contre Ugo Humbert, le 04/11 à 16:40 (heure de Paris).\nCotes Unibet : Matteo Berrettini 1.84, Ugo Humbert 1.68.\nAvis du bot : écarté — Forme insuffisante : 3V-7D sur ses 10 derniers matchs.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+  },
+  {
+   "id": "tennis:e9c7e8bc7876cbb19446a417d0447cf0",
+   "sport": "tennis",
+   "label": "Alex Michelsen – Carlos Alcaraz",
+   "competition": "ATP Paris Masters",
+   "time": "2026-11-04T18:00:00+00:00",
+   "verdict": "Écarté",
+   "line": "19:00 Alex Michelsen – Carlos Alcaraz — écarté (cote trop basse) : favori Carlos Alcaraz 1.12 [ATP Paris Masters]",
+   "brief": "Match de tennis (ATP Paris Masters, dur) : Alex Michelsen contre Carlos Alcaraz, le 04/11 à 19:00 (heure de Paris).\nCotes Unibet : Alex Michelsen 4.05, Carlos Alcaraz 1.12.\nAvis du bot : écarté — Cote trop basse : Favori à 1.12 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+  },
+  {
+   "id": "tennis:1cd952bfa7bc99f45d2ced1b80209056",
+   "sport": "tennis",
+   "label": "Arthur Fils – Tomas Machac",
+   "competition": "ATP Paris Masters",
+   "time": "2026-11-04T19:30:00+00:00",
+   "verdict": "Écarté",
+   "line": "20:30 Arthur Fils – Tomas Machac — écarté (blessure possible) : favori Arthur Fils 1.45 [ATP Paris Masters]",
+   "brief": "Match de tennis (ATP Paris Masters, dur) : Arthur Fils contre Tomas Machac, le 04/11 à 20:30 (heure de Paris).\nCotes Unibet : Arthur Fils 1.45, Tomas Machac 2.50.\nAvis du bot : écarté — Blessure possible : Abandon ou forfait le 30/10 contre Taylor Fritz (Swiss Indoors Basel).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   }
  ]
 }
