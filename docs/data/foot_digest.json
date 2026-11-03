@@ -1,45 +1,4 @@
 {
- "generated_at": "2026-11-02T18:23:38.006105+00:00",
- "matches": [
-  {
-   "id": "foot:5118966f484adf525196d196a61bc5d6",
-   "sport": "foot",
-   "label": "Lorient – Brest",
-   "competition": "Ligue 1",
-   "time": "2026-11-02T19:45:00+00:00",
-   "verdict": "Écarté",
-   "line": "20:45 Lorient – Brest — écarté (favori pas assez net) : favori Lorient 2.30 [Ligue 1]",
-   "brief": "Match de foot (Ligue 1) : Lorient (domicile) contre Brest (extérieur), le 02/11 à 20:45 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : Lorient 2.30, nul 3.15, Brest 3.00.\nAvis du bot : écarté — Favori pas assez net : Cote de 2.30, au-dessus de la limite de 1.80..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
-  },
-  {
-   "id": "foot:2e488800d615a94e5377c195810303c0",
-   "sport": "foot",
-   "label": "Atalanta – Parma",
-   "competition": "Serie A",
-   "time": "2026-11-02T19:45:00+00:00",
-   "verdict": "Écarté",
-   "line": "20:45 Atalanta – Parma — écarté (match piège avant la coupe d'europe) : favori Atalanta 1.38 [Serie A]",
-   "brief": "Match de foot (Serie A) : Atalanta (domicile) contre Parma (extérieur), le 02/11 à 20:45 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : Atalanta 1.38, nul 4.40, Parma 5.30.\nAvis du bot : écarté — Match piège avant la Coupe d'Europe : Ligue Conférence contre Kairat Almaty dans 70 h : risque de rotation.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
-  },
-  {
-   "id": "foot:7a2cd2744fdf15ea675423a6c23df46b",
-   "sport": "foot",
-   "label": "Deportivo – Osasuna",
-   "competition": "Liga",
-   "time": "2026-11-02T20:00:00+00:00",
-   "verdict": "Écarté",
-   "line": "21:00 Deportivo – Osasuna — écarté (favori pas assez net) : favori Deportivo 1.97 [Liga]",
-   "brief": "Match de foot (Liga) : Deportivo (domicile) contre Osasuna (extérieur), le 02/11 à 21:00 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : Deportivo 1.97, nul 2.95, Osasuna 3.40.\nAvis du bot : écarté — Favori pas assez net : Cote de 1.97, au-dessus de la limite de 1.80..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
-  },
-  {
-   "id": "foot:0f552d9c6990c69474f50ff2fb54e9a3",
-   "sport": "foot",
-   "label": "Newcastle United – Everton",
-   "competition": "Premier League",
-   "time": "2026-11-02T20:00:00+00:00",
-   "verdict": "Écarté",
-   "line": "21:00 Newcastle United – Everton — écarté (favori pas assez net) : favori Newcastle United 1.98 [Premier League]",
-   "brief": "Match de foot (Premier League) : Newcastle United (domicile) contre Everton (extérieur), le 02/11 à 21:00 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : Newcastle United 1.98, nul 3.55, Everton 3.25.\nAvis du bot : écarté — Favori pas assez net : Cote de 1.98, au-dessus de la limite de 1.80..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
-  }
- ]
+ "generated_at": "2026-11-03T16:16:35.983539+00:00",
+ "matches": []
 }
