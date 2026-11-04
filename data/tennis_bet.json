@@ -1,23 +1,23 @@
 {
- "created": "2026-11-03T22:16:00.242765+00:00",
- "created_label": "mardi 03/11 à 23:16",
+ "created": "2026-11-04T16:19:44.646815+00:00",
+ "created_label": "mercredi 04/11 à 17:19",
  "bets": [
   {
    "option": "Option 1 · Pari simple",
    "kind": "Pari simple",
-   "total": 1.59,
-   "prob": 0.579,
-   "stake": 15,
+   "total": 1.27,
+   "prob": 0.7,
+   "stake": 25,
    "legs": [
     {
-     "event_id": "b1f8e4cc08a752752738c51105899ad6",
-     "pick": "Frances Tiafoe",
-     "opponent": "Quentin Halys",
-     "odds": 1.59,
+     "event_id": "8962e5108426884c7237a80948c77cfb",
+     "pick": "Lorenzo Musetti",
+     "opponent": "Luca Van Assche",
+     "odds": 1.27,
      "tournament": "ATP Paris Masters",
      "best_of": 3,
-     "commence": "2026-11-04T10:00:00+00:00",
-     "time": "04/11 11:00"
+     "commence": "2026-11-05T10:00:00+00:00",
+     "time": "05/11 11:00"
     }
    ]
   }
