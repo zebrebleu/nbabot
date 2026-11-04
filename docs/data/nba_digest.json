@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-04T20:33:20.977123+00:00",
+ "generated_at": "2026-11-04T22:32:47.176911+00:00",
  "matches": [
   {
    "id": "nba:91df86557819598ca270ba35410cfcfa",
@@ -25,8 +25,8 @@
    "label": "Milwaukee Bucks @ Boston Celtics",
    "time": "2026-11-05T00:30:00+00:00",
    "verdict": "Écarté",
-   "line": "01:30 Milwaukee Bucks @ Boston Celtics — écarté (cote trop basse) : favori Boston Celtics 1.17",
-   "brief": "Match NBA : Milwaukee Bucks (extérieur) contre Boston Celtics (domicile), le 05/11 à 01:30 (heure de Paris).\nCotes Unibet : Milwaukee Bucks 3.75, Boston Celtics 1.17.\nAvis du bot : écarté — Cote trop basse : Favori à 1.17 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "01:30 Milwaukee Bucks @ Boston Celtics — écarté (cote trop basse) : favori Boston Celtics 1.15",
+   "brief": "Match NBA : Milwaukee Bucks (extérieur) contre Boston Celtics (domicile), le 05/11 à 01:30 (heure de Paris).\nCotes Unibet : Milwaukee Bucks 4.05, Boston Celtics 1.15.\nAvis du bot : écarté — Cote trop basse : Favori à 1.15 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:6b33f8632d4dd100cba8453db82213fa",
@@ -34,8 +34,8 @@
    "label": "Charlotte Hornets @ Brooklyn Nets",
    "time": "2026-11-05T00:30:00+00:00",
    "verdict": "Écarté",
-   "line": "01:30 Charlotte Hornets @ Brooklyn Nets — écarté (forme insuffisante) : favori Charlotte Hornets 1.52",
-   "brief": "Match NBA : Charlotte Hornets (extérieur) contre Brooklyn Nets (domicile), le 05/11 à 01:30 (heure de Paris).\nCotes Unibet : Charlotte Hornets 1.52, Brooklyn Nets 2.15.\nAvis du bot : écarté — Forme insuffisante : 1V-2D sur ses 3 derniers à l'extérieur (2 V requises).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "01:30 Charlotte Hornets @ Brooklyn Nets — écarté (forme insuffisante) : favori Charlotte Hornets 1.51",
+   "brief": "Match NBA : Charlotte Hornets (extérieur) contre Brooklyn Nets (domicile), le 05/11 à 01:30 (heure de Paris).\nCotes Unibet : Charlotte Hornets 1.51, Brooklyn Nets 2.20.\nAvis du bot : écarté — Forme insuffisante : 1V-2D sur ses 3 derniers à l'extérieur (2 V requises).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:87d2b814c3f0d3691e9cebbf2de76295",
@@ -116,7 +116,7 @@
    "time": "2026-11-05T03:00:00+00:00",
    "verdict": "Écarté",
    "line": "04:00 Los Angeles Lakers @ Sacramento Kings — écarté (cote trop basse) : favori Los Angeles Lakers 1.13",
-   "brief": "Match NBA : Los Angeles Lakers (extérieur) contre Sacramento Kings (domicile), le 05/11 à 04:00 (heure de Paris).\nCotes Unibet : Los Angeles Lakers 1.13, Sacramento Kings 4.20.\nAvis du bot : écarté — Cote trop basse : Favori à 1.13 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "brief": "Match NBA : Los Angeles Lakers (extérieur) contre Sacramento Kings (domicile), le 05/11 à 04:00 (heure de Paris).\nCotes Unibet : Los Angeles Lakers 1.13, Sacramento Kings 4.30.\nAvis du bot : écarté — Cote trop basse : Favori à 1.13 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:72c786e70ad9360fdc41e4c2a50fa788",

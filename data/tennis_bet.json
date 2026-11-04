@@ -1,23 +1,52 @@
 {
- "created": "2026-11-04T16:19:44.646815+00:00",
- "created_label": "mercredi 04/11 à 17:19",
+ "created": "2026-11-04T22:32:51.016915+00:00",
+ "created_label": "mercredi 04/11 à 23:32",
  "bets": [
   {
    "option": "Option 1 · Pari simple",
    "kind": "Pari simple",
    "total": 1.27,
-   "prob": 0.7,
+   "prob": 0.724,
    "stake": 25,
    "legs": [
     {
-     "event_id": "8962e5108426884c7237a80948c77cfb",
-     "pick": "Lorenzo Musetti",
-     "opponent": "Luca Van Assche",
+     "event_id": "4111a4ac0ae11935311b655ebadd040b",
+     "pick": "Tommy Paul",
+     "opponent": "Quentin Halys",
      "odds": 1.27,
      "tournament": "ATP Paris Masters",
      "best_of": 3,
      "commence": "2026-11-05T10:00:00+00:00",
      "time": "05/11 11:00"
+    }
+   ]
+  },
+  {
+   "option": "Option 2 · Combiné",
+   "kind": "Combiné de 2 matchs",
+   "total": 1.6,
+   "prob": 0.525,
+   "stake": 25,
+   "legs": [
+    {
+     "event_id": "4111a4ac0ae11935311b655ebadd040b",
+     "pick": "Tommy Paul",
+     "opponent": "Quentin Halys",
+     "odds": 1.27,
+     "tournament": "ATP Paris Masters",
+     "best_of": 3,
+     "commence": "2026-11-05T10:00:00+00:00",
+     "time": "05/11 11:00"
+    },
+    {
+     "event_id": "8a2e76c34cf0bce53c2afc75d9f2793e",
+     "pick": "Ben Shelton",
+     "opponent": "Arthur Rinderknech",
+     "odds": 1.26,
+     "tournament": "ATP Paris Masters",
+     "best_of": 3,
+     "commence": "2026-11-05T11:10:00+00:00",
+     "time": "05/11 12:10"
     }
    ]
   }
