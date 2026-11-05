@@ -1,23 +1,52 @@
 {
- "created": "2026-11-05T16:29:13.736920+00:00",
- "created_label": "jeudi 05/11 à 17:29",
+ "created": "2026-11-05T22:38:50.187234+00:00",
+ "created_label": "jeudi 05/11 à 23:38",
  "bets": [
   {
    "option": "Option 1 · Pari simple",
    "kind": "Pari simple",
-   "total": 1.65,
-   "prob": 0.533,
+   "total": 1.26,
+   "prob": 0.727,
+   "stake": 25,
+   "legs": [
+    {
+     "event_id": "e4e0781ebc80c47d216dd73609a3c8e0",
+     "pick": "Carlos Alcaraz",
+     "opponent": "Taylor Fritz",
+     "odds": 1.26,
+     "tournament": "ATP Paris Masters",
+     "best_of": 3,
+     "commence": "2026-11-06T18:00:00+00:00",
+     "time": "06/11 19:00"
+    }
+   ]
+  },
+  {
+   "option": "Option 2 · Combiné",
+   "kind": "Combiné de 2 matchs",
+   "total": 1.8,
+   "prob": 0.448,
    "stake": 15,
    "legs": [
     {
-     "event_id": "10a66a309af482f75813cc0d9ce0bdd1",
-     "pick": "Tommy Paul",
-     "opponent": "Ben Shelton",
-     "odds": 1.65,
+     "event_id": "e4e0781ebc80c47d216dd73609a3c8e0",
+     "pick": "Carlos Alcaraz",
+     "opponent": "Taylor Fritz",
+     "odds": 1.26,
      "tournament": "ATP Paris Masters",
      "best_of": 3,
-     "commence": "2026-11-06T10:00:00+00:00",
-     "time": "06/11 11:00"
+     "commence": "2026-11-06T18:00:00+00:00",
+     "time": "06/11 19:00"
+    },
+    {
+     "event_id": "0adc47c275819823d018232033a6de7f",
+     "pick": "Casper Ruud",
+     "opponent": "Nuno Borges",
+     "odds": 1.43,
+     "tournament": "ATP Paris Masters",
+     "best_of": 3,
+     "commence": "2026-11-06T19:30:00+00:00",
+     "time": "06/11 20:30"
     }
    ]
   }

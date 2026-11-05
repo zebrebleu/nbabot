@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-05T20:50:07.393236+00:00",
+ "generated_at": "2026-11-05T22:38:48.663535+00:00",
  "matches": [
   {
    "id": "nba:2a76b31e02d1416de069a995589515fc",
@@ -7,8 +7,8 @@
    "label": "Orlando Magic @ Phoenix Suns",
    "time": "2026-11-06T02:00:00+00:00",
    "verdict": "Écarté",
-   "line": "03:00 Orlando Magic @ Phoenix Suns — écarté (match piège) : favori Phoenix Suns 1.73",
-   "brief": "Match NBA : Orlando Magic (extérieur) contre Phoenix Suns (domicile), le 06/11 à 03:00 (heure de Paris).\nCotes Unibet : Orlando Magic 1.85, Phoenix Suns 1.73.\nAvis du bot : écarté — Match piège : Le favori a un gros choc juste après et risque de se ménager. Choc contre Rockets (contender) dans 48 h.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "03:00 Orlando Magic @ Phoenix Suns — écarté (match piège) : favori Phoenix Suns 1.71",
+   "brief": "Match NBA : Orlando Magic (extérieur) contre Phoenix Suns (domicile), le 06/11 à 03:00 (heure de Paris).\nCotes Unibet : Orlando Magic 1.87, Phoenix Suns 1.71.\nAvis du bot : écarté — Match piège : Le favori a un gros choc juste après et risque de se ménager. Choc contre Rockets (contender) dans 48 h.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:ac38449dd3dfbe1c9b48164b6a41aa83",
@@ -16,8 +16,8 @@
    "label": "Miami Heat @ Golden State Warriors",
    "time": "2026-11-06T03:00:00+00:00",
    "verdict": "Écarté",
-   "line": "04:00 Miami Heat @ Golden State Warriors — écarté (blessure importante) : favori Golden State Warriors 1.29",
-   "brief": "Match NBA : Miami Heat (extérieur) contre Golden State Warriors (domicile), le 06/11 à 04:00 (heure de Paris).\nCotes Unibet : Miami Heat 3.10, Golden State Warriors 1.29.\nAvis du bot : écarté — Blessure importante : 4 joueurs absents/incertains, seuil de 3 atteint — règle de secours (Golden State Warriors absente de KEY_PLAYERS) : Gui Santos (Out), Kristaps Porzingis (Out), Moses Moody (Out), Jimmy Butler III (Out).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "04:00 Miami Heat @ Golden State Warriors — écarté (la cote du favori monte) : favori Golden State Warriors 1.58",
+   "brief": "Match NBA : Miami Heat (extérieur) contre Golden State Warriors (domicile), le 06/11 à 04:00 (heure de Paris).\nCotes Unibet : Miami Heat 2.15, Golden State Warriors 1.58.\nAvis du bot : écarté — La cote du favori monte : Le marché commence à douter. Hausse anormale de la cote du favori : 1.27 → 1.58 (+24.4%).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   }
  ]
 }
