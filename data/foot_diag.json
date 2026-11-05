@@ -1,72 +1,72 @@
 {
- "generated_at": "2026-11-04T16:19:53.287845+00:00",
+ "generated_at": "2026-11-05T16:29:23.106186+00:00",
  "leagues": {
   "Ligue 1": {
-   "matchs_espn": 0,
-   "cotes": 0,
-   "rapprochés": 0,
-   "matchs_lus_sur_10_jours": 18
+   "matchs_espn": 1,
+   "cotes": 18,
+   "rapprochés": 1,
+   "matchs_lus_sur_10_jours": 15
   },
   "Liga": {
-   "matchs_espn": 0,
-   "cotes": 0,
-   "rapprochés": 0,
-   "matchs_lus_sur_10_jours": 20
+   "matchs_espn": 1,
+   "cotes": 20,
+   "rapprochés": 1,
+   "matchs_lus_sur_10_jours": 19
   },
   "Premier League": {
-   "matchs_espn": 0,
-   "cotes": 0,
-   "rapprochés": 0,
+   "matchs_espn": 1,
+   "cotes": 20,
+   "rapprochés": 1,
    "matchs_lus_sur_10_jours": 20
   },
   "Serie A": {
-   "matchs_espn": 0,
-   "cotes": 0,
-   "rapprochés": 0,
+   "matchs_espn": 1,
+   "cotes": 20,
+   "rapprochés": 1,
    "matchs_lus_sur_10_jours": 20
   },
   "Bundesliga": {
-   "matchs_espn": 0,
-   "cotes": 0,
-   "rapprochés": 0,
-   "matchs_lus_sur_10_jours": 18
+   "matchs_espn": 1,
+   "cotes": 18,
+   "rapprochés": 1,
+   "matchs_lus_sur_10_jours": 17
   }
  },
- "credits_used": 0,
+ "credits_used": 5,
  "unmatched": [],
- "matches": 0,
- "equipes_avec_resultats": 0,
- "equipes_avec_historique": 0,
+ "matches": 5,
+ "equipes_avec_resultats": 10,
+ "equipes_avec_historique": 9,
  "espn_brut": {
   "uefa.champions (jour par jour)": 18,
   "uefa.europa (jour par jour)": 18,
   "uefa.europa.conf (jour par jour)": 18,
   "fra.coupe_de_france (jour par jour)": 2,
   "esp.copa_del_rey (jour par jour)": 10,
-  "eng.fa (jour par jour)": 39,
+  "eng.fa (jour par jour)": 40,
   "eng.league_cup (jour par jour)": 0,
   "ita.coppa_italia (jour par jour)": 0,
   "ger.dfb_pokal (jour par jour)": 0,
-  "fra.1 (jour par jour)": 18,
-  "esp.1 (jour par jour)": 20,
+  "fra.1 (jour par jour)": 15,
+  "esp.1 (jour par jour)": 19,
   "eng.1 (jour par jour)": 20,
   "ita.1 (jour par jour)": 20,
-  "ger.1 (jour par jour)": 18
+  "ger.1 (jour par jour)": 17
  },
  "erreurs": [
-  "uefa.champions plage : HTTPError 400 Client Error: Bad Request for url: https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.champions/scoreboard?dates=20261030-20261108",
-  "uefa.europa plage : HTTPError 400 Client Error: Bad Request for url: https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa/scoreboard?dates=20261030-20261108",
-  "uefa.europa.conf plage : HTTPError 400 Client Error: Bad Request for url: https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa.conf/scoreboard?dates=20261030-20261108",
-  "fra.coupe_de_france plage : HTTPError 400 Client Error: Bad Request for url: https://site.api.espn.com/apis/site/v2/sports/soccer/fra.coupe_de_france/scoreboard?dates=20261030-20261108",
-  "esp.copa_del_rey plage : HTTPError 400 Client Error: Bad Request for url: https://site.api.espn.com/apis/site/v2/sports/soccer/esp.copa_del_rey/scoreboard?dates=20261030-20261108",
-  "eng.fa plage : HTTPError 400 Client Error: Bad Request for url: https://site.api.espn.com/apis/site/v2/sports/soccer/eng.fa/scoreboard?dates=20261030-20261108",
-  "eng.league_cup plage : HTTPError 400 Client Error: Bad Request for url: https://site.api.espn.com/apis/site/v2/sports/soccer/eng.league_cup/scoreboard?dates=20261030-20261108",
-  "ita.coppa_italia plage : HTTPError 400 Client Error: Bad Request for url: https://site.api.espn.com/apis/site/v2/sports/soccer/ita.coppa_italia/scoreboard?dates=20261030-20261108",
-  "ger.dfb_pokal plage : HTTPError 400 Client Error: Bad Request for url: https://site.api.espn.com/apis/site/v2/sports/soccer/ger.dfb_pokal/scoreboard?dates=20261030-20261108",
-  "fra.1 plage : HTTPError 400 Client Error: Bad Request for url: https://site.api.espn.com/apis/site/v2/sports/soccer/fra.1/scoreboard?dates=20261030-20261108",
-  "esp.1 plage : HTTPError 400 Client Error: Bad Request for url: https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/scoreboard?dates=20261030-20261108",
-  "eng.1 plage : HTTPError 400 Client Error: Bad Request for url: https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/scoreboard?dates=20261030-20261108",
-  "ita.1 plage : HTTPError 400 Client Error: Bad Request for url: https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/scoreboard?dates=20261030-20261108",
-  "ger.1 plage : HTTPError 400 Client Error: Bad Request for url: https://site.api.espn.com/apis/site/v2/sports/soccer/ger.1/scoreboard?dates=20261030-20261108"
+  "uefa.champions plage : HTTPError 400 Client Error: Bad Request for url: https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.champions/scoreboard?dates=20261031-20261109",
+  "uefa.europa plage : HTTPError 400 Client Error: Bad Request for url: https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa/scoreboard?dates=20261031-20261109",
+  "uefa.europa.conf plage : HTTPError 400 Client Error: Bad Request for url: https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa.conf/scoreboard?dates=20261031-20261109",
+  "fra.coupe_de_france plage : HTTPError 400 Client Error: Bad Request for url: https://site.api.espn.com/apis/site/v2/sports/soccer/fra.coupe_de_france/scoreboard?dates=20261031-20261109",
+  "esp.copa_del_rey plage : HTTPError 400 Client Error: Bad Request for url: https://site.api.espn.com/apis/site/v2/sports/soccer/esp.copa_del_rey/scoreboard?dates=20261031-20261109",
+  "eng.fa plage : HTTPError 400 Client Error: Bad Request for url: https://site.api.espn.com/apis/site/v2/sports/soccer/eng.fa/scoreboard?dates=20261031-20261109",
+  "eng.league_cup plage : HTTPError 400 Client Error: Bad Request for url: https://site.api.espn.com/apis/site/v2/sports/soccer/eng.league_cup/scoreboard?dates=20261031-20261109",
+  "ita.coppa_italia plage : HTTPError 400 Client Error: Bad Request for url: https://site.api.espn.com/apis/site/v2/sports/soccer/ita.coppa_italia/scoreboard?dates=20261031-20261109",
+  "ger.dfb_pokal plage : HTTPError 400 Client Error: Bad Request for url: https://site.api.espn.com/apis/site/v2/sports/soccer/ger.dfb_pokal/scoreboard?dates=20261031-20261109",
+  "fra.1 plage : HTTPError 400 Client Error: Bad Request for url: https://site.api.espn.com/apis/site/v2/sports/soccer/fra.1/scoreboard?dates=20261031-20261109",
+  "esp.1 plage : HTTPError 400 Client Error: Bad Request for url: https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/scoreboard?dates=20261031-20261109",
+  "eng.1 plage : HTTPError 400 Client Error: Bad Request for url: https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/scoreboard?dates=20261031-20261109",
+  "ita.1 plage : HTTPError 400 Client Error: Bad Request for url: https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/scoreboard?dates=20261031-20261109",
+  "ger.1 plage : HTTPError 400 Client Error: Bad Request for url: https://site.api.espn.com/apis/site/v2/sports/soccer/ger.1/scoreboard?dates=20261031-20261109"
  ]
 }

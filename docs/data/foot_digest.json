@@ -1,4 +1,55 @@
 {
- "generated_at": "2026-11-04T16:19:53.287845+00:00",
- "matches": []
+ "generated_at": "2026-11-05T16:29:23.106186+00:00",
+ "matches": [
+  {
+   "id": "foot:295076c39e49863cb54db085ac3cd340",
+   "sport": "foot",
+   "label": "Hamburg SV – Borussia Mönchengladbach",
+   "competition": "Bundesliga",
+   "time": "2026-11-06T19:30:00+00:00",
+   "verdict": "Écarté",
+   "line": "20:30 Hamburg SV – Borussia Mönchengladbach — écarté (favori pas assez net) : favori Hamburg SV 2.15 [Bundesliga]",
+   "brief": "Match de foot (Bundesliga) : Hamburg SV (domicile) contre Borussia Mönchengladbach (extérieur), le 06/11 à 20:30 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : Hamburg SV 2.15, nul 3.40, Borussia Mönchengladbach 2.60.\nAvis du bot : écarté — Favori pas assez net : Cote de 2.15, au-dessus de la limite de 1.80..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+  },
+  {
+   "id": "foot:5e7d141f719835de18877ed95bedcb32",
+   "sport": "foot",
+   "label": "Toulouse – Strasbourg",
+   "competition": "Ligue 1",
+   "time": "2026-11-06T19:45:00+00:00",
+   "verdict": "Écarté",
+   "line": "20:45 Toulouse – Strasbourg — écarté (favori pas assez net) : favori Toulouse 1.85 [Ligue 1]",
+   "brief": "Match de foot (Ligue 1) : Toulouse (domicile) contre Strasbourg (extérieur), le 06/11 à 20:45 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : Toulouse 1.85, nul 3.50, Strasbourg 3.10.\nAvis du bot : écarté — Favori pas assez net : Cote de 1.85, au-dessus de la limite de 1.80..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+  },
+  {
+   "id": "foot:fa069801a5c9b49143447a1a1d173fd1",
+   "sport": "foot",
+   "label": "Venezia – Udinese",
+   "competition": "Serie A",
+   "time": "2026-11-06T19:45:00+00:00",
+   "verdict": "Écarté",
+   "line": "20:45 Venezia – Udinese — écarté (favori pas assez net) : favori Venezia 1.98 [Serie A]",
+   "brief": "Match de foot (Serie A) : Venezia (domicile) contre Udinese (extérieur), le 06/11 à 20:45 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : Venezia 1.98, nul 3.30, Udinese 2.95.\nAvis du bot : écarté — Favori pas assez net : Cote de 1.98, au-dessus de la limite de 1.80..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+  },
+  {
+   "id": "foot:9dd0014685fd62d9b2890d7c33a8c9ab",
+   "sport": "foot",
+   "label": "Sevilla – Alavés",
+   "competition": "Liga",
+   "time": "2026-11-06T20:00:00+00:00",
+   "verdict": "Écarté",
+   "line": "21:00 Sevilla – Alavés — écarté (risque de match nul) : favori Sevilla 1.73 [Liga]",
+   "brief": "Match de foot (Liga) : Sevilla (domicile) contre Alavés (extérieur), le 06/11 à 21:00 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : Sevilla 1.73, nul 3.20, Alavés 3.80.\nAvis du bot : écarté — Risque de match nul : Le marché donne 28% de chances au nul (cote du nul 3.50) : match trop équilibré.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+  },
+  {
+   "id": "foot:586bec023ee8ac2f0645d963bd2c9d25",
+   "sport": "foot",
+   "label": "Everton – Coventry City",
+   "competition": "Premier League",
+   "time": "2026-11-06T20:00:00+00:00",
+   "verdict": "Écarté",
+   "line": "21:00 Everton – Coventry City — écarté (forme insuffisante) : favori Everton 1.60 [Premier League]",
+   "brief": "Match de foot (Premier League) : Everton (domicile) contre Coventry City (extérieur), le 06/11 à 21:00 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : Everton 1.60, nul 3.60, Coventry City 4.10.\nAvis du bot : écarté — Forme insuffisante : VNDDV sur les 5 derniers (1.4 point par match).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+  }
+ ]
 }

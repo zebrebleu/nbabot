@@ -1,25 +1,55 @@
 {
- "created_label": "mardi 03/11 à 23:16",
+ "created_label": "mercredi 04/11 à 23:32",
  "bets": [
   {
    "option": "Option 1 · Pari simple",
    "kind": "Pari simple",
-   "total": 1.59,
+   "total": 1.27,
    "legs": [
     {
-     "event_id": "b1f8e4cc08a752752738c51105899ad6",
-     "pick": "Frances Tiafoe",
+     "event_id": "4111a4ac0ae11935311b655ebadd040b",
+     "pick": "Tommy Paul",
      "opponent": "Quentin Halys",
-     "odds": 1.59,
+     "odds": 1.27,
      "tournament": "ATP Paris Masters",
      "best_of": 3,
-     "commence": "2026-11-04T10:00:00+00:00",
-     "time": "04/11 11:00",
-     "result": false
+     "commence": "2026-11-05T10:00:00+00:00",
+     "time": "05/11 11:00",
+     "result": true
     }
    ],
-   "status": "perdu"
+   "status": "gagné"
+  },
+  {
+   "option": "Option 2 · Combiné",
+   "kind": "Combiné de 2 matchs",
+   "total": 1.6,
+   "legs": [
+    {
+     "event_id": "4111a4ac0ae11935311b655ebadd040b",
+     "pick": "Tommy Paul",
+     "opponent": "Quentin Halys",
+     "odds": 1.27,
+     "tournament": "ATP Paris Masters",
+     "best_of": 3,
+     "commence": "2026-11-05T10:00:00+00:00",
+     "time": "05/11 11:00",
+     "result": true
+    },
+    {
+     "event_id": "8a2e76c34cf0bce53c2afc75d9f2793e",
+     "pick": "Ben Shelton",
+     "opponent": "Arthur Rinderknech",
+     "odds": 1.26,
+     "tournament": "ATP Paris Masters",
+     "best_of": 3,
+     "commence": "2026-11-05T11:10:00+00:00",
+     "time": "05/11 12:10",
+     "result": true
+    }
+   ],
+   "status": "gagné"
   }
  ],
- "status": "pari simple perdu"
+ "status": "pari simple gagné / combiné de 2 matchs gagné"
 }

@@ -1,75 +1,35 @@
 {
- "generated_at": "2026-11-04T22:32:51.016915+00:00",
+ "generated_at": "2026-11-05T16:29:13.736920+00:00",
  "matches": [
   {
-   "id": "tennis:4111a4ac0ae11935311b655ebadd040b",
+   "id": "tennis:6a03e950601f142942705acfb764d107",
    "sport": "tennis",
-   "label": "Tommy Paul – Quentin Halys",
+   "label": "Arthur Fils – Taylor Fritz",
    "competition": "ATP Paris Masters",
-   "time": "2026-11-05T10:00:00+00:00",
-   "verdict": "À jouer",
-   "line": "11:00 Tommy Paul – Quentin Halys — À JOUER : Tommy Paul 1.27 (72% estimé) [ATP Paris Masters]",
-   "brief": "Match de tennis (ATP Paris Masters, dur) : Tommy Paul contre Quentin Halys, le 05/11 à 11:00 (heure de Paris).\nCotes Unibet : Tommy Paul 1.27, Quentin Halys 3.00.\nAvis du bot : à jouer — Tommy Paul gagne, confiance moyenne, chances estimées 72%, mise conseillée 25 €.\nAtouts : Gros écart de classement : 14e contre 46e ; Quentin Halys sort d'un match long (3 sets, 29 jeux).\nPoints de vigilance : Cote Unibet en dessous du marché (79% contre 72%).\nForme récente (10 derniers matchs) : Tommy Paul : 7V-3D, 2 victoires de suite / Quentin Halys : 5V-5D, 2 victoires de suite\nConfrontations depuis 2023 : Aucune confrontation sur les 3 dernières saisons\nClassement : Tommy Paul : 14e mondial / Quentin Halys : 46e mondial\nSaisons précédentes : Tommy Paul : 2025 29V-14D (dur 18V-9D) · 2024 45V-19D (dur 34V-15D) · 2023 42V-25D (dur 35V-19D) / Quentin Halys : 2025 18V-28D (dur 14V-21D) · 2024 26V-13D (dur 13V-9D) · 2023 17V-22D (dur 11V-18D)\nSur dur : Tommy Paul : 125V-59D (68%) / Quentin Halys : 67V-65D (51%)\nDernier match : Tommy Paul : il y a 22 h : victoire contre Daniel Merida (2 sets, 14 jeux) / Quentin Halys : il y a 24 h : victoire contre Frances Tiafoe (3 sets, 29 jeux)\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
-  },
-  {
-   "id": "tennis:8a2e76c34cf0bce53c2afc75d9f2793e",
-   "sport": "tennis",
-   "label": "Ben Shelton – Arthur Rinderknech",
-   "competition": "ATP Paris Masters",
-   "time": "2026-11-05T11:10:00+00:00",
-   "verdict": "À jouer",
-   "line": "12:10 Ben Shelton – Arthur Rinderknech — À JOUER : Ben Shelton 1.26 (73% estimé) [ATP Paris Masters]",
-   "brief": "Match de tennis (ATP Paris Masters, dur) : Ben Shelton contre Arthur Rinderknech, le 05/11 à 12:10 (heure de Paris).\nCotes Unibet : Ben Shelton 1.26, Arthur Rinderknech 3.25.\nAvis du bot : à jouer — Ben Shelton gagne, confiance moyenne, chances estimées 73%, mise conseillée 25 €.\nAtouts : Gros écart de classement : 4e contre 68e.\nPoints de vigilance : Confrontations : A perdu la dernière confrontation (0-1 en faveur de Arthur Rinderknech) ; Cote Unibet en dessous du marché (79% contre 73%).\nForme récente (10 derniers matchs) : Ben Shelton : 7V-3D, 1 victoire de suite / Arthur Rinderknech : 6V-4D, 2 victoires de suite\nConfrontations depuis 2023 : Ben Shelton 0V-1D · derniers : 06/2025 HSBC Championships (D)\nClassement : Ben Shelton : 4e mondial / Arthur Rinderknech : 68e mondial\nSaisons précédentes : Ben Shelton : 2025 41V-24D (dur 31V-17D) · 2024 41V-24D (dur 33V-17D) · 2023 25V-24D (dur 22V-15D) / Arthur Rinderknech : 2025 30V-31D (dur 22V-20D) · 2024 29V-29D (dur 25V-22D) · 2023 15V-26D (dur 10V-20D)\nSur dur : Ben Shelton : 122V-60D (67%) / Arthur Rinderknech : 67V-76D (47%)\nDernier match : Ben Shelton : il y a 41 h : victoire contre Cameron Norrie (2 sets, 19 jeux) / Arthur Rinderknech : il y a 25 h : victoire contre Mattia Bellucci (2 sets, 17 jeux)\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
-  },
-  {
-   "id": "tennis:8962e5108426884c7237a80948c77cfb",
-   "sport": "tennis",
-   "label": "Lorenzo Musetti – Luca Van Assche",
-   "competition": "ATP Paris Masters",
-   "time": "2026-11-05T12:20:00+00:00",
-   "verdict": "Validé",
-   "line": "13:20 Lorenzo Musetti – Luca Van Assche — validé : Lorenzo Musetti 1.27 (72% estimé) [ATP Paris Masters]",
-   "brief": "Match de tennis (ATP Paris Masters, dur) : Lorenzo Musetti contre Luca Van Assche, le 05/11 à 13:20 (heure de Paris).\nCotes Unibet : Lorenzo Musetti 1.27, Luca Van Assche 3.00.\nAvis du bot : validé, non retenu — Lorenzo Musetti gagne, confiance moyenne, chances estimées 72%, mise conseillée 25 €.\nAtouts : Nette différence de forme : 8V-2D contre 5V-5D ; Gros écart de classement : 24e contre 47e.\nPoints de vigilance : Cote Unibet en dessous du marché (79% contre 72%).\nForme récente (10 derniers matchs) : Lorenzo Musetti : 8V-2D, 2 victoires de suite / Luca Van Assche : 5V-5D, 2 victoires de suite\nConfrontations depuis 2023 : Lorenzo Musetti 1V-1D · derniers : 01/2024 Australian Open (D), 10/2026 Grand Prix Auvergne-Rhône-Alpes (V)\nClassement : Lorenzo Musetti : 24e mondial / Luca Van Assche : 47e mondial\nSaisons précédentes : Lorenzo Musetti : 2025 45V-23D (dur 27V-18D) · 2024 41V-27D (dur 26V-18D) · 2023 29V-26D (dur 12V-17D) / Luca Van Assche : 2025 9V-10D (dur 5V-6D) · 2024 17V-25D (dur 13V-18D) · 2023 15V-25D (dur 7V-17D)\nSur dur : Lorenzo Musetti : 87V-62D (58%) / Luca Van Assche : 37V-54D (41%)\nDernier match : Lorenzo Musetti : il y a 24 h : victoire contre Alexander Zverev (2 sets, 21 jeux) / Luca Van Assche : il y a 25 h : victoire contre Learner Tien (2 sets, 23 jeux)\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
-  },
-  {
-   "id": "tennis:ce54c1892701e4d3d4713f621a47cc00",
-   "sport": "tennis",
-   "label": "Rinky Hijikata – Tomas Martin Etcheverry",
-   "competition": "ATP Paris Masters",
-   "time": "2026-11-05T13:00:00+00:00",
+   "time": "2026-11-05T18:00:00+00:00",
    "verdict": "Écarté",
-   "line": "14:00 Rinky Hijikata – Tomas Martin Etcheverry — écarté (forme insuffisante) : favori Tomas Martin Etcheverry 1.65 [ATP Paris Masters]",
-   "brief": "Match de tennis (ATP Paris Masters, dur) : Rinky Hijikata contre Tomas Martin Etcheverry, le 05/11 à 14:00 (heure de Paris).\nCotes Unibet : Rinky Hijikata 1.95, Tomas Martin Etcheverry 1.65.\nAvis du bot : écarté — Forme insuffisante : 4V-6D sur ses 10 derniers matchs.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
-  },
-  {
-   "id": "tennis:235263f6f3bbd21f2327b39e61407934",
-   "sport": "tennis",
-   "label": "Nuno Borges – Ignacio Buse",
-   "competition": "ATP Paris Masters",
-   "time": "2026-11-05T14:10:00+00:00",
-   "verdict": "Écarté",
-   "line": "15:10 Nuno Borges – Ignacio Buse — écarté (pas à l'aise sur la surface) : favori Nuno Borges 1.58 [ATP Paris Masters]",
-   "brief": "Match de tennis (ATP Paris Masters, dur) : Nuno Borges contre Ignacio Buse, le 05/11 à 15:10 (heure de Paris).\nCotes Unibet : Nuno Borges 1.58, Ignacio Buse 2.05.\nAvis du bot : écarté — Pas à l'aise sur la surface : 71V-69D sur dur depuis 2023 (51%).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "19:00 Arthur Fils – Taylor Fritz — écarté (blessure possible) : favori Arthur Fils 1.65 [ATP Paris Masters]",
+   "brief": "Match de tennis (ATP Paris Masters, dur) : Arthur Fils contre Taylor Fritz, le 05/11 à 19:00 (heure de Paris).\nCotes Unibet : Arthur Fils 1.65, Taylor Fritz 2.05.\nAvis du bot : écarté — Blessure possible : Abandon ou forfait le 30/10 contre Taylor Fritz (Swiss Indoors Basel).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "tennis:47d9edba7490e876194504362c877fe3",
    "sport": "tennis",
    "label": "Jan-Lennard Struff – Casper Ruud",
    "competition": "ATP Paris Masters",
-   "time": "2026-11-05T15:20:00+00:00",
+   "time": "2026-11-05T19:30:00+00:00",
    "verdict": "Écarté",
-   "line": "16:20 Jan-Lennard Struff – Casper Ruud — écarté (l'outsider est en forme) : favori Casper Ruud 1.40 [ATP Paris Masters]",
-   "brief": "Match de tennis (ATP Paris Masters, dur) : Jan-Lennard Struff contre Casper Ruud, le 05/11 à 16:20 (heure de Paris).\nCotes Unibet : Jan-Lennard Struff 2.50, Casper Ruud 1.40.\nAvis du bot : écarté — L'outsider est en forme : L'outsider est en meilleure forme : Casper Ruud 6V-4D vs Jan-Lennard Struff 8V-2D.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "20:30 Jan-Lennard Struff – Casper Ruud — écarté (l'outsider est en forme) : favori Casper Ruud 1.39 [ATP Paris Masters]",
+   "brief": "Match de tennis (ATP Paris Masters, dur) : Jan-Lennard Struff contre Casper Ruud, le 05/11 à 20:30 (heure de Paris).\nCotes Unibet : Jan-Lennard Struff 2.40, Casper Ruud 1.39.\nAvis du bot : écarté — L'outsider est en forme : L'outsider est en meilleure forme : Casper Ruud 6V-4D vs Jan-Lennard Struff 8V-2D.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
-   "id": "tennis:1ef82c68f5ccf78aa0a6d031f750cc6e",
+   "id": "tennis:10a66a309af482f75813cc0d9ce0bdd1",
    "sport": "tennis",
-   "label": "Matteo Berrettini – Carlos Alcaraz",
+   "label": "Ben Shelton – Tommy Paul",
    "competition": "ATP Paris Masters",
-   "time": "2026-11-05T18:00:00+00:00",
-   "verdict": "Écarté",
-   "line": "19:00 Matteo Berrettini – Carlos Alcaraz — écarté (cote trop basse) : favori Carlos Alcaraz 1.09 [ATP Paris Masters]",
-   "brief": "Match de tennis (ATP Paris Masters, dur) : Matteo Berrettini contre Carlos Alcaraz, le 05/11 à 19:00 (heure de Paris).\nCotes Unibet : Matteo Berrettini 4.95, Carlos Alcaraz 1.09.\nAvis du bot : écarté — Cote trop basse : Favori à 1.09 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "time": "2026-11-06T10:00:00+00:00",
+   "verdict": "À jouer",
+   "line": "11:00 Ben Shelton – Tommy Paul — À JOUER : Tommy Paul 1.65 (53% estimé) [ATP Paris Masters]",
+   "brief": "Match de tennis (ATP Paris Masters, dur) : Ben Shelton contre Tommy Paul, le 06/11 à 11:00 (heure de Paris).\nCotes Unibet : Ben Shelton 1.87, Tommy Paul 1.65.\nAvis du bot : à jouer — Tommy Paul gagne, confiance prudente, chances estimées 53%, mise conseillée 15 €.\nAtouts : Ben Shelton sort d'un match long (3 sets, 32 jeux).\nPoints de vigilance : Cote de 1.65 : favori moins net, une défaite est plausible ; Cote Unibet en dessous du marché (61% contre 53%).\nForme récente (10 derniers matchs) : Tommy Paul : 7V-3D, 3 victoires de suite / Ben Shelton : 7V-3D, 2 victoires de suite\nConfrontations depuis 2023 : Tommy Paul 2V-2D · derniers : 01/2023 Australian Open (V), 09/2023 US Open (D), 10/2023 Kinoshita Group Japan Open Tennis Championships (D), 02/2024 Nexo Dallas Open (V)\nClassement : Tommy Paul : 14e mondial / Ben Shelton : 4e mondial\nSaisons précédentes : Tommy Paul : 2025 29V-14D (dur 18V-9D) · 2024 45V-19D (dur 34V-15D) · 2023 42V-25D (dur 35V-19D) / Ben Shelton : 2025 41V-24D (dur 31V-17D) · 2024 41V-24D (dur 33V-17D) · 2023 25V-24D (dur 22V-15D)\nSur dur : Tommy Paul : 126V-59D (68%) / Ben Shelton : 123V-60D (67%)\nDernier match : Tommy Paul : il y a 24 h : victoire contre Quentin Halys (2 sets, 23 jeux) / Ben Shelton : il y a 22 h : victoire contre Arthur Rinderknech (3 sets, 32 jeux)\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   }
  ]
 }
