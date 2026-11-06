@@ -1,12 +1,12 @@
 {
- "created": "2026-11-05T22:38:50.187234+00:00",
- "created_label": "jeudi 05/11 à 23:38",
+ "created": "2026-11-06T15:55:50.253758+00:00",
+ "created_label": "vendredi 06/11 à 16:55",
  "bets": [
   {
    "option": "Option 1 · Pari simple",
    "kind": "Pari simple",
    "total": 1.26,
-   "prob": 0.727,
+   "prob": 0.718,
    "stake": 25,
    "legs": [
     {
@@ -24,9 +24,9 @@
   {
    "option": "Option 2 · Combiné",
    "kind": "Combiné de 2 matchs",
-   "total": 1.8,
-   "prob": 0.448,
-   "stake": 15,
+   "total": 1.68,
+   "prob": 0.481,
+   "stake": 25,
    "legs": [
     {
      "event_id": "e4e0781ebc80c47d216dd73609a3c8e0",
@@ -42,7 +42,7 @@
      "event_id": "0adc47c275819823d018232033a6de7f",
      "pick": "Casper Ruud",
      "opponent": "Nuno Borges",
-     "odds": 1.43,
+     "odds": 1.33,
      "tournament": "ATP Paris Masters",
      "best_of": 3,
      "commence": "2026-11-06T19:30:00+00:00",

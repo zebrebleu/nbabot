@@ -1,26 +1,6 @@
 {
- "generated_at": "2026-11-05T22:38:50.187234+00:00",
+ "generated_at": "2026-11-06T15:55:50.253758+00:00",
  "matches": [
-  {
-   "id": "tennis:10a66a309af482f75813cc0d9ce0bdd1",
-   "sport": "tennis",
-   "label": "Ben Shelton – Tommy Paul",
-   "competition": "ATP Paris Masters",
-   "time": "2026-11-06T13:00:00+00:00",
-   "verdict": "Validé",
-   "line": "14:00 Ben Shelton – Tommy Paul — validé : Tommy Paul 1.61 (55% estimé) [ATP Paris Masters]",
-   "brief": "Match de tennis (ATP Paris Masters, dur) : Ben Shelton contre Tommy Paul, le 06/11 à 14:00 (heure de Paris).\nCotes Unibet : Ben Shelton 1.93, Tommy Paul 1.61.\nAvis du bot : validé, non retenu — Tommy Paul gagne, confiance prudente, chances estimées 55%, mise conseillée 15 €.\nAtouts : Ben Shelton sort d'un match long (3 sets, 32 jeux).\nPoints de vigilance : Cote de 1.61 : favori moins net, une défaite est plausible ; Cote Unibet en dessous du marché (62% contre 55%).\nForme récente (10 derniers matchs) : Tommy Paul : 7V-3D, 3 victoires de suite / Ben Shelton : 7V-3D, 2 victoires de suite\nConfrontations depuis 2023 : Tommy Paul 2V-2D · derniers : 01/2023 Australian Open (V), 09/2023 US Open (D), 10/2023 Kinoshita Group Japan Open Tennis Championships (D), 02/2024 Nexo Dallas Open (V)\nClassement : Tommy Paul : 14e mondial / Ben Shelton : 4e mondial\nSaisons précédentes : Tommy Paul : 2025 29V-14D (dur 18V-9D) · 2024 45V-19D (dur 34V-15D) · 2023 42V-25D (dur 35V-19D) / Ben Shelton : 2025 41V-24D (dur 31V-17D) · 2024 41V-24D (dur 33V-17D) · 2023 25V-24D (dur 22V-15D)\nSur dur : Tommy Paul : 126V-59D (68%) / Ben Shelton : 123V-60D (67%)\nDernier match : Tommy Paul : il y a 27 h : victoire contre Quentin Halys (2 sets, 23 jeux) / Ben Shelton : il y a 25 h : victoire contre Arthur Rinderknech (3 sets, 32 jeux)\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
-  },
-  {
-   "id": "tennis:f1676b13a42184d83dee9e84e1b17aa5",
-   "sport": "tennis",
-   "label": "Luca Van Assche – Rinky Hijikata",
-   "competition": "ATP Paris Masters",
-   "time": "2026-11-06T14:10:00+00:00",
-   "verdict": "Écarté",
-   "line": "15:10 Luca Van Assche – Rinky Hijikata — écarté (fatigue) : favori Luca Van Assche 1.51 [ATP Paris Masters]",
-   "brief": "Match de tennis (ATP Paris Masters, dur) : Luca Van Assche contre Rinky Hijikata, le 06/11 à 15:10 (heure de Paris).\nCotes Unibet : Luca Van Assche 1.51, Rinky Hijikata 2.30.\nAvis du bot : écarté — Fatigue : Match long il y a 24 h : 3 sets, 31 jeux contre Lorenzo Musetti.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
-  },
   {
    "id": "tennis:e4e0781ebc80c47d216dd73609a3c8e0",
    "sport": "tennis",
@@ -28,8 +8,8 @@
    "competition": "ATP Paris Masters",
    "time": "2026-11-06T18:00:00+00:00",
    "verdict": "À jouer",
-   "line": "19:00 Taylor Fritz – Carlos Alcaraz — À JOUER : Carlos Alcaraz 1.26 (73% estimé) [ATP Paris Masters]",
-   "brief": "Match de tennis (ATP Paris Masters, dur) : Taylor Fritz contre Carlos Alcaraz, le 06/11 à 19:00 (heure de Paris).\nCotes Unibet : Taylor Fritz 3.25, Carlos Alcaraz 1.26.\nAvis du bot : à jouer — Carlos Alcaraz gagne, confiance moyenne, chances estimées 73%, mise conseillée 25 €.\nAtouts : Très à l'aise sur dur : 145V-30D ; Mène les confrontations : 4-0.\nPoints de vigilance : Cote Unibet en dessous du marché (79% contre 73%).\nForme récente (10 derniers matchs) : Carlos Alcaraz : 9V-1D, 7 victoires de suite / Taylor Fritz : 8V-2D, 3 victoires de suite\nConfrontations depuis 2023 : Carlos Alcaraz 4V-0D · derniers : 03/2023 Miami Open presented by Itau (V), 07/2025 Wimbledon (V), 09/2025 Kinoshita Group Japan Open Tennis Championships (V), 11/2025 Nitto ATP Finals (V)\nClassement : Carlos Alcaraz : 3e mondial / Taylor Fritz : 12e mondial\nSaisons précédentes : Carlos Alcaraz : 2025 70V-8D (dur 42V-6D) · 2024 49V-13D (dur 32V-11D) · 2023 65V-12D (dur 37V-9D) / Taylor Fritz : 2025 46V-21D (dur 30V-16D) · 2024 49V-21D (dur 31V-15D) · 2023 49V-23D (dur 38V-15D)\nSur dur : Carlos Alcaraz : 145V-30D (83%) / Taylor Fritz : 134V-59D (69%)\nDernier match : Carlos Alcaraz : il y a 24 h : victoire contre Matteo Berrettini (0 sets, 0 jeux) / Taylor Fritz : il y a 24 h : victoire contre Arthur Fils (2 sets, 19 jeux)\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "19:00 Taylor Fritz – Carlos Alcaraz — À JOUER : Carlos Alcaraz 1.26 (72% estimé) [ATP Paris Masters]",
+   "brief": "Match de tennis (ATP Paris Masters, dur) : Taylor Fritz contre Carlos Alcaraz, le 06/11 à 19:00 (heure de Paris).\nCotes Unibet : Taylor Fritz 3.35, Carlos Alcaraz 1.26.\nAvis du bot : à jouer — Carlos Alcaraz gagne, confiance moyenne, chances estimées 72%, mise conseillée 25 €.\nAtouts : Très à l'aise sur dur : 145V-30D ; Mène les confrontations : 4-0.\nPoints de vigilance : Cote Unibet en dessous du marché (79% contre 72%).\nForme récente (10 derniers matchs) : Carlos Alcaraz : 9V-1D, 7 victoires de suite / Taylor Fritz : 8V-2D, 3 victoires de suite\nConfrontations depuis 2023 : Carlos Alcaraz 4V-0D · derniers : 03/2023 Miami Open presented by Itau (V), 07/2025 Wimbledon (V), 09/2025 Kinoshita Group Japan Open Tennis Championships (V), 11/2025 Nitto ATP Finals (V)\nClassement : Carlos Alcaraz : 3e mondial / Taylor Fritz : 12e mondial\nSaisons précédentes : Carlos Alcaraz : 2025 70V-8D (dur 42V-6D) · 2024 49V-13D (dur 32V-11D) · 2023 65V-12D (dur 37V-9D) / Taylor Fritz : 2025 46V-21D (dur 30V-16D) · 2024 49V-21D (dur 31V-15D) · 2023 49V-23D (dur 38V-15D)\nSur dur : Carlos Alcaraz : 145V-30D (83%) / Taylor Fritz : 134V-59D (69%)\nDernier match : Carlos Alcaraz : il y a 24 h : victoire contre Matteo Berrettini (0 sets, 0 jeux) / Taylor Fritz : il y a 24 h : victoire contre Arthur Fils (2 sets, 19 jeux)\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "tennis:0adc47c275819823d018232033a6de7f",
@@ -38,8 +18,8 @@
    "competition": "ATP Paris Masters",
    "time": "2026-11-06T19:30:00+00:00",
    "verdict": "À jouer",
-   "line": "20:30 Casper Ruud – Nuno Borges — À JOUER : Casper Ruud 1.43 (62% estimé) [ATP Paris Masters]",
-   "brief": "Match de tennis (ATP Paris Masters, dur) : Casper Ruud contre Nuno Borges, le 06/11 à 20:30 (heure de Paris).\nCotes Unibet : Casper Ruud 1.43, Nuno Borges 2.25.\nAvis du bot : à jouer — Casper Ruud gagne, confiance prudente, chances estimées 62%, mise conseillée 15 €.\nAtouts : Gros écart de classement : 23e contre 49e.\nPoints de vigilance : Confrontations : A perdu la dernière confrontation (2-2 en faveur de Casper Ruud) ; Cote Unibet en dessous du marché (70% contre 62%).\nForme récente (10 derniers matchs) : Casper Ruud : 7V-3D, 3 victoires de suite / Nuno Borges : 7V-3D, 3 victoires de suite\nConfrontations depuis 2023 : Casper Ruud 2V-2D · derniers : 02/2024 Mifel Tennis Open by Telcel Oppo (V), 05/2025 Roland Garros (D), 07/2025 National Bank Open presented by Rogers (V), 10/2026 Swiss Indoors Basel (D)\nClassement : Casper Ruud : 23e mondial / Nuno Borges : 49e mondial\nSaisons précédentes : Casper Ruud : 2025 34V-17D (dur 20V-12D) · 2024 47V-24D (dur 24V-18D) · 2023 35V-22D (dur 15V-14D) / Nuno Borges : 2025 29V-28D (dur 20V-21D) · 2024 27V-24D (dur 22V-18D) · 2023 11V-19D (dur 8V-12D)\nSur dur : Casper Ruud : 73V-55D (57%) / Nuno Borges : 72V-69D (51%)\nDernier match : Casper Ruud : il y a 24 h : victoire contre Jan-Lennard Struff (2 sets, 18 jeux) / Nuno Borges : il y a 27 h : victoire contre Ignacio Buse (2 sets, 14 jeux)\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "20:30 Casper Ruud – Nuno Borges — À JOUER : Casper Ruud 1.33 (67% estimé) [ATP Paris Masters]",
+   "brief": "Match de tennis (ATP Paris Masters, dur) : Casper Ruud contre Nuno Borges, le 06/11 à 20:30 (heure de Paris).\nCotes Unibet : Casper Ruud 1.33, Nuno Borges 2.60.\nAvis du bot : à jouer — Casper Ruud gagne, confiance moyenne, chances estimées 67%, mise conseillée 25 €.\nAtouts : Gros écart de classement : 23e contre 49e.\nPoints de vigilance : Confrontations : A perdu la dernière confrontation (2-2 en faveur de Casper Ruud) ; Cote Unibet en dessous du marché (75% contre 67%).\nForme récente (10 derniers matchs) : Casper Ruud : 7V-3D, 3 victoires de suite / Nuno Borges : 7V-3D, 3 victoires de suite\nConfrontations depuis 2023 : Casper Ruud 2V-2D · derniers : 02/2024 Mifel Tennis Open by Telcel Oppo (V), 05/2025 Roland Garros (D), 07/2025 National Bank Open presented by Rogers (V), 10/2026 Swiss Indoors Basel (D)\nClassement : Casper Ruud : 23e mondial / Nuno Borges : 49e mondial\nSaisons précédentes : Casper Ruud : 2025 34V-17D (dur 20V-12D) · 2024 47V-24D (dur 24V-18D) · 2023 35V-22D (dur 15V-14D) / Nuno Borges : 2025 29V-28D (dur 20V-21D) · 2024 27V-24D (dur 22V-18D) · 2023 11V-19D (dur 8V-12D)\nSur dur : Casper Ruud : 73V-55D (57%) / Nuno Borges : 72V-69D (51%)\nDernier match : Casper Ruud : il y a 24 h : victoire contre Jan-Lennard Struff (2 sets, 18 jeux) / Nuno Borges : il y a 27 h : victoire contre Ignacio Buse (2 sets, 14 jeux)\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   }
  ]
 }
