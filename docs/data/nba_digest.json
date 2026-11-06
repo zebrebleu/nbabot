@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-06T20:05:43.838847+00:00",
+ "generated_at": "2026-11-06T22:00:32.032309+00:00",
  "matches": [
   {
    "id": "nba:9246c91f746732472c13e94bd8e7be85",
@@ -7,8 +7,8 @@
    "label": "Washington Wizards @ Atlanta Hawks",
    "time": "2026-11-07T00:00:00+00:00",
    "verdict": "Écarté",
-   "line": "01:00 Washington Wizards @ Atlanta Hawks — écarté (forme insuffisante) : favori Atlanta Hawks 1.26",
-   "brief": "Match NBA : Washington Wizards (extérieur) contre Atlanta Hawks (domicile), le 07/11 à 01:00 (heure de Paris).\nCotes Unibet : Washington Wizards 3.05, Atlanta Hawks 1.26.\nAvis du bot : écarté — Forme insuffisante : 1V-2D sur ses 3 derniers à domicile (2 V requises).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "01:00 Washington Wizards @ Atlanta Hawks — écarté (forme insuffisante) : favori Atlanta Hawks 1.27",
+   "brief": "Match NBA : Washington Wizards (extérieur) contre Atlanta Hawks (domicile), le 07/11 à 01:00 (heure de Paris).\nCotes Unibet : Washington Wizards 3.05, Atlanta Hawks 1.27.\nAvis du bot : écarté — Forme insuffisante : 1V-2D sur ses 3 derniers à domicile (2 V requises).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:49daf3d42e20ce4bc70f8a68cf70ce4c",
@@ -80,7 +80,7 @@
    "time": "2026-11-07T03:00:00+00:00",
    "verdict": "Écarté",
    "line": "04:00 San Antonio Spurs @ Sacramento Kings — écarté (cote trop basse) : favori San Antonio Spurs 1.05",
-   "brief": "Match NBA : San Antonio Spurs (extérieur) contre Sacramento Kings (domicile), le 07/11 à 04:00 (heure de Paris).\nCotes Unibet : San Antonio Spurs 1.05, Sacramento Kings 6.00.\nAvis du bot : écarté — Cote trop basse : Favori à 1.05 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "brief": "Match NBA : San Antonio Spurs (extérieur) contre Sacramento Kings (domicile), le 07/11 à 04:00 (heure de Paris).\nCotes Unibet : San Antonio Spurs 1.05, Sacramento Kings 5.90.\nAvis du bot : écarté — Cote trop basse : Favori à 1.05 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   }
  ]
 }

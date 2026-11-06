@@ -1,25 +1,15 @@
 {
- "generated_at": "2026-11-06T15:55:50.253758+00:00",
+ "generated_at": "2026-11-06T22:00:34.608944+00:00",
  "matches": [
   {
-   "id": "tennis:e4e0781ebc80c47d216dd73609a3c8e0",
+   "id": "tennis:9ebb22b87460accfb899c0e613b47651",
    "sport": "tennis",
-   "label": "Taylor Fritz – Carlos Alcaraz",
+   "label": "Luca Van Assche – Ben Shelton",
    "competition": "ATP Paris Masters",
-   "time": "2026-11-06T18:00:00+00:00",
-   "verdict": "À jouer",
-   "line": "19:00 Taylor Fritz – Carlos Alcaraz — À JOUER : Carlos Alcaraz 1.26 (72% estimé) [ATP Paris Masters]",
-   "brief": "Match de tennis (ATP Paris Masters, dur) : Taylor Fritz contre Carlos Alcaraz, le 06/11 à 19:00 (heure de Paris).\nCotes Unibet : Taylor Fritz 3.35, Carlos Alcaraz 1.26.\nAvis du bot : à jouer — Carlos Alcaraz gagne, confiance moyenne, chances estimées 72%, mise conseillée 25 €.\nAtouts : Très à l'aise sur dur : 145V-30D ; Mène les confrontations : 4-0.\nPoints de vigilance : Cote Unibet en dessous du marché (79% contre 72%).\nForme récente (10 derniers matchs) : Carlos Alcaraz : 9V-1D, 7 victoires de suite / Taylor Fritz : 8V-2D, 3 victoires de suite\nConfrontations depuis 2023 : Carlos Alcaraz 4V-0D · derniers : 03/2023 Miami Open presented by Itau (V), 07/2025 Wimbledon (V), 09/2025 Kinoshita Group Japan Open Tennis Championships (V), 11/2025 Nitto ATP Finals (V)\nClassement : Carlos Alcaraz : 3e mondial / Taylor Fritz : 12e mondial\nSaisons précédentes : Carlos Alcaraz : 2025 70V-8D (dur 42V-6D) · 2024 49V-13D (dur 32V-11D) · 2023 65V-12D (dur 37V-9D) / Taylor Fritz : 2025 46V-21D (dur 30V-16D) · 2024 49V-21D (dur 31V-15D) · 2023 49V-23D (dur 38V-15D)\nSur dur : Carlos Alcaraz : 145V-30D (83%) / Taylor Fritz : 134V-59D (69%)\nDernier match : Carlos Alcaraz : il y a 24 h : victoire contre Matteo Berrettini (0 sets, 0 jeux) / Taylor Fritz : il y a 24 h : victoire contre Arthur Fils (2 sets, 19 jeux)\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
-  },
-  {
-   "id": "tennis:0adc47c275819823d018232033a6de7f",
-   "sport": "tennis",
-   "label": "Casper Ruud – Nuno Borges",
-   "competition": "ATP Paris Masters",
-   "time": "2026-11-06T19:30:00+00:00",
-   "verdict": "À jouer",
-   "line": "20:30 Casper Ruud – Nuno Borges — À JOUER : Casper Ruud 1.33 (67% estimé) [ATP Paris Masters]",
-   "brief": "Match de tennis (ATP Paris Masters, dur) : Casper Ruud contre Nuno Borges, le 06/11 à 20:30 (heure de Paris).\nCotes Unibet : Casper Ruud 1.33, Nuno Borges 2.60.\nAvis du bot : à jouer — Casper Ruud gagne, confiance moyenne, chances estimées 67%, mise conseillée 25 €.\nAtouts : Gros écart de classement : 23e contre 49e.\nPoints de vigilance : Confrontations : A perdu la dernière confrontation (2-2 en faveur de Casper Ruud) ; Cote Unibet en dessous du marché (75% contre 67%).\nForme récente (10 derniers matchs) : Casper Ruud : 7V-3D, 3 victoires de suite / Nuno Borges : 7V-3D, 3 victoires de suite\nConfrontations depuis 2023 : Casper Ruud 2V-2D · derniers : 02/2024 Mifel Tennis Open by Telcel Oppo (V), 05/2025 Roland Garros (D), 07/2025 National Bank Open presented by Rogers (V), 10/2026 Swiss Indoors Basel (D)\nClassement : Casper Ruud : 23e mondial / Nuno Borges : 49e mondial\nSaisons précédentes : Casper Ruud : 2025 34V-17D (dur 20V-12D) · 2024 47V-24D (dur 24V-18D) · 2023 35V-22D (dur 15V-14D) / Nuno Borges : 2025 29V-28D (dur 20V-21D) · 2024 27V-24D (dur 22V-18D) · 2023 11V-19D (dur 8V-12D)\nSur dur : Casper Ruud : 73V-55D (57%) / Nuno Borges : 72V-69D (51%)\nDernier match : Casper Ruud : il y a 24 h : victoire contre Jan-Lennard Struff (2 sets, 18 jeux) / Nuno Borges : il y a 27 h : victoire contre Ignacio Buse (2 sets, 14 jeux)\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "time": "2026-11-07T13:30:00+00:00",
+   "verdict": "Écarté",
+   "line": "14:30 Luca Van Assche – Ben Shelton — écarté (cote trop basse) : favori Ben Shelton 1.22 [ATP Paris Masters]",
+   "brief": "Match de tennis (ATP Paris Masters, dur) : Luca Van Assche contre Ben Shelton, le 07/11 à 14:30 (heure de Paris).\nCotes Unibet : Luca Van Assche 3.55, Ben Shelton 1.22.\nAvis du bot : écarté — Cote trop basse : Favori à 1.22 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   }
  ]
 }
