@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-06T15:55:48.199377+00:00",
+ "generated_at": "2026-11-06T20:05:43.838847+00:00",
  "matches": [
   {
    "id": "nba:9246c91f746732472c13e94bd8e7be85",
@@ -7,8 +7,8 @@
    "label": "Washington Wizards @ Atlanta Hawks",
    "time": "2026-11-07T00:00:00+00:00",
    "verdict": "Écarté",
-   "line": "01:00 Washington Wizards @ Atlanta Hawks — écarté (forme insuffisante) : favori Atlanta Hawks 1.28",
-   "brief": "Match NBA : Washington Wizards (extérieur) contre Atlanta Hawks (domicile), le 07/11 à 01:00 (heure de Paris).\nCotes Unibet : Washington Wizards 2.95, Atlanta Hawks 1.28.\nAvis du bot : écarté — Forme insuffisante : 1V-2D sur ses 3 derniers à domicile (2 V requises).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "01:00 Washington Wizards @ Atlanta Hawks — écarté (forme insuffisante) : favori Atlanta Hawks 1.26",
+   "brief": "Match NBA : Washington Wizards (extérieur) contre Atlanta Hawks (domicile), le 07/11 à 01:00 (heure de Paris).\nCotes Unibet : Washington Wizards 3.05, Atlanta Hawks 1.26.\nAvis du bot : écarté — Forme insuffisante : 1V-2D sur ses 3 derniers à domicile (2 V requises).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:49daf3d42e20ce4bc70f8a68cf70ce4c",
@@ -16,8 +16,8 @@
    "label": "Boston Celtics @ Charlotte Hornets",
    "time": "2026-11-07T00:00:00+00:00",
    "verdict": "Écarté",
-   "line": "01:00 Boston Celtics @ Charlotte Hornets — écarté (forme insuffisante) : favori Boston Celtics 1.25",
-   "brief": "Match NBA : Boston Celtics (extérieur) contre Charlotte Hornets (domicile), le 07/11 à 01:00 (heure de Paris).\nCotes Unibet : Boston Celtics 1.25, Charlotte Hornets 3.10.\nAvis du bot : écarté — Forme insuffisante : 1V-2D sur ses 3 derniers à l'extérieur (2 V requises).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "01:00 Boston Celtics @ Charlotte Hornets — écarté (cote trop basse) : favori Boston Celtics 1.22",
+   "brief": "Match NBA : Boston Celtics (extérieur) contre Charlotte Hornets (domicile), le 07/11 à 01:00 (heure de Paris).\nCotes Unibet : Boston Celtics 1.22, Charlotte Hornets 3.35.\nAvis du bot : écarté — Cote trop basse : Favori à 1.22 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:85869b2fdc16ef10d3e2582bf05ead95",
@@ -34,8 +34,8 @@
    "label": "Utah Jazz @ Dallas Mavericks",
    "time": "2026-11-07T01:00:00+00:00",
    "verdict": "Écarté",
-   "line": "02:00 Utah Jazz @ Dallas Mavericks — écarté (blessure importante) : favori Dallas Mavericks 1.30",
-   "brief": "Match NBA : Utah Jazz (extérieur) contre Dallas Mavericks (domicile), le 07/11 à 02:00 (heure de Paris).\nCotes Unibet : Utah Jazz 2.85, Dallas Mavericks 1.30.\nAvis du bot : écarté — Blessure importante : 5 joueurs absents/incertains, seuil de 3 atteint — règle de secours (Dallas Mavericks absente de KEY_PLAYERS) : Sergio de Larrea (Out), Santi Aldama (Out), Max Christie (Day-To-Day), Tarik Biberovic (Out), Dereck Lively II (Out).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "02:00 Utah Jazz @ Dallas Mavericks — écarté (blessure importante) : favori Dallas Mavericks 1.32",
+   "brief": "Match NBA : Utah Jazz (extérieur) contre Dallas Mavericks (domicile), le 07/11 à 02:00 (heure de Paris).\nCotes Unibet : Utah Jazz 2.75, Dallas Mavericks 1.32.\nAvis du bot : écarté — Blessure importante : 6 joueurs absents/incertains, seuil de 3 atteint — règle de secours (Dallas Mavericks absente de KEY_PLAYERS) : Kyrie Irving (Day-To-Day), Sergio de Larrea (Out), Santi Aldama (Out), Max Christie (Day-To-Day), Tarik Biberovic (Out), Dereck Lively II (Out).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:86684f64a8ec8385537a36c3b3768935",
@@ -52,8 +52,8 @@
    "label": "Toronto Raptors @ Milwaukee Bucks",
    "time": "2026-11-07T01:00:00+00:00",
    "verdict": "Écarté",
-   "line": "02:00 Toronto Raptors @ Milwaukee Bucks — écarté (trop de déplacements) : favori Toronto Raptors 1.32",
-   "brief": "Match NBA : Toronto Raptors (extérieur) contre Milwaukee Bucks (domicile), le 07/11 à 02:00 (heure de Paris).\nCotes Unibet : Toronto Raptors 1.32, Milwaukee Bucks 2.75.\nAvis du bot : écarté — Trop de déplacements : 4e match consécutif à l'extérieur.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "02:00 Toronto Raptors @ Milwaukee Bucks — écarté (la cote du favori monte) : favori Toronto Raptors 1.46",
+   "brief": "Match NBA : Toronto Raptors (extérieur) contre Milwaukee Bucks (domicile), le 07/11 à 02:00 (heure de Paris).\nCotes Unibet : Toronto Raptors 1.46, Milwaukee Bucks 2.30.\nAvis du bot : écarté — La cote du favori monte : Le marché commence à douter. Hausse anormale de la cote du favori : 1.32 → 1.46 (+10.6%).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:5e4708fadda49a3c06fd7ac50414020e",
@@ -61,8 +61,8 @@
    "label": "Minnesota Timberwolves @ New Orleans Pelicans",
    "time": "2026-11-07T01:00:00+00:00",
    "verdict": "Écarté",
-   "line": "02:00 Minnesota Timberwolves @ New Orleans Pelicans — écarté (forme insuffisante) : favori Minnesota Timberwolves 1.49",
-   "brief": "Match NBA : Minnesota Timberwolves (extérieur) contre New Orleans Pelicans (domicile), le 07/11 à 02:00 (heure de Paris).\nCotes Unibet : Minnesota Timberwolves 1.49, New Orleans Pelicans 2.25.\nAvis du bot : écarté — Forme insuffisante : 1V-2D sur ses 3 derniers à l'extérieur (2 V requises).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "02:00 Minnesota Timberwolves @ New Orleans Pelicans — écarté (forme insuffisante) : favori Minnesota Timberwolves 1.51",
+   "brief": "Match NBA : Minnesota Timberwolves (extérieur) contre New Orleans Pelicans (domicile), le 07/11 à 02:00 (heure de Paris).\nCotes Unibet : Minnesota Timberwolves 1.51, New Orleans Pelicans 2.20.\nAvis du bot : écarté — Forme insuffisante : 1V-2D sur ses 3 derniers à l'extérieur (2 V requises).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:83d77fe350d56a036fd7a3404e78249a",
@@ -71,7 +71,7 @@
    "time": "2026-11-07T03:00:00+00:00",
    "verdict": "Écarté",
    "line": "04:00 Portland Trail Blazers @ Los Angeles Lakers — écarté (match piège) : favori Los Angeles Lakers 1.59",
-   "brief": "Match NBA : Portland Trail Blazers (extérieur) contre Los Angeles Lakers (domicile), le 07/11 à 04:00 (heure de Paris).\nCotes Unibet : Portland Trail Blazers 2.10, Los Angeles Lakers 1.59.\nAvis du bot : écarté — Match piège : Le favori a un gros choc juste après et risque de se ménager. Choc contre Pistons (contender) dans 44 h.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "brief": "Match NBA : Portland Trail Blazers (extérieur) contre Los Angeles Lakers (domicile), le 07/11 à 04:00 (heure de Paris).\nCotes Unibet : Portland Trail Blazers 2.15, Los Angeles Lakers 1.59.\nAvis du bot : écarté — Match piège : Le favori a un gros choc juste après et risque de se ménager. Choc contre Pistons (contender) dans 44 h.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:d24eb5492983d6e28be3b96df396fa12",
@@ -79,8 +79,8 @@
    "label": "San Antonio Spurs @ Sacramento Kings",
    "time": "2026-11-07T03:00:00+00:00",
    "verdict": "Écarté",
-   "line": "04:00 San Antonio Spurs @ Sacramento Kings — écarté (cote trop basse) : favori San Antonio Spurs 1.06",
-   "brief": "Match NBA : San Antonio Spurs (extérieur) contre Sacramento Kings (domicile), le 07/11 à 04:00 (heure de Paris).\nCotes Unibet : San Antonio Spurs 1.06, Sacramento Kings 5.70.\nAvis du bot : écarté — Cote trop basse : Favori à 1.06 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "04:00 San Antonio Spurs @ Sacramento Kings — écarté (cote trop basse) : favori San Antonio Spurs 1.05",
+   "brief": "Match NBA : San Antonio Spurs (extérieur) contre Sacramento Kings (domicile), le 07/11 à 04:00 (heure de Paris).\nCotes Unibet : San Antonio Spurs 1.05, Sacramento Kings 6.00.\nAvis du bot : écarté — Cote trop basse : Favori à 1.05 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   }
  ]
 }
