@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-07T14:55:02.404904+00:00",
+ "generated_at": "2026-11-07T18:19:14.062440+00:00",
  "matches": [
   {
    "id": "nba:e76682ca6c25a37b0a53cec226b91aab",
@@ -7,8 +7,8 @@
    "label": "Denver Nuggets @ Indiana Pacers",
    "time": "2026-11-07T22:00:00+00:00",
    "verdict": "À jouer",
-   "line": "23:00 Denver Nuggets @ Indiana Pacers — À JOUER : Denver Nuggets 1.28 (72% estimé)",
-   "brief": "Match NBA : Denver Nuggets (extérieur) contre Indiana Pacers (domicile), le 07/11 à 23:00 (heure de Paris).\nCotes Unibet : Denver Nuggets 1.28, Indiana Pacers 2.95.\nAvis du bot : à jouer — Denver Nuggets gagne, confiance prudente, chances estimées 72%, mise conseillée 15 €.\nAtouts : Indiana Pacers diminué : 5 absents ou incertains ; Domine les face-à-face : 5-1 depuis 2023-24 ; Bien meilleur la saison passée : 54V-28D contre 19V-63D.\nPoints de vigilance : Début de saison : Peu de matchs joués, analyse moins fiable — Denver Nuggets : 7 match(s) joué(s), Indiana Pacers : 9 (10 requis pour chaque équipe) ; Écart moyen de Denver Nuggets faible (+0.7 pts/match) : victoires souvent serrées ; Cote Unibet en dessous du marché (78% implicite contre 72% estimé).\nForme récente (10 derniers matchs) : Denver Nuggets : 4V-3D, 1 victoire de suite, écart moyen +0.7 pts/match / Indiana Pacers : 3V-6D, 1 victoire de suite, écart moyen -3.0 pts/match\nFace-à-face depuis 2023-24 : Denver Nuggets 5V-1D contre Indiana Pacers / Derniers : 02/2025 V 125-116, 04/2025 D 120-125, 11/2025 V 117-100, 12/2025 V 135-120\nConfrontations cette saison : Première confrontation de la saison\nSaisons précédentes : Denver Nuggets : 2025-26 54V-28D · 2024-25 50V-32D · 2023-24 57V-25D / Indiana Pacers : 2025-26 19V-63D · 2024-25 50V-32D · 2023-24 47V-36D\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "23:00 Denver Nuggets @ Indiana Pacers — À JOUER : Denver Nuggets 1.27 (74% estimé)",
+   "brief": "Match NBA : Denver Nuggets (extérieur) contre Indiana Pacers (domicile), le 07/11 à 23:00 (heure de Paris).\nCotes Unibet : Denver Nuggets 1.27, Indiana Pacers 3.00.\nAvis du bot : à jouer — Denver Nuggets gagne, confiance prudente, chances estimées 74%, mise conseillée 15 €.\nAtouts : Indiana Pacers diminué : 5 absents ou incertains ; Domine les face-à-face : 5-1 depuis 2023-24 ; Bien meilleur la saison passée : 54V-28D contre 19V-63D.\nPoints de vigilance : Début de saison : Peu de matchs joués, analyse moins fiable — Denver Nuggets : 7 match(s) joué(s), Indiana Pacers : 9 (10 requis pour chaque équipe) ; Écart moyen de Denver Nuggets faible (+0.7 pts/match) : victoires souvent serrées ; Cote Unibet en dessous du marché (79% implicite contre 74% estimé).\nForme récente (10 derniers matchs) : Denver Nuggets : 4V-3D, 1 victoire de suite, écart moyen +0.7 pts/match / Indiana Pacers : 3V-6D, 1 victoire de suite, écart moyen -3.0 pts/match\nFace-à-face depuis 2023-24 : Denver Nuggets 5V-1D contre Indiana Pacers / Derniers : 02/2025 V 125-116, 04/2025 D 120-125, 11/2025 V 117-100, 12/2025 V 135-120\nConfrontations cette saison : Première confrontation de la saison\nSaisons précédentes : Denver Nuggets : 2025-26 54V-28D · 2024-25 50V-32D · 2023-24 57V-25D / Indiana Pacers : 2025-26 19V-63D · 2024-25 50V-32D · 2023-24 47V-36D\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:ee45341df802cfb42dd48f1ad60c8b81",
@@ -16,8 +16,8 @@
    "label": "Brooklyn Nets @ Atlanta Hawks",
    "time": "2026-11-08T00:30:00+00:00",
    "verdict": "Écarté",
-   "line": "01:30 Brooklyn Nets @ Atlanta Hawks — écarté (blessure importante) : favori Atlanta Hawks 1.31",
-   "brief": "Match NBA : Brooklyn Nets (extérieur) contre Atlanta Hawks (domicile), le 08/11 à 01:30 (heure de Paris).\nCotes Unibet : Brooklyn Nets 2.80, Atlanta Hawks 1.31.\nAvis du bot : écarté — Blessure importante : 6 joueurs absents/incertains, seuil de 3 atteint — règle de secours (Atlanta Hawks absente de KEY_PLAYERS) : Jalen Johnson (Out), Keshon Gilbert (Out), Asa Newell (Out), Jock Landale (Out), Mouhamed Gueye (Out), Henri Veesaar (Out).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "01:30 Brooklyn Nets @ Atlanta Hawks — écarté (blessure importante) : favori Atlanta Hawks 1.29",
+   "brief": "Match NBA : Brooklyn Nets (extérieur) contre Atlanta Hawks (domicile), le 08/11 à 01:30 (heure de Paris).\nCotes Unibet : Brooklyn Nets 2.90, Atlanta Hawks 1.29.\nAvis du bot : écarté — Blessure importante : 6 joueurs absents/incertains, seuil de 3 atteint — règle de secours (Atlanta Hawks absente de KEY_PLAYERS) : Keshon Gilbert (Day-To-Day), Asa Newell (Day-To-Day), Jalen Johnson (Out), Jock Landale (Out), Mouhamed Gueye (Out), Henri Veesaar (Out).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:fdf3b77f50b2fad3988193af5ef4b00e",
@@ -25,8 +25,8 @@
    "label": "New York Knicks @ Cleveland Cavaliers",
    "time": "2026-11-08T01:00:00+00:00",
    "verdict": "Écarté",
-   "line": "02:00 New York Knicks @ Cleveland Cavaliers — écarté (forme insuffisante) : favori New York Knicks 1.45",
-   "brief": "Match NBA : New York Knicks (extérieur) contre Cleveland Cavaliers (domicile), le 08/11 à 02:00 (heure de Paris).\nCotes Unibet : New York Knicks 1.45, Cleveland Cavaliers 2.45.\nAvis du bot : écarté — Forme insuffisante : 1V-2D sur ses 3 derniers à l'extérieur (2 V requises).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "02:00 New York Knicks @ Cleveland Cavaliers — écarté (forme insuffisante) : favori New York Knicks 1.42",
+   "brief": "Match NBA : New York Knicks (extérieur) contre Cleveland Cavaliers (domicile), le 08/11 à 02:00 (heure de Paris).\nCotes Unibet : New York Knicks 1.42, Cleveland Cavaliers 2.55.\nAvis du bot : écarté — Forme insuffisante : 1V-2D sur ses 3 derniers à l'extérieur (2 V requises).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:6faeaee3bdf2a167eb67f93c44d3ef37",
@@ -34,8 +34,8 @@
    "label": "Washington Wizards @ Oklahoma City Thunder",
    "time": "2026-11-08T01:00:00+00:00",
    "verdict": "Écarté",
-   "line": "02:00 Washington Wizards @ Oklahoma City Thunder — écarté (cote trop basse) : favori Oklahoma City Thunder 1.15",
-   "brief": "Match NBA : Washington Wizards (extérieur) contre Oklahoma City Thunder (domicile), le 08/11 à 02:00 (heure de Paris).\nCotes Unibet : Washington Wizards 4.05, Oklahoma City Thunder 1.15.\nAvis du bot : écarté — Cote trop basse : Favori à 1.15 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "02:00 Washington Wizards @ Oklahoma City Thunder — écarté (cote trop basse) : favori Oklahoma City Thunder 1.14",
+   "brief": "Match NBA : Washington Wizards (extérieur) contre Oklahoma City Thunder (domicile), le 08/11 à 02:00 (heure de Paris).\nCotes Unibet : Washington Wizards 4.10, Oklahoma City Thunder 1.14.\nAvis du bot : écarté — Cote trop basse : Favori à 1.14 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:39099dc03208d0771daaab5f7993478a",
@@ -52,8 +52,8 @@
    "label": "Houston Rockets @ Phoenix Suns",
    "time": "2026-11-08T02:00:00+00:00",
    "verdict": "Écarté",
-   "line": "03:00 Houston Rockets @ Phoenix Suns — écarté (match piège) : favori Houston Rockets 1.29",
-   "brief": "Match NBA : Houston Rockets (extérieur) contre Phoenix Suns (domicile), le 08/11 à 03:00 (heure de Paris).\nCotes Unibet : Houston Rockets 1.29, Phoenix Suns 2.90.\nAvis du bot : écarté — Match piège : Le favori a un gros choc juste après et risque de se ménager. Choc contre Nuggets (contender) dans 48 h.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "03:00 Houston Rockets @ Phoenix Suns — écarté (match piège) : favori Houston Rockets 1.31",
+   "brief": "Match NBA : Houston Rockets (extérieur) contre Phoenix Suns (domicile), le 08/11 à 03:00 (heure de Paris).\nCotes Unibet : Houston Rockets 1.31, Phoenix Suns 2.80.\nAvis du bot : écarté — Match piège : Le favori a un gros choc juste après et risque de se ménager. Choc contre Nuggets (contender) dans 48 h.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:08d47dd5e50e83839e395e49870d6a0d",
@@ -61,8 +61,8 @@
    "label": "San Antonio Spurs @ Portland Trail Blazers",
    "time": "2026-11-08T03:00:00+00:00",
    "verdict": "Écarté",
-   "line": "04:00 San Antonio Spurs @ Portland Trail Blazers — écarté (fatigue) : favori San Antonio Spurs 1.42",
-   "brief": "Match NBA : San Antonio Spurs (extérieur) contre Portland Trail Blazers (domicile), le 08/11 à 04:00 (heure de Paris).\nCotes Unibet : San Antonio Spurs 1.42, Portland Trail Blazers 2.55.\nAvis du bot : écarté — Fatigue : Deuxième match en 24 h, à l'extérieur. 2e match en ~24 h ET à l'extérieur (veille vs Kings).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "04:00 San Antonio Spurs @ Portland Trail Blazers — écarté (fatigue) : favori San Antonio Spurs 1.41",
+   "brief": "Match NBA : San Antonio Spurs (extérieur) contre Portland Trail Blazers (domicile), le 08/11 à 04:00 (heure de Paris).\nCotes Unibet : San Antonio Spurs 1.41, Portland Trail Blazers 2.55.\nAvis du bot : écarté — Fatigue : Deuxième match en 24 h, à l'extérieur. 2e match en ~24 h ET à l'extérieur (veille vs Kings).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   }
  ]
 }
