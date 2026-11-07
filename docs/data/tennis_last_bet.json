@@ -1,20 +1,20 @@
 {
- "created_label": "mercredi 04/11 à 23:32",
+ "created_label": "vendredi 06/11 à 16:55",
  "bets": [
   {
    "option": "Option 1 · Pari simple",
    "kind": "Pari simple",
-   "total": 1.27,
+   "total": 1.26,
    "legs": [
     {
-     "event_id": "4111a4ac0ae11935311b655ebadd040b",
-     "pick": "Tommy Paul",
-     "opponent": "Quentin Halys",
-     "odds": 1.27,
+     "event_id": "e4e0781ebc80c47d216dd73609a3c8e0",
+     "pick": "Carlos Alcaraz",
+     "opponent": "Taylor Fritz",
+     "odds": 1.26,
      "tournament": "ATP Paris Masters",
      "best_of": 3,
-     "commence": "2026-11-05T10:00:00+00:00",
-     "time": "05/11 11:00",
+     "commence": "2026-11-06T18:00:00+00:00",
+     "time": "06/11 19:00",
      "result": true
     }
    ],
@@ -23,28 +23,28 @@
   {
    "option": "Option 2 · Combiné",
    "kind": "Combiné de 2 matchs",
-   "total": 1.6,
+   "total": 1.68,
    "legs": [
     {
-     "event_id": "4111a4ac0ae11935311b655ebadd040b",
-     "pick": "Tommy Paul",
-     "opponent": "Quentin Halys",
-     "odds": 1.27,
-     "tournament": "ATP Paris Masters",
-     "best_of": 3,
-     "commence": "2026-11-05T10:00:00+00:00",
-     "time": "05/11 11:00",
-     "result": true
-    },
-    {
-     "event_id": "8a2e76c34cf0bce53c2afc75d9f2793e",
-     "pick": "Ben Shelton",
-     "opponent": "Arthur Rinderknech",
+     "event_id": "e4e0781ebc80c47d216dd73609a3c8e0",
+     "pick": "Carlos Alcaraz",
+     "opponent": "Taylor Fritz",
      "odds": 1.26,
      "tournament": "ATP Paris Masters",
      "best_of": 3,
-     "commence": "2026-11-05T11:10:00+00:00",
-     "time": "05/11 12:10",
+     "commence": "2026-11-06T18:00:00+00:00",
+     "time": "06/11 19:00",
+     "result": true
+    },
+    {
+     "event_id": "0adc47c275819823d018232033a6de7f",
+     "pick": "Casper Ruud",
+     "opponent": "Nuno Borges",
+     "odds": 1.33,
+     "tournament": "ATP Paris Masters",
+     "best_of": 3,
+     "commence": "2026-11-06T19:30:00+00:00",
+     "time": "06/11 20:30",
      "result": true
     }
    ],

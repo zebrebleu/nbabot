@@ -1,15 +1,15 @@
 {
- "generated_at": "2026-11-06T22:00:34.608944+00:00",
+ "generated_at": "2026-11-07T14:55:05.248282+00:00",
  "matches": [
   {
-   "id": "tennis:9ebb22b87460accfb899c0e613b47651",
+   "id": "tennis:d4b8a9b232417b21fd0dd2de1af179ee",
    "sport": "tennis",
-   "label": "Luca Van Assche – Ben Shelton",
+   "label": "Casper Ruud – Carlos Alcaraz",
    "competition": "ATP Paris Masters",
-   "time": "2026-11-07T13:30:00+00:00",
+   "time": "2026-11-07T16:00:00+00:00",
    "verdict": "Écarté",
-   "line": "14:30 Luca Van Assche – Ben Shelton — écarté (cote trop basse) : favori Ben Shelton 1.22 [ATP Paris Masters]",
-   "brief": "Match de tennis (ATP Paris Masters, dur) : Luca Van Assche contre Ben Shelton, le 07/11 à 14:30 (heure de Paris).\nCotes Unibet : Luca Van Assche 3.55, Ben Shelton 1.22.\nAvis du bot : écarté — Cote trop basse : Favori à 1.22 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "17:00 Casper Ruud – Carlos Alcaraz — écarté (cote trop basse) : favori Carlos Alcaraz 1.12 [ATP Paris Masters]",
+   "brief": "Match de tennis (ATP Paris Masters, dur) : Casper Ruud contre Carlos Alcaraz, le 07/11 à 17:00 (heure de Paris).\nCotes Unibet : Casper Ruud 5.00, Carlos Alcaraz 1.12.\nAvis du bot : écarté — Cote trop basse : Favori à 1.12 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   }
  ]
 }

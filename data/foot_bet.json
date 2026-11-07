@@ -1,23 +1,23 @@
 {
- "created": "2026-11-06T15:55:57.527299+00:00",
- "created_label": "vendredi 06/11 à 16:55",
+ "created": "2026-11-07T14:55:12.805569+00:00",
+ "created_label": "samedi 07/11 à 15:55",
  "bets": [
   {
    "option": "Option 1 · Pari simple",
    "kind": "Pari simple",
-   "total": 1.54,
-   "stake": 15,
+   "total": 1.45,
+   "stake": 25,
    "legs": [
     {
-     "event_id": "59c5f635cfe11613c07e9a5520ced5c1",
-     "pick": "Manchester City",
-     "opponent": "Nottingham Forest",
-     "pick_id": "382",
-     "opp_id": "393",
-     "odds": 1.54,
+     "event_id": "0cfbab01e152f81e34f9014e02c7eb79",
+     "pick": "Liverpool",
+     "opponent": "Crystal Palace",
+     "pick_id": "364",
+     "opp_id": "384",
+     "odds": 1.45,
      "tournament": "Premier League",
-     "commence": "2026-11-07T17:30:00+00:00",
-     "time": "07/11 18:30"
+     "commence": "2026-11-08T14:00:00+00:00",
+     "time": "08/11 15:00"
     }
    ]
   }
