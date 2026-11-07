@@ -1,15 +1,15 @@
 {
- "generated_at": "2026-11-07T14:55:05.248282+00:00",
+ "generated_at": "2026-11-07T20:49:41.143553+00:00",
  "matches": [
   {
-   "id": "tennis:d4b8a9b232417b21fd0dd2de1af179ee",
+   "id": "tennis:2c1005d01a3f63cd2249facf4ce5f5ed",
    "sport": "tennis",
-   "label": "Casper Ruud – Carlos Alcaraz",
+   "label": "Ben Shelton – Carlos Alcaraz",
    "competition": "ATP Paris Masters",
-   "time": "2026-11-07T16:00:00+00:00",
-   "verdict": "Écarté",
-   "line": "17:00 Casper Ruud – Carlos Alcaraz — écarté (cote trop basse) : favori Carlos Alcaraz 1.12 [ATP Paris Masters]",
-   "brief": "Match de tennis (ATP Paris Masters, dur) : Casper Ruud contre Carlos Alcaraz, le 07/11 à 17:00 (heure de Paris).\nCotes Unibet : Casper Ruud 5.00, Carlos Alcaraz 1.12.\nAvis du bot : écarté — Cote trop basse : Favori à 1.12 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "time": "2026-11-08T14:00:00+00:00",
+   "verdict": "En attente",
+   "line": "15:00 Ben Shelton – Carlos Alcaraz — pas encore de cote Unibet [ATP Paris Masters]",
+   "brief": "Match de tennis (ATP Paris Masters, dur) : Ben Shelton contre Carlos Alcaraz, le 08/11 à 15:00 (heure de Paris).\nCotes Unibet : pas encore publiées.\nAvis du bot : écarté — Pas encore de cote Unibet : Unibet n'a pas encore ouvert les paris sur ce match..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   }
  ]
 }
