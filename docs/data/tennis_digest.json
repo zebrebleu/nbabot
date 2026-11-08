@@ -1,15 +1,4 @@
 {
- "generated_at": "2026-11-07T20:49:41.143553+00:00",
- "matches": [
-  {
-   "id": "tennis:2c1005d01a3f63cd2249facf4ce5f5ed",
-   "sport": "tennis",
-   "label": "Ben Shelton – Carlos Alcaraz",
-   "competition": "ATP Paris Masters",
-   "time": "2026-11-08T14:00:00+00:00",
-   "verdict": "En attente",
-   "line": "15:00 Ben Shelton – Carlos Alcaraz — pas encore de cote Unibet [ATP Paris Masters]",
-   "brief": "Match de tennis (ATP Paris Masters, dur) : Ben Shelton contre Carlos Alcaraz, le 08/11 à 15:00 (heure de Paris).\nCotes Unibet : pas encore publiées.\nAvis du bot : écarté — Pas encore de cote Unibet : Unibet n'a pas encore ouvert les paris sur ce match..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
-  }
- ]
+ "generated_at": "2026-11-08T15:13:02.307419+00:00",
+ "matches": []
 }

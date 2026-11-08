@@ -1,216 +1,6 @@
 {
- "generated_at": "2026-11-07T14:55:12.805569+00:00",
+ "generated_at": "2026-11-08T15:13:09.030709+00:00",
  "matches": [
-  {
-   "id": "foot:842fcc5b9feb8c63054a661ad1fc8926",
-   "sport": "foot",
-   "label": "Arsenal – Hull City",
-   "competition": "Premier League",
-   "time": "2026-11-07T15:00:00+00:00",
-   "verdict": "Écarté",
-   "line": "16:00 Arsenal – Hull City — écarté (cote trop basse) : favori Arsenal 1.06 [Premier League]",
-   "brief": "Match de foot (Premier League) : Arsenal (domicile) contre Hull City (extérieur), le 07/11 à 16:00 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : Arsenal 1.06, nul 6.60, Hull City 15.00.\nAvis du bot : écarté — Cote trop basse : Favori à 1.06 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
-  },
-  {
-   "id": "foot:3903e98a54db0f2cc23095407fe9dad8",
-   "sport": "foot",
-   "label": "Fulham – Newcastle United",
-   "competition": "Premier League",
-   "time": "2026-11-07T15:00:00+00:00",
-   "verdict": "Écarté",
-   "line": "16:00 Fulham – Newcastle United — écarté (favori pas assez net) : favori Fulham 1.84 [Premier League]",
-   "brief": "Match de foot (Premier League) : Fulham (domicile) contre Newcastle United (extérieur), le 07/11 à 16:00 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : Fulham 1.84, nul 3.40, Newcastle United 3.10.\nAvis du bot : écarté — Favori pas assez net : Cote de 1.84, au-dessus de la limite de 1.80..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
-  },
-  {
-   "id": "foot:262c2c99c38456b8a70cb9daa32f2f6d",
-   "sport": "foot",
-   "label": "Espanyol – Deportivo",
-   "competition": "Liga",
-   "time": "2026-11-07T15:15:00+00:00",
-   "verdict": "Écarté",
-   "line": "16:15 Espanyol – Deportivo — écarté (favori pas assez net) : favori Espanyol 2.15 [Liga]",
-   "brief": "Match de foot (Liga) : Espanyol (domicile) contre Deportivo (extérieur), le 07/11 à 16:15 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : Espanyol 2.15, nul 3.10, Deportivo 2.70.\nAvis du bot : écarté — Favori pas assez net : Cote de 2.15, au-dessus de la limite de 1.80..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
-  },
-  {
-   "id": "foot:813cc4970b2dcab8457490a332fb5a6c",
-   "sport": "foot",
-   "label": "Parma – Bologna",
-   "competition": "Serie A",
-   "time": "2026-11-07T17:00:00+00:00",
-   "verdict": "Écarté",
-   "line": "18:00 Parma – Bologna — écarté (l'adversaire domine les face-à-face) : favori Bologna 1.55 [Serie A]",
-   "brief": "Match de foot (Serie A) : Parma (domicile) contre Bologna (extérieur), le 07/11 à 18:00 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : Parma 4.80, nul 3.40, Bologna 1.55.\nAvis du bot : écarté — L'adversaire domine les face-à-face : L'adversaire domine les face-à-face : 1V-1N-2D depuis 2024.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
-  },
-  {
-   "id": "foot:71ca5141a1c532e390c6fa14e080d8bd",
-   "sport": "foot",
-   "label": "Osasuna – Athletic Club",
-   "competition": "Liga",
-   "time": "2026-11-07T17:30:00+00:00",
-   "verdict": "Écarté",
-   "line": "18:30 Osasuna – Athletic Club — écarté (favori pas assez net) : favori Athletic Club 1.82 [Liga]",
-   "brief": "Match de foot (Liga) : Osasuna (domicile) contre Athletic Club (extérieur), le 07/11 à 18:30 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : Osasuna 3.50, nul 3.20, Athletic Club 1.82.\nAvis du bot : écarté — Favori pas assez net : Cote de 1.82, au-dessus de la limite de 1.80..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
-  },
-  {
-   "id": "foot:59c5f635cfe11613c07e9a5520ced5c1",
-   "sport": "foot",
-   "label": "Nottingham Forest – Manchester City",
-   "competition": "Premier League",
-   "time": "2026-11-07T17:30:00+00:00",
-   "verdict": "Validé",
-   "line": "18:30 Nottingham Forest – Manchester City — validé : Manchester City 1.54 (57% estimé) [Premier League]",
-   "brief": "Match de foot (Premier League) : Nottingham Forest (domicile) contre Manchester City (extérieur), le 07/11 à 18:30 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : Nottingham Forest 4.30, nul 3.70, Manchester City 1.54.\nAvis du bot : validé, non retenu — Manchester City gagne, confiance prudente, chances estimées 57%, mise conseillée 15 €.\nAtouts : Nette différence de forme : VVVDD contre DDDND ; Gros écart au classement : 2e contre 19e ; Écart de niveau : +1.1 but/match contre -0.7 ; Domine les face-à-face : 4V-1N-1D.\nPoints de vigilance : Au foot, le nul fait perdre ce pari : environ 24% de risque de nul ; Cote Unibet en dessous du marché (65% implicite contre 57% estimé) ; Compositions et blessures : à vérifier avant le match (bouton « Demander à Claude »).\nForme (5 derniers matchs) : Manchester City : VVVDD (1.8 pt/match) / Nottingham Forest : DDDND (0.2 pt/match)\nFace-à-face depuis 2023-24 : Manchester City 4V-1N-1D · derniers : 12/2024 3-0, 03/2025 0-1, 12/2025 2-1, 03/2026 2-2\nClassement : Manchester City : 2e, 21 pts / Nottingham Forest : 19e, 6 pts\nDomicile / extérieur : Manchester City à l'extérieur : VVVD / Nottingham Forest à domicile : DNDD\nCalendrier : Manchester City : dernier match il y a 2 j (Ligue des champions) / Nottingham Forest : pas de match récent connu\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
-  },
-  {
-   "id": "foot:716d6e3f3e91c47a6efaa2e93d570533",
-   "sport": "foot",
-   "label": "VfB Stuttgart – Werder Bremen",
-   "competition": "Bundesliga",
-   "time": "2026-11-07T17:30:00+00:00",
-   "verdict": "Écarté",
-   "line": "18:30 VfB Stuttgart – Werder Bremen — écarté (la cote du favori monte) : favori VfB Stuttgart 1.70 [Bundesliga]",
-   "brief": "Match de foot (Bundesliga) : VfB Stuttgart (domicile) contre Werder Bremen (extérieur), le 07/11 à 18:30 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : VfB Stuttgart 1.70, nul 3.90, Werder Bremen 3.30.\nAvis du bot : écarté — La cote du favori monte : Hausse anormale : 1.55 → 1.70 (+9.7%).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
-  },
-  {
-   "id": "foot:8553a80cf1ae5cbe3e7a69b76ce8167f",
-   "sport": "foot",
-   "label": "AJ Auxerre – Paris FC",
-   "competition": "Ligue 1",
-   "time": "2026-11-07T18:00:00+00:00",
-   "verdict": "Écarté",
-   "line": "19:00 AJ Auxerre – Paris FC — écarté (forme insuffisante) : favori Paris FC 1.58 [Ligue 1]",
-   "brief": "Match de foot (Ligue 1) : AJ Auxerre (domicile) contre Paris FC (extérieur), le 07/11 à 19:00 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : AJ Auxerre 4.20, nul 3.60, Paris FC 1.58.\nAvis du bot : écarté — Forme insuffisante : Fragile à l'extérieur : NVDD (1.0 pt/match).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
-  },
-  {
-   "id": "foot:f110107bca066ac1a598c89661c88fa3",
-   "sport": "foot",
-   "label": "AS Roma – Sassuolo",
-   "competition": "Serie A",
-   "time": "2026-11-07T19:45:00+00:00",
-   "verdict": "Écarté",
-   "line": "20:45 AS Roma – Sassuolo — écarté (cote trop basse) : favori AS Roma 1.19 [Serie A]",
-   "brief": "Match de foot (Serie A) : AS Roma (domicile) contre Sassuolo (extérieur), le 07/11 à 20:45 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : AS Roma 1.19, nul 5.40, Sassuolo 8.00.\nAvis du bot : écarté — Cote trop basse : Favori à 1.19 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
-  },
-  {
-   "id": "foot:5b386dfdf6f76705116fbb4120ee8493",
-   "sport": "foot",
-   "label": "Valencia – Real Madrid",
-   "competition": "Liga",
-   "time": "2026-11-07T20:00:00+00:00",
-   "verdict": "Écarté",
-   "line": "21:00 Valencia – Real Madrid — écarté (cote trop basse) : favori Real Madrid 1.16 [Liga]",
-   "brief": "Match de foot (Liga) : Valencia (domicile) contre Real Madrid (extérieur), le 07/11 à 21:00 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : Valencia 11.00, nul 6.80, Real Madrid 1.16.\nAvis du bot : écarté — Cote trop basse : Favori à 1.16 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
-  },
-  {
-   "id": "foot:f7b240389fa5ec055c58a48ab153dcdd",
-   "sport": "foot",
-   "label": "Paris Saint-Germain – Troyes",
-   "competition": "Ligue 1",
-   "time": "2026-11-07T20:05:00+00:00",
-   "verdict": "Écarté",
-   "line": "21:05 Paris Saint-Germain – Troyes — écarté (cote trop basse) : favori Paris Saint-Germain 1.08 [Ligue 1]",
-   "brief": "Match de foot (Ligue 1) : Paris Saint-Germain (domicile) contre Troyes (extérieur), le 07/11 à 21:05 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : Paris Saint-Germain 1.08, nul 9.20, Troyes 15.00.\nAvis du bot : écarté — Cote trop basse : Favori à 1.08 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
-  },
-  {
-   "id": "foot:23bf8ea47358ef82f65aa7398a2b3921",
-   "sport": "foot",
-   "label": "Napoli – Lazio",
-   "competition": "Serie A",
-   "time": "2026-11-08T11:30:00+00:00",
-   "verdict": "Écarté",
-   "line": "12:30 Napoli – Lazio — écarté (favori pas assez net) : favori Napoli 2.05 [Serie A]",
-   "brief": "Match de foot (Serie A) : Napoli (domicile) contre Lazio (extérieur), le 08/11 à 12:30 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : Napoli 2.05, nul 3.40, Lazio 2.75.\nAvis du bot : écarté — Favori pas assez net : Cote de 2.05, au-dessus de la limite de 1.80..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
-  },
-  {
-   "id": "foot:c35673eb1e889309d6985c091a43a3f5",
-   "sport": "foot",
-   "label": "Elche – Real Betis",
-   "competition": "Liga",
-   "time": "2026-11-08T13:00:00+00:00",
-   "verdict": "Écarté",
-   "line": "14:00 Elche – Real Betis — écarté (favori pas assez net) : favori Real Betis 1.92 [Liga]",
-   "brief": "Match de foot (Liga) : Elche (domicile) contre Real Betis (extérieur), le 08/11 à 14:00 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : Elche 3.10, nul 3.30, Real Betis 1.92.\nAvis du bot : écarté — Favori pas assez net : Cote de 1.92, au-dessus de la limite de 1.80..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
-  },
-  {
-   "id": "foot:4288fbe018e6e6fb223e389bcf3e57dd",
-   "sport": "foot",
-   "label": "Stade Rennais – Lille",
-   "competition": "Ligue 1",
-   "time": "2026-11-08T14:00:00+00:00",
-   "verdict": "Écarté",
-   "line": "15:00 Stade Rennais – Lille — écarté (favori pas assez net) : favori Stade Rennais 2.05 [Ligue 1]",
-   "brief": "Match de foot (Ligue 1) : Stade Rennais (domicile) contre Lille (extérieur), le 08/11 à 15:00 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : Stade Rennais 2.05, nul 3.30, Lille 2.80.\nAvis du bot : écarté — Favori pas assez net : Cote de 2.05, au-dessus de la limite de 1.80..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
-  },
-  {
-   "id": "foot:8e3ca98e29be84dd4a882ed05f50fa79",
-   "sport": "foot",
-   "label": "Brighton & Hove Albion – Brentford",
-   "competition": "Premier League",
-   "time": "2026-11-08T14:00:00+00:00",
-   "verdict": "Écarté",
-   "line": "15:00 Brighton & Hove Albion – Brentford — écarté (risque de match nul) : favori Brighton & Hove Albion 1.78 [Premier League]",
-   "brief": "Match de foot (Premier League) : Brighton & Hove Albion (domicile) contre Brentford (extérieur), le 08/11 à 15:00 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : Brighton & Hove Albion 1.78, nul 3.50, Brentford 3.30.\nAvis du bot : écarté — Risque de match nul : Équipes qui font souvent match nul : 11% et 56% de nuls sur leurs 10 derniers matchs.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
-  },
-  {
-   "id": "foot:0cfbab01e152f81e34f9014e02c7eb79",
-   "sport": "foot",
-   "label": "Crystal Palace – Liverpool",
-   "competition": "Premier League",
-   "time": "2026-11-08T14:00:00+00:00",
-   "verdict": "À jouer",
-   "line": "15:00 Crystal Palace – Liverpool — À JOUER : Liverpool 1.45 (62% estimé) [Premier League]",
-   "brief": "Match de foot (Premier League) : Crystal Palace (domicile) contre Liverpool (extérieur), le 08/11 à 15:00 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : Crystal Palace 4.80, nul 4.00, Liverpool 1.45.\nAvis du bot : à jouer — Liverpool gagne, confiance moyenne, chances estimées 62%, mise conseillée 25 €.\nAtouts : Nette différence de forme : VDVVD contre NVDDD ; Très solide à l'extérieur : NVVV ; Gros écart au classement : 6e contre 18e ; Écart de niveau : +0.2 but/match contre -1.3.\nPoints de vigilance : Au foot, le nul fait perdre ce pari : environ 21% de risque de nul ; Cote Unibet en dessous du marché (69% implicite contre 62% estimé) ; Compositions et blessures : à vérifier avant le match (bouton « Demander à Claude »).\nForme (5 derniers matchs) : Liverpool : VDVVD (1.8 pt/match) / Crystal Palace : NVDDD (0.8 pt/match)\nFace-à-face depuis 2023-24 : Liverpool 3V-1N-2D · derniers : 10/2024 1-0, 05/2025 1-1, 09/2025 1-2, 04/2026 3-1\nClassement : Liverpool : 6e, 15 pts / Crystal Palace : 18e, 7 pts\nDomicile / extérieur : Liverpool à l'extérieur : NVVV / Crystal Palace à domicile : DDVD\nCalendrier : Liverpool : dernier match il y a 3 j (Ligue des champions) / Crystal Palace : dernier match il y a 2 j (Ligue Europa)\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
-  },
-  {
-   "id": "foot:79ed3df594d7b352ef027128b1ba5d0a",
-   "sport": "foot",
-   "label": "Ipswich Town – AFC Bournemouth",
-   "competition": "Premier League",
-   "time": "2026-11-08T14:00:00+00:00",
-   "verdict": "Écarté",
-   "line": "15:00 Ipswich Town – AFC Bournemouth — écarté (forme insuffisante) : favori AFC Bournemouth 1.76 [Premier League]",
-   "brief": "Match de foot (Premier League) : Ipswich Town (domicile) contre AFC Bournemouth (extérieur), le 08/11 à 15:00 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : Ipswich Town 3.50, nul 3.40, AFC Bournemouth 1.76.\nAvis du bot : écarté — Forme insuffisante : Fragile à l'extérieur : DNDV (1.0 pt/match).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
-  },
-  {
-   "id": "foot:3a4608abdf257d2a0024b944757d9dc9",
-   "sport": "foot",
-   "label": "Sunderland – Chelsea",
-   "competition": "Premier League",
-   "time": "2026-11-08T14:00:00+00:00",
-   "verdict": "Écarté",
-   "line": "15:00 Sunderland – Chelsea — écarté (favori pas assez net) : favori Chelsea 1.83 [Premier League]",
-   "brief": "Match de foot (Premier League) : Sunderland (domicile) contre Chelsea (extérieur), le 08/11 à 15:00 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : Sunderland 3.30, nul 3.30, Chelsea 1.83.\nAvis du bot : écarté — Favori pas assez net : Cote de 1.83, au-dessus de la limite de 1.80..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
-  },
-  {
-   "id": "foot:7a68b099b47ed7724062b661cd9af464",
-   "sport": "foot",
-   "label": "Genoa – AC Milan",
-   "competition": "Serie A",
-   "time": "2026-11-08T14:00:00+00:00",
-   "verdict": "Écarté",
-   "line": "15:00 Genoa – AC Milan — écarté (risque de match nul) : favori AC Milan 1.70 [Serie A]",
-   "brief": "Match de foot (Serie A) : Genoa (domicile) contre AC Milan (extérieur), le 08/11 à 15:00 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : Genoa 4.00, nul 3.20, AC Milan 1.70.\nAvis du bot : écarté — Risque de match nul : Le marché donne 27% de chances au nul (cote du nul 3.56) : match trop équilibré.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
-  },
-  {
-   "id": "foot:5ea6b7050b00fcc1832f7938794dd755",
-   "sport": "foot",
-   "label": "Monza – Atalanta",
-   "competition": "Serie A",
-   "time": "2026-11-08T14:00:00+00:00",
-   "verdict": "Écarté",
-   "line": "15:00 Monza – Atalanta — écarté (favori pas assez net) : favori Atalanta 1.86 [Serie A]",
-   "brief": "Match de foot (Serie A) : Monza (domicile) contre Atalanta (extérieur), le 08/11 à 15:00 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : Monza 3.10, nul 3.50, Atalanta 1.86.\nAvis du bot : écarté — Favori pas assez net : Cote de 1.86, au-dessus de la limite de 1.80..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
-  },
-  {
-   "id": "foot:c70f9f21f48464daa93973147502e183",
-   "sport": "foot",
-   "label": "FC Cologne – Bayer Leverkusen",
-   "competition": "Bundesliga",
-   "time": "2026-11-08T14:30:00+00:00",
-   "verdict": "Écarté",
-   "line": "15:30 FC Cologne – Bayer Leverkusen — écarté (fatigue) : favori Bayer Leverkusen 1.69 [Bundesliga]",
-   "brief": "Match de foot (Bundesliga) : FC Cologne (domicile) contre Bayer Leverkusen (extérieur), le 08/11 à 15:30 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : FC Cologne 3.40, nul 3.80, Bayer Leverkusen 1.69.\nAvis du bot : écarté — Fatigue : A joué il y a 66 h (Ligue Europa contre Marseille).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
-  },
   {
    "id": "foot:339a6465fa5153fd8f31e487cf557cf0",
    "sport": "foot",
@@ -218,8 +8,8 @@
    "competition": "Liga",
    "time": "2026-11-08T15:15:00+00:00",
    "verdict": "Écarté",
-   "line": "16:15 Real Sociedad – Rayo Vallecano — écarté (l'adversaire domine les face-à-face) : favori Real Sociedad 1.57 [Liga]",
-   "brief": "Match de foot (Liga) : Real Sociedad (domicile) contre Rayo Vallecano (extérieur), le 08/11 à 16:15 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : Real Sociedad 1.57, nul 3.80, Rayo Vallecano 4.00.\nAvis du bot : écarté — L'adversaire domine les face-à-face : L'adversaire domine les face-à-face : 0V-4N-2D depuis 2023.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "16:15 Real Sociedad – Rayo Vallecano — écarté (la cote du favori monte) : favori Real Sociedad 1.65 [Liga]",
+   "brief": "Match de foot (Liga) : Real Sociedad (domicile) contre Rayo Vallecano (extérieur), le 08/11 à 16:15 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : Real Sociedad 1.65, nul 3.60, Rayo Vallecano 3.70.\nAvis du bot : écarté — La cote du favori monte : Hausse anormale : 1.57 → 1.65 (+5.1%).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "foot:54fae64b1421d836e07a17cad0536c73",
@@ -228,8 +18,8 @@
    "competition": "Ligue 1",
    "time": "2026-11-08T16:15:00+00:00",
    "verdict": "Écarté",
-   "line": "17:15 Angers – Nice — écarté (favori pas assez net) : favori Nice 1.90 [Ligue 1]",
-   "brief": "Match de foot (Ligue 1) : Angers (domicile) contre Nice (extérieur), le 08/11 à 17:15 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : Angers 3.10, nul 3.30, Nice 1.90.\nAvis du bot : écarté — Favori pas assez net : Cote de 1.90, au-dessus de la limite de 1.80..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "17:15 Angers – Nice — écarté (favori pas assez net) : favori Nice 1.88 [Ligue 1]",
+   "brief": "Match de foot (Ligue 1) : Angers (domicile) contre Nice (extérieur), le 08/11 à 17:15 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : Angers 3.20, nul 3.30, Nice 1.88.\nAvis du bot : écarté — Favori pas assez net : Cote de 1.88, au-dessus de la limite de 1.80..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "foot:cc9731ee7796fe0d532f11ca2aa522c9",
@@ -239,7 +29,7 @@
    "time": "2026-11-08T16:15:00+00:00",
    "verdict": "Écarté",
    "line": "17:15 Brest – Lyon — écarté (favori pas assez net) : favori Lyon 2.25 [Ligue 1]",
-   "brief": "Match de foot (Ligue 1) : Brest (domicile) contre Lyon (extérieur), le 08/11 à 17:15 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : Brest 2.60, nul 3.10, Lyon 2.25.\nAvis du bot : écarté — Favori pas assez net : Cote de 2.25, au-dessus de la limite de 1.80..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "brief": "Match de foot (Ligue 1) : Brest (domicile) contre Lyon (extérieur), le 08/11 à 17:15 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : Brest 2.55, nul 3.20, Lyon 2.25.\nAvis du bot : écarté — Favori pas assez net : Cote de 2.25, au-dessus de la limite de 1.80..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "foot:3e9954446f26494c04c4967db523d375",
@@ -249,7 +39,7 @@
    "time": "2026-11-08T16:15:00+00:00",
    "verdict": "Écarté",
    "line": "17:15 Le Havre AC – Lorient — écarté (favori pas assez net) : favori Lorient 2.25 [Ligue 1]",
-   "brief": "Match de foot (Ligue 1) : Le Havre AC (domicile) contre Lorient (extérieur), le 08/11 à 17:15 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : Le Havre AC 2.65, nul 3.10, Lorient 2.25.\nAvis du bot : écarté — Favori pas assez net : Cote de 2.25, au-dessus de la limite de 1.80..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "brief": "Match de foot (Ligue 1) : Le Havre AC (domicile) contre Lorient (extérieur), le 08/11 à 17:15 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : Le Havre AC 2.70, nul 3.00, Lorient 2.25.\nAvis du bot : écarté — Favori pas assez net : Cote de 2.25, au-dessus de la limite de 1.80..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "foot:a529e5762f18d97981194ec3668dc3d3",
@@ -258,8 +48,8 @@
    "competition": "Ligue 1",
    "time": "2026-11-08T16:15:00+00:00",
    "verdict": "Écarté",
-   "line": "17:15 Le Mans – AS Monaco — écarté (forme insuffisante) : favori AS Monaco 1.62 [Ligue 1]",
-   "brief": "Match de foot (Ligue 1) : Le Mans (domicile) contre AS Monaco (extérieur), le 08/11 à 17:15 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : Le Mans 3.90, nul 3.60, AS Monaco 1.62.\nAvis du bot : écarté — Forme insuffisante : VNDND sur les 5 derniers (1.0 point par match).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "17:15 Le Mans – AS Monaco — écarté (forme insuffisante) : favori AS Monaco 1.53 [Ligue 1]",
+   "brief": "Match de foot (Ligue 1) : Le Mans (domicile) contre AS Monaco (extérieur), le 08/11 à 17:15 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : Le Mans 4.80, nul 3.50, AS Monaco 1.53.\nAvis du bot : écarté — Forme insuffisante : VNDND sur les 5 derniers (1.0 point par match).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "foot:b0a4b5448a7e02d9ad1eaa817599fff0",
@@ -268,8 +58,8 @@
    "competition": "Premier League",
    "time": "2026-11-08T16:30:00+00:00",
    "verdict": "Écarté",
-   "line": "17:30 Manchester United – Aston Villa — écarté (favori pas assez net) : favori Manchester United 1.95 [Premier League]",
-   "brief": "Match de foot (Premier League) : Manchester United (domicile) contre Aston Villa (extérieur), le 08/11 à 17:30 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : Manchester United 1.95, nul 3.30, Aston Villa 3.00.\nAvis du bot : écarté — Favori pas assez net : Cote de 1.95, au-dessus de la limite de 1.80..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "17:30 Manchester United – Aston Villa — écarté (favori pas assez net) : favori Manchester United 1.98 [Premier League]",
+   "brief": "Match de foot (Premier League) : Manchester United (domicile) contre Aston Villa (extérieur), le 08/11 à 17:30 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : Manchester United 1.98, nul 3.40, Aston Villa 2.80.\nAvis du bot : écarté — Favori pas assez net : Cote de 1.98, au-dessus de la limite de 1.80..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "foot:c1b9696d88719cb8832d794b986cdd68",
@@ -278,8 +68,8 @@
    "competition": "Bundesliga",
    "time": "2026-11-08T16:30:00+00:00",
    "verdict": "Écarté",
-   "line": "17:30 SC Freiburg – 1. FC Union Berlin — écarté (risque de match nul) : favori SC Freiburg 1.36 [Bundesliga]",
-   "brief": "Match de foot (Bundesliga) : SC Freiburg (domicile) contre 1. FC Union Berlin (extérieur), le 08/11 à 17:30 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : SC Freiburg 1.36, nul 4.30, 1. FC Union Berlin 5.50.\nAvis du bot : écarté — Risque de match nul : Équipes qui font souvent match nul : 12% et 50% de nuls sur leurs 10 derniers matchs.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "17:30 SC Freiburg – 1. FC Union Berlin — écarté (risque de match nul) : favori SC Freiburg 1.34 [Bundesliga]",
+   "brief": "Match de foot (Bundesliga) : SC Freiburg (domicile) contre 1. FC Union Berlin (extérieur), le 08/11 à 17:30 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : SC Freiburg 1.34, nul 4.20, 1. FC Union Berlin 6.00.\nAvis du bot : écarté — Risque de match nul : Équipes qui font souvent match nul : 12% et 50% de nuls sur leurs 10 derniers matchs.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "foot:657fd1ac35832f65fcc6feba93970e10",
@@ -288,8 +78,8 @@
    "competition": "Serie A",
    "time": "2026-11-08T17:00:00+00:00",
    "verdict": "Écarté",
-   "line": "18:00 Internazionale – Como — écarté (l'adversaire est en forme) : favori Internazionale 1.74 [Serie A]",
-   "brief": "Match de foot (Serie A) : Internazionale (domicile) contre Como (extérieur), le 08/11 à 18:00 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : Internazionale 1.74, nul 3.70, Como 3.30.\nAvis du bot : écarté — L'adversaire est en forme : Outsider en feu : Internazionale VVVVD vs Como NVVVV.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "18:00 Internazionale – Como — écarté (favori pas assez net) : favori Internazionale 1.88 [Serie A]",
+   "brief": "Match de foot (Serie A) : Internazionale (domicile) contre Como (extérieur), le 08/11 à 18:00 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : Internazionale 1.88, nul 3.70, Como 2.90.\nAvis du bot : écarté — Favori pas assez net : Cote de 1.88, au-dessus de la limite de 1.80..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "foot:0d2e199bfba0db42871696c10037bad3",
@@ -298,8 +88,8 @@
    "competition": "Liga",
    "time": "2026-11-08T17:30:00+00:00",
    "verdict": "Écarté",
-   "line": "18:30 Celta Vigo – Levante — écarté (risque de match nul) : favori Celta Vigo 1.75 [Liga]",
-   "brief": "Match de foot (Liga) : Celta Vigo (domicile) contre Levante (extérieur), le 08/11 à 18:30 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : Celta Vigo 1.75, nul 3.20, Levante 3.70.\nAvis du bot : écarté — Risque de match nul : Équipes qui font souvent match nul : 50% et 40% de nuls sur leurs 10 derniers matchs.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "18:30 Celta Vigo – Levante — écarté (risque de match nul) : favori Celta Vigo 1.68 [Liga]",
+   "brief": "Match de foot (Liga) : Celta Vigo (domicile) contre Levante (extérieur), le 08/11 à 18:30 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : Celta Vigo 1.68, nul 3.30, Levante 3.90.\nAvis du bot : écarté — Risque de match nul : Équipes qui font souvent match nul : 50% et 40% de nuls sur leurs 10 derniers matchs.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "foot:81ad04996f63fb60b494d243b13ac586",
@@ -308,8 +98,8 @@
    "competition": "Liga",
    "time": "2026-11-08T17:30:00+00:00",
    "verdict": "Écarté",
-   "line": "18:30 Villarreal – Getafe — écarté (forme insuffisante) : favori Villarreal 1.30 [Liga]",
-   "brief": "Match de foot (Liga) : Villarreal (domicile) contre Getafe (extérieur), le 08/11 à 18:30 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : Villarreal 1.30, nul 4.30, Getafe 6.60.\nAvis du bot : écarté — Forme insuffisante : VDNVD sur les 5 derniers (1.4 point par match).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "18:30 Villarreal – Getafe — écarté (la cote du favori monte) : favori Villarreal 1.40 [Liga]",
+   "brief": "Match de foot (Liga) : Villarreal (domicile) contre Getafe (extérieur), le 08/11 à 18:30 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : Villarreal 1.40, nul 4.00, Getafe 5.40.\nAvis du bot : écarté — La cote du favori monte : Hausse anormale : 1.30 → 1.40 (+7.7%).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "foot:8963081c3457212ee238b498bbc33a03",
@@ -318,8 +108,8 @@
    "competition": "Bundesliga",
    "time": "2026-11-08T18:30:00+00:00",
    "verdict": "Écarté",
-   "line": "19:30 TSG Hoffenheim – Schalke 04 — écarté (forme insuffisante) : favori TSG Hoffenheim 1.46 [Bundesliga]",
-   "brief": "Match de foot (Bundesliga) : TSG Hoffenheim (domicile) contre Schalke 04 (extérieur), le 08/11 à 19:30 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : TSG Hoffenheim 1.46, nul 4.10, Schalke 04 4.50.\nAvis du bot : écarté — Forme insuffisante : DDVVD sur les 5 derniers (1.2 point par match).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "19:30 TSG Hoffenheim – Schalke 04 — écarté (forme insuffisante) : favori TSG Hoffenheim 1.48 [Bundesliga]",
+   "brief": "Match de foot (Bundesliga) : TSG Hoffenheim (domicile) contre Schalke 04 (extérieur), le 08/11 à 19:30 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : TSG Hoffenheim 1.48, nul 4.00, Schalke 04 4.50.\nAvis du bot : écarté — Forme insuffisante : DDVVD sur les 5 derniers (1.2 point par match).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "foot:4e917e19b59093a02a0e12bcf9a5ecc4",
@@ -328,8 +118,8 @@
    "competition": "Ligue 1",
    "time": "2026-11-08T19:45:00+00:00",
    "verdict": "Écarté",
-   "line": "20:45 Lens – Marseille — écarté (favori pas assez net) : favori Lens 2.15 [Ligue 1]",
-   "brief": "Match de foot (Ligue 1) : Lens (domicile) contre Marseille (extérieur), le 08/11 à 20:45 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : Lens 2.15, nul 3.80, Marseille 2.60.\nAvis du bot : écarté — Favori pas assez net : Cote de 2.15, au-dessus de la limite de 1.80..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "20:45 Lens – Marseille — écarté (favori pas assez net) : favori Lens 2.20 [Ligue 1]",
+   "brief": "Match de foot (Ligue 1) : Lens (domicile) contre Marseille (extérieur), le 08/11 à 20:45 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : Lens 2.20, nul 3.60, Marseille 2.70.\nAvis du bot : écarté — Favori pas assez net : Cote de 2.20, au-dessus de la limite de 1.80..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "foot:7f50eb7deaebfbcd45c3f4e7cd3724e4",
@@ -338,8 +128,8 @@
    "competition": "Serie A",
    "time": "2026-11-08T19:45:00+00:00",
    "verdict": "Écarté",
-   "line": "20:45 Fiorentina – Juventus — écarté (favori pas assez net) : favori Juventus 1.88 [Serie A]",
-   "brief": "Match de foot (Serie A) : Fiorentina (domicile) contre Juventus (extérieur), le 08/11 à 20:45 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : Fiorentina 3.10, nul 3.30, Juventus 1.88.\nAvis du bot : écarté — Favori pas assez net : Cote de 1.88, au-dessus de la limite de 1.80..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "20:45 Fiorentina – Juventus — écarté (favori pas assez net) : favori Juventus 1.95 [Serie A]",
+   "brief": "Match de foot (Serie A) : Fiorentina (domicile) contre Juventus (extérieur), le 08/11 à 20:45 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : Fiorentina 3.10, nul 3.20, Juventus 1.95.\nAvis du bot : écarté — Favori pas assez net : Cote de 1.95, au-dessus de la limite de 1.80..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "foot:dd247b356d8fc53e4b4f9bfcfe09c924",
