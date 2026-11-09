@@ -1,21 +1,21 @@
 {
- "created_label": "dimanche 01/11 à 13:53",
+ "created_label": "samedi 07/11 à 15:55",
  "bets": [
   {
    "option": "Option 1 · Pari simple",
    "kind": "Pari simple",
-   "total": 1.4,
+   "total": 1.45,
    "legs": [
     {
-     "event_id": "3f9f4bc9a19bf36dcb74be2f29610d55",
-     "pick": "Lazio",
-     "opponent": "Cagliari",
-     "pick_id": "112",
-     "opp_id": "2925",
-     "odds": 1.4,
-     "tournament": "Serie A",
-     "commence": "2026-11-01T14:00:00+00:00",
-     "time": "01/11 15:00",
+     "event_id": "0cfbab01e152f81e34f9014e02c7eb79",
+     "pick": "Liverpool",
+     "opponent": "Crystal Palace",
+     "pick_id": "364",
+     "opp_id": "384",
+     "odds": 1.45,
+     "tournament": "Premier League",
+     "commence": "2026-11-08T14:00:00+00:00",
+     "time": "08/11 15:00",
      "result": true
     }
    ],

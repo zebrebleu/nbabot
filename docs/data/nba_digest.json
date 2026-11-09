@@ -1,68 +1,77 @@
 {
- "generated_at": "2026-11-08T18:30:07.047481+00:00",
+ "generated_at": "2026-11-09T18:48:50.946294+00:00",
  "matches": [
   {
-   "id": "nba:a5d2d9c68b7446860de658aa4bc33c5b",
+   "id": "nba:07361a8381206817e27bd2697fad7479",
    "sport": "nba",
-   "label": "Philadelphia 76ers @ Chicago Bulls",
-   "time": "2026-11-08T20:30:00+00:00",
+   "label": "Los Angeles Lakers @ Atlanta Hawks",
+   "time": "2026-11-10T00:00:00+00:00",
    "verdict": "Écarté",
-   "line": "21:30 Philadelphia 76ers @ Chicago Bulls — écarté (cote trop basse) : favori Philadelphia 76ers 1.21",
-   "brief": "Match NBA : Philadelphia 76ers (extérieur) contre Chicago Bulls (domicile), le 08/11 à 21:30 (heure de Paris).\nCotes Unibet : Philadelphia 76ers 1.21, Chicago Bulls 3.70.\nAvis du bot : écarté — Cote trop basse : Favori à 1.21 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "01:00 Los Angeles Lakers @ Atlanta Hawks — écarté (l'outsider est en forme) : favori Atlanta Hawks 1.79",
+   "brief": "Match NBA : Los Angeles Lakers (extérieur) contre Atlanta Hawks (domicile), le 10/11 à 01:00 (heure de Paris).\nCotes Unibet : Los Angeles Lakers 1.85, Atlanta Hawks 1.79.\nAvis du bot : écarté — L'outsider est en forme : L'outsider est en meilleure forme : Atlanta Hawks 6-4 vs Los Angeles Lakers 8-2 sur les 10 derniers.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
-   "id": "nba:182e2b5349fa0ff4ad3c0e8359c1a9a0",
+   "id": "nba:1df5ff8fe9c6d2dbff1d0ae176063b37",
    "sport": "nba",
-   "label": "Los Angeles Lakers @ Detroit Pistons",
-   "time": "2026-11-08T23:00:00+00:00",
+   "label": "Cleveland Cavaliers @ Charlotte Hornets",
+   "time": "2026-11-10T00:00:00+00:00",
    "verdict": "Écarté",
-   "line": "00:00 Los Angeles Lakers @ Detroit Pistons — écarté (l'outsider est en forme) : favori Detroit Pistons 1.32",
-   "brief": "Match NBA : Los Angeles Lakers (extérieur) contre Detroit Pistons (domicile), le 09/11 à 00:00 (heure de Paris).\nCotes Unibet : Los Angeles Lakers 2.90, Detroit Pistons 1.32.\nAvis du bot : écarté — L'outsider est en forme : L'outsider est en meilleure forme : Detroit Pistons 6-2 vs Los Angeles Lakers 8-2 sur les 10 derniers.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "01:00 Cleveland Cavaliers @ Charlotte Hornets — écarté (match piège) : favori Cleveland Cavaliers 1.27",
+   "brief": "Match NBA : Cleveland Cavaliers (extérieur) contre Charlotte Hornets (domicile), le 10/11 à 01:00 (heure de Paris).\nCotes Unibet : Cleveland Cavaliers 1.27, Charlotte Hornets 3.00.\nAvis du bot : écarté — Match piège : Le favori a un gros choc juste après et risque de se ménager. Choc contre Knicks (contender) dans 48 h.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
-   "id": "nba:758ca94b2abd151c0593b182254dab32",
+   "id": "nba:929b863acedecaf614c6312e28a44837",
    "sport": "nba",
-   "label": "Utah Jazz @ Minnesota Timberwolves",
-   "time": "2026-11-09T00:00:00+00:00",
+   "label": "Washington Wizards @ Detroit Pistons",
+   "time": "2026-11-10T00:00:00+00:00",
    "verdict": "Écarté",
-   "line": "01:00 Utah Jazz @ Minnesota Timberwolves — écarté (cote trop basse) : favori Minnesota Timberwolves 1.12",
-   "brief": "Match NBA : Utah Jazz (extérieur) contre Minnesota Timberwolves (domicile), le 09/11 à 01:00 (heure de Paris).\nCotes Unibet : Utah Jazz 4.45, Minnesota Timberwolves 1.12.\nAvis du bot : écarté — Cote trop basse : Favori à 1.12 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "01:00 Washington Wizards @ Detroit Pistons — écarté (cote trop basse) : favori Detroit Pistons 1.15",
+   "brief": "Match NBA : Washington Wizards (extérieur) contre Detroit Pistons (domicile), le 10/11 à 01:00 (heure de Paris).\nCotes Unibet : Washington Wizards 3.95, Detroit Pistons 1.15.\nAvis du bot : écarté — Cote trop basse : Favori à 1.15 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
-   "id": "nba:c5b6599e8e4949749798dcdadceb68d4",
+   "id": "nba:56efae2815b3a18850f07a3781d652a2",
    "sport": "nba",
-   "label": "Brooklyn Nets @ Dallas Mavericks",
-   "time": "2026-11-09T00:30:00+00:00",
+   "label": "Memphis Grizzlies @ Toronto Raptors",
+   "time": "2026-11-10T00:30:00+00:00",
    "verdict": "Écarté",
-   "line": "01:30 Brooklyn Nets @ Dallas Mavericks — écarté (blessure importante) : favori Dallas Mavericks 1.27",
-   "brief": "Match NBA : Brooklyn Nets (extérieur) contre Dallas Mavericks (domicile), le 09/11 à 01:30 (heure de Paris).\nCotes Unibet : Brooklyn Nets 3.00, Dallas Mavericks 1.27.\nAvis du bot : écarté — Blessure importante : 3 joueurs absents/incertains, seuil de 3 atteint — règle de secours (Dallas Mavericks absente de KEY_PLAYERS) : Sergio de Larrea (Out), Tarik Biberovic (Out), Dereck Lively II (Out).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "01:30 Memphis Grizzlies @ Toronto Raptors — écarté (l'outsider est en forme) : favori Toronto Raptors 1.61",
+   "brief": "Match NBA : Memphis Grizzlies (extérieur) contre Toronto Raptors (domicile), le 10/11 à 01:30 (heure de Paris).\nCotes Unibet : Memphis Grizzlies 2.00, Toronto Raptors 1.61.\nAvis du bot : écarté — L'outsider est en forme : L'outsider est en meilleure forme : Toronto Raptors 5-4 vs Memphis Grizzlies 6-3 sur les 9 derniers.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
-   "id": "nba:98eae523edadc7d4d42ab37222eb2c88",
+   "id": "nba:9866fa22adc8509d487522ef4cf0fc24",
    "sport": "nba",
-   "label": "Boston Celtics @ Milwaukee Bucks",
-   "time": "2026-11-09T01:00:00+00:00",
+   "label": "Indiana Pacers @ Dallas Mavericks",
+   "time": "2026-11-10T01:00:00+00:00",
    "verdict": "Écarté",
-   "line": "02:00 Boston Celtics @ Milwaukee Bucks — écarté (cote trop basse) : favori Boston Celtics 1.11",
-   "brief": "Match NBA : Boston Celtics (extérieur) contre Milwaukee Bucks (domicile), le 09/11 à 02:00 (heure de Paris).\nCotes Unibet : Boston Celtics 1.11, Milwaukee Bucks 4.55.\nAvis du bot : écarté — Cote trop basse : Favori à 1.11 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "02:00 Indiana Pacers @ Dallas Mavericks — écarté (blessure importante) : favori Dallas Mavericks 1.55",
+   "brief": "Match NBA : Indiana Pacers (extérieur) contre Dallas Mavericks (domicile), le 10/11 à 02:00 (heure de Paris).\nCotes Unibet : Indiana Pacers 2.10, Dallas Mavericks 1.55.\nAvis du bot : écarté — Blessure importante : 3 joueurs absents/incertains, seuil de 3 atteint — règle de secours (Dallas Mavericks absente de KEY_PLAYERS) : Sergio de Larrea (Out), Tarik Biberovic (Out), Dereck Lively II (Out).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
-   "id": "nba:c205d8d8102fbb0e72929fff3c1fd089",
+   "id": "nba:dc61de43b5db9de357f48f44c8022494",
    "sport": "nba",
-   "label": "New Orleans Pelicans @ LA Clippers",
-   "time": "2026-11-09T02:00:00+00:00",
+   "label": "Denver Nuggets @ Houston Rockets",
+   "time": "2026-11-10T01:30:00+00:00",
    "verdict": "Écarté",
-   "line": "03:00 New Orleans Pelicans @ LA Clippers — écarté (forme insuffisante) : favori New Orleans Pelicans 1.68",
-   "brief": "Match NBA : New Orleans Pelicans (extérieur) contre LA Clippers (domicile), le 09/11 à 03:00 (heure de Paris).\nCotes Unibet : New Orleans Pelicans 1.68, LA Clippers 1.90.\nAvis du bot : écarté — Forme insuffisante : 1V-2D sur ses 3 derniers à l'extérieur (2 V requises).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "02:30 Denver Nuggets @ Houston Rockets — écarté (blessure importante) : favori Houston Rockets 1.27",
+   "brief": "Match NBA : Denver Nuggets (extérieur) contre Houston Rockets (domicile), le 10/11 à 02:30 (heure de Paris).\nCotes Unibet : Denver Nuggets 3.20, Houston Rockets 1.27.\nAvis du bot : écarté — Blessure importante : 3 joueurs absents/incertains, seuil de 3 atteint — règle de secours (Houston Rockets absente de KEY_PLAYERS) : Oscar Tshiebwe (Out), Clint Capela (Out), Steven Adams (Out).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
-   "id": "nba:7ea5547b35ef782963e4f384d3414dfa",
+   "id": "nba:dc4eb6ae9979b3d3418c35b4210f0c72",
    "sport": "nba",
-   "label": "Miami Heat @ Sacramento Kings",
-   "time": "2026-11-09T02:00:00+00:00",
+   "label": "San Antonio Spurs @ Phoenix Suns",
+   "time": "2026-11-10T02:00:00+00:00",
    "verdict": "Écarté",
-   "line": "03:00 Miami Heat @ Sacramento Kings — écarté (cote trop basse) : favori Miami Heat 1.18",
-   "brief": "Match NBA : Miami Heat (extérieur) contre Sacramento Kings (domicile), le 09/11 à 03:00 (heure de Paris).\nCotes Unibet : Miami Heat 1.18, Sacramento Kings 3.70.\nAvis du bot : écarté — Cote trop basse : Favori à 1.18 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "03:00 San Antonio Spurs @ Phoenix Suns — écarté (cote trop basse) : favori San Antonio Spurs 1.22",
+   "brief": "Match NBA : San Antonio Spurs (extérieur) contre Phoenix Suns (domicile), le 10/11 à 03:00 (heure de Paris).\nCotes Unibet : San Antonio Spurs 1.22, Phoenix Suns 3.30.\nAvis du bot : écarté — Cote trop basse : Favori à 1.22 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+  },
+  {
+   "id": "nba:3619e1cf4b0a325c3e0ba5b1fb7f3d91",
+   "sport": "nba",
+   "label": "New Orleans Pelicans @ Golden State Warriors",
+   "time": "2026-11-10T03:00:00+00:00",
+   "verdict": "Écarté",
+   "line": "04:00 New Orleans Pelicans @ Golden State Warriors — écarté (cote trop basse) : favori Golden State Warriors 1.21",
+   "brief": "Match NBA : New Orleans Pelicans (extérieur) contre Golden State Warriors (domicile), le 10/11 à 04:00 (heure de Paris).\nCotes Unibet : New Orleans Pelicans 3.40, Golden State Warriors 1.21.\nAvis du bot : écarté — Cote trop basse : Favori à 1.21 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   }
  ]
 }
