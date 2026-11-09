@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-09T18:48:50.946294+00:00",
+ "generated_at": "2026-11-09T23:09:42.830233+00:00",
  "matches": [
   {
    "id": "nba:07361a8381206817e27bd2697fad7479",
@@ -7,17 +7,17 @@
    "label": "Los Angeles Lakers @ Atlanta Hawks",
    "time": "2026-11-10T00:00:00+00:00",
    "verdict": "Écarté",
-   "line": "01:00 Los Angeles Lakers @ Atlanta Hawks — écarté (l'outsider est en forme) : favori Atlanta Hawks 1.79",
-   "brief": "Match NBA : Los Angeles Lakers (extérieur) contre Atlanta Hawks (domicile), le 10/11 à 01:00 (heure de Paris).\nCotes Unibet : Los Angeles Lakers 1.85, Atlanta Hawks 1.79.\nAvis du bot : écarté — L'outsider est en forme : L'outsider est en meilleure forme : Atlanta Hawks 6-4 vs Los Angeles Lakers 8-2 sur les 10 derniers.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "01:00 Los Angeles Lakers @ Atlanta Hawks — écarté (l'outsider est en forme) : favori Atlanta Hawks 1.62",
+   "brief": "Match NBA : Los Angeles Lakers (extérieur) contre Atlanta Hawks (domicile), le 10/11 à 01:00 (heure de Paris).\nCotes Unibet : Los Angeles Lakers 2.15, Atlanta Hawks 1.62.\nAvis du bot : écarté — L'outsider est en forme : L'outsider est en meilleure forme : Atlanta Hawks 6-4 vs Los Angeles Lakers 8-2 sur les 10 derniers.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:1df5ff8fe9c6d2dbff1d0ae176063b37",
    "sport": "nba",
    "label": "Cleveland Cavaliers @ Charlotte Hornets",
    "time": "2026-11-10T00:00:00+00:00",
-   "verdict": "Écarté",
-   "line": "01:00 Cleveland Cavaliers @ Charlotte Hornets — écarté (match piège) : favori Cleveland Cavaliers 1.27",
-   "brief": "Match NBA : Cleveland Cavaliers (extérieur) contre Charlotte Hornets (domicile), le 10/11 à 01:00 (heure de Paris).\nCotes Unibet : Cleveland Cavaliers 1.27, Charlotte Hornets 3.00.\nAvis du bot : écarté — Match piège : Le favori a un gros choc juste après et risque de se ménager. Choc contre Knicks (contender) dans 48 h.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "verdict": "En attente",
+   "line": "01:00 Cleveland Cavaliers @ Charlotte Hornets — pas encore de cote Unibet",
+   "brief": "Match NBA : Cleveland Cavaliers (extérieur) contre Charlotte Hornets (domicile), le 10/11 à 01:00 (heure de Paris).\nCotes Unibet : pas encore publiées.\nAvis du bot : écarté — Pas encore de cote Unibet : Unibet n'a pas encore ouvert les paris sur ce match..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:929b863acedecaf614c6312e28a44837",
@@ -25,8 +25,8 @@
    "label": "Washington Wizards @ Detroit Pistons",
    "time": "2026-11-10T00:00:00+00:00",
    "verdict": "Écarté",
-   "line": "01:00 Washington Wizards @ Detroit Pistons — écarté (cote trop basse) : favori Detroit Pistons 1.15",
-   "brief": "Match NBA : Washington Wizards (extérieur) contre Detroit Pistons (domicile), le 10/11 à 01:00 (heure de Paris).\nCotes Unibet : Washington Wizards 3.95, Detroit Pistons 1.15.\nAvis du bot : écarté — Cote trop basse : Favori à 1.15 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "01:00 Washington Wizards @ Detroit Pistons — écarté (cote trop basse) : favori Detroit Pistons 1.20",
+   "brief": "Match NBA : Washington Wizards (extérieur) contre Detroit Pistons (domicile), le 10/11 à 01:00 (heure de Paris).\nCotes Unibet : Washington Wizards 3.50, Detroit Pistons 1.20.\nAvis du bot : écarté — Cote trop basse : Favori à 1.20 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:56efae2815b3a18850f07a3781d652a2",
@@ -34,8 +34,8 @@
    "label": "Memphis Grizzlies @ Toronto Raptors",
    "time": "2026-11-10T00:30:00+00:00",
    "verdict": "Écarté",
-   "line": "01:30 Memphis Grizzlies @ Toronto Raptors — écarté (l'outsider est en forme) : favori Toronto Raptors 1.61",
-   "brief": "Match NBA : Memphis Grizzlies (extérieur) contre Toronto Raptors (domicile), le 10/11 à 01:30 (heure de Paris).\nCotes Unibet : Memphis Grizzlies 2.00, Toronto Raptors 1.61.\nAvis du bot : écarté — L'outsider est en forme : L'outsider est en meilleure forme : Toronto Raptors 5-4 vs Memphis Grizzlies 6-3 sur les 9 derniers.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "01:30 Memphis Grizzlies @ Toronto Raptors — écarté (la cote du favori monte) : favori Memphis Grizzlies 1.67",
+   "brief": "Match NBA : Memphis Grizzlies (extérieur) contre Toronto Raptors (domicile), le 10/11 à 01:30 (heure de Paris).\nCotes Unibet : Memphis Grizzlies 1.67, Toronto Raptors 1.92.\nAvis du bot : écarté — La cote du favori monte : Le marché commence à douter. Le favori a changé depuis la 1re observation (était à 2.00).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:9866fa22adc8509d487522ef4cf0fc24",
@@ -43,8 +43,8 @@
    "label": "Indiana Pacers @ Dallas Mavericks",
    "time": "2026-11-10T01:00:00+00:00",
    "verdict": "Écarté",
-   "line": "02:00 Indiana Pacers @ Dallas Mavericks — écarté (blessure importante) : favori Dallas Mavericks 1.55",
-   "brief": "Match NBA : Indiana Pacers (extérieur) contre Dallas Mavericks (domicile), le 10/11 à 02:00 (heure de Paris).\nCotes Unibet : Indiana Pacers 2.10, Dallas Mavericks 1.55.\nAvis du bot : écarté — Blessure importante : 3 joueurs absents/incertains, seuil de 3 atteint — règle de secours (Dallas Mavericks absente de KEY_PLAYERS) : Sergio de Larrea (Out), Tarik Biberovic (Out), Dereck Lively II (Out).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "02:00 Indiana Pacers @ Dallas Mavericks — écarté (blessure importante) : favori Dallas Mavericks 1.48",
+   "brief": "Match NBA : Indiana Pacers (extérieur) contre Dallas Mavericks (domicile), le 10/11 à 02:00 (heure de Paris).\nCotes Unibet : Indiana Pacers 2.25, Dallas Mavericks 1.48.\nAvis du bot : écarté — Blessure importante : 4 joueurs absents/incertains, seuil de 3 atteint — règle de secours (Dallas Mavericks absente de KEY_PLAYERS) : Morez Johnson Jr. (Day-To-Day), Sergio de Larrea (Out), Tarik Biberovic (Out), Dereck Lively II (Out).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:dc61de43b5db9de357f48f44c8022494",
@@ -52,8 +52,8 @@
    "label": "Denver Nuggets @ Houston Rockets",
    "time": "2026-11-10T01:30:00+00:00",
    "verdict": "Écarté",
-   "line": "02:30 Denver Nuggets @ Houston Rockets — écarté (blessure importante) : favori Houston Rockets 1.27",
-   "brief": "Match NBA : Denver Nuggets (extérieur) contre Houston Rockets (domicile), le 10/11 à 02:30 (heure de Paris).\nCotes Unibet : Denver Nuggets 3.20, Houston Rockets 1.27.\nAvis du bot : écarté — Blessure importante : 3 joueurs absents/incertains, seuil de 3 atteint — règle de secours (Houston Rockets absente de KEY_PLAYERS) : Oscar Tshiebwe (Out), Clint Capela (Out), Steven Adams (Out).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "02:30 Denver Nuggets @ Houston Rockets — écarté (la cote du favori monte) : favori Houston Rockets 1.49",
+   "brief": "Match NBA : Denver Nuggets (extérieur) contre Houston Rockets (domicile), le 10/11 à 02:30 (heure de Paris).\nCotes Unibet : Denver Nuggets 2.45, Houston Rockets 1.49.\nAvis du bot : écarté — La cote du favori monte : Le marché commence à douter. Hausse anormale de la cote du favori : 1.27 → 1.49 (+17.3%).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:dc4eb6ae9979b3d3418c35b4210f0c72",
@@ -61,8 +61,8 @@
    "label": "San Antonio Spurs @ Phoenix Suns",
    "time": "2026-11-10T02:00:00+00:00",
    "verdict": "Écarté",
-   "line": "03:00 San Antonio Spurs @ Phoenix Suns — écarté (cote trop basse) : favori San Antonio Spurs 1.22",
-   "brief": "Match NBA : San Antonio Spurs (extérieur) contre Phoenix Suns (domicile), le 10/11 à 03:00 (heure de Paris).\nCotes Unibet : San Antonio Spurs 1.22, Phoenix Suns 3.30.\nAvis du bot : écarté — Cote trop basse : Favori à 1.22 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "03:00 San Antonio Spurs @ Phoenix Suns — écarté (cote trop basse) : favori San Antonio Spurs 1.21",
+   "brief": "Match NBA : San Antonio Spurs (extérieur) contre Phoenix Suns (domicile), le 10/11 à 03:00 (heure de Paris).\nCotes Unibet : San Antonio Spurs 1.21, Phoenix Suns 3.45.\nAvis du bot : écarté — Cote trop basse : Favori à 1.21 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:3619e1cf4b0a325c3e0ba5b1fb7f3d91",
@@ -70,8 +70,8 @@
    "label": "New Orleans Pelicans @ Golden State Warriors",
    "time": "2026-11-10T03:00:00+00:00",
    "verdict": "Écarté",
-   "line": "04:00 New Orleans Pelicans @ Golden State Warriors — écarté (cote trop basse) : favori Golden State Warriors 1.21",
-   "brief": "Match NBA : New Orleans Pelicans (extérieur) contre Golden State Warriors (domicile), le 10/11 à 04:00 (heure de Paris).\nCotes Unibet : New Orleans Pelicans 3.40, Golden State Warriors 1.21.\nAvis du bot : écarté — Cote trop basse : Favori à 1.21 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "04:00 New Orleans Pelicans @ Golden State Warriors — écarté (cote trop basse) : favori Golden State Warriors 1.12",
+   "brief": "Match NBA : New Orleans Pelicans (extérieur) contre Golden State Warriors (domicile), le 10/11 à 04:00 (heure de Paris).\nCotes Unibet : New Orleans Pelicans 4.35, Golden State Warriors 1.12.\nAvis du bot : écarté — Cote trop basse : Favori à 1.12 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   }
  ]
 }
