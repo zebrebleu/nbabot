@@ -1,0 +1,25 @@
+{
+ "created": "2026-11-10T16:26:28.043598+00:00",
+ "created_label": "mardi 10/11 à 17:26",
+ "bets": [
+  {
+   "option": "Option 1 · Pari simple",
+   "kind": "Pari simple",
+   "total": 1.48,
+   "prob": 0.615,
+   "stake": 15,
+   "legs": [
+    {
+     "event_id": "0066b4bf94846e710339ce11591e33f8",
+     "pick": "Coco Gauff",
+     "opponent": "Linda Noskova",
+     "odds": 1.48,
+     "tournament": "WTA Finals",
+     "best_of": 3,
+     "commence": "2026-11-10T21:10:00+00:00",
+     "time": "10/11 22:10"
+    }
+   ]
+  }
+ ]
+}
