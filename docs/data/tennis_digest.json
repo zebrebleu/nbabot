@@ -1,26 +1,6 @@
 {
- "generated_at": "2026-11-11T16:11:13.751835+00:00",
+ "generated_at": "2026-11-11T23:26:05.083550+00:00",
  "matches": [
-  {
-   "id": "tennis:d87ade1e56f0c96e3b28b59dea344837",
-   "sport": "tennis",
-   "label": "Elina Svitolina – Karolina Muchova",
-   "competition": "WTA Finals",
-   "time": "2026-11-11T20:00:00+00:00",
-   "verdict": "À jouer",
-   "line": "21:00 Elina Svitolina – Karolina Muchova — À JOUER : Karolina Muchova 1.53 (57% estimé) [WTA Finals]",
-   "brief": "Match de tennis (WTA Finals, dur) : Elina Svitolina contre Karolina Muchova, le 11/11 à 21:00 (heure de Paris).\nCotes Unibet : Elina Svitolina 2.05, Karolina Muchova 1.53.\nAvis du bot : à jouer — Karolina Muchova gagne, confiance prudente, chances estimées 57%, mise conseillée 15 €.\nAtouts : Très à l'aise sur dur : 90V-34D.\nPoints de vigilance : Cote Unibet en dessous du marché (65% contre 57%).\nForme récente (10 derniers matchs) : Karolina Muchova : 7V-3D, 1 défaite de suite / Elina Svitolina : 6V-4D, 1 défaite de suite\nConfrontations depuis 2023 : Karolina Muchova 1V-1D · derniers : 03/2025 Miami Open presented by Itau (D), 04/2026 Porsche Tennis Grand Prix (V)\nClassement : Karolina Muchova : 7e mondial / Elina Svitolina : 6e mondial\nSaisons précédentes : Karolina Muchova : 2025 24V-15D (dur 24V-13D) · 2024 21V-8D (dur 15V-5D) · 2023 38V-14D (dur 28V-10D) / Elina Svitolina : 2025 33V-14D (dur 19V-9D) · 2024 29V-17D (dur 18V-10D) · 2023 21V-10D (dur 7V-4D)\nSur dur : Karolina Muchova : 90V-34D (73%) / Elina Svitolina : 75V-33D (69%)\nDernier match : Karolina Muchova : il y a 35 jours : défaite contre Nikola Bartunkova (2 sets, 15 jeux) / Elina Svitolina : il y a 34 jours : défaite contre Zheng Qinwen (2 sets, 22 jeux)\nParcours à WTA Finals : Karolina Muchova : premier match dans le tournoi / Elina Svitolina : premier match dans le tournoi\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
-  },
-  {
-   "id": "tennis:d1549c8585e649677db3579affc1da2e",
-   "sport": "tennis",
-   "label": "Aryna Sabalenka – Mirra Andreeva",
-   "competition": "WTA Finals",
-   "time": "2026-11-11T21:10:00+00:00",
-   "verdict": "Écarté",
-   "line": "22:10 Aryna Sabalenka – Mirra Andreeva — écarté (la cote du favori monte) : favori Aryna Sabalenka 1.71 [WTA Finals]",
-   "brief": "Match de tennis (WTA Finals, dur) : Aryna Sabalenka contre Mirra Andreeva, le 11/11 à 22:10 (heure de Paris).\nCotes Unibet : Aryna Sabalenka 1.71, Mirra Andreeva 1.83.\nAvis du bot : écarté — La cote du favori monte : Hausse anormale : 1.60 → 1.71 (+6.9%).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
-  },
   {
    "id": "tennis:b8a1b5d0077794775db0a2ca6b15baf7",
    "sport": "tennis",
@@ -28,8 +8,8 @@
    "competition": "WTA Finals",
    "time": "2026-11-12T20:00:00+00:00",
    "verdict": "Écarté",
-   "line": "21:00 Marta Kostyuk – Coco Gauff — écarté (cote trop basse) : favori Coco Gauff 1.22 [WTA Finals]",
-   "brief": "Match de tennis (WTA Finals, dur) : Marta Kostyuk contre Coco Gauff, le 12/11 à 21:00 (heure de Paris).\nCotes Unibet : Marta Kostyuk 3.10, Coco Gauff 1.22.\nAvis du bot : écarté — Cote trop basse : Favori à 1.22 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "21:00 Marta Kostyuk – Coco Gauff — écarté (la cote du favori monte) : favori Coco Gauff 1.29 [WTA Finals]",
+   "brief": "Match de tennis (WTA Finals, dur) : Marta Kostyuk contre Coco Gauff, le 12/11 à 21:00 (heure de Paris).\nCotes Unibet : Marta Kostyuk 2.75, Coco Gauff 1.29.\nAvis du bot : écarté — La cote du favori monte : Hausse anormale : 1.22 → 1.29 (+5.7%).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "tennis:7d0fa680caf6f5718ca51b421754252d",
@@ -38,8 +18,8 @@
    "competition": "WTA Finals",
    "time": "2026-11-12T21:30:00+00:00",
    "verdict": "Écarté",
-   "line": "22:30 Jessica Pegula – Linda Noskova — écarté (l'outsider est en forme) : favori Linda Noskova 1.68 [WTA Finals]",
-   "brief": "Match de tennis (WTA Finals, dur) : Jessica Pegula contre Linda Noskova, le 12/11 à 22:30 (heure de Paris).\nCotes Unibet : Jessica Pegula 1.84, Linda Noskova 1.68.\nAvis du bot : écarté — L'outsider est en forme : L'outsider est en meilleure forme : Linda Noskova 7V-3D vs Jessica Pegula 8V-2D.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "22:30 Jessica Pegula – Linda Noskova — écarté (la cote du favori monte) : favori Linda Noskova 1.74 [WTA Finals]",
+   "brief": "Match de tennis (WTA Finals, dur) : Jessica Pegula contre Linda Noskova, le 12/11 à 22:30 (heure de Paris).\nCotes Unibet : Jessica Pegula 1.90, Linda Noskova 1.74.\nAvis du bot : écarté — La cote du favori monte : Hausse anormale : 1.68 → 1.74 (+3.6%).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   }
  ]
 }
