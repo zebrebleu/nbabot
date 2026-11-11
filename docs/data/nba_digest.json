@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-10T22:18:13.735471+00:00",
+ "generated_at": "2026-11-11T00:13:32.899228+00:00",
  "matches": [
   {
    "id": "nba:3689d555c9a1c81e3d300375b4c80530",
@@ -7,8 +7,8 @@
    "label": "Milwaukee Bucks @ New York Knicks",
    "time": "2026-11-11T00:30:00+00:00",
    "verdict": "Écarté",
-   "line": "01:30 Milwaukee Bucks @ New York Knicks — écarté (cote trop basse) : favori New York Knicks 1.06",
-   "brief": "Match NBA : Milwaukee Bucks (extérieur) contre New York Knicks (domicile), le 11/11 à 01:30 (heure de Paris).\nCotes Unibet : Milwaukee Bucks 5.80, New York Knicks 1.06.\nAvis du bot : écarté — Cote trop basse : Favori à 1.06 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "01:30 Milwaukee Bucks @ New York Knicks — écarté (cote trop basse) : favori New York Knicks 1.05",
+   "brief": "Match NBA : Milwaukee Bucks (extérieur) contre New York Knicks (domicile), le 11/11 à 01:30 (heure de Paris).\nCotes Unibet : Milwaukee Bucks 6.10, New York Knicks 1.05.\nAvis du bot : écarté — Cote trop basse : Favori à 1.05 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:cfa503c66cd505776a910921875ef7dd",
@@ -25,8 +25,8 @@
    "label": "LA Clippers @ Phoenix Suns",
    "time": "2026-11-11T02:00:00+00:00",
    "verdict": "À jouer",
-   "line": "03:00 LA Clippers @ Phoenix Suns — À JOUER : Phoenix Suns 1.50 (61% estimé)",
-   "brief": "Match NBA : LA Clippers (extérieur) contre Phoenix Suns (domicile), le 11/11 à 03:00 (heure de Paris).\nCotes Unibet : LA Clippers 2.20, Phoenix Suns 1.50.\nAvis du bot : à jouer — Phoenix Suns gagne, confiance prudente, chances estimées 61%, mise conseillée 15 €.\nAtouts : LA Clippers diminué : 5 absents ou incertains.\nPoints de vigilance : Début de saison : Peu de matchs joués, analyse moins fiable — Phoenix Suns : 9 match(s) joué(s), LA Clippers : 9 (10 requis pour chaque équipe) ; Back-to-back : Back-to-back mais à domicile (toléré) — fatigue possible ; LA Clippers a eu plus de repos (2 jour(s) de repos contre back-to-back (a joué la veille)).\nForme récente (10 derniers matchs) : Phoenix Suns : 3V-6D, 1 défaite de suite, écart moyen -8.4 pts/match / LA Clippers : 2V-7D, 1 victoire de suite, écart moyen -4.0 pts/match\nFace-à-face depuis 2023-24 : Phoenix Suns 7V-5D contre LA Clippers / Derniers : 10/2025 D 102-129, 11/2025 V 115-102, 11/2025 V 114-103, 02/2026 D 93-117\nConfrontations cette saison : Première confrontation de la saison\nSaisons précédentes : Phoenix Suns : 2025-26 45V-37D · 2024-25 36V-46D · 2023-24 49V-33D / LA Clippers : 2025-26 42V-40D · 2024-25 50V-32D · 2023-24 51V-31D\nBilan de la saison : Phoenix Suns : 3V-6D (22e NBA) · à domicile 3V-3D / LA Clippers : 2V-7D (25e NBA) · à l'extérieur 0V-4D\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "03:00 LA Clippers @ Phoenix Suns — À JOUER : Phoenix Suns 1.50 (62% estimé)",
+   "brief": "Match NBA : LA Clippers (extérieur) contre Phoenix Suns (domicile), le 11/11 à 03:00 (heure de Paris).\nCotes Unibet : LA Clippers 2.20, Phoenix Suns 1.50.\nAvis du bot : à jouer — Phoenix Suns gagne, confiance prudente, chances estimées 62%, mise conseillée 15 €.\nAtouts : LA Clippers diminué : 5 absents ou incertains.\nPoints de vigilance : Début de saison : Peu de matchs joués, analyse moins fiable — Phoenix Suns : 9 match(s) joué(s), LA Clippers : 9 (10 requis pour chaque équipe) ; Back-to-back : Back-to-back mais à domicile (toléré) — fatigue possible ; LA Clippers a eu plus de repos (2 jour(s) de repos contre back-to-back (a joué la veille)).\nForme récente (10 derniers matchs) : Phoenix Suns : 3V-6D, 1 défaite de suite, écart moyen -8.4 pts/match / LA Clippers : 2V-7D, 1 victoire de suite, écart moyen -4.0 pts/match\nFace-à-face depuis 2023-24 : Phoenix Suns 7V-5D contre LA Clippers / Derniers : 10/2025 D 102-129, 11/2025 V 115-102, 11/2025 V 114-103, 02/2026 D 93-117\nConfrontations cette saison : Première confrontation de la saison\nSaisons précédentes : Phoenix Suns : 2025-26 45V-37D · 2024-25 36V-46D · 2023-24 49V-33D / LA Clippers : 2025-26 42V-40D · 2024-25 50V-32D · 2023-24 51V-31D\nBilan de la saison : Phoenix Suns : 3V-6D (22e NBA) · à domicile 3V-3D / LA Clippers : 2V-7D (25e NBA) · à l'extérieur 0V-4D\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:9ac02cb22adf276b325b1e9c9c6c588e",
@@ -43,8 +43,8 @@
    "label": "Orlando Magic @ Sacramento Kings",
    "time": "2026-11-11T03:00:00+00:00",
    "verdict": "Écarté",
-   "line": "04:00 Orlando Magic @ Sacramento Kings — écarté (trop de déplacements) : favori Orlando Magic 1.33",
-   "brief": "Match NBA : Orlando Magic (extérieur) contre Sacramento Kings (domicile), le 11/11 à 04:00 (heure de Paris).\nCotes Unibet : Orlando Magic 1.33, Sacramento Kings 2.70.\nAvis du bot : écarté — Trop de déplacements : 3e match consécutif à l'extérieur.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "04:00 Orlando Magic @ Sacramento Kings — écarté (trop de déplacements) : favori Orlando Magic 1.36",
+   "brief": "Match NBA : Orlando Magic (extérieur) contre Sacramento Kings (domicile), le 11/11 à 04:00 (heure de Paris).\nCotes Unibet : Orlando Magic 1.36, Sacramento Kings 2.60.\nAvis du bot : écarté — Trop de déplacements : 3e match consécutif à l'extérieur.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:f5477c781c94e09e85374bbf9149c0f1",
