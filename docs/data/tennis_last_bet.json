@@ -1,55 +1,25 @@
 {
- "created_label": "vendredi 06/11 à 16:55",
+ "created_label": "mardi 10/11 à 17:26",
  "bets": [
   {
    "option": "Option 1 · Pari simple",
    "kind": "Pari simple",
-   "total": 1.26,
+   "total": 1.48,
    "legs": [
     {
-     "event_id": "e4e0781ebc80c47d216dd73609a3c8e0",
-     "pick": "Carlos Alcaraz",
-     "opponent": "Taylor Fritz",
-     "odds": 1.26,
-     "tournament": "ATP Paris Masters",
+     "event_id": "0066b4bf94846e710339ce11591e33f8",
+     "pick": "Coco Gauff",
+     "opponent": "Linda Noskova",
+     "odds": 1.48,
+     "tournament": "WTA Finals",
      "best_of": 3,
-     "commence": "2026-11-06T18:00:00+00:00",
-     "time": "06/11 19:00",
-     "result": true
+     "commence": "2026-11-10T21:10:00+00:00",
+     "time": "10/11 22:10",
+     "result": null
     }
    ],
-   "status": "gagné"
-  },
-  {
-   "option": "Option 2 · Combiné",
-   "kind": "Combiné de 2 matchs",
-   "total": 1.68,
-   "legs": [
-    {
-     "event_id": "e4e0781ebc80c47d216dd73609a3c8e0",
-     "pick": "Carlos Alcaraz",
-     "opponent": "Taylor Fritz",
-     "odds": 1.26,
-     "tournament": "ATP Paris Masters",
-     "best_of": 3,
-     "commence": "2026-11-06T18:00:00+00:00",
-     "time": "06/11 19:00",
-     "result": true
-    },
-    {
-     "event_id": "0adc47c275819823d018232033a6de7f",
-     "pick": "Casper Ruud",
-     "opponent": "Nuno Borges",
-     "odds": 1.33,
-     "tournament": "ATP Paris Masters",
-     "best_of": 3,
-     "commence": "2026-11-06T19:30:00+00:00",
-     "time": "06/11 20:30",
-     "result": true
-    }
-   ],
-   "status": "gagné"
+   "status": "résultat non disponible"
   }
  ],
- "status": "pari simple gagné / combiné de 2 matchs gagné"
+ "status": "pari simple résultat non disponible"
 }

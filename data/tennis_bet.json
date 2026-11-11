@@ -1,23 +1,23 @@
 {
- "created": "2026-11-10T16:26:28.043598+00:00",
- "created_label": "mardi 10/11 à 17:26",
+ "created": "2026-11-11T16:11:13.751835+00:00",
+ "created_label": "mercredi 11/11 à 17:11",
  "bets": [
   {
    "option": "Option 1 · Pari simple",
    "kind": "Pari simple",
-   "total": 1.48,
-   "prob": 0.615,
+   "total": 1.53,
+   "prob": 0.568,
    "stake": 15,
    "legs": [
     {
-     "event_id": "0066b4bf94846e710339ce11591e33f8",
-     "pick": "Coco Gauff",
-     "opponent": "Linda Noskova",
-     "odds": 1.48,
+     "event_id": "d87ade1e56f0c96e3b28b59dea344837",
+     "pick": "Karolina Muchova",
+     "opponent": "Elina Svitolina",
+     "odds": 1.53,
      "tournament": "WTA Finals",
      "best_of": 3,
-     "commence": "2026-11-10T21:10:00+00:00",
-     "time": "10/11 22:10"
+     "commence": "2026-11-11T20:00:00+00:00",
+     "time": "11/11 21:00"
     }
    ]
   }
