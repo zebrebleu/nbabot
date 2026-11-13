@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-13T20:39:09.911725+00:00",
+ "generated_at": "2026-11-13T22:31:54.157868+00:00",
  "matches": [
   {
    "id": "nba:6669b911691463c669a5c10574742e8e",
@@ -17,7 +17,7 @@
    "time": "2026-11-14T00:00:00+00:00",
    "verdict": "Écarté",
    "line": "01:00 Milwaukee Bucks @ Orlando Magic — écarté (cote trop basse) : favori Orlando Magic 1.20",
-   "brief": "Match NBA : Milwaukee Bucks (extérieur) contre Orlando Magic (domicile), le 14/11 à 01:00 (heure de Paris).\nCotes Unibet : Milwaukee Bucks 3.25, Orlando Magic 1.20.\nAvis du bot : écarté — Cote trop basse : Favori à 1.20 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "brief": "Match NBA : Milwaukee Bucks (extérieur) contre Orlando Magic (domicile), le 14/11 à 01:00 (heure de Paris).\nCotes Unibet : Milwaukee Bucks 3.30, Orlando Magic 1.20.\nAvis du bot : écarté — Cote trop basse : Favori à 1.20 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:58b860d500be69ebf853926aa1ac8271",
@@ -25,8 +25,8 @@
    "label": "Cleveland Cavaliers @ Miami Heat",
    "time": "2026-11-14T01:00:00+00:00",
    "verdict": "Écarté",
-   "line": "02:00 Cleveland Cavaliers @ Miami Heat — écarté (forme insuffisante) : favori Miami Heat 1.64",
-   "brief": "Match NBA : Cleveland Cavaliers (extérieur) contre Miami Heat (domicile), le 14/11 à 02:00 (heure de Paris).\nCotes Unibet : Cleveland Cavaliers 2.10, Miami Heat 1.64.\nAvis du bot : écarté — Forme insuffisante : 1V-2D sur ses 3 derniers à domicile (2 V requises).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "02:00 Cleveland Cavaliers @ Miami Heat — écarté (forme insuffisante) : favori Miami Heat 1.63",
+   "brief": "Match NBA : Cleveland Cavaliers (extérieur) contre Miami Heat (domicile), le 14/11 à 02:00 (heure de Paris).\nCotes Unibet : Cleveland Cavaliers 2.10, Miami Heat 1.63.\nAvis du bot : écarté — Forme insuffisante : 1V-2D sur ses 3 derniers à domicile (2 V requises).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:80ffc963f864f3d4fcefa82fd02b7d7b",
@@ -61,8 +61,8 @@
    "label": "Golden State Warriors @ San Antonio Spurs",
    "time": "2026-11-14T02:30:00+00:00",
    "verdict": "Écarté",
-   "line": "03:30 Golden State Warriors @ San Antonio Spurs — écarté (cote trop basse) : favori San Antonio Spurs 1.12",
-   "brief": "Match NBA : Golden State Warriors (extérieur) contre San Antonio Spurs (domicile), le 14/11 à 03:30 (heure de Paris).\nCotes Unibet : Golden State Warriors 4.85, San Antonio Spurs 1.12.\nAvis du bot : écarté — Cote trop basse : Favori à 1.12 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "03:30 Golden State Warriors @ San Antonio Spurs — écarté (cote trop basse) : favori San Antonio Spurs 1.13",
+   "brief": "Match NBA : Golden State Warriors (extérieur) contre San Antonio Spurs (domicile), le 14/11 à 03:30 (heure de Paris).\nCotes Unibet : Golden State Warriors 4.65, San Antonio Spurs 1.13.\nAvis du bot : écarté — Cote trop basse : Favori à 1.13 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:a51c350318d7570c2b74af08eedb9fcd",
