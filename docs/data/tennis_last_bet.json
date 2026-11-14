@@ -1,25 +1,55 @@
 {
- "created_label": "mercredi 11/11 à 17:11",
+ "created_label": "vendredi 13/11 à 17:25",
  "bets": [
   {
    "option": "Option 1 · Pari simple",
    "kind": "Pari simple",
-   "total": 1.53,
+   "total": 1.38,
    "legs": [
     {
-     "event_id": "d87ade1e56f0c96e3b28b59dea344837",
-     "pick": "Karolina Muchova",
+     "event_id": "29a6e4e35a3b385e9666473ad68f2084",
+     "pick": "Aryna Sabalenka",
      "opponent": "Elina Svitolina",
-     "odds": 1.53,
+     "odds": 1.38,
      "tournament": "WTA Finals",
      "best_of": 3,
-     "commence": "2026-11-11T20:00:00+00:00",
-     "time": "11/11 21:00",
+     "commence": "2026-11-13T21:30:00+00:00",
+     "time": "13/11 22:30",
+     "result": null
+    }
+   ],
+   "status": "résultat non disponible"
+  },
+  {
+   "option": "Option 2 · Combiné",
+   "kind": "Combiné de 2 matchs",
+   "total": 1.72,
+   "legs": [
+    {
+     "event_id": "6b92a67eab021047017da9d42e1e1fae",
+     "pick": "Mirra Andreeva",
+     "opponent": "Karolina Muchova",
+     "odds": 1.25,
+     "tournament": "WTA Finals",
+     "best_of": 3,
+     "commence": "2026-11-13T20:00:00+00:00",
+     "time": "13/11 21:00",
+     "result": null
+    },
+    {
+     "event_id": "29a6e4e35a3b385e9666473ad68f2084",
+     "pick": "Aryna Sabalenka",
+     "opponent": "Elina Svitolina",
+     "odds": 1.38,
+     "tournament": "WTA Finals",
+     "best_of": 3,
+     "commence": "2026-11-13T21:30:00+00:00",
+     "time": "13/11 22:30",
      "result": null
     }
    ],
    "status": "résultat non disponible"
   }
  ],
- "status": "pari simple résultat non disponible"
+ "status": "pari simple résultat non disponible / combiné de 2 matchs résultat non disponible"
 }
