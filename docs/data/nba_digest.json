@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-14T18:51:27.174992+00:00",
+ "generated_at": "2026-11-14T21:23:27.176062+00:00",
  "matches": [
   {
    "id": "nba:6cb4c8feeadd57aa6ab46ebdee60818a",
@@ -8,7 +8,7 @@
    "time": "2026-11-15T00:00:00+00:00",
    "verdict": "Écarté",
    "line": "01:00 Denver Nuggets @ New Orleans Pelicans — écarté (cote trop basse) : favori Denver Nuggets 1.11",
-   "brief": "Match NBA : Denver Nuggets (extérieur) contre New Orleans Pelicans (domicile), le 15/11 à 01:00 (heure de Paris).\nCotes Unibet : Denver Nuggets 1.11, New Orleans Pelicans 4.15.\nAvis du bot : écarté — Cote trop basse : Favori à 1.11 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "brief": "Match NBA : Denver Nuggets (extérieur) contre New Orleans Pelicans (domicile), le 15/11 à 01:00 (heure de Paris).\nCotes Unibet : Denver Nuggets 1.11, New Orleans Pelicans 4.25.\nAvis du bot : écarté — Cote trop basse : Favori à 1.11 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:2cc2c254049b0bd0a6219f70cbb0b69a",
@@ -16,17 +16,17 @@
    "label": "Dallas Mavericks @ Cleveland Cavaliers",
    "time": "2026-11-15T00:30:00+00:00",
    "verdict": "Écarté",
-   "line": "01:30 Dallas Mavericks @ Cleveland Cavaliers — écarté (forme insuffisante) : favori Dallas Mavericks 1.45",
-   "brief": "Match NBA : Dallas Mavericks (extérieur) contre Cleveland Cavaliers (domicile), le 15/11 à 01:30 (heure de Paris).\nCotes Unibet : Dallas Mavericks 1.45, Cleveland Cavaliers 2.25.\nAvis du bot : écarté — Forme insuffisante : 1V-2D sur ses 3 derniers à l'extérieur (2 V requises).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "01:30 Dallas Mavericks @ Cleveland Cavaliers — écarté (forme insuffisante) : favori Dallas Mavericks 1.43",
+   "brief": "Match NBA : Dallas Mavericks (extérieur) contre Cleveland Cavaliers (domicile), le 15/11 à 01:30 (heure de Paris).\nCotes Unibet : Dallas Mavericks 1.43, Cleveland Cavaliers 2.30.\nAvis du bot : écarté — Forme insuffisante : 1V-2D sur ses 3 derniers à l'extérieur (2 V requises).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:cb06267ae037a883ae6f71078d6e2aaa",
    "sport": "nba",
    "label": "Detroit Pistons @ Miami Heat",
    "time": "2026-11-15T01:00:00+00:00",
-   "verdict": "À jouer",
-   "line": "02:00 Detroit Pistons @ Miami Heat — À JOUER : Detroit Pistons 1.50 (61% estimé)",
-   "brief": "Match NBA : Detroit Pistons (extérieur) contre Miami Heat (domicile), le 15/11 à 02:00 (heure de Paris).\nCotes Unibet : Detroit Pistons 1.50, Miami Heat 2.30.\nAvis du bot : à jouer — Detroit Pistons gagne, confiance moyenne, chances estimées 61%, mise conseillée 25 €.\nAtouts : Solide à l'extérieur : 5V-1D cette saison ; Miami Heat joue en back-to-back, Detroit Pistons est reposé ; Miami Heat diminué : 3 absents ou incertains ; A déjà battu Miami Heat cette saison.\nPoints de vigilance : Cote Unibet en dessous du marché (67% implicite contre 61% estimé) ; Perd souvent contre Miami Heat : 5-7 depuis 2023-24.\nForme récente (10 derniers matchs) : Detroit Pistons : 7V-3D, 2 victoires de suite, écart moyen +7.7 pts/match / Miami Heat : 6V-4D, 3 victoires de suite, écart moyen +0.7 pts/match\nFace-à-face depuis 2023-24 : Detroit Pistons 5V-7D contre Miami Heat / Derniers : 11/2025 V 138-135, 01/2026 D 112-118, 03/2026 D 110-121, 10/2026 V 128-111\nConfrontations cette saison : victoire 128-111\nSaisons précédentes : Detroit Pistons : 2025-26 60V-22D · 2024-25 44V-38D · 2023-24 14V-68D / Miami Heat : 2025-26 43V-39D · 2024-25 37V-45D · 2023-24 46V-36D\nBilan de la saison : Detroit Pistons : 8V-3D (8e NBA) · à l'extérieur 5V-1D / Miami Heat : 6V-6D (15e NBA) · à domicile 2V-3D\nRepos et calendrier : Detroit Pistons : 2 jour(s) de repos / Miami Heat : back-to-back (a joué la veille)\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "verdict": "Écarté",
+   "line": "02:00 Detroit Pistons @ Miami Heat — écarté (la cote du favori monte) : favori Detroit Pistons 1.54",
+   "brief": "Match NBA : Detroit Pistons (extérieur) contre Miami Heat (domicile), le 15/11 à 02:00 (heure de Paris).\nCotes Unibet : Detroit Pistons 1.54, Miami Heat 2.20.\nAvis du bot : écarté — La cote du favori monte : Le marché commence à douter. Hausse anormale de la cote du favori : 1.46 → 1.54 (+5.5%).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:a7cb6062530bd69eb6caee84a015abd0",
@@ -34,8 +34,8 @@
    "label": "Brooklyn Nets @ Memphis Grizzlies",
    "time": "2026-11-15T01:00:00+00:00",
    "verdict": "Écarté",
-   "line": "02:00 Brooklyn Nets @ Memphis Grizzlies — écarté (la cote du favori monte) : favori Memphis Grizzlies 1.57",
-   "brief": "Match NBA : Brooklyn Nets (extérieur) contre Memphis Grizzlies (domicile), le 15/11 à 02:00 (heure de Paris).\nCotes Unibet : Brooklyn Nets 1.99, Memphis Grizzlies 1.57.\nAvis du bot : écarté — La cote du favori monte : Le marché commence à douter. Hausse anormale de la cote du favori : 1.50 → 1.57 (+4.7%).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "02:00 Brooklyn Nets @ Memphis Grizzlies — écarté (la cote du favori monte) : favori Memphis Grizzlies 1.66",
+   "brief": "Match NBA : Brooklyn Nets (extérieur) contre Memphis Grizzlies (domicile), le 15/11 à 02:00 (heure de Paris).\nCotes Unibet : Brooklyn Nets 1.86, Memphis Grizzlies 1.66.\nAvis du bot : écarté — La cote du favori monte : Le marché commence à douter. Hausse anormale de la cote du favori : 1.50 → 1.66 (+10.7%).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:5773e80d52d3fba36b11be38ded62790",
