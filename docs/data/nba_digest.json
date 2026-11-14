@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-14T21:23:27.176062+00:00",
+ "generated_at": "2026-11-14T23:21:08.298505+00:00",
  "matches": [
   {
    "id": "nba:6cb4c8feeadd57aa6ab46ebdee60818a",
@@ -15,9 +15,9 @@
    "sport": "nba",
    "label": "Dallas Mavericks @ Cleveland Cavaliers",
    "time": "2026-11-15T00:30:00+00:00",
-   "verdict": "Écarté",
-   "line": "01:30 Dallas Mavericks @ Cleveland Cavaliers — écarté (forme insuffisante) : favori Dallas Mavericks 1.43",
-   "brief": "Match NBA : Dallas Mavericks (extérieur) contre Cleveland Cavaliers (domicile), le 15/11 à 01:30 (heure de Paris).\nCotes Unibet : Dallas Mavericks 1.43, Cleveland Cavaliers 2.30.\nAvis du bot : écarté — Forme insuffisante : 1V-2D sur ses 3 derniers à l'extérieur (2 V requises).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "verdict": "En attente",
+   "line": "01:30 Dallas Mavericks @ Cleveland Cavaliers — pas encore de cote Unibet",
+   "brief": "Match NBA : Dallas Mavericks (extérieur) contre Cleveland Cavaliers (domicile), le 15/11 à 01:30 (heure de Paris).\nCotes Unibet : pas encore publiées.\nAvis du bot : écarté — Pas encore de cote Unibet : Unibet n'a pas encore ouvert les paris sur ce match..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:cb06267ae037a883ae6f71078d6e2aaa",
@@ -25,8 +25,8 @@
    "label": "Detroit Pistons @ Miami Heat",
    "time": "2026-11-15T01:00:00+00:00",
    "verdict": "Écarté",
-   "line": "02:00 Detroit Pistons @ Miami Heat — écarté (la cote du favori monte) : favori Detroit Pistons 1.54",
-   "brief": "Match NBA : Detroit Pistons (extérieur) contre Miami Heat (domicile), le 15/11 à 02:00 (heure de Paris).\nCotes Unibet : Detroit Pistons 1.54, Miami Heat 2.20.\nAvis du bot : écarté — La cote du favori monte : Le marché commence à douter. Hausse anormale de la cote du favori : 1.46 → 1.54 (+5.5%).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "02:00 Detroit Pistons @ Miami Heat — écarté (la cote du favori monte) : favori Detroit Pistons 1.53",
+   "brief": "Match NBA : Detroit Pistons (extérieur) contre Miami Heat (domicile), le 15/11 à 02:00 (heure de Paris).\nCotes Unibet : Detroit Pistons 1.53, Miami Heat 2.25.\nAvis du bot : écarté — La cote du favori monte : Le marché commence à douter. Hausse anormale de la cote du favori : 1.46 → 1.53 (+4.8%).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:a7cb6062530bd69eb6caee84a015abd0",
