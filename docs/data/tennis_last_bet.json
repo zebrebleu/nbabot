@@ -1,20 +1,20 @@
 {
- "created_label": "vendredi 13/11 à 17:25",
+ "created_label": "samedi 14/11 à 16:05",
  "bets": [
   {
    "option": "Option 1 · Pari simple",
    "kind": "Pari simple",
-   "total": 1.38,
+   "total": 1.51,
    "legs": [
     {
-     "event_id": "29a6e4e35a3b385e9666473ad68f2084",
-     "pick": "Aryna Sabalenka",
+     "event_id": "57cede457aa62785e8460c5b2a052ac6",
+     "pick": "Linda Noskova",
      "opponent": "Elina Svitolina",
-     "odds": 1.38,
+     "odds": 1.51,
      "tournament": "WTA Finals",
      "best_of": 3,
-     "commence": "2026-11-13T21:30:00+00:00",
-     "time": "13/11 22:30",
+     "commence": "2026-11-14T21:10:00+00:00",
+     "time": "14/11 22:10",
      "result": null
     }
    ],
@@ -23,29 +23,29 @@
   {
    "option": "Option 2 · Combiné",
    "kind": "Combiné de 2 matchs",
-   "total": 1.72,
+   "total": 1.99,
    "legs": [
     {
-     "event_id": "6b92a67eab021047017da9d42e1e1fae",
-     "pick": "Mirra Andreeva",
-     "opponent": "Karolina Muchova",
-     "odds": 1.25,
+     "event_id": "57cede457aa62785e8460c5b2a052ac6",
+     "pick": "Linda Noskova",
+     "opponent": "Elina Svitolina",
+     "odds": 1.51,
      "tournament": "WTA Finals",
      "best_of": 3,
-     "commence": "2026-11-13T20:00:00+00:00",
-     "time": "13/11 21:00",
+     "commence": "2026-11-14T21:10:00+00:00",
+     "time": "14/11 22:10",
      "result": null
     },
     {
-     "event_id": "29a6e4e35a3b385e9666473ad68f2084",
-     "pick": "Aryna Sabalenka",
-     "opponent": "Elina Svitolina",
-     "odds": 1.38,
-     "tournament": "WTA Finals",
+     "event_id": "a09dfd51fadc5c32dd0adb4f799b8628",
+     "pick": "Alexander Zverev",
+     "opponent": "Rafael Jodar",
+     "odds": 1.32,
+     "tournament": "ATP Finals",
      "best_of": 3,
-     "commence": "2026-11-13T21:30:00+00:00",
-     "time": "13/11 22:30",
-     "result": null
+     "commence": "2026-11-15T13:00:00+00:00",
+     "time": "15/11 14:00",
+     "result": true
     }
    ],
    "status": "résultat non disponible"
