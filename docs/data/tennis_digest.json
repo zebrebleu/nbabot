@@ -1,26 +1,6 @@
 {
- "generated_at": "2026-11-15T15:40:13.658135+00:00",
+ "generated_at": "2026-11-15T21:41:23.765844+00:00",
  "matches": [
-  {
-   "id": "tennis:2e7a66dfb5caacad9c224d3eaf230dee",
-   "sport": "tennis",
-   "label": "Ben Shelton – Arthur Fils",
-   "competition": "ATP Finals",
-   "time": "2026-11-15T19:30:00+00:00",
-   "verdict": "À jouer",
-   "line": "20:30 Ben Shelton – Arthur Fils — À JOUER : Ben Shelton 1.46 (61% estimé) [ATP Finals]",
-   "brief": "Match de tennis (ATP Finals, dur) : Ben Shelton contre Arthur Fils, le 15/11 à 20:30 (heure de Paris).\nCotes Unibet : Ben Shelton 1.46, Arthur Fils 2.50.\nAvis du bot : à jouer — Ben Shelton gagne, confiance moyenne, chances estimées 61%, mise conseillée 25 €.\nPoints de vigilance : Cote Unibet en dessous du marché (68% contre 61%).\nForme récente (10 derniers matchs) : Ben Shelton : 6V-4D, 1 défaite de suite / Arthur Fils : 6V-4D, 1 défaite de suite\nConfrontations depuis 2023 : Ben Shelton 1V-1D · derniers : 09/2024 Kinoshita Group Japan Open Tennis Championships (D), 10/2024 Swiss Indoors Basel (V)\nClassement : Ben Shelton : 4e mondial / Arthur Fils : 7e mondial\nSaisons précédentes : Ben Shelton : 2025 41V-24D (dur 31V-17D) · 2024 41V-24D (dur 33V-17D) · 2023 25V-24D (dur 22V-15D) / Arthur Fils : 2025 21V-12D (dur 11V-7D) · 2024 37V-26D (dur 25V-18D) · 2023 34V-18D (dur 27V-12D)\nSur dur : Ben Shelton : 125V-61D (67%) / Arthur Fils : 95V-50D (66%)\nDernier match : Ben Shelton : il y a 7 jours : défaite contre Carlos Alcaraz (2 sets, 25 jeux) / Arthur Fils : il y a 10 jours : défaite contre Taylor Fritz (2 sets, 19 jeux)\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
-  },
-  {
-   "id": "tennis:db0cf55e0c26bfbf59d91c22de428d25",
-   "sport": "tennis",
-   "label": "Elina Svitolina – Mirra Andreeva",
-   "competition": "WTA Finals",
-   "time": "2026-11-15T20:00:00+00:00",
-   "verdict": "À jouer",
-   "line": "21:00 Elina Svitolina – Mirra Andreeva — À JOUER : Mirra Andreeva 1.30 (71% estimé) [WTA Finals]",
-   "brief": "Match de tennis (WTA Finals, dur) : Elina Svitolina contre Mirra Andreeva, le 15/11 à 21:00 (heure de Paris).\nCotes Unibet : Elina Svitolina 3.10, Mirra Andreeva 1.30.\nAvis du bot : à jouer — Mirra Andreeva gagne, confiance prudente, chances estimées 71%, mise conseillée 15 €.\nAtouts : Très à l'aise sur dur : 85V-36D.\nPoints de vigilance : Confrontations : A perdu la dernière confrontation (1-1 en faveur de Mirra Andreeva) ; Cote Unibet en dessous du marché (77% contre 71%).\nForme récente (10 derniers matchs) : Mirra Andreeva : 7V-3D, 1 défaite de suite / Elina Svitolina : 6V-4D, 1 défaite de suite\nConfrontations depuis 2023 : Mirra Andreeva 1V-1D · derniers : 03/2025 BNP Paribas Open (V), 01/2026 Australian Open (D)\nClassement : Mirra Andreeva : 3e mondial / Elina Svitolina : 6e mondial\nSaisons précédentes : Mirra Andreeva : 2025 40V-16D (dur 24V-9D) · 2024 34V-16D (dur 20V-11D) · 2023 24V-9D (dur 9V-5D) / Elina Svitolina : 2025 33V-14D (dur 19V-9D) · 2024 29V-17D (dur 18V-10D) · 2023 21V-10D (dur 7V-4D)\nSur dur : Mirra Andreeva : 85V-36D (70%) / Elina Svitolina : 75V-33D (69%)\nDernier match : Mirra Andreeva : il y a 35 jours : défaite contre Zheng Qinwen (2 sets, 22 jeux) / Elina Svitolina : il y a 38 jours : défaite contre Zheng Qinwen (2 sets, 22 jeux)\nParcours à WTA Finals : Mirra Andreeva : premier match dans le tournoi / Elina Svitolina : premier match dans le tournoi\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
-  },
   {
    "id": "tennis:c81851847baf5e3a479993ec167a8e2a",
    "sport": "tennis",
@@ -29,7 +9,7 @@
    "time": "2026-11-16T13:00:00+00:00",
    "verdict": "Écarté",
    "line": "14:00 Carlos Alcaraz – Frances Tiafoe — écarté (cote trop basse) : favori Carlos Alcaraz 1.06 [ATP Finals]",
-   "brief": "Match de tennis (ATP Finals, dur) : Carlos Alcaraz contre Frances Tiafoe, le 16/11 à 14:00 (heure de Paris).\nCotes Unibet : Carlos Alcaraz 1.06, Frances Tiafoe 5.20.\nAvis du bot : écarté — Cote trop basse : Favori à 1.06 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "brief": "Match de tennis (ATP Finals, dur) : Carlos Alcaraz contre Frances Tiafoe, le 16/11 à 14:00 (heure de Paris).\nCotes Unibet : Carlos Alcaraz 1.06, Frances Tiafoe 6.85.\nAvis du bot : écarté — Cote trop basse : Favori à 1.06 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "tennis:7ac3bf138012785e65835d1481524d5c",
@@ -38,8 +18,8 @@
    "competition": "ATP Finals",
    "time": "2026-11-16T19:30:00+00:00",
    "verdict": "Écarté",
-   "line": "20:30 Daniil Medvedev – Flavio Cobolli — écarté (cote trop basse) : favori Daniil Medvedev 1.20 [ATP Finals]",
-   "brief": "Match de tennis (ATP Finals, dur) : Daniil Medvedev contre Flavio Cobolli, le 16/11 à 20:30 (heure de Paris).\nCotes Unibet : Daniil Medvedev 1.20, Flavio Cobolli 3.25.\nAvis du bot : écarté — Cote trop basse : Favori à 1.20 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "20:30 Daniil Medvedev – Flavio Cobolli — écarté (cote trop basse) : favori Daniil Medvedev 1.19 [ATP Finals]",
+   "brief": "Match de tennis (ATP Finals, dur) : Daniil Medvedev contre Flavio Cobolli, le 16/11 à 20:30 (heure de Paris).\nCotes Unibet : Daniil Medvedev 1.19, Flavio Cobolli 4.00.\nAvis du bot : écarté — Cote trop basse : Favori à 1.19 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   }
  ]
 }
