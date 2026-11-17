@@ -1,16 +1,6 @@
 {
- "generated_at": "2026-11-17T17:38:51.787738+00:00",
+ "generated_at": "2026-11-17T23:48:55.724897+00:00",
  "matches": [
-  {
-   "id": "tennis:f0a6612a0e894025a58459b04ecd02c9",
-   "sport": "tennis",
-   "label": "Alexander Zverev – Ben Shelton",
-   "competition": "ATP Finals",
-   "time": "2026-11-17T19:30:00+00:00",
-   "verdict": "À jouer",
-   "line": "20:30 Alexander Zverev – Ben Shelton — À JOUER : Alexander Zverev 1.38 (65% estimé) [ATP Finals]",
-   "brief": "Match de tennis (ATP Finals, dur) : Alexander Zverev contre Ben Shelton, le 17/11 à 20:30 (heure de Paris).\nCotes Unibet : Alexander Zverev 1.38, Ben Shelton 2.75.\nAvis du bot : à jouer — Alexander Zverev gagne, confiance moyenne, chances estimées 65%, mise conseillée 25 €.\nAtouts : Très à l'aise sur dur : 154V-59D ; Mène les confrontations : 6-0.\nPoints de vigilance : Cote Unibet en dessous du marché (72% contre 65%).\nForme récente (10 derniers matchs) : Alexander Zverev : 7V-3D, 1 victoire de suite / Ben Shelton : 7V-3D, 1 victoire de suite\nConfrontations depuis 2023 : Alexander Zverev 6V-0D · derniers : 06/2025 Boss Open (V), 08/2025 Cincinnati Open (V), 11/2025 Nitto ATP Finals (V), 09/2026 US Open (V)\nClassement : Alexander Zverev : 1er mondial / Ben Shelton : 4e mondial\nSaisons précédentes : Alexander Zverev : 2025 54V-23D (dur 39V-15D) · 2024 64V-19D (dur 42V-14D) · 2023 54V-24D (dur 34V-18D) / Ben Shelton : 2025 41V-24D (dur 31V-17D) · 2024 41V-24D (dur 33V-17D) · 2023 25V-24D (dur 22V-15D)\nSur dur : Alexander Zverev : 154V-59D (72%) / Ben Shelton : 126V-61D (67%)\nDernier match : Alexander Zverev : il y a 2 jours : victoire contre Rafael Jodar (2 sets, 20 jeux) / Ben Shelton : il y a 48 h : victoire contre Arthur Fils (3 sets, 26 jeux)\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
-  },
   {
    "id": "tennis:a3e64105988f48f4c6447c9ca6de0030",
    "sport": "tennis",
@@ -18,8 +8,8 @@
    "competition": "ATP Finals",
    "time": "2026-11-18T13:00:00+00:00",
    "verdict": "Écarté",
-   "line": "14:00 Carlos Alcaraz – Daniil Medvedev — écarté (cote trop basse) : favori Carlos Alcaraz 1.20 [ATP Finals]",
-   "brief": "Match de tennis (ATP Finals, dur) : Carlos Alcaraz contre Daniil Medvedev, le 18/11 à 14:00 (heure de Paris).\nCotes Unibet : Carlos Alcaraz 1.20, Daniil Medvedev 3.95.\nAvis du bot : écarté — Cote trop basse : Favori à 1.20 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "14:00 Carlos Alcaraz – Daniil Medvedev — écarté (cote trop basse) : favori Carlos Alcaraz 1.19 [ATP Finals]",
+   "brief": "Match de tennis (ATP Finals, dur) : Carlos Alcaraz contre Daniil Medvedev, le 18/11 à 14:00 (heure de Paris).\nCotes Unibet : Carlos Alcaraz 1.19, Daniil Medvedev 4.00.\nAvis du bot : écarté — Cote trop basse : Favori à 1.19 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "tennis:5f11f792535a031c557f8a33a8093f18",
@@ -28,8 +18,8 @@
    "competition": "ATP Finals",
    "time": "2026-11-18T19:30:00+00:00",
    "verdict": "Écarté",
-   "line": "20:30 Flavio Cobolli – Frances Tiafoe — écarté (forme insuffisante) : favori Frances Tiafoe 1.66 [ATP Finals]",
-   "brief": "Match de tennis (ATP Finals, dur) : Flavio Cobolli contre Frances Tiafoe, le 18/11 à 20:30 (heure de Paris).\nCotes Unibet : Flavio Cobolli 2.05, Frances Tiafoe 1.66.\nAvis du bot : écarté — Forme insuffisante : 4V-6D sur ses 10 derniers matchs.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "20:30 Flavio Cobolli – Frances Tiafoe — écarté (forme insuffisante) : favori Frances Tiafoe 1.69 [ATP Finals]",
+   "brief": "Match de tennis (ATP Finals, dur) : Flavio Cobolli contre Frances Tiafoe, le 18/11 à 20:30 (heure de Paris).\nCotes Unibet : Flavio Cobolli 2.00, Frances Tiafoe 1.69.\nAvis du bot : écarté — Forme insuffisante : 4V-6D sur ses 10 derniers matchs.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   }
  ]
 }
