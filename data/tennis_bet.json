@@ -1,19 +1,19 @@
 {
- "created": "2026-11-16T18:33:36.894958+00:00",
- "created_label": "lundi 16/11 à 19:33",
+ "created": "2026-11-17T00:45:00.263388+00:00",
+ "created_label": "mardi 17/11 à 01:45",
  "bets": [
   {
    "option": "Option 1 · Pari simple",
    "kind": "Pari simple",
-   "total": 1.4,
-   "prob": 0.632,
+   "total": 1.41,
+   "prob": 0.634,
    "stake": 25,
    "legs": [
     {
      "event_id": "f0a6612a0e894025a58459b04ecd02c9",
      "pick": "Alexander Zverev",
      "opponent": "Ben Shelton",
-     "odds": 1.4,
+     "odds": 1.41,
      "tournament": "ATP Finals",
      "best_of": 3,
      "commence": "2026-11-17T19:30:00+00:00",
