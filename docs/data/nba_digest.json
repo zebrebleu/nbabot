@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-18T21:36:16.251456+00:00",
+ "generated_at": "2026-11-18T23:21:03.622410+00:00",
  "matches": [
   {
    "id": "nba:b7e3f453045a3162b3c4940f4b50ff32",
@@ -7,8 +7,8 @@
    "label": "Memphis Grizzlies @ Cleveland Cavaliers",
    "time": "2026-11-19T00:00:00+00:00",
    "verdict": "Écarté",
-   "line": "01:00 Memphis Grizzlies @ Cleveland Cavaliers — écarté (l'outsider est en forme) : favori Cleveland Cavaliers 1.42",
-   "brief": "Match NBA : Memphis Grizzlies (extérieur) contre Cleveland Cavaliers (domicile), le 19/11 à 01:00 (heure de Paris).\nCotes Unibet : Memphis Grizzlies 2.30, Cleveland Cavaliers 1.42.\nAvis du bot : écarté — L'outsider est en forme : L'outsider est en meilleure forme : Cleveland Cavaliers 5-5 vs Memphis Grizzlies 6-4 sur les 10 derniers.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "01:00 Memphis Grizzlies @ Cleveland Cavaliers — écarté (l'outsider est en forme) : favori Cleveland Cavaliers 1.43",
+   "brief": "Match NBA : Memphis Grizzlies (extérieur) contre Cleveland Cavaliers (domicile), le 19/11 à 01:00 (heure de Paris).\nCotes Unibet : Memphis Grizzlies 2.30, Cleveland Cavaliers 1.43.\nAvis du bot : écarté — L'outsider est en forme : L'outsider est en meilleure forme : Cleveland Cavaliers 5-5 vs Memphis Grizzlies 6-4 sur les 10 derniers.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:f9ae24215832bbc1703c9836d0c96751",
@@ -16,8 +16,8 @@
    "label": "Houston Rockets @ Indiana Pacers",
    "time": "2026-11-19T00:00:00+00:00",
    "verdict": "Écarté",
-   "line": "01:00 Houston Rockets @ Indiana Pacers — écarté (trop de déplacements) : favori Houston Rockets 1.26",
-   "brief": "Match NBA : Houston Rockets (extérieur) contre Indiana Pacers (domicile), le 19/11 à 01:00 (heure de Paris).\nCotes Unibet : Houston Rockets 1.26, Indiana Pacers 2.90.\nAvis du bot : écarté — Trop de déplacements : 3e match consécutif à l'extérieur.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "01:00 Houston Rockets @ Indiana Pacers — écarté (cote trop basse) : favori Houston Rockets 1.22",
+   "brief": "Match NBA : Houston Rockets (extérieur) contre Indiana Pacers (domicile), le 19/11 à 01:00 (heure de Paris).\nCotes Unibet : Houston Rockets 1.22, Indiana Pacers 3.10.\nAvis du bot : écarté — Cote trop basse : Favori à 1.22 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:b609888ea766ac28cd0e84f315d8f3d2",
@@ -33,9 +33,9 @@
    "sport": "nba",
    "label": "Philadelphia 76ers @ Orlando Magic",
    "time": "2026-11-19T00:00:00+00:00",
-   "verdict": "Écarté",
-   "line": "01:00 Philadelphia 76ers @ Orlando Magic — écarté (blessure importante) : favori Philadelphia 76ers 1.79",
-   "brief": "Match NBA : Philadelphia 76ers (extérieur) contre Orlando Magic (domicile), le 19/11 à 01:00 (heure de Paris).\nCotes Unibet : Philadelphia 76ers 1.79, Orlando Magic 1.85.\nAvis du bot : écarté — Blessure importante : 5 joueurs absents/incertains, seuil de 3 atteint — règle de secours (Philadelphia 76ers absente de KEY_PLAYERS) : Dean Wade (Day-To-Day), Dominick Barlow (Out), Jaylen Brown (Out), Adem Bona (Out), Ariel Hukporti (Out).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "verdict": "En attente",
+   "line": "01:00 Philadelphia 76ers @ Orlando Magic — pas encore de cote Unibet",
+   "brief": "Match NBA : Philadelphia 76ers (extérieur) contre Orlando Magic (domicile), le 19/11 à 01:00 (heure de Paris).\nCotes Unibet : pas encore publiées.\nAvis du bot : écarté — Pas encore de cote Unibet : Unibet n'a pas encore ouvert les paris sur ce match..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:6a72c23de4887e73345dde9bdc64eabe",
@@ -43,17 +43,17 @@
    "label": "Chicago Bulls @ Brooklyn Nets",
    "time": "2026-11-19T00:30:00+00:00",
    "verdict": "Écarté",
-   "line": "01:30 Chicago Bulls @ Brooklyn Nets — écarté (forme insuffisante) : favori Brooklyn Nets 1.59",
-   "brief": "Match NBA : Chicago Bulls (extérieur) contre Brooklyn Nets (domicile), le 19/11 à 01:30 (heure de Paris).\nCotes Unibet : Chicago Bulls 1.96, Brooklyn Nets 1.59.\nAvis du bot : écarté — Forme insuffisante : 1V-2D sur ses 3 derniers à domicile (2 V requises).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "01:30 Chicago Bulls @ Brooklyn Nets — écarté (forme insuffisante) : favori Brooklyn Nets 1.65",
+   "brief": "Match NBA : Chicago Bulls (extérieur) contre Brooklyn Nets (domicile), le 19/11 à 01:30 (heure de Paris).\nCotes Unibet : Chicago Bulls 1.88, Brooklyn Nets 1.65.\nAvis du bot : écarté — Forme insuffisante : 1V-2D sur ses 3 derniers à domicile (2 V requises).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:5896e4ed2ed41ce673e882b6529078b8",
    "sport": "nba",
    "label": "Washington Wizards @ Toronto Raptors",
    "time": "2026-11-19T00:30:00+00:00",
-   "verdict": "Écarté",
-   "line": "01:30 Washington Wizards @ Toronto Raptors — écarté (la cote du favori monte) : favori Toronto Raptors 1.44",
-   "brief": "Match NBA : Washington Wizards (extérieur) contre Toronto Raptors (domicile), le 19/11 à 01:30 (heure de Paris).\nCotes Unibet : Washington Wizards 2.25, Toronto Raptors 1.44.\nAvis du bot : écarté — La cote du favori monte : Le marché commence à douter. Hausse anormale de la cote du favori : 1.33 → 1.44 (+8.3%).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "verdict": "En attente",
+   "line": "01:30 Washington Wizards @ Toronto Raptors — pas encore de cote Unibet",
+   "brief": "Match NBA : Washington Wizards (extérieur) contre Toronto Raptors (domicile), le 19/11 à 01:30 (heure de Paris).\nCotes Unibet : pas encore publiées.\nAvis du bot : écarté — Pas encore de cote Unibet : Unibet n'a pas encore ouvert les paris sur ce match..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:990b541d0ada46fce07ce8b502cf425c",
@@ -96,9 +96,9 @@
    "sport": "nba",
    "label": "Utah Jazz @ Los Angeles Lakers",
    "time": "2026-11-19T03:00:00+00:00",
-   "verdict": "En attente",
-   "line": "04:00 Utah Jazz @ Los Angeles Lakers — pas encore de cote Unibet",
-   "brief": "Match NBA : Utah Jazz (extérieur) contre Los Angeles Lakers (domicile), le 19/11 à 04:00 (heure de Paris).\nCotes Unibet : pas encore publiées.\nAvis du bot : écarté — Pas encore de cote Unibet : Unibet n'a pas encore ouvert les paris sur ce match..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "verdict": "Écarté",
+   "line": "04:00 Utah Jazz @ Los Angeles Lakers — écarté (cote trop basse) : favori Los Angeles Lakers 1.12",
+   "brief": "Match NBA : Utah Jazz (extérieur) contre Los Angeles Lakers (domicile), le 19/11 à 04:00 (heure de Paris).\nCotes Unibet : Utah Jazz 4.05, Los Angeles Lakers 1.12.\nAvis du bot : écarté — Cote trop basse : Favori à 1.12 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:4bdafbab228335fd29f62006a4bc932d",

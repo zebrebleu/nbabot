@@ -1,19 +1,19 @@
 {
- "created": "2026-11-18T17:15:50.679137+00:00",
- "created_label": "mercredi 18/11 à 18:15",
+ "created": "2026-11-18T23:21:07.013745+00:00",
+ "created_label": "jeudi 19/11 à 00:21",
  "bets": [
   {
    "option": "Option 1 · Pari simple",
    "kind": "Pari simple",
-   "total": 1.42,
-   "prob": 0.642,
+   "total": 1.39,
+   "prob": 0.661,
    "stake": 25,
    "legs": [
     {
      "event_id": "91d621e106bf38d41c61739852993840",
      "pick": "Ben Shelton",
      "opponent": "Rafael Jodar",
-     "odds": 1.42,
+     "odds": 1.39,
      "tournament": "ATP Finals",
      "best_of": 3,
      "commence": "2026-11-19T13:00:00+00:00",
@@ -24,15 +24,15 @@
   {
    "option": "Option 2 · Combiné",
    "kind": "Combiné de 2 matchs",
-   "total": 1.87,
-   "prob": 0.437,
+   "total": 1.83,
+   "prob": 0.455,
    "stake": 25,
    "legs": [
     {
      "event_id": "91d621e106bf38d41c61739852993840",
      "pick": "Ben Shelton",
      "opponent": "Rafael Jodar",
-     "odds": 1.42,
+     "odds": 1.39,
      "tournament": "ATP Finals",
      "best_of": 3,
      "commence": "2026-11-19T13:00:00+00:00",
