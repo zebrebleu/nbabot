@@ -1,16 +1,6 @@
 {
- "generated_at": "2026-11-17T23:48:55.724897+00:00",
+ "generated_at": "2026-11-18T17:15:50.679137+00:00",
  "matches": [
-  {
-   "id": "tennis:a3e64105988f48f4c6447c9ca6de0030",
-   "sport": "tennis",
-   "label": "Carlos Alcaraz – Daniil Medvedev",
-   "competition": "ATP Finals",
-   "time": "2026-11-18T13:00:00+00:00",
-   "verdict": "Écarté",
-   "line": "14:00 Carlos Alcaraz – Daniil Medvedev — écarté (cote trop basse) : favori Carlos Alcaraz 1.19 [ATP Finals]",
-   "brief": "Match de tennis (ATP Finals, dur) : Carlos Alcaraz contre Daniil Medvedev, le 18/11 à 14:00 (heure de Paris).\nCotes Unibet : Carlos Alcaraz 1.19, Daniil Medvedev 4.00.\nAvis du bot : écarté — Cote trop basse : Favori à 1.19 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
-  },
   {
    "id": "tennis:5f11f792535a031c557f8a33a8093f18",
    "sport": "tennis",
@@ -18,8 +8,28 @@
    "competition": "ATP Finals",
    "time": "2026-11-18T19:30:00+00:00",
    "verdict": "Écarté",
-   "line": "20:30 Flavio Cobolli – Frances Tiafoe — écarté (forme insuffisante) : favori Frances Tiafoe 1.69 [ATP Finals]",
-   "brief": "Match de tennis (ATP Finals, dur) : Flavio Cobolli contre Frances Tiafoe, le 18/11 à 20:30 (heure de Paris).\nCotes Unibet : Flavio Cobolli 2.00, Frances Tiafoe 1.69.\nAvis du bot : écarté — Forme insuffisante : 4V-6D sur ses 10 derniers matchs.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "20:30 Flavio Cobolli – Frances Tiafoe — écarté (forme insuffisante) : favori Frances Tiafoe 1.61 [ATP Finals]",
+   "brief": "Match de tennis (ATP Finals, dur) : Flavio Cobolli contre Frances Tiafoe, le 18/11 à 20:30 (heure de Paris).\nCotes Unibet : Flavio Cobolli 2.15, Frances Tiafoe 1.61.\nAvis du bot : écarté — Forme insuffisante : 4V-6D sur ses 10 derniers matchs.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+  },
+  {
+   "id": "tennis:91d621e106bf38d41c61739852993840",
+   "sport": "tennis",
+   "label": "Ben Shelton – Rafael Jodar",
+   "competition": "ATP Finals",
+   "time": "2026-11-19T13:00:00+00:00",
+   "verdict": "À jouer",
+   "line": "14:00 Ben Shelton – Rafael Jodar — À JOUER : Ben Shelton 1.42 (64% estimé) [ATP Finals]",
+   "brief": "Match de tennis (ATP Finals, dur) : Ben Shelton contre Rafael Jodar, le 19/11 à 14:00 (heure de Paris).\nCotes Unibet : Ben Shelton 1.42, Rafael Jodar 2.60.\nAvis du bot : à jouer — Ben Shelton gagne, confiance moyenne, chances estimées 64%, mise conseillée 25 €.\nPoints de vigilance : Cote Unibet en dessous du marché (70% contre 64%).\nForme récente (10 derniers matchs) : Ben Shelton : 6V-4D, 1 défaite de suite / Rafael Jodar : 5V-5D, 3 défaites de suite\nConfrontations depuis 2023 : Aucune confrontation sur les 3 dernières saisons\nClassement : Ben Shelton : 4e mondial / Rafael Jodar : 10e mondial\nSaisons précédentes : Ben Shelton : 2025 41V-24D (dur 31V-17D) · 2024 41V-24D (dur 33V-17D) · 2023 25V-24D (dur 22V-15D) / Rafael Jodar : 2025 2V-1D (dur 2V-1D)\nSur dur : Ben Shelton : 126V-62D (67%) / Rafael Jodar : 36V-17D (68%)\nDernier match : Ben Shelton : il y a 41 h : défaite contre Alexander Zverev (2 sets, 21 jeux) / Rafael Jodar : il y a 48 h : défaite contre Arthur Fils (3 sets, 26 jeux)\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+  },
+  {
+   "id": "tennis:66cc3b98e9e67560a34198715ee78d75",
+   "sport": "tennis",
+   "label": "Alexander Zverev – Arthur Fils",
+   "competition": "ATP Finals",
+   "time": "2026-11-19T19:30:00+00:00",
+   "verdict": "À jouer",
+   "line": "20:30 Alexander Zverev – Arthur Fils — À JOUER : Alexander Zverev 1.32 (68% estimé) [ATP Finals]",
+   "brief": "Match de tennis (ATP Finals, dur) : Alexander Zverev contre Arthur Fils, le 19/11 à 20:30 (heure de Paris).\nCotes Unibet : Alexander Zverev 1.32, Arthur Fils 3.00.\nAvis du bot : à jouer — Alexander Zverev gagne, confiance moyenne, chances estimées 68%, mise conseillée 25 €.\nAtouts : Très à l'aise sur dur : 155V-59D ; Mène les confrontations : 5-2.\nPoints de vigilance : Cote Unibet en dessous du marché (76% contre 68%).\nForme récente (10 derniers matchs) : Alexander Zverev : 7V-3D, 2 victoires de suite / Arthur Fils : 6V-4D, 1 victoire de suite\nConfrontations depuis 2023 : Alexander Zverev 5V-2D · derniers : 10/2024 Rolex Paris Masters (V), 03/2025 Miami Open presented by Itau (D), 05/2025 Internazionali BNL d'Italia (V), 03/2026 BNP Paribas Open (V)\nClassement : Alexander Zverev : 1er mondial / Arthur Fils : 7e mondial\nSaisons précédentes : Alexander Zverev : 2025 54V-23D (dur 39V-15D) · 2024 64V-19D (dur 42V-14D) · 2023 54V-24D (dur 34V-18D) / Arthur Fils : 2025 21V-12D (dur 11V-7D) · 2024 37V-26D (dur 25V-18D) · 2023 34V-18D (dur 27V-12D)\nSur dur : Alexander Zverev : 155V-59D (72%) / Arthur Fils : 96V-51D (65%)\nDernier match : Alexander Zverev : il y a 48 h : victoire contre Ben Shelton (2 sets, 21 jeux) / Arthur Fils : il y a 2 jours : victoire contre Rafael Jodar (3 sets, 26 jeux)\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   }
  ]
 }
