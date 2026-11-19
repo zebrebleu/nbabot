@@ -1,25 +1,55 @@
 {
- "created_label": "mardi 17/11 à 18:38",
+ "created_label": "jeudi 19/11 à 00:21",
  "bets": [
   {
    "option": "Option 1 · Pari simple",
    "kind": "Pari simple",
-   "total": 1.38,
+   "total": 1.39,
    "legs": [
     {
-     "event_id": "f0a6612a0e894025a58459b04ecd02c9",
-     "pick": "Alexander Zverev",
-     "opponent": "Ben Shelton",
-     "odds": 1.38,
+     "event_id": "91d621e106bf38d41c61739852993840",
+     "pick": "Ben Shelton",
+     "opponent": "Rafael Jodar",
+     "odds": 1.39,
      "tournament": "ATP Finals",
      "best_of": 3,
-     "commence": "2026-11-17T19:30:00+00:00",
-     "time": "17/11 20:30",
+     "commence": "2026-11-19T13:00:00+00:00",
+     "time": "19/11 14:00",
+     "result": true
+    }
+   ],
+   "status": "gagné"
+  },
+  {
+   "option": "Option 2 · Combiné",
+   "kind": "Combiné de 2 matchs",
+   "total": 1.83,
+   "legs": [
+    {
+     "event_id": "91d621e106bf38d41c61739852993840",
+     "pick": "Ben Shelton",
+     "opponent": "Rafael Jodar",
+     "odds": 1.39,
+     "tournament": "ATP Finals",
+     "best_of": 3,
+     "commence": "2026-11-19T13:00:00+00:00",
+     "time": "19/11 14:00",
+     "result": true
+    },
+    {
+     "event_id": "66cc3b98e9e67560a34198715ee78d75",
+     "pick": "Alexander Zverev",
+     "opponent": "Arthur Fils",
+     "odds": 1.32,
+     "tournament": "ATP Finals",
+     "best_of": 3,
+     "commence": "2026-11-19T19:30:00+00:00",
+     "time": "19/11 20:30",
      "result": true
     }
    ],
    "status": "gagné"
   }
  ],
- "status": "pari simple gagné"
+ "status": "pari simple gagné / combiné de 2 matchs gagné"
 }

@@ -1,16 +1,14 @@
 {
- "generated_at": "2026-11-19T17:23:00.934557+00:00",
+ "generated_at": "2026-11-19T23:30:18.239854+00:00",
  "espn_matches": {
-  "atp": 24803,
+  "atp": 24804,
   "wta": 12776
  },
  "rankings": {
   "atp": 150,
   "wta": 150
  },
- "tournaments": [
-  "tennis_atp_finals"
- ],
+ "tournaments": [],
  "years": [
   2026,
   2025,
@@ -99,7 +97,7 @@
  },
  "players": 2108,
  "ranked_players": 300,
- "odds_events": 3,
- "upcoming_matches": 3,
+ "odds_events": 0,
+ "upcoming_matches": 0,
  "unmatched_names": []
 }
