@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-19T17:22:59.164267+00:00",
+ "generated_at": "2026-11-19T21:49:20.720756+00:00",
  "matches": [
   {
    "id": "nba:3c082b72aa002131c276ff5e24bada1b",
@@ -7,8 +7,8 @@
    "label": "Golden State Warriors @ Memphis Grizzlies",
    "time": "2026-11-20T01:00:00+00:00",
    "verdict": "Écarté",
-   "line": "02:00 Golden State Warriors @ Memphis Grizzlies — écarté (match piège) : favori Memphis Grizzlies 1.33",
-   "brief": "Match NBA : Golden State Warriors (extérieur) contre Memphis Grizzlies (domicile), le 20/11 à 02:00 (heure de Paris).\nCotes Unibet : Golden State Warriors 2.60, Memphis Grizzlies 1.33.\nAvis du bot : écarté — Match piège : Le favori a un gros choc juste après et risque de se ménager. Choc contre Timberwolves (contender) dans 48 h.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "02:00 Golden State Warriors @ Memphis Grizzlies — écarté (match piège) : favori Memphis Grizzlies 1.38",
+   "brief": "Match NBA : Golden State Warriors (extérieur) contre Memphis Grizzlies (domicile), le 20/11 à 02:00 (heure de Paris).\nCotes Unibet : Golden State Warriors 2.40, Memphis Grizzlies 1.38.\nAvis du bot : écarté — Match piège : Le favori a un gros choc juste après et risque de se ménager. Choc contre Timberwolves (contender) dans 48 h.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:006df00e5e48650d849d1bb4cd81565d",
@@ -16,8 +16,8 @@
    "label": "Portland Trail Blazers @ Milwaukee Bucks",
    "time": "2026-11-20T01:00:00+00:00",
    "verdict": "Écarté",
-   "line": "02:00 Portland Trail Blazers @ Milwaukee Bucks — écarté (cote trop basse) : favori Portland Trail Blazers 1.15",
-   "brief": "Match NBA : Portland Trail Blazers (extérieur) contre Milwaukee Bucks (domicile), le 20/11 à 02:00 (heure de Paris).\nCotes Unibet : Portland Trail Blazers 1.15, Milwaukee Bucks 3.65.\nAvis du bot : écarté — Cote trop basse : Favori à 1.15 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "02:00 Portland Trail Blazers @ Milwaukee Bucks — écarté (cote trop basse) : favori Portland Trail Blazers 1.13",
+   "brief": "Match NBA : Portland Trail Blazers (extérieur) contre Milwaukee Bucks (domicile), le 20/11 à 02:00 (heure de Paris).\nCotes Unibet : Portland Trail Blazers 1.13, Milwaukee Bucks 3.85.\nAvis du bot : écarté — Cote trop basse : Favori à 1.13 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:5ee4efd00c1daaebd8249ff44fd6ac9d",
@@ -25,8 +25,8 @@
    "label": "New York Knicks @ Minnesota Timberwolves",
    "time": "2026-11-20T01:00:00+00:00",
    "verdict": "Écarté",
-   "line": "02:00 New York Knicks @ Minnesota Timberwolves — écarté (trop de déplacements) : favori New York Knicks 1.77",
-   "brief": "Match NBA : New York Knicks (extérieur) contre Minnesota Timberwolves (domicile), le 20/11 à 02:00 (heure de Paris).\nCotes Unibet : New York Knicks 1.77, Minnesota Timberwolves 1.87.\nAvis du bot : écarté — Trop de déplacements : 4e match consécutif à l'extérieur.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "02:00 New York Knicks @ Minnesota Timberwolves — écarté (trop de déplacements) : favori New York Knicks 1.78",
+   "brief": "Match NBA : New York Knicks (extérieur) contre Minnesota Timberwolves (domicile), le 20/11 à 02:00 (heure de Paris).\nCotes Unibet : New York Knicks 1.78, Minnesota Timberwolves 1.85.\nAvis du bot : écarté — Trop de déplacements : 4e match consécutif à l'extérieur.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:20fa5e2d73cec494c113790161a89aec",
