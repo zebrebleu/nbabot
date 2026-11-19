@@ -1,4 +1,35 @@
 {
- "generated_at": "2026-11-18T17:15:58.812553+00:00",
- "matches": []
+ "generated_at": "2026-11-19T17:23:07.237722+00:00",
+ "matches": [
+  {
+   "id": "foot:cae480fb1195f0032554a268cb80eb44",
+   "sport": "foot",
+   "label": "Bayern Munich – FC Cologne",
+   "competition": "Bundesliga",
+   "time": "2026-11-20T19:30:00+00:00",
+   "verdict": "Écarté",
+   "line": "20:30 Bayern Munich – FC Cologne — écarté (cote trop basse) : favori Bayern Munich 1.03 [Bundesliga]",
+   "brief": "Match de foot (Bundesliga) : Bayern Munich (domicile) contre FC Cologne (extérieur), le 20/11 à 20:30 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : Bayern Munich 1.03, nul 8.40, FC Cologne 16.00.\nAvis du bot : écarté — Cote trop basse : Favori à 1.03 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+  },
+  {
+   "id": "foot:5dcc9d2b0da87770a4f49e924275be39",
+   "sport": "foot",
+   "label": "Troyes – Le Havre AC",
+   "competition": "Ligue 1",
+   "time": "2026-11-20T19:45:00+00:00",
+   "verdict": "Écarté",
+   "line": "20:45 Troyes – Le Havre AC — écarté (favori pas assez net) : favori Troyes 2.00 [Ligue 1]",
+   "brief": "Match de foot (Ligue 1) : Troyes (domicile) contre Le Havre AC (extérieur), le 20/11 à 20:45 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : Troyes 2.00, nul 3.30, Le Havre AC 3.20.\nAvis du bot : écarté — Favori pas assez net : Cote de 2.00, au-dessus de la limite de 1.80..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+  },
+  {
+   "id": "foot:dcee36f9b8a9989972b6d4ddde76c4c7",
+   "sport": "foot",
+   "label": "Athletic Club – Espanyol",
+   "competition": "Liga",
+   "time": "2026-11-20T20:00:00+00:00",
+   "verdict": "Écarté",
+   "line": "21:00 Athletic Club – Espanyol — écarté (l'adversaire domine les face-à-face) : favori Athletic Club 1.37 [Liga]",
+   "brief": "Match de foot (Liga) : Athletic Club (domicile) contre Espanyol (extérieur), le 20/11 à 21:00 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : Athletic Club 1.37, nul 4.40, Espanyol 6.50.\nAvis du bot : écarté — L'adversaire domine les face-à-face : L'adversaire domine les face-à-face : 1V-1N-2D depuis 2024.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+  }
+ ]
 }
