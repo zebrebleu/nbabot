@@ -1,4 +1,25 @@
 {
- "generated_at": "2026-11-19T23:30:18.239854+00:00",
- "matches": []
+ "generated_at": "2026-11-20T16:58:18.334526+00:00",
+ "matches": [
+  {
+   "id": "tennis:1acdb2047defbe0439ef3b1961a60010",
+   "sport": "tennis",
+   "label": "Daniil Medvedev – Frances Tiafoe",
+   "competition": "ATP Finals",
+   "time": "2026-11-20T19:30:00+00:00",
+   "verdict": "À jouer",
+   "line": "20:30 Daniil Medvedev – Frances Tiafoe — À JOUER : Daniil Medvedev 1.32 (68% estimé) [ATP Finals]",
+   "brief": "Match de tennis (ATP Finals, dur) : Daniil Medvedev contre Frances Tiafoe, le 20/11 à 20:30 (heure de Paris).\nCotes Unibet : Daniil Medvedev 1.32, Frances Tiafoe 3.05.\nAvis du bot : à jouer — Daniil Medvedev gagne, confiance moyenne, chances estimées 68%, mise conseillée 25 €.\nAtouts : Très à l'aise sur dur : 167V-62D ; Mène les confrontations : 2-1.\nPoints de vigilance : Confrontations : A perdu la dernière confrontation (2-1 en faveur de Daniil Medvedev) ; Cote Unibet en dessous du marché (76% contre 68%).\nForme récente (10 derniers matchs) : Daniil Medvedev : 7V-3D, 1 défaite de suite / Frances Tiafoe : 4V-6D, 1 victoire de suite\nConfrontations depuis 2023 : Daniil Medvedev 2V-1D · derniers : 03/2023 BNP Paribas Open (V), 01/2026 Brisbane International presented by ANZ (V), 09/2026 US Open (D)\nClassement : Daniil Medvedev : 5e mondial / Frances Tiafoe : 8e mondial\nSaisons précédentes : Daniil Medvedev : 2025 43V-23D (dur 36V-18D) · 2024 46V-19D (dur 32V-14D) · 2023 67V-18D (dur 52V-14D) / Frances Tiafoe : 2025 25V-21D (dur 16V-14D) · 2024 33V-25D (dur 29V-20D) · 2023 34V-19D (dur 24V-14D)\nSur dur : Daniil Medvedev : 167V-62D (73%) / Frances Tiafoe : 105V-65D (62%)\nDernier match : Daniil Medvedev : il y a 2 jours : défaite contre Carlos Alcaraz (2 sets, 18 jeux) / Frances Tiafoe : il y a 48 h : victoire contre Flavio Cobolli (2 sets, 19 jeux)\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+  },
+  {
+   "id": "tennis:81c3faeaadd3d42734cd831b32b32597",
+   "sport": "tennis",
+   "label": "Carlos Alcaraz – Ben Shelton",
+   "competition": "ATP Finals",
+   "time": "2026-11-21T13:00:00+00:00",
+   "verdict": "À jouer",
+   "line": "14:00 Carlos Alcaraz – Ben Shelton — À JOUER : Carlos Alcaraz 1.25 (71% estimé) [ATP Finals]",
+   "brief": "Match de tennis (ATP Finals, dur) : Carlos Alcaraz contre Ben Shelton, le 21/11 à 14:00 (heure de Paris).\nCotes Unibet : Carlos Alcaraz 1.25, Ben Shelton 3.20.\nAvis du bot : à jouer — Carlos Alcaraz gagne, confiance moyenne, chances estimées 71%, mise conseillée 25 €.\nAtouts : Nette différence de forme : 10V-0D contre 7V-3D ; Très à l'aise sur dur : 151V-30D ; Mène les confrontations : 3-1.\nPoints de vigilance : Cote Unibet en dessous du marché (80% contre 71%).\nForme récente (10 derniers matchs) : Carlos Alcaraz : 10V-0D, 10 victoires de suite / Ben Shelton : 7V-3D, 1 victoire de suite\nConfrontations depuis 2023 : Carlos Alcaraz 3V-1D · derniers : 08/2023 National Bank Open presented by Rogers (V), 06/2025 Roland Garros (V), 09/2026 US Open (D), 11/2026 Rolex Paris Masters (V)\nClassement : Carlos Alcaraz : 3e mondial / Ben Shelton : 4e mondial\nSaisons précédentes : Carlos Alcaraz : 2025 70V-8D (dur 42V-6D) · 2024 49V-13D (dur 32V-11D) · 2023 65V-12D (dur 37V-9D) / Ben Shelton : 2025 41V-24D (dur 31V-17D) · 2024 41V-24D (dur 33V-17D) · 2023 25V-24D (dur 22V-15D)\nSur dur : Carlos Alcaraz : 151V-30D (83%) / Ben Shelton : 127V-62D (67%)\nDernier match : Carlos Alcaraz : il y a 24 h : victoire contre Flavio Cobolli (2 sets, 17 jeux) / Ben Shelton : il y a 48 h : victoire contre Rafael Jodar (2 sets, 25 jeux)\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+  }
+ ]
 }
