@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-20T21:32:15.932694+00:00",
+ "generated_at": "2026-11-20T23:02:33.564181+00:00",
  "matches": [
   {
    "id": "nba:f8ad540db00e4a4a360d67dfcb7a53b8",
@@ -8,7 +8,7 @@
    "time": "2026-11-21T00:00:00+00:00",
    "verdict": "Écarté",
    "line": "01:00 Charlotte Hornets @ Atlanta Hawks — écarté (blessure importante) : favori Atlanta Hawks 1.32",
-   "brief": "Match NBA : Charlotte Hornets (extérieur) contre Atlanta Hawks (domicile), le 21/11 à 01:00 (heure de Paris).\nCotes Unibet : Charlotte Hornets 2.65, Atlanta Hawks 1.32.\nAvis du bot : écarté — Blessure importante : 6 joueurs absents/incertains, seuil de 3 atteint — règle de secours (Atlanta Hawks absente de KEY_PLAYERS) : Jock Landale (Out), Kingston Flemings (Day-To-Day), Asa Newell (Out), CJ McCollum (Out), Mouhamed Gueye (Out), Henri Veesaar (Out).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "brief": "Match NBA : Charlotte Hornets (extérieur) contre Atlanta Hawks (domicile), le 21/11 à 01:00 (heure de Paris).\nCotes Unibet : Charlotte Hornets 2.65, Atlanta Hawks 1.32.\nAvis du bot : écarté — Blessure importante : 6 joueurs absents/incertains, seuil de 3 atteint — règle de secours (Atlanta Hawks absente de KEY_PLAYERS) : Kingston Flemings (Out), Jock Landale (Out), Asa Newell (Out), CJ McCollum (Out), Mouhamed Gueye (Out), Henri Veesaar (Out).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:6e1faf38d3fed9e0396d6613891770e1",
@@ -16,8 +16,8 @@
    "label": "Orlando Magic @ Brooklyn Nets",
    "time": "2026-11-21T00:30:00+00:00",
    "verdict": "Écarté",
-   "line": "01:30 Orlando Magic @ Brooklyn Nets — écarté (blessure importante) : favori Orlando Magic 1.31",
-   "brief": "Match NBA : Orlando Magic (extérieur) contre Brooklyn Nets (domicile), le 21/11 à 01:30 (heure de Paris).\nCotes Unibet : Orlando Magic 1.31, Brooklyn Nets 2.65.\nAvis du bot : écarté — Blessure importante : 4 joueurs absents/incertains, seuil de 3 atteint — règle de secours (Orlando Magic absente de KEY_PLAYERS) : Izaiyah Nelson (Out), Jonathan Isaac (Out), Noah Penda (Out), Paolo Banchero (Out).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "01:30 Orlando Magic @ Brooklyn Nets — écarté (blessure importante) : favori Orlando Magic 1.28",
+   "brief": "Match NBA : Orlando Magic (extérieur) contre Brooklyn Nets (domicile), le 21/11 à 01:30 (heure de Paris).\nCotes Unibet : Orlando Magic 1.28, Brooklyn Nets 2.75.\nAvis du bot : écarté — Blessure importante : 4 joueurs absents/incertains, seuil de 3 atteint — règle de secours (Orlando Magic absente de KEY_PLAYERS) : Izaiyah Nelson (Out), Jonathan Isaac (Out), Noah Penda (Out), Paolo Banchero (Out).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:10e9b9aca502ce158d6a3a91bf00bfd2",
@@ -70,8 +70,8 @@
    "label": "Houston Rockets @ Denver Nuggets",
    "time": "2026-11-21T03:00:00+00:00",
    "verdict": "À jouer",
-   "line": "04:00 Houston Rockets @ Denver Nuggets — À JOUER : Denver Nuggets 1.72 (54% estimé)",
-   "brief": "Match NBA : Houston Rockets (extérieur) contre Denver Nuggets (domicile), le 21/11 à 04:00 (heure de Paris).\nCotes Unibet : Houston Rockets 1.93, Denver Nuggets 1.72.\nAvis du bot : à jouer — Denver Nuggets gagne, confiance prudente, chances estimées 54%, mise conseillée 15 €.\nAtouts : Houston Rockets diminué : 3 absents ou incertains.\nPoints de vigilance : A perdu contre Houston Rockets cette saison ; Cote de 1.72 : favori moins net, une défaite est plausible ; Cote Unibet en dessous du marché (58% implicite contre 54% estimé).\nForme récente (10 derniers matchs) : Denver Nuggets : 7V-3D, 1 victoire de suite, écart moyen +3.8 pts/match / Houston Rockets : 7V-3D, 1 victoire de suite, écart moyen +7.3 pts/match\nFace-à-face depuis 2023-24 : Denver Nuggets 6V-6D contre Houston Rockets / Derniers : 12/2025 V 128-125, 12/2025 D 101-115, 03/2026 V 129-93, 11/2026 D 100-110\nConfrontations cette saison : défaite 100-110\nSaisons précédentes : Denver Nuggets : 2025-26 54V-28D · 2024-25 50V-32D · 2023-24 57V-25D / Houston Rockets : 2025-26 52V-30D · 2024-25 52V-30D · 2023-24 41V-41D\nBilan de la saison : Denver Nuggets : 8V-5D (10e NBA) · à domicile 3V-3D / Houston Rockets : 12V-4D (4e NBA) · à l'extérieur 5V-3D\nRepos et calendrier : Denver Nuggets : 2 jour(s) de repos / Houston Rockets : 2 jour(s) de repos\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "04:00 Houston Rockets @ Denver Nuggets — À JOUER : Denver Nuggets 1.72 (53% estimé)",
+   "brief": "Match NBA : Houston Rockets (extérieur) contre Denver Nuggets (domicile), le 21/11 à 04:00 (heure de Paris).\nCotes Unibet : Houston Rockets 1.93, Denver Nuggets 1.72.\nAvis du bot : à jouer — Denver Nuggets gagne, confiance prudente, chances estimées 53%, mise conseillée 15 €.\nAtouts : Houston Rockets diminué : 3 absents ou incertains.\nPoints de vigilance : A perdu contre Houston Rockets cette saison ; Cote de 1.72 : favori moins net, une défaite est plausible ; Cote Unibet en dessous du marché (58% implicite contre 53% estimé).\nForme récente (10 derniers matchs) : Denver Nuggets : 7V-3D, 1 victoire de suite, écart moyen +3.8 pts/match / Houston Rockets : 7V-3D, 1 victoire de suite, écart moyen +7.3 pts/match\nFace-à-face depuis 2023-24 : Denver Nuggets 6V-6D contre Houston Rockets / Derniers : 12/2025 V 128-125, 12/2025 D 101-115, 03/2026 V 129-93, 11/2026 D 100-110\nConfrontations cette saison : défaite 100-110\nSaisons précédentes : Denver Nuggets : 2025-26 54V-28D · 2024-25 50V-32D · 2023-24 57V-25D / Houston Rockets : 2025-26 52V-30D · 2024-25 52V-30D · 2023-24 41V-41D\nBilan de la saison : Denver Nuggets : 8V-5D (10e NBA) · à domicile 3V-3D / Houston Rockets : 12V-4D (4e NBA) · à l'extérieur 5V-3D\nRepos et calendrier : Denver Nuggets : 2 jour(s) de repos / Houston Rockets : 2 jour(s) de repos\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:55c3096b11f501ffb6d8bccbb2cd319d",
