@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-20T16:58:15.661877+00:00",
+ "generated_at": "2026-11-20T21:32:15.932694+00:00",
  "matches": [
   {
    "id": "nba:f8ad540db00e4a4a360d67dfcb7a53b8",
@@ -7,8 +7,8 @@
    "label": "Charlotte Hornets @ Atlanta Hawks",
    "time": "2026-11-21T00:00:00+00:00",
    "verdict": "Écarté",
-   "line": "01:00 Charlotte Hornets @ Atlanta Hawks — écarté (blessure importante) : favori Atlanta Hawks 1.34",
-   "brief": "Match NBA : Charlotte Hornets (extérieur) contre Atlanta Hawks (domicile), le 21/11 à 01:00 (heure de Paris).\nCotes Unibet : Charlotte Hornets 2.55, Atlanta Hawks 1.34.\nAvis du bot : écarté — Blessure importante : 6 joueurs absents/incertains, seuil de 3 atteint — règle de secours (Atlanta Hawks absente de KEY_PLAYERS) : Jock Landale (Out), Kingston Flemings (Day-To-Day), Asa Newell (Out), CJ McCollum (Out), Mouhamed Gueye (Out), Henri Veesaar (Out).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "01:00 Charlotte Hornets @ Atlanta Hawks — écarté (blessure importante) : favori Atlanta Hawks 1.32",
+   "brief": "Match NBA : Charlotte Hornets (extérieur) contre Atlanta Hawks (domicile), le 21/11 à 01:00 (heure de Paris).\nCotes Unibet : Charlotte Hornets 2.65, Atlanta Hawks 1.32.\nAvis du bot : écarté — Blessure importante : 6 joueurs absents/incertains, seuil de 3 atteint — règle de secours (Atlanta Hawks absente de KEY_PLAYERS) : Jock Landale (Out), Kingston Flemings (Day-To-Day), Asa Newell (Out), CJ McCollum (Out), Mouhamed Gueye (Out), Henri Veesaar (Out).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:6e1faf38d3fed9e0396d6613891770e1",
@@ -24,9 +24,9 @@
    "sport": "nba",
    "label": "Indiana Pacers @ Cleveland Cavaliers",
    "time": "2026-11-21T00:30:00+00:00",
-   "verdict": "À jouer",
-   "line": "01:30 Indiana Pacers @ Cleveland Cavaliers — À JOUER : Cleveland Cavaliers 1.37 (67% estimé)",
-   "brief": "Match NBA : Indiana Pacers (extérieur) contre Cleveland Cavaliers (domicile), le 21/11 à 01:30 (heure de Paris).\nCotes Unibet : Indiana Pacers 2.45, Cleveland Cavaliers 1.37.\nAvis du bot : à jouer — Cleveland Cavaliers gagne, confiance prudente, chances estimées 67%, mise conseillée 15 €.\nAtouts : Indiana Pacers diminué : 6 absents ou incertains ; Bien meilleur la saison passée : 52V-30D contre 19V-63D.\nPoints de vigilance : Écart moyen de Cleveland Cavaliers faible (+0.1 pts/match) : victoires souvent serrées ; Cote Unibet en dessous du marché (73% implicite contre 67% estimé).\nForme récente (10 derniers matchs) : Cleveland Cavaliers : 4V-6D, 1 défaite de suite, écart moyen +0.1 pts/match / Indiana Pacers : 3V-7D, 2 défaites de suite, écart moyen -5.0 pts/match\nFace-à-face depuis 2023-24 : Cleveland Cavaliers 7V-5D contre Indiana Pacers / Derniers : 11/2025 V 120-109, 12/2025 V 135-119, 01/2026 V 120-116, 04/2026 V 117-108\nConfrontations cette saison : Première confrontation de la saison\nSaisons précédentes : Cleveland Cavaliers : 2025-26 52V-30D · 2024-25 64V-18D · 2023-24 48V-34D / Indiana Pacers : 2025-26 19V-63D · 2024-25 50V-32D · 2023-24 47V-36D\nBilan de la saison : Cleveland Cavaliers : 8V-8D (16e NBA) · à domicile 6V-3D / Indiana Pacers : 5V-10D (21e NBA) · à l'extérieur 3V-4D\nRepos et calendrier : Cleveland Cavaliers : 2 jour(s) de repos / Indiana Pacers : 2 jour(s) de repos\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "verdict": "Validé",
+   "line": "01:30 Indiana Pacers @ Cleveland Cavaliers — validé : Cleveland Cavaliers 1.36 (67% estimé)",
+   "brief": "Match NBA : Indiana Pacers (extérieur) contre Cleveland Cavaliers (domicile), le 21/11 à 01:30 (heure de Paris).\nCotes Unibet : Indiana Pacers 2.45, Cleveland Cavaliers 1.36.\nAvis du bot : validé, non retenu — Cleveland Cavaliers gagne, confiance prudente, chances estimées 67%, mise conseillée 15 €.\nAtouts : Indiana Pacers diminué : 6 absents ou incertains ; Bien meilleur la saison passée : 52V-30D contre 19V-63D.\nPoints de vigilance : Écart moyen de Cleveland Cavaliers faible (+0.1 pts/match) : victoires souvent serrées ; Cote Unibet en dessous du marché (74% implicite contre 67% estimé).\nForme récente (10 derniers matchs) : Cleveland Cavaliers : 4V-6D, 1 défaite de suite, écart moyen +0.1 pts/match / Indiana Pacers : 3V-7D, 2 défaites de suite, écart moyen -5.0 pts/match\nFace-à-face depuis 2023-24 : Cleveland Cavaliers 7V-5D contre Indiana Pacers / Derniers : 11/2025 V 120-109, 12/2025 V 135-119, 01/2026 V 120-116, 04/2026 V 117-108\nConfrontations cette saison : Première confrontation de la saison\nSaisons précédentes : Cleveland Cavaliers : 2025-26 52V-30D · 2024-25 64V-18D · 2023-24 48V-34D / Indiana Pacers : 2025-26 19V-63D · 2024-25 50V-32D · 2023-24 47V-36D\nBilan de la saison : Cleveland Cavaliers : 8V-8D (16e NBA) · à domicile 6V-3D / Indiana Pacers : 5V-10D (21e NBA) · à l'extérieur 3V-4D\nRepos et calendrier : Cleveland Cavaliers : 2 jour(s) de repos / Indiana Pacers : 2 jour(s) de repos\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:9051693857c6a0e5e1bc6bb2b4f6fe35",
@@ -34,8 +34,8 @@
    "label": "Toronto Raptors @ Detroit Pistons",
    "time": "2026-11-21T00:30:00+00:00",
    "verdict": "Écarté",
-   "line": "01:30 Toronto Raptors @ Detroit Pistons — écarté (forme insuffisante) : favori Detroit Pistons 1.35",
-   "brief": "Match NBA : Toronto Raptors (extérieur) contre Detroit Pistons (domicile), le 21/11 à 01:30 (heure de Paris).\nCotes Unibet : Toronto Raptors 2.85, Detroit Pistons 1.35.\nAvis du bot : écarté — Forme insuffisante : 1V-2D sur ses 3 derniers à domicile (2 V requises).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "01:30 Toronto Raptors @ Detroit Pistons — écarté (forme insuffisante) : favori Detroit Pistons 1.34",
+   "brief": "Match NBA : Toronto Raptors (extérieur) contre Detroit Pistons (domicile), le 21/11 à 01:30 (heure de Paris).\nCotes Unibet : Toronto Raptors 2.90, Detroit Pistons 1.34.\nAvis du bot : écarté — Forme insuffisante : 1V-2D sur ses 3 derniers à domicile (2 V requises).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:d6ed1e97c331fc604506e4c354ab1cdc",
@@ -43,8 +43,8 @@
    "label": "Washington Wizards @ Chicago Bulls",
    "time": "2026-11-21T01:00:00+00:00",
    "verdict": "Écarté",
-   "line": "02:00 Washington Wizards @ Chicago Bulls — écarté (forme insuffisante) : favori Chicago Bulls 1.59",
-   "brief": "Match NBA : Washington Wizards (extérieur) contre Chicago Bulls (domicile), le 21/11 à 02:00 (heure de Paris).\nCotes Unibet : Washington Wizards 1.95, Chicago Bulls 1.59.\nAvis du bot : écarté — Forme insuffisante : 1V-2D sur ses 3 derniers à domicile (2 V requises).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "02:00 Washington Wizards @ Chicago Bulls — écarté (forme insuffisante) : favori Chicago Bulls 1.61",
+   "brief": "Match NBA : Washington Wizards (extérieur) contre Chicago Bulls (domicile), le 21/11 à 02:00 (heure de Paris).\nCotes Unibet : Washington Wizards 1.93, Chicago Bulls 1.61.\nAvis du bot : écarté — Forme insuffisante : 1V-2D sur ses 3 derniers à domicile (2 V requises).\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:17e3a8dc71275a88b19d0d6750a5052c",
@@ -52,8 +52,8 @@
    "label": "New Orleans Pelicans @ Oklahoma City Thunder",
    "time": "2026-11-21T01:00:00+00:00",
    "verdict": "Écarté",
-   "line": "02:00 New Orleans Pelicans @ Oklahoma City Thunder — écarté (cote trop basse) : favori Oklahoma City Thunder 1.13",
-   "brief": "Match NBA : New Orleans Pelicans (extérieur) contre Oklahoma City Thunder (domicile), le 21/11 à 02:00 (heure de Paris).\nCotes Unibet : New Orleans Pelicans 3.90, Oklahoma City Thunder 1.13.\nAvis du bot : écarté — Cote trop basse : Favori à 1.13 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "02:00 New Orleans Pelicans @ Oklahoma City Thunder — écarté (cote trop basse) : favori Oklahoma City Thunder 1.12",
+   "brief": "Match NBA : New Orleans Pelicans (extérieur) contre Oklahoma City Thunder (domicile), le 21/11 à 02:00 (heure de Paris).\nCotes Unibet : New Orleans Pelicans 4.05, Oklahoma City Thunder 1.12.\nAvis du bot : écarté — Cote trop basse : Favori à 1.12 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:ee204ae35d677450476eab6ad6a146a7",
@@ -61,17 +61,17 @@
    "label": "Phoenix Suns @ Utah Jazz",
    "time": "2026-11-21T02:30:00+00:00",
    "verdict": "Écarté",
-   "line": "03:30 Phoenix Suns @ Utah Jazz — écarté (trop de déplacements) : favori Phoenix Suns 1.45",
-   "brief": "Match NBA : Phoenix Suns (extérieur) contre Utah Jazz (domicile), le 21/11 à 03:30 (heure de Paris).\nCotes Unibet : Phoenix Suns 1.45, Utah Jazz 2.20.\nAvis du bot : écarté — Trop de déplacements : 3e match consécutif à l'extérieur.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "03:30 Phoenix Suns @ Utah Jazz — écarté (trop de déplacements) : favori Phoenix Suns 1.44",
+   "brief": "Match NBA : Phoenix Suns (extérieur) contre Utah Jazz (domicile), le 21/11 à 03:30 (heure de Paris).\nCotes Unibet : Phoenix Suns 1.44, Utah Jazz 2.25.\nAvis du bot : écarté — Trop de déplacements : 3e match consécutif à l'extérieur.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:086d2fe80483ffcc280994fe2e12d4f4",
    "sport": "nba",
    "label": "Houston Rockets @ Denver Nuggets",
    "time": "2026-11-21T03:00:00+00:00",
-   "verdict": "Validé",
-   "line": "04:00 Houston Rockets @ Denver Nuggets — validé : Denver Nuggets 1.72 (52% estimé)",
-   "brief": "Match NBA : Houston Rockets (extérieur) contre Denver Nuggets (domicile), le 21/11 à 04:00 (heure de Paris).\nCotes Unibet : Houston Rockets 1.92, Denver Nuggets 1.72.\nAvis du bot : validé, non retenu — Denver Nuggets gagne, confiance prudente, chances estimées 52%, mise conseillée 15 €.\nAtouts : Houston Rockets diminué : 3 absents ou incertains.\nPoints de vigilance : A perdu contre Houston Rockets cette saison ; Cote de 1.72 : favori moins net, une défaite est plausible ; Cote Unibet en dessous du marché (58% implicite contre 52% estimé).\nForme récente (10 derniers matchs) : Denver Nuggets : 7V-3D, 1 victoire de suite, écart moyen +3.8 pts/match / Houston Rockets : 7V-3D, 1 victoire de suite, écart moyen +7.3 pts/match\nFace-à-face depuis 2023-24 : Denver Nuggets 6V-6D contre Houston Rockets / Derniers : 12/2025 V 128-125, 12/2025 D 101-115, 03/2026 V 129-93, 11/2026 D 100-110\nConfrontations cette saison : défaite 100-110\nSaisons précédentes : Denver Nuggets : 2025-26 54V-28D · 2024-25 50V-32D · 2023-24 57V-25D / Houston Rockets : 2025-26 52V-30D · 2024-25 52V-30D · 2023-24 41V-41D\nBilan de la saison : Denver Nuggets : 8V-5D (10e NBA) · à domicile 3V-3D / Houston Rockets : 12V-4D (4e NBA) · à l'extérieur 5V-3D\nRepos et calendrier : Denver Nuggets : 2 jour(s) de repos / Houston Rockets : 2 jour(s) de repos\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "verdict": "À jouer",
+   "line": "04:00 Houston Rockets @ Denver Nuggets — À JOUER : Denver Nuggets 1.72 (54% estimé)",
+   "brief": "Match NBA : Houston Rockets (extérieur) contre Denver Nuggets (domicile), le 21/11 à 04:00 (heure de Paris).\nCotes Unibet : Houston Rockets 1.93, Denver Nuggets 1.72.\nAvis du bot : à jouer — Denver Nuggets gagne, confiance prudente, chances estimées 54%, mise conseillée 15 €.\nAtouts : Houston Rockets diminué : 3 absents ou incertains.\nPoints de vigilance : A perdu contre Houston Rockets cette saison ; Cote de 1.72 : favori moins net, une défaite est plausible ; Cote Unibet en dessous du marché (58% implicite contre 54% estimé).\nForme récente (10 derniers matchs) : Denver Nuggets : 7V-3D, 1 victoire de suite, écart moyen +3.8 pts/match / Houston Rockets : 7V-3D, 1 victoire de suite, écart moyen +7.3 pts/match\nFace-à-face depuis 2023-24 : Denver Nuggets 6V-6D contre Houston Rockets / Derniers : 12/2025 V 128-125, 12/2025 D 101-115, 03/2026 V 129-93, 11/2026 D 100-110\nConfrontations cette saison : défaite 100-110\nSaisons précédentes : Denver Nuggets : 2025-26 54V-28D · 2024-25 50V-32D · 2023-24 57V-25D / Houston Rockets : 2025-26 52V-30D · 2024-25 52V-30D · 2023-24 41V-41D\nBilan de la saison : Denver Nuggets : 8V-5D (10e NBA) · à domicile 3V-3D / Houston Rockets : 12V-4D (4e NBA) · à l'extérieur 5V-3D\nRepos et calendrier : Denver Nuggets : 2 jour(s) de repos / Houston Rockets : 2 jour(s) de repos\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:55c3096b11f501ffb6d8bccbb2cd319d",
