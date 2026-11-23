@@ -1,53 +1,21 @@
 {
- "created_label": "vendredi 20/11 à 17:58",
+ "created_label": "dimanche 22/11 à 17:17",
  "bets": [
   {
    "option": "Option 1 · Pari simple",
    "kind": "Pari simple",
-   "total": 1.8,
+   "total": 1.5,
    "legs": [
     {
-     "event_id": "cf68da11fa604c13fc9ef3219fad0314",
-     "pick": "AFC Bournemouth",
-     "opponent": "Nottingham Forest",
-     "pick_id": "349",
-     "opp_id": "393",
-     "odds": 1.8,
-     "tournament": "Premier League",
-     "commence": "2026-11-21T15:00:00+00:00",
-     "time": "21/11 16:00",
-     "result": true
-    }
-   ],
-   "status": "gagné"
-  },
-  {
-   "option": "Option 2 · Combiné",
-   "kind": "Combiné de 2 matchs",
-   "total": 1.82,
-   "legs": [
-    {
-     "event_id": "bf921a2780e2a25201da8a3bfece84c4",
-     "pick": "Lazio",
-     "opponent": "Lecce",
-     "pick_id": "112",
-     "opp_id": "113",
-     "odds": 1.27,
-     "tournament": "Serie A",
-     "commence": "2026-11-21T14:00:00+00:00",
-     "time": "21/11 15:00",
-     "result": true
-    },
-    {
-     "event_id": "e67ee3a6f93bb90b8aefcf3dd204477c",
-     "pick": "Tottenham Hotspur",
-     "opponent": "Ipswich Town",
-     "pick_id": "367",
-     "opp_id": "373",
-     "odds": 1.43,
-     "tournament": "Premier League",
-     "commence": "2026-11-21T15:00:00+00:00",
-     "time": "21/11 16:00",
+     "event_id": "9a214142c9b31ad8233dccad53f75d6d",
+     "pick": "Werder Bremen",
+     "opponent": "Hamburg SV",
+     "pick_id": "137",
+     "opp_id": "127",
+     "odds": 1.5,
+     "tournament": "Bundesliga",
+     "commence": "2026-11-22T16:30:00+00:00",
+     "time": "22/11 17:30",
      "result": true
     }
    ],
