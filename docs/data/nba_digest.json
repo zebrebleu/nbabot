@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-24T19:30:17.543432+00:00",
+ "generated_at": "2026-11-24T23:16:54.166328+00:00",
  "matches": [
   {
    "id": "nba:42f48a4769eab3d1472d76aac0fd0fa7",
@@ -7,8 +7,8 @@
    "label": "Detroit Pistons @ Orlando Magic",
    "time": "2026-11-25T00:00:00+00:00",
    "verdict": "Écarté",
-   "line": "01:00 Detroit Pistons @ Orlando Magic — écarté (blessure importante) : favori Detroit Pistons 1.61",
-   "brief": "Match NBA : Detroit Pistons (extérieur) contre Orlando Magic (domicile), le 25/11 à 01:00 (heure de Paris).\nCotes Unibet : Detroit Pistons 1.61, Orlando Magic 1.93.\nAvis du bot : écarté — Blessure importante : Franchise player Cade Cunningham : Day-To-Day.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "01:00 Detroit Pistons @ Orlando Magic — écarté (blessure importante) : favori Detroit Pistons 1.65",
+   "brief": "Match NBA : Detroit Pistons (extérieur) contre Orlando Magic (domicile), le 25/11 à 01:00 (heure de Paris).\nCotes Unibet : Detroit Pistons 1.65, Orlando Magic 1.87.\nAvis du bot : écarté — Blessure importante : Franchise player Cade Cunningham : Day-To-Day.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:3167a4072c65c9314c71d0fe49be8e28",
@@ -16,8 +16,8 @@
    "label": "Boston Celtics @ Washington Wizards",
    "time": "2026-11-25T01:00:00+00:00",
    "verdict": "Écarté",
-   "line": "02:00 Boston Celtics @ Washington Wizards — écarté (cote trop basse) : favori Boston Celtics 1.18",
-   "brief": "Match NBA : Boston Celtics (extérieur) contre Washington Wizards (domicile), le 25/11 à 02:00 (heure de Paris).\nCotes Unibet : Boston Celtics 1.18, Washington Wizards 3.95.\nAvis du bot : écarté — Cote trop basse : Favori à 1.18 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "02:00 Boston Celtics @ Washington Wizards — écarté (cote trop basse) : favori Boston Celtics 1.17",
+   "brief": "Match NBA : Boston Celtics (extérieur) contre Washington Wizards (domicile), le 25/11 à 02:00 (heure de Paris).\nCotes Unibet : Boston Celtics 1.17, Washington Wizards 4.00.\nAvis du bot : écarté — Cote trop basse : Favori à 1.17 : le gain serait trop faible pour le risque..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   },
   {
    "id": "nba:6bfadbd22ed8a054cf82ec1b12b78243",
@@ -25,8 +25,8 @@
    "label": "Dallas Mavericks @ Denver Nuggets",
    "time": "2026-11-25T03:00:00+00:00",
    "verdict": "À jouer",
-   "line": "04:00 Dallas Mavericks @ Denver Nuggets — À JOUER : Denver Nuggets 1.26 (72% estimé)",
-   "brief": "Match NBA : Dallas Mavericks (extérieur) contre Denver Nuggets (domicile), le 25/11 à 04:00 (heure de Paris).\nCotes Unibet : Dallas Mavericks 2.90, Denver Nuggets 1.26.\nAvis du bot : à jouer — Denver Nuggets gagne, confiance prudente, chances estimées 72%, mise conseillée 15 €.\nAtouts : Dallas Mavericks diminué : 5 absents ou incertains ; Bien meilleur la saison passée : 54V-28D contre 26V-56D.\nPoints de vigilance : Cote Unibet en dessous du marché (79% implicite contre 72% estimé).\nForme récente (10 derniers matchs) : Denver Nuggets : 7V-3D, 3 victoires de suite, écart moyen +3.3 pts/match / Dallas Mavericks : 6V-4D, 3 victoires de suite, écart moyen -0.1 pts/match\nFace-à-face depuis 2023-24 : Denver Nuggets 7V-4D contre Dallas Mavericks / Derniers : 12/2025 D 121-131, 12/2025 D 130-131, 01/2026 V 118-109, 03/2026 V 142-135\nConfrontations cette saison : Première confrontation de la saison\nSaisons précédentes : Denver Nuggets : 2025-26 54V-28D · 2024-25 50V-32D · 2023-24 57V-25D / Dallas Mavericks : 2025-26 26V-56D · 2024-25 39V-43D · 2023-24 50V-32D\nBilan de la saison : Denver Nuggets : 10V-5D (7e NBA) · à domicile 4V-3D / Dallas Mavericks : 10V-7D (14e NBA) · à l'extérieur 3V-5D\nRepos et calendrier : Denver Nuggets : 2 jour(s) de repos / Dallas Mavericks : 2 jour(s) de repos\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+   "line": "04:00 Dallas Mavericks @ Denver Nuggets — À JOUER : Denver Nuggets 1.25 (72% estimé)",
+   "brief": "Match NBA : Dallas Mavericks (extérieur) contre Denver Nuggets (domicile), le 25/11 à 04:00 (heure de Paris).\nCotes Unibet : Dallas Mavericks 2.95, Denver Nuggets 1.25.\nAvis du bot : à jouer — Denver Nuggets gagne, confiance prudente, chances estimées 72%, mise conseillée 15 €.\nAtouts : Dallas Mavericks diminué : 5 absents ou incertains ; Bien meilleur la saison passée : 54V-28D contre 26V-56D.\nPoints de vigilance : Cote Unibet en dessous du marché (80% implicite contre 72% estimé).\nForme récente (10 derniers matchs) : Denver Nuggets : 7V-3D, 3 victoires de suite, écart moyen +3.3 pts/match / Dallas Mavericks : 6V-4D, 3 victoires de suite, écart moyen -0.1 pts/match\nFace-à-face depuis 2023-24 : Denver Nuggets 7V-4D contre Dallas Mavericks / Derniers : 12/2025 D 121-131, 12/2025 D 130-131, 01/2026 V 118-109, 03/2026 V 142-135\nConfrontations cette saison : Première confrontation de la saison\nSaisons précédentes : Denver Nuggets : 2025-26 54V-28D · 2024-25 50V-32D · 2023-24 57V-25D / Dallas Mavericks : 2025-26 26V-56D · 2024-25 39V-43D · 2023-24 50V-32D\nBilan de la saison : Denver Nuggets : 10V-5D (7e NBA) · à domicile 4V-3D / Dallas Mavericks : 10V-7D (14e NBA) · à l'extérieur 3V-5D\nRepos et calendrier : Denver Nuggets : 2 jour(s) de repos / Dallas Mavericks : 2 jour(s) de repos\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
   }
  ]
 }
