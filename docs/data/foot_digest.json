@@ -1,4 +1,55 @@
 {
- "generated_at": "2026-11-25T18:39:31.896273+00:00",
- "matches": []
+ "generated_at": "2026-11-26T18:26:16.568432+00:00",
+ "matches": [
+  {
+   "id": "foot:698f4a7967ead89e10205a68ceb4bda4",
+   "sport": "foot",
+   "label": "Werder Bremen – Borussia Mönchengladbach",
+   "competition": "Bundesliga",
+   "time": "2026-11-27T19:30:00+00:00",
+   "verdict": "Écarté",
+   "line": "20:30 Werder Bremen – Borussia Mönchengladbach — écarté (l'adversaire domine les face-à-face) : favori Werder Bremen 1.63 [Bundesliga]",
+   "brief": "Match de foot (Bundesliga) : Werder Bremen (domicile) contre Borussia Mönchengladbach (extérieur), le 27/11 à 20:30 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : Werder Bremen 1.63, nul 3.80, Borussia Mönchengladbach 3.90.\nAvis du bot : écarté — L'adversaire domine les face-à-face : L'adversaire domine les face-à-face : 1V-3N-2D depuis 2023.\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+  },
+  {
+   "id": "foot:02ff879cf54f6d1fec2664efee0431db",
+   "sport": "foot",
+   "label": "Brest – Paris FC",
+   "competition": "Ligue 1",
+   "time": "2026-11-27T19:45:00+00:00",
+   "verdict": "Écarté",
+   "line": "20:45 Brest – Paris FC — écarté (favori pas assez net) : favori Paris FC 2.00 [Ligue 1]",
+   "brief": "Match de foot (Ligue 1) : Brest (domicile) contre Paris FC (extérieur), le 27/11 à 20:45 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : Brest 3.10, nul 3.40, Paris FC 2.00.\nAvis du bot : écarté — Favori pas assez net : Cote de 2.00, au-dessus de la limite de 1.80..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+  },
+  {
+   "id": "foot:e9a663f13e7503c0ac20a54804338b60",
+   "sport": "foot",
+   "label": "Venezia – Bologna",
+   "competition": "Serie A",
+   "time": "2026-11-27T19:45:00+00:00",
+   "verdict": "Écarté",
+   "line": "20:45 Venezia – Bologna — écarté (favori pas assez net) : favori Bologna 2.00 [Serie A]",
+   "brief": "Match de foot (Serie A) : Venezia (domicile) contre Bologna (extérieur), le 27/11 à 20:45 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : Venezia 3.20, nul 3.10, Bologna 2.00.\nAvis du bot : écarté — Favori pas assez net : Cote de 2.00, au-dessus de la limite de 1.80..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+  },
+  {
+   "id": "foot:80c92a163a81b69fef76530221e2edd0",
+   "sport": "foot",
+   "label": "Levante – Racing Santander",
+   "competition": "Liga",
+   "time": "2026-11-27T20:00:00+00:00",
+   "verdict": "Écarté",
+   "line": "21:00 Levante – Racing Santander — écarté (favori pas assez net) : favori Levante 1.92 [Liga]",
+   "brief": "Match de foot (Liga) : Levante (domicile) contre Racing Santander (extérieur), le 27/11 à 21:00 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : Levante 1.92, nul 3.60, Racing Santander 3.00.\nAvis du bot : écarté — Favori pas assez net : Cote de 1.92, au-dessus de la limite de 1.80..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+  },
+  {
+   "id": "foot:40d95e660c301c2d8a5a7a6317017b65",
+   "sport": "foot",
+   "label": "Nottingham Forest – Chelsea",
+   "competition": "Premier League",
+   "time": "2026-11-27T20:00:00+00:00",
+   "verdict": "Écarté",
+   "line": "21:00 Nottingham Forest – Chelsea — écarté (favori pas assez net) : favori Nottingham Forest 2.35 [Premier League]",
+   "brief": "Match de foot (Premier League) : Nottingham Forest (domicile) contre Chelsea (extérieur), le 27/11 à 21:00 (heure de Paris). Pari étudié : victoire du favori (le nul fait perdre).\nCotes Unibet (1N2) : Nottingham Forest 2.35, nul 3.40, Chelsea 2.50.\nAvis du bot : écarté — Favori pas assez net : Cote de 2.35, au-dessus de la limite de 1.80..\nAnalyse complète sur mon site : https://zebrebleu.github.io/nbabot/"
+  }
+ ]
 }
