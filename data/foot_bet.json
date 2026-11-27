@@ -1,0 +1,25 @@
+{
+ "created": "2026-11-27T18:11:52.569849+00:00",
+ "created_label": "vendredi 27/11 à 19:11",
+ "bets": [
+  {
+   "option": "Option 1 · Pari simple",
+   "kind": "Pari simple",
+   "total": 1.57,
+   "stake": 15,
+   "legs": [
+    {
+     "event_id": "e9a1243fbfbc6f58d0e0522eb07ea9a1",
+     "pick": "Nice",
+     "opponent": "Troyes",
+     "pick_id": "2502",
+     "opp_id": "170",
+     "odds": 1.57,
+     "tournament": "Ligue 1",
+     "commence": "2026-11-28T19:45:00+00:00",
+     "time": "28/11 20:45"
+    }
+   ]
+  }
+ ]
+}
